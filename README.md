@@ -1,6 +1,6 @@
 # ModularRep and the manuscript application
 
-This repository contains the Lean sources accompanying Baoyu Zhang's manuscript
+This repository contains the Lean sources accompanying the manuscript
 on the inductive blockwise Alperin weight condition for groups of types B and C
 and sporadic groups. `packages/ModularRep` contains the reusable representation
 theory library; `ManuscriptIBAW` contains the manuscript application.
