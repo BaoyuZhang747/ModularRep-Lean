@@ -1,0 +1,157 @@
+name = "ModularRep"
+version = "0.1.0"
+keywords = ["mathematics", "representation-theory"]
+defaultTargets = ["ModularRep"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[require]]
+name = "formalisation"
+path = "packages/formalisation"
+
+[[lean_lib]]
+name = "ModularRep"
+moreLeanArgs = ["--trust=0", "--threads=1"]
+needs = [
+  "babyCode",
+  "babyOutput",
+  "fi24BlocksCode",
+  "fi24BlocksOutput",
+  "fi24P3Code",
+  "fi24P3Output",
+  "fi24WeightsCode",
+  "fi24WeightsOutput",
+  "monsterCode",
+  "monsterOutput",
+  "o7BlockTwoCode",
+  "o7BlockTwoOutput",
+  "o7BlocksCode",
+  "o7BlocksOutput",
+  "o7BrauerCode",
+  "o7BrauerOutput",
+  "o7RadicalCode",
+  "o7RadicalOutput",
+  "o7WeightsCode",
+  "o7WeightsOutput",
+  "sp6Code",
+  "sp6Output",
+]
+
+[[input_file]]
+name = "babyCode"
+path = "data/computations/code/baby.g"
+text = true
+
+[[input_file]]
+name = "babyOutput"
+path = "data/computations/outputs/baby.out"
+text = true
+
+[[input_file]]
+name = "fi24BlocksCode"
+path = "data/computations/code/fi24blocks.g"
+text = true
+
+[[input_file]]
+name = "fi24BlocksOutput"
+path = "data/computations/outputs/fi24blocks.out"
+text = true
+
+[[input_file]]
+name = "fi24P3Code"
+path = "data/computations/code/fi24p3.g"
+text = true
+
+[[input_file]]
+name = "fi24P3Output"
+path = "data/computations/outputs/fi24p3.out"
+text = true
+
+[[input_file]]
+name = "fi24WeightsCode"
+path = "data/computations/code/fi24weights.g"
+text = true
+
+[[input_file]]
+name = "fi24WeightsOutput"
+path = "data/computations/outputs/fi24weights.out"
+text = true
+
+[[input_file]]
+name = "monsterCode"
+path = "data/computations/code/monster.g"
+text = true
+
+[[input_file]]
+name = "monsterOutput"
+path = "data/computations/outputs/monster.out"
+text = true
+
+[[input_file]]
+name = "o7BlockTwoCode"
+path = "data/computations/code/o7block2.g"
+text = true
+
+[[input_file]]
+name = "o7BlockTwoOutput"
+path = "data/computations/outputs/o7block2.out"
+text = true
+
+[[input_file]]
+name = "o7BlocksCode"
+path = "data/computations/code/o7blocks.g"
+text = true
+
+[[input_file]]
+name = "o7BlocksOutput"
+path = "data/computations/outputs/o7blocks.out"
+text = true
+
+[[input_file]]
+name = "o7BrauerCode"
+path = "data/computations/code/o7brauer.g"
+text = true
+
+[[input_file]]
+name = "o7BrauerOutput"
+path = "data/computations/outputs/o7brauer.out"
+text = true
+
+[[input_file]]
+name = "o7RadicalCode"
+path = "data/computations/code/o7radical.g"
+text = true
+
+[[input_file]]
+name = "o7RadicalOutput"
+path = "data/computations/outputs/o7radical.out"
+text = true
+
+[[input_file]]
+name = "o7WeightsCode"
+path = "data/computations/code/o7weights.g"
+text = true
+
+[[input_file]]
+name = "o7WeightsOutput"
+path = "data/computations/outputs/o7weights.out"
+text = true
+
+[[input_file]]
+name = "sp6Code"
+path = "data/computations/code/sp6.g"
+text = true
+
+[[input_file]]
+name = "sp6Output"
+path = "data/computations/outputs/sp6.out"
+text = true

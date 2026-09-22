@@ -1,0 +1,25 @@
+name: Application build and configured audits
+
+# Use a controlled private mirror with a dedicated, isolated runner.
+# Never attach a persistent self-hosted runner to the public repository:
+# another pull-request workflow could target it regardless of this trigger.
+# Git, Python 3.11+ and elan must be installed on the runner.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    if: github.event.repository.private == true
+    runs-on: [self-hosted, lean]
+    timeout-minutes: 1440
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Check source and dependency pins
+        run: python -B scripts/check_repository.py
+      - name: Build the application import closure with committed dependency pins
+        run: lake build
+      - name: Build audit dependencies and run configured audits
+        run: python -B scripts/run_lean_audits.py

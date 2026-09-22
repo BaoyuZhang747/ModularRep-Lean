@@ -1,0 +1,167 @@
+\chapter{The inductive condition and the scope of the arguments}
+\label{chap:current-scope}
+
+The blockwise Alperin weight (BAW) conjecture predicts that a block has as many
+irreducible Brauer characters as conjugacy classes of weights. The
+inductive blockwise Alperin weight (iBAW) condition requires compatible
+equivariant correspondences on
+covering groups of a nonabelian simple group. These include conditions
+on character extensions and on blocks of intermediate groups.
+
+This report follows the manuscript's arguments for the inductive
+blockwise Alperin weight condition for simple groups of Type B, simple
+groups of Type C and sporadic simple groups. It begins with the general
+preliminary results, then treats the three families and the reduction to
+finite groups. The conclusions hold under the hypotheses stated in each
+argument. References to manuscript results use the numbering of the accompanying
+manuscript.
+The mathematical library manual describes the foundations and the general
+ModularRep results used in these arguments.
+
+\section{Characters, weights and covering groups}
+
+Fix a prime $\ell$. A weight of a finite group $G$ consists of a radical
+$\ell$-subgroup $Q$ and an ordinary irreducible character $\theta$ of
+$N_G(Q)/Q$ with defect zero. The set $\Alp(b)$ consists of the conjugacy
+classes of weights belonging to a block $b$, and $\IBr(b)$ denotes its
+irreducible Brauer characters. For passage through a quotient or an isomorphism, both the subgroup map and the character map must be specified under the stated hypotheses.
+
+The full universal covering group of a simple group $S$ and its universal
+$\ell'$-cover $X_\ell(S)$ play different roles. Each descent argument uses
+the specified covering projection, central kernel and automorphism
+action. The constructions for exceptional covers include these maps
+and the character and block identifications they induce.
+
+\begin{implementation}
+The representations, irreducibility predicate and ordinary character
+function are supplied by Mathlib. ModularRep uses these definitions to
+form its type of ordinary irreducible character functions, and provides
+the Brauer character and block constructions used below. The mathematical
+library manual explains the imported definitions and results, the
+additional constructions, and the explicit hypotheses.
+\end{implementation}
+
+\section{Coefficient fields and reduction}
+
+Brauer characters use a chosen correspondence between roots of unity in
+characteristic $\ell$ and characteristic zero. Character comparisons use
+compatible roots.
+
+The coefficient hypotheses depend on the application. The principal
+$2$-block construction for Type C, including its rank two principal
+case, uses an algebraically closed coefficient field $K$ for ordinary characters. It does not
+require a discrete valuation ring with fraction field $K$. The applications
+in defining characteristic and in low rank over even fields use a field
+$K$ of characteristic zero, an algebraically closed field $k$ of
+characteristic $\ell$, and the specified correspondences between roots
+of unity. They do not require $K$ to be algebraically closed.
+The application of Li--Li's theorem to all blocks in rank two and the applications
+in higher rank at odd nondefining primes use a specified modular system
+with fraction field $K$ and residue field $k$, together with the stated
+splitting and root assumptions. Fixed embeddings of a common cyclotomic
+field compare complex character values with values in $K$.
+
+The hypotheses on the decomposition homomorphism, its naturality and
+block induction refer to these coefficient choices. Where a published
+statement uses complex characters, its application over another value
+field includes the required character and root identifications.
+
+\section{The conclusions and their assumptions}
+
+The equality
+\[
+ |\IBr(b)|=|\Alp(b)|,
+\]
+an equivariant bijection between these sets, and a bijection satisfying
+the prescribed block isomorphism relation between modular character
+triples are distinct conclusions. The full inductive condition also requires compatible
+extensions and block equalities for intermediate groups. At the trivial
+radical subgroup it prescribes the correspondence coming from ordinary
+characters of defect zero.
+
+The arguments below state which conclusion is obtained. Counting
+arguments give numerical equalities or equivariant bijections under the
+stated group actions. Published criteria supply the further character
+and block conditions under their hypotheses. When a passage from
+individual blocks to a full family chooses compatible correspondences,
+the resulting family need not coincide with independently chosen block
+correspondences.
+
+Each Lean theorem proves its conclusion under its stated hypotheses.
+These include standard representation theory, cited results, finite
+data and their interpretation for the groups in question. The geometric
+constructions and trace identities used in manuscript Lemmas 2.11 and
+2.12 remain assumptions. In particular, the construction of the centrally
+normalised split pair in Type C is not formalised. Lean proves the finite spanning, independence,
+coverage and character selection deductions. The conditional Type C
+selection theorem concerns the specified family in the conformal
+symplectic group. Induction and restriction identities give a separate
+finite selection result for the symplectic group. The principal block
+application takes the published field invariance and character counts
+as explicit assumptions. The passage from the selected ordinary
+characters to these principal block conclusions is not formalised.
+At rank two, Li--Li's theorem is applied on the specified cover.
+Compatibility across blocks and the quotient and root identifications
+required for the central lift remain separate assumptions.
+The inductive condition reported by CTBlocks
+for the other $22$ sporadic groups is also assumed. A numerical table is
+used with its stated interpretation and completeness assumptions.
+The implementation paragraphs identify the deductions that are formalised.
+
+\section{Scope of the hypotheses}
+
+The Type C source interface applies the published block theorem only to
+the specified automorphism stabilisers.
+The theorem \lean{Main.theorem_1_1} assumes both
+\lean{Main.ClassicalInputs} and \lean{Sporadic.Theorem.Inputs}.
+The package does not construct either complete collection of source
+assumptions. The conditional deductions do not establish the manuscript
+without the stated external assumptions.
+
+\section{References and source records}
+
+Appendix~\ref{chap:current-statements} relates the numbered manuscript
+statements to selected Lean declarations and states their roles.
+Appendix~\ref{chap:current-source-index} indexes the manuscript citations
+and bibliography. Appendix~\ref{app:construction-details} describes
+further constructions in the source library and distinguishes auxiliary
+results from those used in the manuscript deductions.
+Numbers within Lean declaration names are not
+manuscript cross-references. The source
+records specify the version consulted, result location, relevant
+hypotheses and use in the formalisation. A supporting reference
+documents the stated result at that location. It is not, by itself,
+a claim that the cited work first established the result.
+
+\section{Compilation and verification}
+\label{sec:compilation-resources}
+
+All 1,999 project Lean source files and four audit sources were checked
+with Lean 4.33.1 using \texttt{--trust=0}. The distributed Lean sources
+agree with the compiled sources outside comments. The build reused
+precompiled external dependencies at the pinned revisions. The recorded
+external objects and direct imports were checked against their hashes.
+The full tree of indirect external dependencies was not checked, and the
+imported proofs were not replayed.
+
+Compilation and verification used approximately 38.1 CPU hours. The peak
+sampled sum of the processes' resident working sets was 10.40\,GiB.
+Shared pages can be counted more than once, and peaks between samples
+may be missed.
+
+The package checker authenticates the distributed sources and metadata
+without rerunning Lean, and the original build logs and compiled objects
+are not distributed.
+
+Source files for the supplementary exhaustive audit helper, its generator
+and the generated audit module are not distributed. That audit cannot
+be repeated using the supplied tooling.
+
+For the audited declarations, the axiom checks restrict dependencies to
+the permitted standard axioms. They do not check every declaration in the
+library. The direct conclusion check rejects a leading hypothesis that
+is definitionally equal to the conclusion.
+It does not detect a merely logically equivalent hypothesis, a conclusion
+hidden in a structure field, or joint circularity among hypotheses.
+These checks do not establish the truth, independence or joint
+satisfiability of the external assumptions.

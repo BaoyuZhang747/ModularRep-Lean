@@ -1,0 +1,69 @@
+\documentclass[11pt,oneside]{book}
+\input{preamble}
+\hypersetup{pdftitle={ModularRep: Mathematical Library Manual}}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\centering
+\vspace*{28mm}
+{\Large\sffamily ModularRep\par}
+\vspace{12mm}
+{\Huge Mathematical Library Manual\par}
+\vspace{10mm}
+{\large Representation theory in Lean\par}
+\vfill
+\begin{minipage}{0.82\textwidth}
+This manual develops the theory of finite group representations, ordinary
+and Brauer characters, reduction, blocks and weights. It explains the mathematical
+constructions and their proofs, with references to the corresponding
+Lean definitions and theorems.
+\end{minipage}
+\vspace{18mm}
+\end{titlepage}
+\tableofcontents
+\chapter*{Using this manual}
+\addcontentsline{toc}{chapter}{Using this manual}
+The chapters follow the constructions needed to pass from representations
+to local weights. Normal subgroups and quotient groups come first, followed
+by ordinary characters, Brauer characters and exact Grothendieck groups.
+These provide the setting for reduction, blocks and weights. The remaining
+chapters study equivariant bijections, character counts from finite
+matrices, and several general arguments involving bases, stabilisers and
+rational series.
+
+Each mathematical statement specifies its coefficient fields and any
+required assumptions on splitting fields, roots of unity and compatibility. The exposition
+includes standard results used by the library. Implementation paragraphs
+distinguish results imported from Mathlib, definitions and deductions in
+this library, and results supplied as explicit hypotheses to the Lean code.
+References support the statements at the indicated locations, with version
+distinctions where these affect the formulation.
+
+\texttt{ModularRep.Library} imports a selection of basic constructions.
+For a particular result, use the module named in its implementation paragraph. The accompanying
+documentation index lists the source modules and their declarations.
+Instructions for compiling the library and checking the proofs are supplied
+with the package.
+Unless explicitly qualified, theorem and equation numbers refer to this
+manual.
+
+The general library and the manuscript applications have separate
+hypotheses. The formalisation report describes the assumptions used by
+the applications. The Lean code does not construct an instance satisfying all the hypotheses
+of the manuscript applications.
+
+\mainmatter
+\input{chapters/library}
+\input{chapters/library-groups}
+\input{chapters/library-ordinary}
+\input{chapters/library-brauer}
+\input{chapters/library-kzero}
+\input{chapters/library-reduction}
+\input{chapters/library-blocks}
+\input{chapters/library-weights}
+\input{chapters/library-actions}
+\input{chapters/library-computations}
+\input{chapters/library-current}
+\backmatter
+\input{bibliography-library}
+\end{document}

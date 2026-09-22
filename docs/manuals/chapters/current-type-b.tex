@@ -1,0 +1,1103 @@
+\chapter{The inductive condition for Type B}
+\label{chap:current-type-b}
+
+Let $\F_q$ be a finite field of order $q=p^f$. Except in the final discussion
+of small ranks and even characteristic, assume that $q$ is odd, $n\geq3$
+and $S=\Omega_{2n+1}(q)$ is the specified nonabelian simple matrix group.
+The spin and special Clifford groups are formed from the same quadratic
+space. Their homomorphisms to the orthogonal groups are the specified
+conjugation maps.
+
+The proof separates the defining prime, odd nondefining primes and the
+prime two. For $\ell=2$, the main steps are the principal block argument using
+generalised Gelfand--Graev characters and the passage from Levi subgroups
+to all blocks by Jordan reduction. The group $\Omega_7(3)$ requires a
+separate covering group. The final case distinction includes small ranks
+and even characteristic. The structural identifications and the cited
+geometric and character theoretic results remain assumptions where
+indicated. The geometric argument in manuscript Lemma 2.11 is also
+unformalised. Chapter~\ref{chap:current-scope} explains the scope of the
+formal verification.
+
+\section{The defining prime and its covering group}
+
+At $\ell=p$, the required cover is
+$G=\Spin_{2n+1}(q)$ with its projection $G\longrightarrow S$.
+The Clifford construction proves surjectivity and identifies
+the kernel with the centre under the specified structural assumptions.
+The centre has order two, hence order prime to the odd prime $p$.
+Perfectness, simplicity of $S$ and maximality among perfect central
+extensions with kernel of order prime to $p$ are the remaining covering
+assumptions.
+
+Sp\"ath's Theorem C is then applied on this cover
+\cite[Theorem~C and its proof]{Spath2013}.
+The source formulation uses the specified blocks, root
+correspondence, local characters and block operations, and concludes the
+prescribed complete family condition. The family and covering map are defined
+before the theorem is applied. Its conclusion includes the complete
+character triple and extension requirements.
+
+This also treats $S=\Omega_7(3)$ at $p=3$. The relevant cover is
+$\Spin_7(3)=2.\Omega_7(3)$, although the full universal central cover
+has kernel of order six \cite[Tables~24.2--24.3 and
+Remark~24.19]{MalleTesterman2011}. Only the universal $p'$-property is
+required. The ordinary coefficient field $K$ has characteristic zero.
+This application does not require it to be the fraction field of a discrete
+valuation ring. The algebraically closed field $k$ of characteristic $p$
+and the root and coefficient conditions of the published source, remain
+specified separately.
+
+\begin{implementation}
+\lean{ManuscriptIBAW.TypeB.Defining.SourceInputs} states the assumptions
+on the same spin group and projection. In that namespace,
+\lean{complete} combines the complete family supplied by the published
+theorem with \lean{D.facts.actualCover}, the covering property of the
+specified spin projection.
+\end{implementation}
+
+\section{Odd nondefining primes}
+
+Let $\ell\ne p$ be odd, let $G=\Spin_{2n+1}(q)$, and let
+$\widetilde G$ be the special Clifford group. The Clifford norm sends an
+element $g$ to the scalar represented by $g\,\operatorname{rev}(g)$, where
+$\operatorname{rev}$ denotes reversal in the Clifford algebra. The group
+$G$ is its kernel. Surjectivity is proved by taking a
+product of two vectors with prescribed nonzero norms. We assume that the centre consists of scalar units.
+Their norms are squares, so the general theorem on multiplier quotients
+gives
+\[
+ \widetilde G/GZ(\widetilde G)
+ \cong \F_q^\times/(\F_q^\times)^2,
+ \qquad |\widetilde G:GZ(\widetilde G)|=2.
+\]
+The larger quotient $\widetilde G/G$ has order $q-1$.
+
+Let $C$ be the group of ordinary linear characters of
+$\widetilde G/G$ of order prime to $\ell$, let $E$ be the finite cyclic group of field automorphisms, and set $A=C\rtimes E$. Tensoring acts on
+a primitive idempotent by scaling the group algebra basis at $g$ by the
+corresponding modular character value. With this left action, the
+module on which the idempotent acts as the identity is tensored by the
+reciprocal character. Cancellation in the group algebra proves this support
+equation on the same idempotent and module. The ordinary lifts and modular
+characters are compared using the common roots and their residue
+compatibility.
+
+For a block $b$ with stabiliser $J=A_b$, the kernel of the field projection
+embeds in this tensor stabiliser. The central character bound and
+the preceding index calculation make its order at most two. It is
+normal, and the quotient is cyclic. Every subgroup of $J$ is
+therefore $2$-hypoelementary. The identification of the centre with
+scalar units is a structural assumption. The index, compatibility with
+module support and stabiliser bound follow from it by the preceding
+arguments.
+
+For $M\in\{G,\widetilde G\}$, the integral basic set theorem in the
+form stated in Feng--Li--Zhang's Theorem 2.3 gives an integral basic set
+on each rational $\ell'$-series
+\cite{FengLiZhang2022TypeB}. The odd nondefining prime is good,
+and the component groups of the algebraic centres have orders two and
+one, respectively. The decomposition into unions of blocks and the block diagonal form
+of the decomposition map identify its restriction to a block $b$ of $M$ as
+\[
+ d_b:\Z[\mathcal X_b]\xrightarrow{\sim}\Z[\IBr(b)],
+ \qquad \mathcal X_b=\Irr(b)\cap\mathcal E(M,\ell').
+\]
+The action preserves these ordinary characters and commutes with
+the specified reduction. The interpretations of the rational series and
+ordinary character values, including stability under tensoring
+\cite[Theorem~4.7.1(3)]{GeckMalle2020}, remain supplied on the
+specified dual groups and common character parameters. This argument
+requires an integral basic set, without an additional unitriangularity
+hypothesis.
+
+On $G$, the effective outer action is the diagonal group of order
+two times the finite cyclic group of field automorphisms. Its block stabilisers are
+also $2$-hypoelementary. Conlon's permutation lattice theorem
+\cite{Conlon1968}, in Bouc's formulation
+\cite[Theorem~3.5.5]{Bouc2000}, gives equality of the subgroup marks.
+Burnside's injectivity theorem for marks \cite[Theorem~2.3.2]{Bouc2000} then gives the equivariant
+bijections in manuscript Lemma 4.2. These results apply to the
+decomposition lattice. The prime used by Conlon is two, while
+$\ell$ is odd.
+
+For $\widetilde G$, compose the constructed block bijection with
+the separately published correspondence from ordinary characters to weights
+\cite[Proposition~7.2]{FengLiZhang2022TypeB}. Choose these maps on
+representatives of block orbits and transport them over the orbits.
+This constructs the global $A$-equivariant correspondence between Brauer
+characters and weights required by the criterion. It preserves blocks.
+
+For $G$, the construction over block orbits first gives one global
+equivariant bijection between all irreducible Brauer characters
+and the selected ordinary series. Apply the ordinary character
+stabiliser theorem of Cabanes and Sp\"ath, in the form recalled in
+\cite[Theorem~3.10]{FengLiZhang2022TypeB}, to its image.
+Equivariance and injectivity transfer the stabiliser factorisation
+back to every Brauer character. The ordinary theorem has no Brauer
+or unitriangularity premise. Only after this transfer does the
+restriction expansion select a constituent of an upper Brauer
+character. The normaliser statement for weight representatives is
+supplied by Proposition 7.5 of the same paper.
+
+The remaining criterion clauses use the same cyclic quotient,
+inertia groups and local characters. Cyclic extension principles,
+with their root hypotheses, supply the Brauer and local ordinary
+extensions. Both inertia groups contain $GZ(\widetilde G)$.
+The index two and oddness of $\ell$ then give the required equality
+involving the inertia group and the preimage of a Hall subgroup of
+$\widetilde G/G$. This equality is proved for the specified
+characters and weight classes.
+
+The manuscript applies the criterion in Feng--Li--Zhang's
+Theorem 2.1 \cite{FengLiZhang2022TypeB}. The formal argument combines
+Brough--Sp\"ath's criterion \cite[Theorem~4.5]{BroughSpath2022},
+Koshitani--Sp\"ath's passage from block conditions to compatible
+correspondences \cite[Lemma~3.3]{KoshitaniSpath2016} and Sp\"ath's full
+condition \cite[Definition~4.1]{Spath2013}. The roots of the common
+modular system and coefficient normalisation remain prescribed.
+This combined statement is not asserted to be the verbatim conclusion
+of Theorem 2.1. The family, local reductions and generic spin cover
+are fixed before the full inductive condition is deduced. The structural
+assumptions include the universal $\ell'$-property. They do
+not separately formalise the full universal central extension
+assertion about the spin group.
+
+For $(n,q)=(3,3)$, use the
+sixfold cover $6.\Omega_7(3)$. The exact order and prime conditions
+give $\ell\in\{5,7,13\}$, each occurring to exponent one.
+Every $\ell$-subgroup is therefore cyclic. The complete
+result for cyclic defect is applied on this cover
+\cite[Theorem~1.1]{KoshitaniSpath2016}. The identification of the simple
+group with the matrix group $\Omega_7(3)$ transfers the complete condition
+to that group while retaining the same cover and characters.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.OddTensorBound} proves the index formula
+determined by the norm and centre, and the tensor stabiliser statements.
+\module{ManuscriptIBAW.TypeB.OddConlon} constructs the upper
+block bijections. \module{ManuscriptIBAW.TypeB.OddApplication}
+constructs the correspondence and criterion hypotheses on its fixed
+family. \module{ManuscriptIBAW.TypeB.OddUniform} selects the generic
+or exceptional cover, and \lean{OddInputs.Inputs.complete} provides
+the certificate on the matrix orthogonal group. These applications
+use one modular system and the required finite ordinary roots.
+Its fraction field is not required to be algebraically closed.
+\end{implementation}
+
+\section{Fixed representatives in products}
+
+Manuscript Lemma 4.4 is a finite product argument. Let
+$N=\prod_{i\in I}H_i$, let $\Delta=\prod_{i\in I}\Delta_i$ act
+componentwise, and let a cyclic group $E$ permute the factors and their
+actions. For a product character, consider its $\Delta$-orbit
+$\mathcal O$ and choose a generator $\tau$ of its setwise stabiliser
+$E_{\mathcal O}$.
+
+On each cycle $C$ of the permutation induced by $\tau$, choose one
+component representative whose stabiliser factors with respect to
+$\Delta_i$ and the iterate $\tau^{|C|}$ acting on the chosen factor.
+Stability of its orbit allows that iterate to be corrected by a diagonal element. The
+factorisation then implies that the chosen representative is fixed by
+the iterate itself. Propagate it around the cycle by powers of $\tau$.
+Fixedness under $\tau^{|C|}$ makes these choices consistent when the cycle
+closes. Each coordinate remains in its original component orbit, and
+the resulting product character $\theta$ is fixed by $\tau$, hence by
+$E_{\mathcal O}$.
+Consequently its stabiliser in $\Delta\rtimes E_{\mathcal O}$ is
+$\Delta_\theta\rtimes E_{\mathcal O}$.
+
+The proof needs positive finite cycle lengths and the stated generator
+property. It does not need $E$ to be finite. In a character application,
+the product parametrisation, orbit identification and equation for the
+iterate on the chosen coordinate must concern the same characters and actions.
+That equation also identifies the iterate with the stated field automorphism.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.Levi} exports
+\lean{component_return_full} and
+\lean{component_return_full_of_product_orbit_stable} from
+\module{ModularRep.ComponentReturnFull}. The latter obtains the orbit
+transport needed in the construction from stability of the product orbit.
+\end{implementation}
+
+\section{Rational Levi factors and their character orbits}
+
+For manuscript Lemma 4.5, fix the regular embedding
+$\mathbf G\hookrightarrow\widetilde{\mathbf G}$ and Frobenius $F$ of the
+statement, an $F$-stable Levi subgroup $\mathbf L$ of $\mathbf G$, and
+$\mathbf H=[\mathbf L,\mathbf L]$. Write
+$\mathbf H=\prod_{j\in I}\mathbf H_j$ using its specified simply
+connected components. If $C_i$ is an $F$-orbit of components, choose
+$x_i\in C_i$, let $n_i=|C_i|$, and set
+$H_i=\mathbf H_{x_i}^{F^{n_i}}$. The coordinate equations for $F$
+construct an isomorphism
+\[
+ \mathbf H^F\cong\prod_i H_i.
+\]
+An element fixed by $F^{n_i}$ determines all coordinates around
+its component orbit, and these assignments give the two inverse maps.
+The geometric component presentation is an assumption. The rational product
+map is deduced from it. For the component decomposition, see
+\cite[Proposition~12.14]{MalleTesterman2011}. For its relation to rational
+points, see \cite[Lemma~1.5.15 and Corollary~1.5.16]{GeckMalle2020}.
+
+Let $\widetilde{\mathbf L}=\mathbf LZ(\widetilde{\mathbf G})$ and
+let $\Delta_i$ be the image of its rational conjugation action on
+$H_i$. The proof also constructs surjectivity of
+\[
+ \widetilde{\mathbf L}^{F}\longrightarrow\prod_i\Delta_i.
+\]
+Choose an element of $\widetilde{\mathbf L}^{F}$ inducing the desired action on one
+factor and write it as $hz$, with $h\in\mathbf H$ and $z$ central.
+Project $h$ onto the corresponding full Frobenius orbit of components.
+This projection commutes with $F$. Because $hz$ is rational, the projected
+element is fixed by $F$ up to a central factor. The Lang--Steinberg theorem on the
+connected centre supplies a central correction making the element rational,
+with the prescribed action on the chosen rational factor and trivial action
+on all other factors. Taking the product of these elements over the factors
+proves surjectivity.
+
+The geometric decomposition used here is
+$\widetilde{\mathbf L}=\mathbf HZ(\widetilde{\mathbf L})$.
+Its rational analogue is not assumed. The centre must be connected
+and stable under the specified Steinberg map before the central Lang
+equation is justified by Geck--Malle Theorem 1.4.8
+\cite{GeckMalle2020}. The proof gives the product of the
+conjugation images. Identifying them with the full groups of
+inner and diagonal automorphisms also requires identifications of the
+adjoint groups and their surjective rational point maps. The required
+comparison for a regular embedding is described in Geck--Malle
+Remark 1.7.6(a). These assumptions concern the adjoint groups and maps
+of the specified algebraic groups.
+
+We use the standard parametrisation of irreducible Brauer characters
+of a finite direct product \cite[Theorem~8.21]{Navarro1998}. The parametrisation, product value formula
+and compatible root lifts are assumptions of this argument. Evaluating the product formula shows that the parametrisation commutes with automorphisms. Surjectivity of the preceding action map then shows that a $\widetilde{\mathbf L}^{F}$-orbit of Brauer characters of $\mathbf H^F$ is exactly the Cartesian product of the component orbits.
+
+Normality of
+$\mathbf H^F\lhd\mathbf L^F\lhd\widetilde{\mathbf L}^F$ and the
+abelian quotient follow from the same geometric subgroups. An injective
+field endomorphism commuting with $F$ restricts to an automorphism of
+the finite rational group. Its preservation of the Levi and centre
+therefore gives setwise preservation of this normal chain. No finite
+order relation is imposed on its action on all algebraic points.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.Levi} exports \lean{rationalProduct},
+\lean{imageProduct_surjective} and \lean{cartesian_character_orbit}
+from \module{ModularRep.PaperProofs.TypeBRegularLeviOrbitAssembly}.
+The hypotheses supply geometric component coordinates, solutions of the
+central Lang equations and character products compatible with the chosen
+roots.
+\end{implementation}
+
+\section{Clifford transfer of a stabiliser factorisation}
+
+Manuscript Lemma 4.6 allows any prime $\ell$. Let $N\leq H\leq G$
+be finite groups, with $N\lhd G$ and $G/N$ abelian. Let a finite group
+$E$ act on $G$, preserving $N$ and $H$. For $\psi\in\IBr(H)$, choose
+an irreducible constituent $\theta$ of $\psi_N$. Suppose that $\theta$
+extends to its full inertia group $G_\theta$ and that
+\[
+ (G\rtimes E)_\theta=G_\theta\rtimes E_\theta.
+\]
+Then
+\[
+ (G\rtimes E)_\psi=G_\psi\rtimes E_\psi.
+\]
+
+The key step is that $G_\theta$ fixes $\psi$. Clifford correspondence
+expresses $\psi$ as the induction of a character over $\theta$.
+Gallagher's description writes that character as the restricted
+extension of $\theta$ times a character of the quotient by $N$.
+The quotient is abelian, so this latter irreducible Brauer character is
+linear. Conjugation by $G_\theta$ fixes this linear character and the restricted extension, since the extension is a class function on $G_\theta$. Induction commutes with conjugation, so $G_\theta$ fixes $\psi$. One then adjusts
+the chosen constituent within its $H$-orbit and applies the assumed
+factorisation at $\theta$ to obtain the factorisation at $\psi$.
+
+We use the formulations of Clifford theory and Gallagher's theorem in
+\cite[Corollary~8.7, Theorem~8.9 and Corollary~8.20]{Navarro1998}. Their supplied
+forms retain the original groups, characters and root comparisons.
+They do not assume that $G_\theta$ fixes $\psi$. Neither cyclicity of
+$E$ nor an assumption that the quotient acting on the characters has
+exponent two is used.
+
+In the Levi application for $\ell=2$, multiplicity freeness first supplies
+the extension of $\theta$ to its full inertia group. Choose an
+ambient irreducible Brauer character over $\theta$ and use homogeneous
+Clifford restriction. Multiplicity freeness makes its multiplicity
+equal to one. Geck--Malle Theorem 1.7.15 allows an algebraically closed
+coefficient field of arbitrary characteristic
+\cite{GeckMalle2020}. Its application still requires the same
+regular embedding and connected centre. In the representative
+construction, one ambient element conjugates both $\psi$ and its
+selected constituent. The constituent relation and the field stabiliser
+of the character orbit are preserved under this conjugation.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.Levi} exports the theorem \lean{lemma46}
+for an arbitrary prime and the conclusion \lean{same_y_representative}, which
+uses one conjugating element for the character and its constituent.
+The characteristic two proof
+uses the abelian quotient and proves the needed inertia fixedness.
+The classification of the rational Levi factors into their Type A,
+rank two and higher spin cases remains a separate structural source
+assumption in the later application.
+\end{implementation}
+
+\section{Field invariance and the principal series}
+
+For the principal $2$-block, set $G=\Spin_{2n+1}(q)$ and let
+$\widetilde G$ be its special Clifford overgroup. Let $F_0$ be the split
+Frobenius over $\F_p$ and set $F=F_0^f$. A geometric unipotent class is stable under
+$F_0$ because the Jordan block sizes in the orthogonal representation
+are preserved. The argument on component groups in Taylor's Section 2
+supplies a representative fixed by $F_0$ on whose component group
+$F_0$ acts trivially \cite{Taylor2013}. This includes the nonabelian
+component groups. Abelianness is not an assumption of this step.
+
+The rational classes in that geometric class are therefore parametrised
+by the ordinary conjugacy classes of the component group
+\cite[Theorem~21.11]{MalleTesterman2011}. The supplied comparison
+commutes with $F_0$, so every rational class is fixed. Taylor's
+equivariance formula then proves field invariance of the same
+generalised Gelfand--Graev characters $\Gamma_u$
+\cite[Proposition~11.10]{Taylor2018Automorphisms}.
+The source assumption includes triviality of the action on the component
+group at the chosen representative. This follows from the component
+calculation together with a change of rational representative. Existence
+of a well-chosen representative alone would not supply that identity.
+
+The principal series identification is
+\[
+ \Irr(B_0(G))=\mathcal E_2(G,1),
+\]
+by Cabanes--Enguehard Theorem 21.14 \cite{CabanesEnguehard2004}.
+The adjoint dual group has type $\mathsf C$. Bonnaf\'e's
+Proposition 5.3(a) makes every quasi-isolated semisimple label have
+order dividing four \cite{Bonnafe2005}. Such a label gives an
+ordinary character in the principal block. A strictly quasi-isolated
+block has a label of odd order, so that label is the identity.
+This proves uniqueness of the principal strictly quasi-isolated block.
+The same result applies to the relative factors of rank two used below.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.PrincipalField} proves that rational classes
+and generalised Gelfand--Graev characters are fixed, using the component Frobenius and the parametrisation
+by ordinary conjugacy classes. The identity action is an inner action
+with inner element one.
+In \module{ManuscriptIBAW.TypeB.PrincipalSeries},
+\lean{ContextData} supplies the geometric labels, ordinary
+characters, root, block selector, primitive idempotent and independent
+source assumptions. \lean{Binding.certificate} proves the
+principal series statement from the Cabanes--Enguehard and Bonnaf\'e
+results together with the clauses on character duality. Only then does
+\lean{Binding.context} construct the context for the generalised Gelfand--Graev characters on those same objects,
+using the principal series statement just proved.
+\end{implementation}
+
+\section{The generalised Gelfand--Graev basis}
+
+Let $\mathcal U$ index the rational unipotent classes of $G$, and let
+$P_u$ be the component of $\Gamma_u$ in the principal block. For a finite
+reductive group $H$ and $\chi\in\Irr(H)$, write $\chi^*$ for the unique
+irreducible character equal to $D_H(\chi)$ up to sign, where $D_H$ denotes
+Alvis--Curtis duality. Manuscript Proposition 4.9
+constructs characters $\eta_u\in\Irr(B_0(G))$ such that
+\[
+ \bigl(\langle\eta_u,P_v\rangle_G\bigr)_{u,v\in\mathcal U}
+\]
+is block lower triangular when representatives in the same geometric class are consecutive and the geometric classes are ordered by nondecreasing dimension, with permutation matrices on its diagonal.
+
+Here the upper group is the special Clifford group $\widetilde G$, and the lower group is the spin group $G$. Fix a geometric unipotent class. Write $A$ for the component group
+of a representative in $G$, and $Z_A$ for the image of the spin centre
+in $A$. The upper component group is $\overline A=A/Z_A$.
+Taylor's component group description \cite[Section~2]{Taylor2013}
+gives three possibilities. If $Z_A=1$, the map from lower to upper
+rational classes is injective. If $A$ is abelian and $Z_A\ne1$, then
+$A=Z_A\cong C_2$ and $\overline A=1$. Otherwise $A$ is extraspecial,
+with centre $Z_A=\langle\vartheta\rangle$ of order two. In the last
+case $\overline A$ is elementary abelian. Its identity corresponds
+to two lower rational classes, and each other element to one.
+The component groups, their Frobenius actions and these rational class
+maps are structural inputs to the formal argument.
+
+We first obtain characters in an upper family attached to an isolated
+pair. Starting with the geometric isolated pair supplied by Geck--H\'ezard's
+Proposition 2.4 \cite{GeckHezard2008}, choose its semisimple parameter
+in an $F$-stable maximal torus contained in an $F$-stable Borel subgroup
+of the dual group. The replacement removes the central factor and
+chooses the corresponding symplectic element of order dividing two
+in this torus. It
+preserves the geometric unipotent class and the attached finite family
+group, but may change the rational Lusztig series. It is not an
+assertion of rational conjugacy with the original parameter.
+In the central case the new parameter has order dividing two.
+
+Let $(s',\mathcal F')$ be this pair, where $\mathcal F'$ is a
+Lusztig family \cite[Definition~4.1.17]{GeckMalle2020}, and write
+$\widetilde{\mathcal F}'$ for its family of ordinary characters.
+The Weyl group is taken relative to the chosen torus. Its Frobenius
+action is trivial under the stated rational structure. This does not
+require the central torus itself to be split. The component group
+$\overline A$ and the finite group $\mathcal G_{\mathcal F'}$ are
+elementary abelian of the same order.
+
+Manuscript Lemma 2.11, stated among the preliminaries and proved in
+Appendix B, selects characters in $\widetilde{\mathcal F}'$ whose
+positive Alvis--Curtis duals have delta scalar products against the generalised Gelfand--Graev characters
+of the upper rational classes in the chosen geometric unipotent class.
+Its isolated Type B hypotheses are the ones used here.
+Its geometric argument applies Geck's theorem on restrictions of
+character sheaves \cite[Theorem~4.5]{Geck1999GGGR} using an auxiliary
+split Frobenius $F'$ chosen as in \cite[(4.7)]{Geck1999GGGR}.
+The elementary abelian groups of equal order give condition (4.4)(a).
+Isolation and the equality of these orders give condition (4.4)(b)
+by H\'ezard's criterion \cite[Proposition~2.3]{GeckHezard2008}.
+
+The manuscript verifies Geck's identities for generalised Gelfand--Graev characters for the required
+groups and unipotent classes, including those in cuspidal Levi
+subgroups and adjoint quotients. For a block attached to a maximal
+torus, $\zeta=\delta=1$ gives condition (2.4)(b). The comparison of
+constants in (3.3)(b) follows from Taylor's Fourier transform argument
+\cite[Lemma~11.3 and Proposition~11.5]{Taylor2016} and Letellier's
+induction identity \cite[(6.2.11)]{Letellier2005},
+using compatible split cuspidal data with $w=1$. This comparison
+also occurs in the proof of \cite[Proposition~7.2]{Lusztig1992Support}.
+The remaining integrality argument uses the character existence
+theorem of H\'ezard and Lusztig \cite[Theorem~1.1]{Taylor2013},
+the scalar product formula of Lusztig and Geck--Malle in Taylor's
+form \cite[Proposition~15.4]{Taylor2016}, and the elementary case
+of a torus. These give \cite[Proposition~3.1 and Corollary~3.2]{Geck1999GGGR}
+for the required groups. With $q'\equiv1\pmod4$,
+\cite[Theorem~3.8]{Geck1999GGGR} determines the constants needed
+in the restriction theorem.
+
+Shoji's theorem \cite[Theorem~3.2]{Shoji1995II} is used for $F'$
+in Geck's proof and for the given $F$ after the geometric restriction
+statement has been established. The geometric argument is proved in
+the manuscript and is not formalised in Lean.
+
+The local systems are irreducible equivariant
+$\overline{\mathbb Q}_{\ell_0}$-local systems, with $\ell_0\ne p$.
+On a unipotent class they are parametrised by irreducible characters
+of its component group. A chosen Frobenius isomorphism gives their
+trace functions. The characteristic functions of character sheaves
+are likewise Frobenius trace functions. For the given $F$, Shoji's
+theorem \cite[Theorem~3.2]{Shoji1995II} identifies the relevant
+character sheaf trace functions with almost characters up to nonzero scalars.
+These almost characters lie in the span of the same ordinary family.
+The finite trace expansions therefore imply that the ordinary character
+values on the chosen rational classes span all functions on those classes.
+
+The proof uses Lusztig's modified generalised Gelfand--Graev class functions, written as
+in Taylor's equation (11.15) \cite{Taylor2016}.
+Taylor's expansion formulas \cite[Theorem~11.13 and Lemma~11.16]{Taylor2016}
+give the scalar products in
+\cite[Lemma~3.5 and Corollary~3.6]{Geck1994BasicIII}. Together with
+Lusztig's duality identities
+\cite[Proposition~8.5 and Corollary~8.6]{Lusztig1992Support},
+applicable by Taylor \cite[Corollary~13.6]{Taylor2016}, these give
+diagonal pairings with nonzero diagonal entries. The diagonal pairings prove that the restrictions to the chosen class of the duals of the modified functions are linearly independent. Their expansions express these restrictions as linear combinations of the restrictions of the Alvis--Curtis duals of the generalised Gelfand--Graev characters. Since the two families have the same size, these restricted duals are linearly independent.
+
+The support of the Alvis--Curtis duals of the generalised Gelfand--Graev characters and the vanishing assertion in Lusztig's
+theorem on unipotent supports
+\cite[Theorem~11.2(iv)]{Lusztig1992Support}, again applicable by
+Taylor's Corollary 13.6, restrict the scalar products to the chosen
+rational classes. Their coefficients are the nonzero class sizes
+divided by the group order. If a multiplicity column were zero, duality would make the corresponding restricted dual orthogonal to the restriction of every ordinary character in the selected family. These restrictions span all functions on the classes, so that restricted dual would be zero, a contradiction.
+
+The row sum is a separate deduction. The scalar product formula of
+Lusztig and Geck--Malle, in Taylor's form
+\cite[Proposition~15.4 and Lemma~14.15]{Taylor2016}, has right side
+$|\overline A|/n_{\rho^*}$ for
+$\rho\in\widetilde{\mathcal F}'$. Its weights are the subgroup indices
+$[\overline A:\overline A^F]$. The component Frobenius is trivial,
+so these indices equal one. Under the Weyl Frobenius hypothesis,
+$n_\rho=|\mathcal G_{\mathcal F'}|$
+\cite[(6.1)(c)]{Geck1999GGGR}. Alvis--Curtis duality preserves the
+denominator of the degree polynomial
+\cite[Proposition~3.4.21]{GeckMalle2020}, so $n_{\rho^*}=n_\rho$.
+Thus each row has sum one. Nonnegative integral entries and a nonzero
+entry in every column give an injective selection of the required
+characters. The denominator identity and the Weyl and component
+Frobenius identities are distinct external inputs.
+
+Restriction to $G$ is multiplicity free
+\cite[Theorem~1.7.15]{GeckMalle2020}. The upper generalised Gelfand--Graev character at the same
+rational representative is induced from the lower generalised Gelfand--Graev character
+\cite[proof of Lemma~14.12]{Taylor2016}. Alvis--Curtis duality commutes
+with restriction, with compatible signs for the positive duals
+\cite[Lemma~5.2 and Corollary~5.3]{Taylor2013}. Frobenius reciprocity
+then expresses an upper scalar product as the sum of the lower
+scalar products over restriction constituents. This identity alone
+does not assert that the sum is zero or one.
+
+If $Z_A=1$, use the characters selected from
+$\widetilde{\mathcal F}'$. The rational class map is injective,
+and ambient conjugation makes the entries
+over a singleton class equal. Their sum is one, so the restriction
+is irreducible and gives the required lower row. This includes the
+abelian cases with trivial central image and the corresponding case
+in rank three.
+
+If $A=Z_A\cong C_2$, use the distinguished character from Taylor's
+original family \cite[Theorem~3.2]{Taylor2013}. Its dual denominator
+is one and its restriction has exactly two constituents. Only the
+row of this distinguished character is needed from that family.
+Its scalar products with the upper generalised Gelfand--Graev characters sum to one by the same
+weighted formula. There is one upper class and two lower classes.
+Clifford transitivity exchanges the two constituents. Equivariance
+and nonnegative column sums of one force the resulting two by two
+matrix to be a permutation matrix.
+
+For nonabelian $A$, keep Taylor's original distinguished character,
+whose restriction has two constituents. Its row sum is one, using
+its stated support and dual denominator. Over the singleton lower
+fibres use $\widetilde{\mathcal F}'$. The distinguished character must
+lie above the double fibre. An element interchanging its constituents
+also interchanges those two classes, since otherwise two equal
+nonnegative entries would sum to one. The local matrix has the form
+\[
+ \begin{pmatrix}a&b\\b&a\end{pmatrix},
+ \qquad a,b\in\mathbb Z_{\geq0},\qquad a+b=1,
+\]
+and is a permutation matrix. A zero upper entry forces every lower
+entry over it to vanish. The original distinguished character and
+the family $\widetilde{\mathcal F}'$ retain their own rational series labels.
+
+Unipotent supports are constant on each family
+\cite[Theorem~3.7]{GeckMalle2000} and are preserved under restriction
+\cite[Lemmas~14.12 and~14.15]{Taylor2016}. These statements apply to
+the characters chosen from either family. Their semisimple parameters are
+considered separately in the adjoint dual group. Taylor's original
+parameter has quasi-isolated image, and the isolated second parameter
+also has quasi-isolated image \cite[Proposition~2.3(b)]{Bonnafe2005}.
+Both images have order a power of two by Proposition 5.3(a) of that
+reference. The principal series identification therefore places the
+selected characters and their duals in the same principal block.
+The two families need not belong to one rational Lusztig series.
+Taylor's identification of wave front sets with dual unipotent supports
+\cite[Lemma~14.15]{Taylor2016}, together with the support theorem of
+Achar and Aubert in the form stated in
+\cite[Proposition~15.2]{Taylor2016}, makes the full matrix triangular.
+Its nonsingularity proves independence of the $P_u$.
+
+The counting assumption is the equality of the number of rational unipotent
+classes with $|\IBr(B_0(G))|$, from Chaneb's Proposition 2.7 and the
+principal series identification \cite{Chaneb2021}.
+Projectivity comes from induction from subgroups of odd order and the
+specified modular reduction. The dimension of the projective
+character space follows from the decomposition data. Thus the
+$P_u$ form a $\Q$-basis of that space. This is a rational span of
+$K$-valued class functions. It does not assert that every value of
+$\Gamma_u$ lies in $\Q$. The ordinary field $K$ is the fraction field of
+a modular system with the required roots of unity. Algebraic closure of
+$K$ is not an assumption.
+
+Field automorphisms fix the $P_u$, so they fix their span and each
+projective indecomposable character. Duality then fixes every
+$\varphi\in\IBr(B_0(G))$. Its stabiliser in the special Clifford
+and field semidirect group consequently factors, and the cyclic
+extension argument supplies an irreducible extension to the
+field semidirect product. These conclusions include $(n,q)=(3,3)$.
+We apply Feng--Yu--Zhang's Theorem 5.16 \cite{FengYuZhang2024} only
+in the nonexceptional case, with the required coefficient normalisation.
+The case $(n,q)=(3,3)$ is treated separately below. The application also uses Sp\"ath's comparison
+with the complete character triple condition
+\cite[Theorem~4.4]{Spath2017Triples}.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.GGGRSources} states assumptions on the
+ordinary characters, class representatives and coefficient field.
+In \lean{FamilySource}, the weighted scalar product formula and the
+dual denominator equality are assumed separately. The component
+Frobenius is assumed to act trivially, and each weight is assumed to
+be the index of the corresponding fixed subgroup. Lean deduces that these
+indices are one and hence that each row has sum one. The identification
+of this action with geometric Frobenius remains external.
+
+\lean{IsolatedValueSource} assumes the trace expansions and diagonal
+pairings used in manuscript Lemma 2.11, together with the support and
+duality identities. The geometric argument establishing the trace
+expansions in the present setting of odd characteristic is the manuscript's
+own argument and is not formalised. The stated Weyl group and its
+trivial Frobenius action are not used in the finite proofs. They have
+no formal identification with the Weyl group of the geometric
+centraliser relative to the chosen torus, and the denominator
+equality remains a separate assumption. The Borel subgroup, torus and
+character sheaves are not constructed here.
+
+The trace expansions use inverse class representatives, as required
+by the $K$-valued scalar product. Constancy of ordinary characters on
+these inverse conjugacy classes is proved from conjugacy invariance.
+From the assumed expansions and diagonal pairings,
+\lean{IsolatedValueSource.value_span} proves that the ordinary
+character values span all functions on the $\widetilde G$-classes, and
+\lean{dualRestriction_independent} proves that the restrictions of the Alvis--Curtis duals of the generalised
+Gelfand--Graev characters are linearly independent. The theorem \lean{localized_pairing}
+uses constancy on conjugacy classes and the support assumptions to
+express the pairing as a sum over those classes. The theorem
+\lean{coverage} combines this identity with the assumed duality
+identity and proves that every multiplicity column has a nonzero entry. These deductions
+use \module{ManuscriptIBAW.Library.FiniteCharacterSelection} and
+\module{ManuscriptIBAW.Library.FiniteClassPairing}, described in the
+library manual. Thus \lean{NonabelianSource.isolatedCoverage} is proved
+from the stated assumptions.
+
+\module{ManuscriptIBAW.TypeB.GGGRAbelian} derives
+\lean{upper_delta_selection}, \lean{singleton_rows} and
+\lean{double_rows} from the same upper functions, actual restriction
+constituents and conjugation action. Its \lean{rows} construction
+handles the two abelian central-image cases, including the rank three
+application. It does not assume the desired lower scalar product matrix.
+The structural descriptions of the component group and rational class
+map remain inputs. In particular, the surjective component map and its
+kernel identify the upper component group with $A/Z_A$.
+The implemented singleton argument selects a constituent with entry
+one and proves the other entries zero, which suffices for the matrix
+construction. \lean{GGGRBasis.rankThreeSource} constructs the basis
+input \lean{RankThreeChanebSource} from these proved rows.
+
+\module{ManuscriptIBAW.TypeB.GGGRSelection} constructs
+\lean{workingFamily} from the original distinguished character and the
+isolated characters over singleton fibres. The theorems
+\lean{distinguishedParent_eq_original} and
+\lean{singletonParent_mem_isolated} identify the characters whose restrictions contain the selected constituents. \lean{SelectedClass.label} and \lean{rowLabel} assign to each selected constituent the rational series label of that character.
+\module{ManuscriptIBAW.TypeB.GGGRBasis} uses these labels to prove
+\lean{gggr_basis}, \lean{principalBrauer_fixed} and
+\lean{principal_selector}, with the abelian rows constructed by \lean{GGGRAbelian}.
+
+\module{ManuscriptIBAW.TypeB.PrincipalApplication} forms its
+\lean{Inputs} from \lean{ContextData}, the principal series
+identification, \lean{GGGRSources.RankSources} and the field sources.
+Its public basis, fixedness and selector theorems apply
+\lean{GGGRBasis}. For a relative family,
+\lean{PrincipalRemainder} states the separate published orthogonal
+and central quotient hypotheses on \lean{SpinGGGRInputs}.
+\lean{PrincipalApplicationInputs.exists_witness} supplies the proved
+fixedness directly to \lean{FYZ516SpathSource.apply516}, then applies
+the central quotient correspondence. The block, root, family and
+actions remain the same. The Levi argument uses this result on each
+spin factor.
+\end{implementation}
+
+\section{The exceptional cover for \texorpdfstring{$\ell=2$}{ell=2}}
+
+For manuscript Proposition 4.11, let $S=\Omega_7(3)$ and
+$X=3.\Omega_7(3)$. The group used in Lean is constructed from a free
+central cover of the matrix group by quotienting its intrinsic
+central subgroup of order two. The structural sources identify the
+matrix group as nonabelian simple, identify the kernel of the full cover as
+cyclic of order six, and supply the universal central extension theorem
+for the free presentation. The construction proves that $X$ is finite
+and perfect and that its projection $\pi:X\longrightarrow S$
+has kernel equal to $Z(X)$, of order three.
+
+Its universal $2'$-property is also deduced. The full cover maps to
+every perfect central extension with odd kernel. Its central subgroup
+of order two maps trivially, so the map factors through this same $X$.
+The resulting map remains surjective. Thus the cover used in the
+character argument has the required maximality, conditional on the
+identifications of the matrix group and free presentation.
+
+The nine table labels $B_1,\ldots,B_9$ are identified with all primitive
+blocks of $X$.
+For the principal block, the Brauer restriction calculation in
+\path{o7brauer.g} gives twelve Brauer characters in the principal block of $S$, with eight fixed
+by the noninner
+involution. Specialising the covering formulas of Feng--Yu--Zhang and
+identifying their weights with the specified group and block gives ten
+$\operatorname{SO}_7(3)$-classes covering twelve $S$-classes,
+with eight singleton fibres and two double fibres
+\cite[Lemma~5.7 and the proof of Proposition~5.11]{FengYuZhang2024}.
+The covering relation identifies the action in each double fibre with
+that same involution \cite[Corollary~2.22(2)]{FengYuZhang2024}. The passage from $\Spin_7(3)$ to $S$ uses the central $2$-quotient
+correspondences for the principal blocks and their weights. Matching
+the involution's fixed points and orbits of size two constructs the
+equivariant bijection. The central $2'$-quotient
+argument lifts it through $\pi$ using the same principal block and
+character deflations \cite[Lemma~2.5]{FengLiZhang2019}.
+
+For $B_2$, the table calculation gives a defect group of order $8$, five ordinary
+characters and two Brauer characters. One ordinary character has height
+$1$, so Kessar--Malle's theorem \cite[Theorem~1.1]{KessarMalle2013}
+excludes abelian defect groups. The defect group of $B_2$ is therefore
+dihedral or quaternion. A block with quaternion defect group of order
+$8$ has one or three irreducible Brauer characters
+\cite[Theorem~8.1]{Sambale2014}. Since $B_2$ has two, its defect group is $D_8$. The relevant result for dihedral blocks gives two weight
+classes, with radical orders eight and four
+\cite[proof of Theorem~4.1]{Sambale2012}. Their different subgroup
+orders force both classes to be fixed by automorphisms, and the
+specified table action fixes the two Brauer characters. This gives
+the required equivariant matching.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.DefectEight} proves
+\lean{defect_is_dihedral} from the table data and its count of two
+Brauer characters, the classification of groups of order eight,
+Kessar--Malle's implication for abelian defect groups and the
+quaternion exclusion stated above. The block, defect subgroup, characters and roots
+are the same throughout, and these inputs are explicit assumptions.
+\lean{QuaternionExclusionSource.toNumerical} derives, by contradiction,
+the numerical implication used by the block construction.
+Both the ambient exceptional inputs and those for principal Levi factors
+require the quaternion exclusion itself. They derive the numerical
+implication before applying the block construction. The separate
+theorem \lean{defect_is_dihedral} gives the direct dihedral argument.
+\end{implementation}
+
+The block $B_3$ has a defect group of order two and is nilpotent.
+The proof uses the local nilpotent argument underlying the criterion
+\cite[Theorem~1.3]{KoshitaniSpath2016}: it uses a defect representative
+of that same block, its Brauer correspondent and the unique
+ordinary character of defect zero on the local quotient. It proves
+that all radical subgroups occurring in weights of the block are
+conjugate to the defect group and
+proves that the block contains exactly one weight class. For the defect zero blocks
+$B_4$ and $B_5$, the dominated blocks and their singleton Brauer fibres
+are also obtained before the local reductions and complete ambient and
+local block decompositions with their central characters are supplied.
+
+Assume that the computed list contains every weight class with the
+given faithful central character. The list has eight classes in each
+faithful central sector. The blocks $B_8$ and $B_9$ have dihedral defect
+\cite[Section~5.5]{Macgregor2022}. The calculation in \path{o7blocks.g}
+gives two irreducible Brauer characters in each. Sambale's theorem therefore gives
+two weight classes in each \cite[Theorem~4.1]{Sambale2012},
+using the specified defect groups and all weight classes belonging to these blocks. Subtracting
+these weights leaves six in each of
+$B_6$ and $B_7$. The noninner action swaps the two blocks in
+each pair, so each faithful block stabiliser consists of inner
+automorphisms. These fix both Brauer characters and weight conjugacy
+classes. The matching is therefore equivariant. The cyclic outer
+automorphism criterion then gives the inductive BAW conclusion,
+including its local and extension clauses
+\cite[Corollary~2.13]{FengLiZhang2019}.
+
+The coefficients in this exceptional application come from one
+specified modular system. Its fraction field $K$ has the required
+finite splitting roots for $X$, with a separate assumption on roots of unity
+for $\operatorname{SO}_7(3)$ in the principal source. Only the residue
+field is required to be algebraically closed. The root embedding for $S$
+is derived from the one for $X$ and retains its residue
+compatibility. Every local reduction concerns the weight's own
+ordinary character on its own normaliser quotient. Local extension
+values are equated with that same local character.
+
+The blockwise arguments use the natural projection $\pi$ for
+$B_1$--$B_5$ and the identity on $X$ for $B_6$--$B_9$.
+They retain the block images, character kernels, deflation values and
+quotient identifications on these presentations. A common family is
+then formed on $X=3.\Omega_7(3)$, using the same modular system,
+root correspondence and local block operations.
+
+Two separate assumptions enter the passage to the full condition.
+The first is an additional assumption for these fixed groups and
+coefficients. It interprets the natural quotient criteria as the relative
+block conditions on this common family. It includes the passage from
+the full cover $6.\Omega_7(3)$, character and block identifications
+over the fixed coefficient fields, and compatible root correspondences
+for quotient groups, extension groups and intermediate subgroups.
+Sp\"ath's Theorem 4.4 concerns the character triple and extension
+part of this passage \cite{Spath2017Triples}. The second assumption
+combines the relative block conditions into a compatible family,
+with the normalisation required by the full inductive condition.
+The proof of the full family condition uses the quotient transport and
+the passage to compatible correspondences as separate assumptions.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.ExceptionalTarget} defines the cover and
+\lean{Target.Complete} independently of the block proof.
+\module{ManuscriptIBAW.TypeB.ExceptionalFamily} constructs
+\lean{commonFamily} and \lean{commonCover}, including the selected
+character reductions and their root identities. The additional
+\lean{AmbientIdempotents} premise identifies every block idempotent
+with the one used in the local block operations.
+In \module{ManuscriptIBAW.TypeB.ExceptionalApplication},
+\lean{Inputs.target} fixes the natural target from \lean{raw}, and
+\lean{Inputs.completeNatural} proves the blockwise conclusion.
+\lean{Inputs.familyComplete} applies the explicit
+\lean{NaturalQuotientTransport} for these fixed data and the separate
+\lean{Inputs.compatibleFamilySource} for the passage to the full condition.
+\lean{Inputs.complete} then constructs
+\lean{FamilyCertificate}, containing that same family, cover and witness.
+The equivalence between the nine labels and all blocks is proved from the
+specified data. The table, group, character, block and coefficient
+identifications remain assumptions.
+
+The principal quotient application uses
+\module{ManuscriptIBAW.TypeB.ExceptionalPrincipalDescent}.
+Its \lean{PrincipalSources.prop411} is one record of the exceptional
+group hypotheses. The theorem \lean{Inputs.familyComplete} constructs
+the full family from that record. The character and weight inflation
+maps in \lean{BlockTransport} then transport its principal block
+bijection to $\Omega_7(3)$. Lean proves that this map is equivariant.
+The \lean{Source} in \module{ModularRep.CurrentSpathFiniteSplittingDescent}
+assumes descent of the extension and block conditions for every pair in
+this specified transported bijection. The application uses
+\cite[Proposition~4.6]{Spath2013} and \cite[Theorem~4.4]{Spath2017Triples}
+for this passage. The formal source requires the stated central quotient,
+character interpretations, full block stabilisers and compatible coefficient
+fields. \lean{BlockTransport.downAutomorphisms} identifies the acting group
+on the quotient with its full block stabiliser, while the covering family
+includes the corresponding identification on the cover.
+No instance of this descent source is constructed here.
+Both ordinary fields must contain the roots
+required by the extension groups in the covering family. Their being
+fraction fields does not imply algebraic closure.
+The theorem \lean{PrincipalSources.coherent} therefore uses the family
+already proved from \lean{prop411}. No independently assumed principal
+block matching is used in this application.
+\end{implementation}
+
+The radical computation examines all $3021$ conjugacy classes of
+subgroups of a Sylow subgroup and finds $26$ radical representatives,
+which form twelve conjugacy classes in $X$. It counts ordinary defect zero
+characters of their normaliser quotients by central sector. The
+interpretation in Lean must identify these outputs with the specified
+matrix and AtlasRep groups, blocks and roots. The two faithful central characters may be interchanged when the
+computations use different generators of the centre. The two local principal
+weights do not themselves establish the separate global count of ten
+orthogonal principal weight classes.
+
+\section{Nonprincipal representatives and Jordan reduction}
+
+The supporting lemmas and the principal result give the full Brauer
+hypothesis in manuscript Proposition 4.13. Let $b$ be a nonprincipal
+block of $G=\Spin_{2n+1}(q)$. Its semisimple parameter $s$ is
+considered up to rational conjugacy in the projective conformal symplectic
+dual group, with series idempotent $e_s$. The rational class is assumed
+to be characterised uniquely by the block support equation
+$b e_s=b$. Diagonal automorphisms fix these group algebra idempotents
+\cite[Lemma~7.4]{BonnafeDatRouquier2017}, while field automorphisms
+permute them according to their semisimple parameters
+\cite[Proposition~7.2]{Taylor2018Automorphisms}. These identities are
+assumed on the same group algebra idempotents.
+
+For this parameter, choose a proper Levi subgroup dual to the unique
+minimal Levi containing the connected and rational centralisers, after
+a common rational conjugation. The existence and properties of this
+choice are geometric assumptions. The simultaneous stability of the
+paired Levi subgroup and its idempotent under the chosen Frobenius power
+is the assertion used from \cite[Lemma~4.5(a)--(b)]{Ruhstorfer2022Derived}.
+The field group used here is the stabiliser of the same parameter. The supplied
+Jordan equivalence is defined on the entire original Brauer sets
+belonging to these idempotents. Its block comparison retains the
+equation for the supporting block
+\cite[Lemma~5.1 and the proof of Proposition~5.2]{FengLiZhang2022Jordan}.
+These geometric and character identifications remain external.
+
+A block of the derived Levi group covered by a block belonging to $e_s$
+is strictly quasi-isolated, as in the proof of
+\cite[Theorem~5.7]{FengLiZhang2022Jordan}. Its blocks on the simple factors
+are strictly quasi-isolated by the proof of Proposition~5.6 of the same
+paper. On the Type B factors these blocks are principal by the principal
+series argument above. These block and parameter identifications are
+included in the factor assumptions.
+
+For Type A, the representative theorem
+\cite[Theorem~8.1]{FengLiZhang2021Equivariant} includes degree two and
+$\operatorname{SL}_2(3)$. For a rank two factor $\Sp_4(q_0)$, trivial
+field action gives the factorisation directly. Otherwise the source
+requires $q_0\geq9$ and the stabiliser assertion for its principal
+$2$-block from the verification following
+\cite[Lemma~4.5, p.~1203]{BroughSchaefferFry2020}, with its block condition
+in Lemma~4.6 of the same paper. Diagonal conjugation gives this assertion
+at the chosen principal character. Its interpretation on the matrix
+group and specified roots remains an assumption. Every spin factor of
+higher rank supplies the geometric data and principal block assumptions
+stated above. The principal series identification is proved on these
+data before applying the factor theorem.
+In particular, lower factors over the field of order three are
+included even when the ambient pair is nonexceptional.
+
+The component and Clifford arguments construct a Levi
+representative, using one conjugating element for its character
+and chosen constituent. The rational product and Lang argument
+also give the ambient product with the paired Levi. The injective
+Jordan map transfers the factorisation to the original character.
+Uniqueness of its block parameter then enlarges the
+factorisation from the parameter stabiliser to the full field
+group. Cyclic extension is applied to the original irreducible
+representation. The proof handles the prime field case and both
+principal and nonprincipal characters, so it supplies a
+representative in every original special Clifford orbit.
+
+For each semisimple label, fix a group with the required outer quotient
+and image of the series stabiliser, using the geometric choice in
+\cite[Corollary~4.2]{Ruhstorfer2022Derived}. The geometric assumptions also specify
+the Frobenius powers and commutation relations, and the stability of the
+Levi and rational class. This group is fixed for all relevant character
+orbits. The factorisation and extension proved for
+the full field group restrict to the required condition for the chosen
+group. The character and its affording representation remain the
+same under this restriction. This is the first hypothesis of the
+reduction, as used in manuscript Lemma 4.12.
+
+The second hypothesis ranges over the complete relative class of
+algebraic pairs in Feng--Li--Zhang's Hypothesis 5.5
+\cite{FengLiZhang2022Jordan}, including the ambient pair.
+Type A uses the stated application to all blocks
+\cite{FengLiZhang2023Morita}, with its hypotheses for small groups
+\cite{FengLiZhang2023LowRankA}.
+For a relative Type B group, the strictly quasi-isolated block is
+principal. For a relative factor of rank two over an odd field, the
+manuscript uses $\Spin_5\cong\Sp_4$ and the principal block bijection
+constructed at the start of Proposition 3.3. The original
+relative character triple relation and coefficient conventions are
+preserved. Higher spin groups use the
+principal result and the passage through their central
+$2$-core. The lower exceptional group uses the nine-block theorem
+on $3.\Omega_7(3)$, followed by fixed point descent and the lift
+to the original spin block. No relative pair is discarded because
+it has a central $2$-subgroup or is not itself a universal
+$2'$-cover.
+
+The geometric labels in these arguments are identified with the
+original block parameters. The ambient series idempotent
+is the sum of the primitive idempotents over its rational
+dual conjugacy class, and equals the idempotent in the parameter
+source. The finite dual is identified with the specified projective
+conformal symplectic group, its geometric parameter represents
+that same class, and its field action agrees with the original
+rational action. Orthogonality and the two support equations prove
+that the geometric class of each block equals its original block
+parameter. Each application to a rank two or spin factor also identifies the
+parameter used for strict quasi-isolation with the parameter used to prove
+principality.
+Jordan reduction uses these equalities. The interpretation
+as algebraic semisimple elements and rational Lusztig series remains
+an assumption.
+
+For the nonexceptional ambient pair, the final family is the
+primitive family on $S=\Omega_{2n+1}(q)$. Its covering map is the
+identity on $S$. This universal $2'$-cover
+is constructed from the spin projection, its centre of order two
+and the stated full universal covering property. Here the condition
+$(n,q)\ne(3,3)$ concerns only the ambient pair. The
+exceptional ambient pair uses the separate argument for the triple cover.
+
+Feng--Li--Zhang's Theorem 5.7 gives BAW-goodness once its two hypotheses
+are established \cite{FengLiZhang2022Jordan}. To obtain the full inductive
+condition for the blocks of $S$, the argument also assumes the passage
+through the central $2$-core for blocks and weights, together with
+Sp\"ath's comparison with that condition
+\cite[Theorem~4.4]{Spath2017Triples}. Every block of $S$ is
+assumed to have a dominating spin block under the original group algebra
+map. Deflation uses the same modular system, roots, local characters
+and extensions. A further hypothesis supplies compatible choices of
+block bijections and extension data over all blocks of $S$, in the
+prescribed modular system and with the same roots, block operations
+and local reductions.
+
+For the ambient group and spin factors of higher rank, the ordinary field
+is the fraction field of a modular system with the required finite roots.
+The algebraically closed ordinary fields permitted by the relative Type A and
+rank two sources are confined to those families. They are not
+imposed on the spin modular system.
+
+\begin{implementation}
+In \module{ManuscriptIBAW.TypeB.LeviRankTwo}, \lean{Sources} specifies the
+original principal block, a character belonging to that block and the geometric
+identification with $\Sp_4$. Its character assumption allows either
+trivial field action on the group or the principal block assertion over
+a field of order at least nine. Triviality here is a hypothesis about
+the action on the group. The proof of
+\lean{standard_factorization_at} uses separation only at the chosen
+character. The theorem \lean{factorization_on_original} transports the
+factorisation through the same group and character identifications.
+Thus \lean{Sources.representative} gives a representative on the original
+Levi factor without a premise about all Brauer characters of $\Sp_4$.
+In \module{ManuscriptIBAW.TypeB.LeviSources},
+\lean{SpinFactorSources} contains \lean{PrincipalSeries.ContextData}
+and \lean{PrincipalApplication.Inputs}.
+\lean{SpinFactorSources.representative} applies the principal
+fixedness theorem on that factor's groups, characters and roots.
+The theorems \lean{factor_representatives}, \lean{selected_constituent}
+and \lean{same_y_representative} combine the factor and component
+arguments. In the same namespace,
+\module{ManuscriptIBAW.TypeB.LeviApplication} proves
+\lean{Source.selected_jordan} and \lean{brauerHypothesis}, retaining
+the Jordan equivalence, block correspondence and equivariance equations.
+\lean{TwoApplication.Inputs.brauerHypothesis} applies this result, and
+\lean{Inputs.perLabel} restricts it after the geometric groups have
+been selected.
+In Lean, \lean{JordanRouting.rankTwoBijection} works in a splitting
+modular system and gives an iBAW bijection for the original
+relative block by lifting the Li--Li quotient block bijection. The covering maps, block identifications,
+quotient and root interpretations and character triple conditions for
+this relative factor remain explicit.
+\lean{JordanStrictApplication.BranchSources.blockWitness} proves the
+relative block condition for each Type A, rank two or higher spin case.
+\lean{JordanStrictApplication.Sources.strictBlocks} combines these
+conditions over the relative strictly quasi-isolated blocks. The records \lean{JordanRouting.FullLabelBinding}
+and \lean{Jordan.TypeBLocalized.AmbientSeriesBinding} keep the
+strict labels and ambient rational parameters identified.
+\lean{AmbientSeriesBinding.block_parameter_class} is a deduction.
+Finally, in \module{ManuscriptIBAW.TypeB.TwoApplication},
+\lean{Inputs.gggr} contains the geometric and character data, and the Brauer
+argument uses \lean{Inputs.principal.context} after construction.
+\lean{Inputs.family}, \lean{Inputs.cover} and \lean{Inputs.target}
+are defined before \lean{Inputs.complete} establishes the full inductive
+condition at the nonexceptional pair.
+\end{implementation}
+
+\section{All primes, small ranks and even characteristic}
+
+For odd $q$ and $n\geq3$, consider a prime divisor $\ell$ of $|S|$.
+If $\ell=p$, apply the defining characteristic result. If $\ell$ is odd and nondefining,
+apply the result for odd primes. For $\ell=2$, use the generic result when
+$(n,q)\ne(3,3)$ and the result for the exceptional triple cover at
+$(n,q)=(3,3)$. Every case concerns the same matrix group $S$.
+It supplies the complete condition on its specified cover, retaining
+the specified family, projection, characters and roots. In particular,
+the exceptional case for $\ell=2$ uses the common family obtained from
+the argument for the nine blocks under the separate assumptions on
+quotient transport and passage to compatible correspondences.
+
+Each case uses the structural and published assumptions already
+stated in its proof. The complete condition follows from these assumptions.
+Applying the argument to every prime divisor of $|S|$ gives the
+result for all primes in odd characteristic and rank at least three.
+
+\begin{implementation}
+\module{ManuscriptIBAW.TypeB.AllPrimes} defines the assumptions for these
+cases in \lean{Inputs}. Its \lean{complete} and
+\lean{all_primes} apply the preceding proofs on the same
+orthogonal group. \lean{OddHighInputs.complete} combines these
+with the common structural assumptions on the finite field and
+Clifford projection.
+\end{implementation}
+
+To cover all ranks and fields, distinguish rank one, rank two over $\F_2$,
+the cases identified with symplectic groups, and odd characteristic in rank
+at least three. The group isomorphisms are structural assumptions. Rank
+one uses the specified $\operatorname{PSL}_2(q)$ identification and
+the published low-rank result
+\cite[Proposition~4.6]{FengLiZhang2023LowRankA}. The derived-group
+convention at rank two over $\F_2$ uses
+$\operatorname{PSL}_2(9)$. The low-rank source includes a cover of a
+nonabelian simple target, so it is not applied to the nonsimple groups
+$\operatorname{PSL}_2(2)$ or $\operatorname{PSL}_2(3)$.
+
+The other rank two cases and the cases in even characteristic use
+the Type C theorem at the same rank, field and prime. These cases satisfy
+$(n,q)\ne(2,2)$, as required by that theorem.
+Composing the covering map with the specified isomorphism of simple groups
+retains the covering group, complete family,
+characters and roots.
+
+\begin{implementation}
+\lean{ManuscriptIBAW.TypeB.Census.complete_at_case} performs this
+case distinction. The \lean{AllPrimeFamily} result for the same orthogonal
+group in higher rank is proved by the preceding distinction among primes
+and supplied separately from \lean{CaseInputs}.
+\lean{Census.of_presentation} transports the result along the
+stated Type B presentation. Finally,
+\lean{ManuscriptIBAW.TypeB.finite_simple_typeB} combines this
+case distinction with \lean{OddHighInputs.complete} to prove the condition
+for every nonabelian simple group with the specified Type B
+presentation, under its stated source assumptions.
+\end{implementation}

@@ -1,0 +1,22 @@
+import ManuscriptIBAW.Sporadic.Common
+
+#print axioms ManuscriptIBAW.Sporadic.CompleteCollapse.lemma_5_2
+#print ManuscriptIBAW.Sporadic.CompleteCollapse.Sources
+#print axioms Formalisation.BlockCancellation.cancel_equivariant_equiv
+#print axioms Formalisation.BlockCancellation.cancel_equivariant_equiv_of_parts
+#print axioms Formalisation.BlockCancellation.cancel_exchanged_blocks_preserving
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCentralPrimeToPSubgroups.map_pSubgroup_injective
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCentralPrimeToPSubgroups.pSubgroupLift_map
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCentralPrimeToRadicals.normalizer_comap_of_central_primeTo
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCentralPrimeToRadicals.radical_iff_map_of_central_primeTo
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCentralPrimeToBrauerBlockFibre.physicalBrauerBlockFibreEquiv
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCentralQuotientCorrespondenceTransport.central_quotient_correspondence_transport_deduction
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierOriginalTripleCoverFamily.ofNormalizedEquiv
+#print axioms ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCenterlessAD3Assembly.centerless_manuscript_ad3_assembly
+
+/-
+This file belongs to the Lean companion to Baoyu Zhang (2026),
+"On the inductive blockwise Alperin weight condition for type B and type C".
+It checks selected arguments under the explicit assumptions described in
+docs/manuals/formalisation-companion.tex and audit/current/source-crosswalk.json.
+-/

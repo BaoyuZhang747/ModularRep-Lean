@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scripts": [
+    "audits/ReusableProviders.lean",
+    "audits/SporadicAxioms.lean",
+    "audits/SporadicDependencies.lean",
+    "audits/Manuscript.lean"
+  ],
+  "manuscript_endpoints": [
+    "ModularRep.LinearBlockStabilizer.ordinary_block_stabilizer_bound",
+    "ModularRep.LinearBlockStabilizer.brauer_quotient_block_stabilizer_bound",
+    "ModularRep.CurrentSpathCriterion.current_theorem_2_3",
+    "ModularRep.CurrentSpathDescent.current_corollary_2_5",
+    "ModularRep.PaperProofs.CurrentCentralQuotientBijection.lemma_2_6_compatibleBijection",
+    "ModularRep.PaperProofs.CurrentCyclicOuterBAW.lemma_2_10_bawGood",
+    "ModularRep.PaperProofs.CurrentFiniteSplittingAssembly.fullFamily",
+    "ModularRep.PaperProofs.TypeCCurrentAllCaseSourceApplication.full_block_condition_source_instantiated",
+    "ModularRep.PaperProofs.TypeBCurrentCliffordStabilizer.lemma46",
+    "ModularRep.PaperProofs.TypeBCurrentBrauerHypothesis.proposition_4_12",
+    "ModularRep.PaperProofs.TypeBCurrentCompletion.primeTwo",
+    "ModularRep.PaperProofs.TypeBCurrentCompletion.complete",
+    "ModularRep.PaperProofs.TypeBCurrentCompletion.allPrimes",
+    "ModularRep.PaperProofs.TypeBCurrentTheorem.finite_simple_typeB",
+    "ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedSporadicAssembly.sporadic_from_external_inputs"
+  ],
+  "status": "configuration-only; execution results are recorded in verification-status.json",
+  "separate_application_endpoints": [
+    "ManuscriptIBAW.Main.theorem_1_1",
+    "ManuscriptIBAW.Main.corollary_1_2"
+  ],
+  "scope": "The scripts list contains only library audits. All four scripts passed in the recorded compilation. SporadicDependencies checks declaration dependencies and does not contribute to the two assertion totals below. Main endpoint assertions belong to the separately compiled ManuscriptIBAW.MainAudit. Across the configured library and application audit modules, all 148 standard axiom assertions and 130 direct conclusion assertions passed. The axiom checks allow only propext, Classical.choice and Quot.sound. The direct conclusion check rejects a leading hypothesis definitionally equal to the conclusion. It does not detect merely logically equivalent hypotheses, conclusions contained in structure fields, or circular dependence involving several hypotheses. These checks do not establish the truth, independence or joint satisfiability of the external assumptions. No inhabitant of ClassicalInputs has been constructed."
+}

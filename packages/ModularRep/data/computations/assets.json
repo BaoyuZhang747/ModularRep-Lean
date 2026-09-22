@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "stem": "baby",
+      "program": "code/baby.g",
+      "program_sha256": "75154a2eed712ec78e565d1c026a480787cbadc32e7e883eb93a25b1e1983afc",
+      "output": "outputs/baby.out",
+      "output_sha256": "38842ebc56bab673e60240b733c44640df53e69bb4b995dbfda3cb196885172d",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.babyTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual",
+        "ModularRep.PaperProofs.ComputationTranscriptAdditionalBindings"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/baby.g > baby.rerun.out"
+    },
+    {
+      "stem": "fi24blocks",
+      "program": "code/fi24blocks.g",
+      "program_sha256": "d90af7da8d17447992b7a8cce452645290b550cd8f58a9c543187be313405d77",
+      "output": "outputs/fi24blocks.out",
+      "output_sha256": "9a122bb0fc0c0e4e4ccbea2ca8d767fe714b9ef0cef7a99b49e6bbd9578365e4",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.fi24BlocksTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual",
+        "ModularRep.PaperProofs.ComputationTranscriptAdditionalBindings",
+        "ModularRep.PaperProofs.SporadicFi24P3AmbientDefectTranscript",
+        "ModularRep.PaperProofs.SporadicFi24P3NamedTableCentralCharacterTranscript",
+        "ModularRep.PaperProofs.SporadicFi24P3ThreeBlockSourceFromSources"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/fi24blocks.g > fi24blocks.rerun.out"
+    },
+    {
+      "stem": "fi24p3",
+      "program": "code/fi24p3.g",
+      "program_sha256": "83faa42430a5be8f6662efe3634d0baccf5082c017c0b5a7c85ebb5ae3d4d6b0",
+      "output": "outputs/fi24p3.out",
+      "output_sha256": "de46144bf767ba44e94a2451a57833b799d664a98ff534cbfa3373af89238234",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.fi24P3Transcript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptAdditionalBindings"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/fi24p3.g > fi24p3.rerun.out"
+    },
+    {
+      "stem": "fi24weights",
+      "program": "code/fi24weights.g",
+      "program_sha256": "96443315c812ab0a3980fd91399d8fc2e5db626ee2e14095c0209fd42da3a081",
+      "output": "outputs/fi24weights.out",
+      "output_sha256": "becde43a057f0a13f73073db950fcf7e843b0aaadf9b9004d194ec862b39835d",
+      "recorded_versions": {},
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.fi24WeightsTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/fi24weights.g > fi24weights.rerun.out"
+    },
+    {
+      "stem": "monster",
+      "program": "code/monster.g",
+      "program_sha256": "0f7bc093a622eb73571256f8a24998550dadb491be1e9ff124673727cca361cd",
+      "output": "outputs/monster.out",
+      "output_sha256": "e0ff30bbdaa8b7da7767aca887ad19a5e3a8834ebe43e33bd2245f785231e54f",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.monsterTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/monster.g > monster.rerun.out"
+    },
+    {
+      "stem": "o7block2",
+      "program": "code/o7block2.g",
+      "program_sha256": "e259ecbb99c83f9866beedb58f3be938fd02146b7aa4caab2fe9e178be9654a7",
+      "output": "outputs/o7block2.out",
+      "output_sha256": "f25aaf1816afab43bced2d3ca800890cd0ff1fd262016849599c577e50871d8c",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.o7BlockTwoTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/o7block2.g > o7block2.rerun.out"
+    },
+    {
+      "stem": "o7blocks",
+      "program": "code/o7blocks.g",
+      "program_sha256": "03c3ec08605d556ec1670d63f10778508f9ad481ea8a1fe78047674265b85dcc",
+      "output": "outputs/o7blocks.out",
+      "output_sha256": "1b1a666e3ece31350809b4758c1cbcc5fb98f10fd0fb7e1804311ab94a7fdb77",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.o7BlocksTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/o7blocks.g > o7blocks.rerun.out"
+    },
+    {
+      "stem": "o7brauer",
+      "program": "code/o7brauer.g",
+      "program_sha256": "10b7d92089077fc2a16d63617b50f81226927605455c13c0f466ea4a1904932d",
+      "output": "outputs/o7brauer.out",
+      "output_sha256": "9fd70441eb8454b4ec4c5b5509d3af7dfde29443b2870025c5750b4b205c4834",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.o7BrauerTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual",
+        "ModularRep.PaperProofs.ComputationTranscriptAdditionalBindings"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/o7brauer.g > o7brauer.rerun.out"
+    },
+    {
+      "stem": "o7radical",
+      "program": "code/o7radical.g",
+      "program_sha256": "9c05da6e793d5c60b5ff8b7770abde7e7272e88021f4b9f83d1d1249ccc93581",
+      "output": "outputs/o7radical.out",
+      "output_sha256": "005549193864622b1b4bddd22cbffc90cb9230b16d1e40dc4f64d1547ce3096d",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "ATLASREP_VERSION": "2.1.11",
+        "CTBLLIB_VERSION": "1.3.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "atlasrep",
+        "ctbllib"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.o7RadicalTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/o7radical.g > o7radical.rerun.out"
+    },
+    {
+      "stem": "o7weights",
+      "program": "code/o7weights.g",
+      "program_sha256": "8e940396b28f6d624cb258273efe9f3ec796b985d748647ff25ff9ec6052622c",
+      "output": "outputs/o7weights.out",
+      "output_sha256": "a3bbedbbfbbbaf032bbda99022bd4eb2c9dcecb01ff62c0491172b5e9bdbf382",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "ATLASREP_VERSION": "2.1.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "atlasrep"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.o7WeightsTranscript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/o7weights.g > o7weights.rerun.out"
+    },
+    {
+      "stem": "sp6",
+      "program": "code/sp6.g",
+      "program_sha256": "db900a120bfa6d9178938d6cba2a5cb27dbaeedfcefec8ebd79ee5d8ca69ab23",
+      "output": "outputs/sp6.out",
+      "output_sha256": "5a7203e657b77974f5b3a5c0002ea42aa75a21f734d5443d411fde09b7b58f4a",
+      "recorded_versions": {
+        "GAP_VERSION": "4.16.0",
+        "CTBLLIB_VERSION": "1.3.11",
+        "ATLASREP_VERSION": "2.1.11"
+      },
+      "unrecorded_versions": "unknown",
+      "required_gap_packages": [
+        "ctbllib",
+        "atlasrep"
+      ],
+      "transcript_constant": "ModularRep.ComputationTranscriptSnapshots.sp6Transcript",
+      "direct_lean_consumers": [
+        "ModularRep.PaperProofs.ComputationTranscriptActual"
+      ],
+      "rerun_command": "gap -q --quitonbreak data/computations/code/sp6.g > sp6.rerun.out"
+    }
+  ]
+}

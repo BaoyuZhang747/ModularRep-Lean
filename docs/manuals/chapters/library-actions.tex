@@ -1,0 +1,423 @@
+\chapter{Basic sets and equivariant bijections}
+\label{chap:library:assembly}
+
+An integral basic set identifies two free abelian groups, one indexed
+by ordinary characters and the other by Brauer characters. If a group
+acts compatibly with decomposition, this identification is equivariant.
+For a hypoelementary group, Conlon's theorem and injectivity of the mark homomorphism
+give a bijection of the two sets of characters. Further results
+in this chapter extend equivariant maps from stabilisers, cancel
+invariant subsets and construct fixed representatives in product orbits.
+
+Write $A$ for an acting group. An $A$-equivariant map satisfies
+$f(ax)=af(x)$, and $A_x$ denotes the stabiliser of $x$. If a map $\pi:X\to I$
+is given, its fibre over $i$ is the subset $X_i=\{x:\pi(x)=i\}$.
+
+\section{Naturality and an integral basic set}
+
+Let $G$ be finite and let $\ell$ be prime. Let $K$ and $k$ be fields
+of characteristic zero and $\ell$, respectively. Consider the Grothendieck groups
+$K_0(KG)$ and $K_0(kG)$ of Chapter~\ref{chap:library:kzero}, and a specified
+decomposition homomorphism $d:K_0(KG)\to K_0(kG)$. Let $X$ and $Y$
+be finite sets. For a set $X$, let
+$\Z X$ denote the free abelian group with basis $(e_x)_{x\in X}$.
+Suppose $X$ and $Y$ index distinct simple modules over $KG$ and $kG$,
+respectively. Sending a basis vector to the corresponding module class
+gives injective maps $j_X:\Z X\to K_0(KG)$ and
+$j_Y:\Z Y\to K_0(kG)$, by the basis of simple classes in
+Theorem~\ref{lib:kzero:basis-theorem}.
+
+\begin{definition}
+The family indexed by $X$ is an \emph{integral basic set} for the family
+indexed by $Y$ if the restriction of $d$ is an isomorphism
+$j_X(\Z X)\to j_Y(\Z Y)$. Equivalently, there is an isomorphism
+$D:\Z X\to\Z Y$ such that $j_YD=dj_X$.
+If $A$ acts on $X$ and $Y$,
+it acts on the free groups by $a e_x=e_{ax}$ and $a e_y=e_{ay}$.
+Compatible actions on the two Grothendieck groups are actions for which
+$j_X$ and $j_Y$ commute with $A$.
+\end{definition}
+
+\begin{proposition}[Equivariance of the restricted decomposition map]
+\label{lib:actions:basic-set}
+Suppose these actions are compatible and $d$ commutes with $A$. Then $D$
+is an isomorphism of integral permutation lattices. If
+$D(e_x)=\sum_y d_{y,x}e_y$, its coefficients satisfy
+$d_{ay,ax}=d_{y,x}$ for every $a\in A$.
+\end{proposition}
+\begin{proof}
+For $v\in\Z X$, use the defining square and naturality to obtain
+\[
+ j_Y D(av)=d j_X(av)=d(a j_Xv)
+          =a d j_Xv=a j_Y Dv=j_Y(a Dv).
+\]
+Injectivity of $j_Y$ gives $D(av)=aD(v)$. Taking coefficients on basis
+vectors proves the stated matrix identity. Conversely, that identity on
+basis vectors implies equivariance by linearity.
+\end{proof}
+
+The next section
+gives conditions under which the two indexing sets are also
+equivariantly bijective. For automorphism twisting, the construction in
+Chapter~\ref{chap:library:reduction} gives naturality under its stated
+compatibility hypothesis. For tensoring with linear characters, the ordinary and modular actions
+must satisfy the corresponding character and root compatibility laws.
+\begin{implementation}
+The permutation representations are Mathlib's
+\lean{Representation.ofMulAction}, with coefficients in $\Z$.
+\module{ModularRep.DecompositionBasicSetBridge} defines
+\lean{RestrictedIntegralBasicSet} and proves
+\lean{matrixEquivariant_of_kZero_naturality}. Its
+\lean{matrixEquivariant_of_stableReduction} obtains naturality from the
+constructed decomposition map. The equivalence between the matrix and
+linear map formulations is
+in \module{ModularRep.IntegralBasicSetBridge}.
+\end{implementation}
+
+\begin{proposition}[Restriction to an invariant block]
+\label{lib:actions:block-restriction}
+Suppose $D$ is equivariant and $\pi_X:X\to I$, $\pi_Y:Y\to I$ are
+$A$-invariant block assignments. If
+\[
+ D(\Z X_i)\subseteq\Z Y_i,
+ \qquad D^{-1}(\Z Y_i)\subseteq\Z X_i
+ \qquad(i\in I),
+\]
+then $D$ restricts to an isomorphism of $\Z A$-lattices
+$\Z X_i\to\Z Y_i$ for every $i\in I$.
+\end{proposition}
+\begin{proof}
+The support conditions restrict $D$ and its inverse to the two submodules
+spanned by the indicated fibres. The restrictions are inverse because the
+original maps are inverse. The action preserves each submodule, and the
+restricted maps still commute with it. Identifying each supported submodule
+with the free group on its fibre gives the assertion.
+\end{proof}
+\begin{implementation}
+\module{ModularRep.BlockFibreRestriction}, especially
+\lean{restrictBlockLinearEquiv}, \lean{restrictBlockLinearEquiv_equivariant}
+and \lean{restrictRestrictedIntegralBasicSet}. Both support conditions
+are hypotheses.
+\end{implementation}
+
+\section{From permutation lattices to finite sets}
+
+Let $p$ be a prime, and write $\Z_p$ for the ring of $p$-adic
+integers. The prime $p$ may differ from the characteristic $\ell$
+used for modular characters. A finite group $A$ is
+\emph{$p$-hypoelementary} if it has a normal $p$-subgroup with cyclic
+quotient of order prime to $p$.
+For an $A$-set $X$ and a subgroup $U\leq A$, the \emph{mark} at $U$
+is $|X^U|$, where
+\[
+ X^U=\{x\in X:ux=x\text{ for every }u\in U\}.
+\]
+
+\begin{theorem}[Conlon]
+Let $A$ be a finite group and let $X,Y$ be finite $A$-sets.
+If $\Z_p X$ and $\Z_p Y$ are isomorphic as $\Z_p A$-lattices, then
+\[
+ |X^U|=|Y^U|
+\]
+for every $p$-hypoelementary subgroup $U$ of $A$.
+\end{theorem}
+
+Conlon's fixed coset calculation gives this implication
+\cite[Section~4, especially (4.7)]{Conlon1968}.
+Bouc gives a modern formulation, including the converse, in
+\cite[Theorem~3.5.5]{Bouc2000}.
+In that account the coefficient ring is a complete commutative
+Noetherian local ring with residue characteristic $p$, and lattices
+are finitely generated and free over that ring. The choice $\Z_p$
+satisfies these hypotheses.
+
+\begin{theorem}[Burnside's determination by marks]
+Let $A$ be a finite group. Two finite $A$-sets $X$ and $Y$ are
+isomorphic if and only if $|X^U|=|Y^U|$ for every subgroup $U\leq A$.
+\end{theorem}
+\begin{proof}
+An equivariant bijection identifies the fixed points of every subgroup.
+For the converse, decompose each set into transitive orbits $A/H$,
+with $H$ taken from a set of representatives of subgroup conjugacy
+classes. The matrix
+\[
+ m(U,H)=|(A/H)^U|
+\]
+is triangular when those representatives are ordered by subgroup
+order. Its diagonal entries are $|N_A(H):H|$, which are nonzero.
+Equality of marks therefore gives equality of the multiplicities of
+all transitive orbits.
+\end{proof}
+For this statement and proof, see, for example,
+\cite[Theorem~2.3.2]{Bouc2000}.
+The equivalent formulation is injectivity of the mark homomorphism
+from the Burnside ring.
+
+\begin{corollary}[Permutation lattices]
+\label{lib:actions:conlon}
+Let $A$ be a finite $p$-hypoelementary group and let $X,Y$ be finite
+$A$-sets. If $\Z_p X\simeq\Z_p Y$ as $\Z_p A$-lattices, then
+$X$ and $Y$ are equivariantly bijective. In particular, the same
+conclusion holds if $\Z X\simeq\Z Y$ as $\Z A$-lattices.
+\end{corollary}
+\begin{proof}
+Conlon's theorem gives equality of the marks at all
+$p$-hypoelementary subgroups. Every subgroup of $A$ is
+$p$-hypoelementary by Proposition~\ref{lib:groups:hypoelementary}.
+Thus all marks agree, and the preceding theorem gives the bijection.
+For the integral version, extend the isomorphism and its inverse
+from $\Z$ to $\Z_p$.
+\end{proof}
+\begin{implementation}
+\module{ModularRep.PaperProofs.ConlonBasicSet} constructs scalar
+extension and the mark map on isomorphism classes of finite $A$-sets.
+The scalar extension uses Mathlib's equivalences for tensor products
+with finitely supported functions. The intertwining identities are
+proved in this module.
+The two published theorems are separate hypotheses:
+\lean{PadicConlonMarkDetection} and
+\lean{PublishedBurnsideMarkInjectivity}. Both range over all finite
+$A$-sets. Under these hypotheses,
+\lean{corollary_2_4_conlonMark} proves the implication from
+isomorphic $p$-adic permutation lattices to an equivariant bijection.
+The proofs of the published theorems are not part of that declaration.
+\end{implementation}
+
+If $A$ is $p$-hypoelementary, Proposition~\ref{lib:actions:basic-set}
+and Corollary~\ref{lib:actions:conlon} give an equivariant bijection
+between the ordinary basic set and the modular characters it indexes.
+Under the same hypothesis, Proposition~\ref{lib:actions:block-restriction}
+gives the corresponding bijection on an invariant block.
+\begin{implementation}
+The corresponding declarations are
+\lean{equivariantSetEquiv_of_kZero_naturality} and
+\lean{equivariantSetEquiv_restrictBlock_of_kZero_naturality}
+in the modules for basic sets and block restriction.
+They assume the specified integral basic set, actions, naturality,
+hypoelementary group and published mark theorems.
+They prove existence of a bijection without prescribing its pairs.
+No unitriangularity hypothesis is used.
+\end{implementation}
+
+\section{Extending a bijection over an orbit}
+
+Let $\pi_X:X\to I$ and
+$\pi_Y:Y\to I$ be equivariant maps, and assume $I$ is transitive.
+
+\begin{proposition}[Extension from one fibre]
+\label{lib:actions:fibre-transport}
+Fix $i_0\in I$ and an $A_{i_0}$-equivariant bijection
+$\beta_0:X_{i_0}\to Y_{i_0}$. There is a unique $A$-equivariant bijection
+$\beta:X\to Y$ that preserves the maps to $I$ and restricts to $\beta_0$ on
+$X_{i_0}$.
+\end{proposition}
+\begin{proof}
+For each $i\in I$, choose $t_i\in A$ with $t_i i_0=i$, and define
+\[
+ \beta(x)=t_i \beta_0(t_i^{-1}x)\qquad(x\in X_i).
+\]
+The expression has image in $Y_i$. Replacing $\beta_0$ by its inverse gives
+an inverse map on every fibre and hence on the total sets. At $i=i_0$,
+the chosen $t_{i_0}$ belongs to $A_{i_0}$, so equivariance of $\beta_0$
+shows that the restriction is exactly $\beta_0$.
+
+Two choices of $t_i$ differ by an element of $A_{i_0}$. Equivariance
+of $\beta_0$ under that stabiliser makes the formulas identical. For
+$a\in A$, the element $t_{ai}^{-1}at_i$ also fixes $i_0$. Applying
+$A_{i_0}$-equivariance to this element proves $\beta(ax)=a\beta(x)$.
+Finally, an equivariant extension of $\beta_0$ must send
+$t_i(t_i^{-1}x)$ to $t_i \beta_0(t_i^{-1}x)$, which proves uniqueness.
+\end{proof}
+\begin{implementation}
+\module{Formalisation.FibreTransport}, with \lean{Formalisation.transportedEquiv},
+\lean{Formalisation.transportedEquiv_equivariant},
+\lean{Formalisation.transportedEquiv_independent_of_transporter} and
+\lean{Formalisation.transportedEquiv_preserves_base}.
+The equivalence of the total sets uses Mathlib's \lean{Equiv.ofFiberEquiv}.
+The transporter formula, its equivariance and its independence of
+the choices are proved in this module.
+The uniqueness assertion follows from the formula for $\beta$, as in the
+proof above. It is not a separate theorem in this module.
+\end{implementation}
+
+For an arbitrary $A$-set $I$, choose one representative $i$ of each
+orbit and an $A_i$-equivariant bijection $X_i\to Y_i$. Applying the
+proposition on each orbit gives an $A$-equivariant bijection $X\to Y$
+preserving the maps to $I$. The module
+\module{Formalisation.IndexedAssembly} combines families satisfying
+$\beta_{ai}(ax)=a\beta_i(x)$. The transporter formula above proves precisely
+this compatibility from the bijections on the representative fibres.
+
+The same formula preserves any specified $A$-invariant relation
+$\mathcal R\subseteq X\times Y$, provided the initial bijections
+satisfy it. More explicitly, assume
+\begin{align*}
+ (x,y)\in\mathcal R&\ \Longrightarrow\ (ax,ay)\in\mathcal R
+   &&(a\in A),\\
+ (x,\beta_i(x))&\in\mathcal R &&(x\in X_i)
+\end{align*}
+with the second condition imposed on each representative fibre.
+Every $x\in X$ has the form $au$ for
+some $u$ in one of those fibres, and
+$(x,\beta(x))=(au,a\beta_i(u))\in\mathcal R$. Thus the local relation and
+its invariance are separate hypotheses in an application.
+
+\begin{example}[A block correspondence on an orbit]
+Suppose $I$ is an orbit of blocks, $X_i$ is its Brauer character set and
+$Y_i$ its set of weight classes. An equivariant bijection for one block,
+under that block's stabiliser, extends to the whole orbit by
+Proposition~\ref{lib:actions:fibre-transport}. It still sends each $X_i$
+into $Y_i$. A modular character triple relation is preserved by the
+extension provided it holds for each pair on the chosen fibre and is
+invariant under the automorphisms being used.
+\end{example}
+
+\section{Involutions and cancellation}
+
+\begin{proposition}[Classification of finite sets with an involution]
+\label{lib:actions:involutions}
+Let $\sigma$ and $\tau$ be involutions on finite sets $X$ and $Y$.
+There is a bijection $\beta:X\to Y$ with $\beta\sigma=\tau \beta$ if and only if
+$|X|=|Y|$ and $|X^\sigma|=|Y^\tau|$.
+\end{proposition}
+\begin{proof}
+Each orbit of an involution has size one or two. If $f$ is the number
+of fixed points and $t$ the number of orbits of size two, then
+$|X|=f+2t$. Thus the two stated equalities imply that the numbers of
+orbits of each size agree. Match the singleton orbits and the orbits of
+size two. A choice of one point in each paired orbit of size two determines
+the bijection on its other point by equivariance. Combining these maps gives
+$\beta$. Conversely, any such $\beta$ preserves total size and carries the fixed
+points bijectively to the fixed points.
+\end{proof}
+
+Equivalently, the two counts determine the cycle type of an involution
+and hence its conjugacy class in the symmetric group.
+\begin{implementation}
+\module{Formalisation.C2Cancellation}, including
+\lean{card_eq_fixed_add_twice_cycleCount} and
+\lean{exists_equivariantEquiv_of_card_eq_of_fixed_card_eq} in
+\lean{Formalisation.C2Cancellation}.
+These results apply Mathlib's fixed point counts and classification
+of permutations by cycle type,
+\lean{Equiv.Perm.isConj_iff_cycleType_eq}, to involutions.
+\end{implementation}
+
+The pair $(|X|,|X^\sigma|)$ determines a finite set with involution up
+to equivariant bijection. Both entries add under invariant disjoint
+unions. Consequently, if $X\simeq Y$ equivariantly and invariant subsets
+$X'\subseteq X$, $Y'\subseteq Y$ are equivariantly bijective, then
+$X\setminus X'\simeq Y\setminus Y'$ equivariantly. The argument
+constructs a bijection of the complements from their two counts.
+
+For two parts exchanged by the involution, a different formula is useful.
+Choose a bijection $f:X_0\to Y_0$, and define the map on $X_1$ by
+$\tau f\sigma$. It takes $X_1$ to $Y_1$, is inverse to the analogous
+map constructed from $f^{-1}$ and commutes with the involutions.
+These constructions are in \module{Formalisation.BlockCancellation}
+and \module{Formalisation.C2Cancellation}.
+
+\begin{proposition}[Cancellation over a block orbit]
+\label{lib:actions:block-cancellation}
+Let $I$ be a finite set with an involution, and let $X\to I$ and
+$Y\to I$ be equivariant maps of finite sets with involutions.
+Write $I_0,\ldots,I_r$ for the orbits in $I$, and let $U_j$ and
+$V_j$ be their inverse images in $X$ and $Y$. Suppose that
+$X\simeq Y$ equivariantly and that $U_j\simeq V_j$ equivariantly
+for $1\leq j\leq r$. Then there is an equivariant bijection
+$U_0\to V_0$ preserving the map to $I_0$.
+\end{proposition}
+\begin{proof}
+Cancel the known parts in the total size and fixed point count.
+Proposition~\ref{lib:actions:involutions} gives an equivariant
+bijection between the remaining parts. If $I_0$ is a singleton,
+it already preserves the map to $I_0$.
+
+Otherwise write $I_0=\{i,\sigma i\}$. The involutions exchange
+the two fibres on each side, so each fibre has half the size of
+its corresponding remaining part. These sizes agree. Choose a
+bijection $f:X_i\to Y_i$ and define the map on the other fibre by
+$\tau f\sigma$, where $\sigma$ and $\tau$ denote the source and
+target involutions. The two formulas give an equivariant bijection
+preserving both fibres.
+\end{proof}
+
+For an application to blocks, the maps to $I$ assign a block to each
+character or weight class. The hypotheses then require equivariant
+comparisons on each of the other block orbits.
+
+\begin{implementation}
+In \module{Formalisation.BlockCancellation},
+\lean{cancel_equivariant_equiv_of_parts} handles the finite
+disjoint union of known parts, and
+\lean{cancel_exchanged_blocks_preserving} constructs the map on
+the remaining pair of exchanged fibres. The resulting map need not
+be the restriction of the initially given equivalence $X\simeq Y$.
+\end{implementation}
+
+\begin{example}
+A set with eight elements and two fixed points has three orbits of size
+two. If an invariant part consists of one such orbit, the complement has
+the pair of counts $(6,2)$. Any other complement with these counts is
+isomorphic as a set with involution.
+\end{example}
+
+\section{Fixed representatives in a product}
+
+Let $D\rtimes R$ act on a set $X$. Suppose that
+\[
+ (D\rtimes R)_x=D_x\rtimes R_x
+\]
+for some $x\in X$. If $r\in R$ satisfies $rx\in Dx$, then $rx=x$.
+Indeed, write $rx=dx$. The element $(d^{-1},r)$ fixes $x$, so the
+stabiliser equality implies $r\in R_x$.
+
+\begin{proposition}[A fixed tuple in a product orbit]
+Let $n>0$, let $O_0,\ldots,O_{n-1}$ be $D$-orbits in $X$, and let
+$T:X\to X$. Suppose a cyclic group $E=\langle\tau\rangle$ acts on
+$X^n$ by
+\[
+ \tau(y_0,\ldots,y_{n-1})=(Ty_{n-1},Ty_0,\ldots,Ty_{n-2}).
+\]
+Assume that $\tau$ preserves $\prod_jO_j$. Choose $x\in O_0$ such
+that
+\[
+ T^n x=rx\quad\text{for some }r\in R,
+ \qquad (D\rtimes R)_x=D_x\rtimes R_x.
+\]
+Then $(x,Tx,\ldots,T^{n-1}x)$ belongs to $\prod_jO_j$ and is fixed
+by $E$.
+\end{proposition}
+\begin{proof}
+Varying the $j$th coordinate of a tuple in the product shows that
+$T(O_j)\subseteq O_{j+1}$, with indices taken modulo $n$.
+Consequently $T^n x\in O_0=Dx$. The preceding observation gives
+$rx=x$, and hence $T^n x=x$.
+Successive transport places $T^jx$ in $O_j$.
+The formula defining $\tau$ now shows that it fixes the tuple,
+so its cyclic group $E$ fixes the tuple as well.
+\end{proof}
+
+Apply this construction on each cycle when there are several cycles
+of coordinates. The groups $D$ and $R$ may vary from cycle to cycle.
+If the actions extend compatibly to $D_{\mathrm{prod}}\rtimes E$,
+where $D_{\mathrm{prod}}$ is the product of the coordinate groups,
+the resulting tuple $\theta$ satisfies
+\[
+ (D_{\mathrm{prod}}\rtimes E)_\theta
+   =(D_{\mathrm{prod}})_\theta\rtimes E.
+\]
+Indeed, every element of $E$ fixes $\theta$, and $(d,e)$ fixes
+$\theta$ exactly when $d$ does.
+
+\begin{implementation}
+\module{ModularRep.ComponentReturnFull} allows separate groups and
+orbit data on every cycle.
+The theorem \lean{component_return_full_of_product_orbit_stable} in
+\lean{ModularRep.ManuscriptVerification.ComponentReturnFull}
+derives the conditions on coordinate orbits from stability of the
+product orbit and constructs the fixed tuple.
+In a representation theoretic application, the product character
+sets, their diagonal actions and the action after a full cycle must
+satisfy the stated action formulas.
+\end{implementation}

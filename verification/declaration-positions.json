@@ -1,0 +1,3100 @@
+{
+  "status": "passed",
+  "positions": [
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.AssembledClauses",
+      "compiled_identifier_position_zero_based": [
+        141,
+        10,
+        141,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        141,
+        10,
+        141,
+        26
+      ],
+      "identifier_text": "AssembledClauses"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate",
+      "compiled_identifier_position_zero_based": [
+        49,
+        10,
+        49,
+        29
+      ],
+      "current_identifier_position_zero_based": [
+        49,
+        10,
+        49,
+        29
+      ],
+      "identifier_text": "SectorwiseCandidate"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assemble",
+      "compiled_identifier_position_zero_based": [
+        62,
+        4,
+        62,
+        12
+      ],
+      "current_identifier_position_zero_based": [
+        62,
+        4,
+        62,
+        12
+      ],
+      "identifier_text": "assemble"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assemble_apply",
+      "compiled_identifier_position_zero_based": [
+        68,
+        8,
+        68,
+        22
+      ],
+      "current_identifier_position_zero_based": [
+        68,
+        8,
+        68,
+        22
+      ],
+      "identifier_text": "assemble_apply"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assemble_equivariant",
+      "compiled_identifier_position_zero_based": [
+        75,
+        8,
+        75,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        75,
+        8,
+        75,
+        28
+      ],
+      "identifier_text": "assemble_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assemble_preserves_block",
+      "compiled_identifier_position_zero_based": [
+        82,
+        8,
+        82,
+        32
+      ],
+      "current_identifier_position_zero_based": [
+        82,
+        8,
+        82,
+        32
+      ],
+      "identifier_text": "assemble_preserves_block"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assemble_preserves_blockInduction",
+      "compiled_identifier_position_zero_based": [
+        90,
+        8,
+        90,
+        41
+      ],
+      "current_identifier_position_zero_based": [
+        90,
+        8,
+        90,
+        41
+      ],
+      "identifier_text": "assemble_preserves_blockInduction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assemble_preserves_sector",
+      "compiled_identifier_position_zero_based": [
+        97,
+        8,
+        97,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        97,
+        8,
+        97,
+        33
+      ],
+      "identifier_text": "assemble_preserves_sector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assembledBlockEquiv",
+      "compiled_identifier_position_zero_based": [
+        102,
+        4,
+        102,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        102,
+        4,
+        102,
+        23
+      ],
+      "identifier_text": "assembledBlockEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.assembledLocalEquiv",
+      "compiled_identifier_position_zero_based": [
+        124,
+        4,
+        124,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        124,
+        4,
+        124,
+        23
+      ],
+      "identifier_text": "assembledLocalEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.part",
+      "compiled_identifier_position_zero_based": [
+        109,
+        4,
+        109,
+        8
+      ],
+      "current_identifier_position_zero_based": [
+        109,
+        4,
+        109,
+        8
+      ],
+      "identifier_text": "part"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.part_equivariant",
+      "compiled_identifier_position_zero_based": [
+        113,
+        8,
+        113,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        113,
+        8,
+        113,
+        24
+      ],
+      "identifier_text": "part_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCandidate.partitionEquiv",
+      "compiled_identifier_position_zero_based": [
+        118,
+        4,
+        118,
+        18
+      ],
+      "current_identifier_position_zero_based": [
+        118,
+        4,
+        118,
+        18
+      ],
+      "identifier_text": "partitionEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification",
+      "compiled_identifier_position_zero_based": [
+        176,
+        10,
+        176,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        176,
+        10,
+        176,
+        33
+      ],
+      "identifier_text": "SectorwiseCertification"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.allAssembledClauses",
+      "compiled_identifier_position_zero_based": [
+        235,
+        4,
+        235,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        235,
+        4,
+        235,
+        23
+      ],
+      "identifier_text": "allAssembledClauses"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.assemble",
+      "compiled_identifier_position_zero_based": [
+        194,
+        4,
+        194,
+        12
+      ],
+      "current_identifier_position_zero_based": [
+        194,
+        4,
+        194,
+        12
+      ],
+      "identifier_text": "assemble"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.assembled_characterTriple",
+      "compiled_identifier_position_zero_based": [
+        213,
+        8,
+        213,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        213,
+        8,
+        213,
+        33
+      ],
+      "identifier_text": "assembled_characterTriple"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.assembled_extensions",
+      "compiled_identifier_position_zero_based": [
+        208,
+        8,
+        208,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        208,
+        8,
+        208,
+        28
+      ],
+      "identifier_text": "assembled_extensions"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.assembled_intermediateBlockEqualities",
+      "compiled_identifier_position_zero_based": [
+        202,
+        8,
+        202,
+        45
+      ],
+      "current_identifier_position_zero_based": [
+        202,
+        8,
+        202,
+        45
+      ],
+      "identifier_text": "assembled_intermediateBlockEqualities"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.assembled_normalisation",
+      "compiled_identifier_position_zero_based": [
+        218,
+        8,
+        218,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        218,
+        8,
+        218,
+        31
+      ],
+      "identifier_text": "assembled_normalisation"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.assembled_qOneExtensionCompatibility",
+      "compiled_identifier_position_zero_based": [
+        226,
+        8,
+        226,
+        44
+      ],
+      "current_identifier_position_zero_based": [
+        226,
+        8,
+        226,
+        44
+      ],
+      "identifier_text": "assembled_qOneExtensionCompatibility"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.SectorwiseCertification.lemma_5_6_relative",
+      "compiled_identifier_position_zero_based": [
+        253,
+        8,
+        253,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        253,
+        8,
+        253,
+        26
+      ],
+      "identifier_text": "lemma_5_6_relative"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.One",
+      "compiled_identifier_position_zero_based": [
+        272,
+        7,
+        272,
+        10
+      ],
+      "current_identifier_position_zero_based": [
+        272,
+        7,
+        272,
+        10
+      ],
+      "identifier_text": "One"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.instGroupOne",
+      "compiled_identifier_position_zero_based": [
+        274,
+        0,
+        274,
+        8
+      ],
+      "current_identifier_position_zero_based": [
+        274,
+        0,
+        274,
+        8
+      ],
+      "identifier_text": "instance"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.instMulActionOne",
+      "compiled_identifier_position_zero_based": [
+        283,
+        0,
+        283,
+        8
+      ],
+      "current_identifier_position_zero_based": [
+        283,
+        0,
+        283,
+        8
+      ],
+      "identifier_text": "instance"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.no_full_data_from_weak_family",
+      "compiled_identifier_position_zero_based": [
+        338,
+        8,
+        338,
+        37
+      ],
+      "current_identifier_position_zero_based": [
+        338,
+        8,
+        338,
+        37
+      ],
+      "identifier_text": "no_full_data_from_weak_family"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.weakContext",
+      "compiled_identifier_position_zero_based": [
+        290,
+        4,
+        290,
+        15
+      ],
+      "current_identifier_position_zero_based": [
+        290,
+        4,
+        290,
+        15
+      ],
+      "identifier_text": "weakContext"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.weakFamily",
+      "compiled_identifier_position_zero_based": [
+        316,
+        4,
+        316,
+        14
+      ],
+      "current_identifier_position_zero_based": [
+        316,
+        4,
+        316,
+        14
+      ],
+      "identifier_text": "weakFamily"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.weak_family_has_characterTriples",
+      "compiled_identifier_position_zero_based": [
+        325,
+        8,
+        325,
+        40
+      ],
+      "current_identifier_position_zero_based": [
+        325,
+        8,
+        325,
+        40
+      ],
+      "identifier_text": "weak_family_has_characterTriples"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicCentralSectorAssemblyLemma56Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicCentralSectorAssemblyLemma56Relative.WeakDataSeparation.weak_family_has_normalisation",
+      "compiled_identifier_position_zero_based": [
+        330,
+        8,
+        330,
+        37
+      ],
+      "current_identifier_position_zero_based": [
+        330,
+        8,
+        330,
+        37
+      ],
+      "identifier_text": "weak_family_has_normalisation"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.Candidate",
+      "compiled_identifier_position_zero_based": [
+        74,
+        10,
+        74,
+        19
+      ],
+      "current_identifier_position_zero_based": [
+        74,
+        10,
+        74,
+        19
+      ],
+      "identifier_text": "Candidate"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.Candidate.fixed_iff",
+      "compiled_identifier_position_zero_based": [
+        144,
+        8,
+        144,
+        17
+      ],
+      "current_identifier_position_zero_based": [
+        144,
+        8,
+        144,
+        17
+      ],
+      "identifier_text": "fixed_iff"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.Candidate.localEquiv",
+      "compiled_identifier_position_zero_based": [
+        97,
+        4,
+        97,
+        14
+      ],
+      "current_identifier_position_zero_based": [
+        97,
+        4,
+        97,
+        14
+      ],
+      "identifier_text": "localEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.Candidate.part",
+      "compiled_identifier_position_zero_based": [
+        86,
+        4,
+        86,
+        8
+      ],
+      "current_identifier_position_zero_based": [
+        86,
+        4,
+        86,
+        8
+      ],
+      "identifier_text": "part"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.Candidate.part_equivariant",
+      "compiled_identifier_position_zero_based": [
+        90,
+        8,
+        90,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        90,
+        8,
+        90,
+        24
+      ],
+      "identifier_text": "part_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.Candidate.stabilizer_eq",
+      "compiled_identifier_position_zero_based": [
+        137,
+        8,
+        137,
+        21
+      ],
+      "current_identifier_position_zero_based": [
+        137,
+        8,
+        137,
+        21
+      ],
+      "identifier_text": "stabilizer_eq"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.CyclicFactorSetBridge",
+      "compiled_identifier_position_zero_based": [
+        221,
+        10,
+        221,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        221,
+        10,
+        221,
+        31
+      ],
+      "identifier_text": "CyclicFactorSetBridge"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.ReplacementContext",
+      "compiled_identifier_position_zero_based": [
+        46,
+        10,
+        46,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        46,
+        10,
+        46,
+        28
+      ],
+      "identifier_text": "ReplacementContext"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.characterTriple_of_cyclic_factor_sets",
+      "compiled_identifier_position_zero_based": [
+        243,
+        8,
+        243,
+        45
+      ],
+      "current_identifier_position_zero_based": [
+        243,
+        8,
+        243,
+        45
+      ],
+      "identifier_text": "characterTriple_of_cyclic_factor_sets"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.equivariantReplacement",
+      "compiled_identifier_position_zero_based": [
+        154,
+        4,
+        154,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        154,
+        4,
+        154,
+        26
+      ],
+      "identifier_text": "equivariantReplacement"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.equivariantReplacement_equiv_independent",
+      "compiled_identifier_position_zero_based": [
+        188,
+        8,
+        188,
+        48
+      ],
+      "current_identifier_position_zero_based": [
+        188,
+        8,
+        188,
+        48
+      ],
+      "identifier_text": "equivariantReplacement_equiv_independent"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.lemma_5_5_relative",
+      "compiled_identifier_position_zero_based": [
+        290,
+        8,
+        290,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        290,
+        8,
+        290,
+        26
+      ],
+      "identifier_text": "lemma_5_5_relative"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Relative.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Relative.transported_characterTriple",
+      "compiled_identifier_position_zero_based": [
+        268,
+        8,
+        268,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        268,
+        8,
+        268,
+        35
+      ],
+      "identifier_text": "transported_characterTriple"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.DefectZeroCoreSource",
+      "compiled_identifier_position_zero_based": [
+        124,
+        10,
+        124,
+        30
+      ],
+      "current_identifier_position_zero_based": [
+        124,
+        10,
+        124,
+        30
+      ],
+      "identifier_text": "DefectZeroCoreSource"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.FYZPrincipalCriterion",
+      "compiled_identifier_position_zero_based": [
+        134,
+        10,
+        134,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        134,
+        10,
+        134,
+        31
+      ],
+      "identifier_text": "FYZPrincipalCriterion"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.centralizerProduct",
+      "compiled_identifier_position_zero_based": [
+        38,
+        4,
+        38,
+        22
+      ],
+      "current_identifier_position_zero_based": [
+        38,
+        4,
+        38,
+        22
+      ],
+      "identifier_text": "centralizerProduct"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.centralizerProduct_eq",
+      "compiled_identifier_position_zero_based": [
+        49,
+        8,
+        49,
+        29
+      ],
+      "current_identifier_position_zero_based": [
+        49,
+        8,
+        49,
+        29
+      ],
+      "identifier_text": "centralizerProduct_eq"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.centralizerProduct_normal",
+      "compiled_identifier_position_zero_based": [
+        44,
+        9,
+        44,
+        34
+      ],
+      "current_identifier_position_zero_based": [
+        44,
+        9,
+        44,
+        34
+      ],
+      "identifier_text": "centralizerProduct_normal"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.centreInCentralizer_eq_top",
+      "compiled_identifier_position_zero_based": [
+        55,
+        8,
+        55,
+        34
+      ],
+      "current_identifier_position_zero_based": [
+        55,
+        8,
+        55,
+        34
+      ],
+      "identifier_text": "centreInCentralizer_eq_top"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.centre_is_sylow_of_centralizer_le",
+      "compiled_identifier_position_zero_based": [
+        69,
+        8,
+        69,
+        41
+      ],
+      "current_identifier_position_zero_based": [
+        69,
+        8,
+        69,
+        41
+      ],
+      "identifier_text": "centre_is_sylow_of_centralizer_le"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.principalPair",
+      "compiled_identifier_position_zero_based": [
+        175,
+        4,
+        175,
+        17
+      ],
+      "current_identifier_position_zero_based": [
+        175,
+        4,
+        175,
+        17
+      ],
+      "identifier_text": "principalPair"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.principalPair_block",
+      "compiled_identifier_position_zero_based": [
+        184,
+        8,
+        184,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        184,
+        8,
+        184,
+        27
+      ],
+      "identifier_text": "principalPair_block"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.principal_of_centralizer_le",
+      "compiled_identifier_position_zero_based": [
+        150,
+        8,
+        150,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        150,
+        8,
+        150,
+        35
+      ],
+      "identifier_text": "principal_of_centralizer_le"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.radical_of_quotient_core_eq_bot",
+      "compiled_identifier_position_zero_based": [
+        85,
+        8,
+        85,
+        39
+      ],
+      "current_identifier_position_zero_based": [
+        85,
+        8,
+        85,
+        39
+      ],
+      "identifier_text": "radical_of_quotient_core_eq_bot"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/PrincipalConverse.lean",
+      "name": "ManuscriptIBAW.TypeC.spFintype",
+      "compiled_identifier_position_zero_based": [
+        117,
+        15,
+        117,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        117,
+        15,
+        117,
+        24
+      ],
+      "identifier_text": "spFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.ActualLemma55Clauses",
+      "compiled_identifier_position_zero_based": [
+        449,
+        10,
+        449,
+        30
+      ],
+      "current_identifier_position_zero_based": [
+        449,
+        10,
+        449,
+        30
+      ],
+      "identifier_text": "ActualLemma55Clauses"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.AnDietrichFaithfulSectorSource",
+      "compiled_identifier_position_zero_based": [
+        243,
+        10,
+        243,
+        40
+      ],
+      "current_identifier_position_zero_based": [
+        243,
+        10,
+        243,
+        40
+      ],
+      "identifier_text": "AnDietrichFaithfulSectorSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.FaithfulIBr",
+      "compiled_identifier_position_zero_based": [
+        87,
+        10,
+        87,
+        21
+      ],
+      "current_identifier_position_zero_based": [
+        87,
+        10,
+        87,
+        21
+      ],
+      "identifier_text": "FaithfulIBr"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.FaithfulSector",
+      "compiled_identifier_position_zero_based": [
+        63,
+        7,
+        63,
+        21
+      ],
+      "current_identifier_position_zero_based": [
+        63,
+        7,
+        63,
+        21
+      ],
+      "identifier_text": "FaithfulSector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.FaithfulWeight",
+      "compiled_identifier_position_zero_based": [
+        95,
+        10,
+        95,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        95,
+        10,
+        95,
+        24
+      ],
+      "identifier_text": "FaithfulWeight"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.actualReplacementContext",
+      "compiled_identifier_position_zero_based": [
+        208,
+        4,
+        208,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        208,
+        4,
+        208,
+        28
+      ],
+      "identifier_text": "actualReplacementContext"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.centerFintype",
+      "compiled_identifier_position_zero_based": [
+        43,
+        29,
+        43,
+        42
+      ],
+      "current_identifier_position_zero_based": [
+        43,
+        29,
+        43,
+        42
+      ],
+      "identifier_text": "centerFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulBrauerBlock",
+      "compiled_identifier_position_zero_based": [
+        177,
+        4,
+        177,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        177,
+        4,
+        177,
+        23
+      ],
+      "identifier_text": "faithfulBrauerBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulBrauerSector",
+      "compiled_identifier_position_zero_based": [
+        165,
+        4,
+        165,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        165,
+        4,
+        165,
+        24
+      ],
+      "identifier_text": "faithfulBrauerSector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulIBrMulAction",
+      "compiled_identifier_position_zero_based": [
+        102,
+        9,
+        102,
+        29
+      ],
+      "current_identifier_position_zero_based": [
+        102,
+        9,
+        102,
+        29
+      ],
+      "identifier_text": "faithfulIBrMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulIBr_smul_eq_iff",
+      "compiled_identifier_position_zero_based": [
+        140,
+        8,
+        140,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        140,
+        8,
+        140,
+        31
+      ],
+      "identifier_text": "faithfulIBr_smul_eq_iff"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulSectorMulAction",
+      "compiled_identifier_position_zero_based": [
+        75,
+        9,
+        75,
+        32
+      ],
+      "current_identifier_position_zero_based": [
+        75,
+        9,
+        75,
+        32
+      ],
+      "identifier_text": "faithfulSectorMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulWeightBlock",
+      "compiled_identifier_position_zero_based": [
+        183,
+        4,
+        183,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        183,
+        4,
+        183,
+        23
+      ],
+      "identifier_text": "faithfulWeightBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulWeightMulAction",
+      "compiled_identifier_position_zero_based": [
+        120,
+        9,
+        120,
+        32
+      ],
+      "current_identifier_position_zero_based": [
+        120,
+        9,
+        120,
+        32
+      ],
+      "identifier_text": "faithfulWeightMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulWeightRadical",
+      "compiled_identifier_position_zero_based": [
+        189,
+        4,
+        189,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        189,
+        4,
+        189,
+        25
+      ],
+      "identifier_text": "faithfulWeightRadical"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulWeightSector",
+      "compiled_identifier_position_zero_based": [
+        171,
+        4,
+        171,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        171,
+        4,
+        171,
+        24
+      ],
+      "identifier_text": "faithfulWeightSector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulWeight_smul_eq_iff",
+      "compiled_identifier_position_zero_based": [
+        153,
+        8,
+        153,
+        34
+      ],
+      "current_identifier_position_zero_based": [
+        153,
+        8,
+        153,
+        34
+      ],
+      "identifier_text": "faithfulWeight_smul_eq_iff"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.lemma_5_5_actual",
+      "compiled_identifier_position_zero_based": [
+        490,
+        4,
+        490,
+        20
+      ],
+      "current_identifier_position_zero_based": [
+        490,
+        4,
+        490,
+        20
+      ],
+      "identifier_text": "lemma_5_5_actual"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transportedCandidate",
+      "compiled_identifier_position_zero_based": [
+        283,
+        4,
+        283,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        283,
+        4,
+        283,
+        24
+      ],
+      "identifier_text": "transportedCandidate"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transportedLocalEquiv",
+      "compiled_identifier_position_zero_based": [
+        427,
+        4,
+        427,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        427,
+        4,
+        427,
+        25
+      ],
+      "identifier_text": "transportedLocalEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transportedPart",
+      "compiled_identifier_position_zero_based": [
+        325,
+        4,
+        325,
+        19
+      ],
+      "current_identifier_position_zero_based": [
+        325,
+        4,
+        325,
+        19
+      ],
+      "identifier_text": "transportedPart"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_characterTriple_actual",
+      "compiled_identifier_position_zero_based": [
+        391,
+        8,
+        391,
+        42
+      ],
+      "current_identifier_position_zero_based": [
+        391,
+        8,
+        391,
+        42
+      ],
+      "identifier_text": "transported_characterTriple_actual"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_equiv_independent",
+      "compiled_identifier_position_zero_based": [
+        406,
+        8,
+        406,
+        37
+      ],
+      "current_identifier_position_zero_based": [
+        406,
+        8,
+        406,
+        37
+      ],
+      "identifier_text": "transported_equiv_independent"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_equivariant",
+      "compiled_identifier_position_zero_based": [
+        293,
+        8,
+        293,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        293,
+        8,
+        293,
+        31
+      ],
+      "identifier_text": "transported_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_part_equivariant",
+      "compiled_identifier_position_zero_based": [
+        332,
+        8,
+        332,
+        36
+      ],
+      "current_identifier_position_zero_based": [
+        332,
+        8,
+        332,
+        36
+      ],
+      "identifier_text": "transported_part_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_preserves_block",
+      "compiled_identifier_position_zero_based": [
+        314,
+        8,
+        314,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        314,
+        8,
+        314,
+        35
+      ],
+      "identifier_text": "transported_preserves_block"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_preserves_sector",
+      "compiled_identifier_position_zero_based": [
+        303,
+        8,
+        303,
+        36
+      ],
+      "current_identifier_position_zero_based": [
+        303,
+        8,
+        303,
+        36
+      ],
+      "identifier_text": "transported_preserves_sector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_stabilizer_eq",
+      "compiled_identifier_position_zero_based": [
+        346,
+        8,
+        346,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        346,
+        8,
+        346,
+        33
+      ],
+      "identifier_text": "transported_stabilizer_eq"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.transported_underlying_stabilizer_eq",
+      "compiled_identifier_position_zero_based": [
+        360,
+        8,
+        360,
+        44
+      ],
+      "current_identifier_position_zero_based": [
+        360,
+        8,
+        360,
+        44
+      ],
+      "identifier_text": "transported_underlying_stabilizer_eq"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "_private.ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.0.ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.C",
+      "compiled_identifier_position_zero_based": [
+        238,
+        15,
+        238,
+        16
+      ],
+      "current_identifier_position_zero_based": [
+        238,
+        15,
+        238,
+        16
+      ],
+      "identifier_text": "C"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicEquivariantReplacementLemma55Actual.lean",
+      "name": "_private.ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.0.ModularRep.PaperProofs.SporadicEquivariantReplacementLemma55Actual.faithfulSector_smul",
+      "compiled_identifier_position_zero_based": [
+        66,
+        16,
+        66,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        66,
+        16,
+        66,
+        35
+      ],
+      "identifier_text": "faithfulSector_smul"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput",
+      "compiled_identifier_position_zero_based": [
+        46,
+        10,
+        46,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        46,
+        10,
+        46,
+        31
+      ],
+      "identifier_text": "AnDietrichSectorInput"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assemble",
+      "compiled_identifier_position_zero_based": [
+        84,
+        4,
+        84,
+        12
+      ],
+      "current_identifier_position_zero_based": [
+        84,
+        4,
+        84,
+        12
+      ],
+      "identifier_text": "assemble"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assemble_apply",
+      "compiled_identifier_position_zero_based": [
+        88,
+        8,
+        88,
+        22
+      ],
+      "current_identifier_position_zero_based": [
+        88,
+        8,
+        88,
+        22
+      ],
+      "identifier_text": "assemble_apply"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assemble_equivariant",
+      "compiled_identifier_position_zero_based": [
+        96,
+        8,
+        96,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        96,
+        8,
+        96,
+        28
+      ],
+      "identifier_text": "assemble_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assemble_preserves_blockInduction",
+      "compiled_identifier_position_zero_based": [
+        103,
+        8,
+        103,
+        41
+      ],
+      "current_identifier_position_zero_based": [
+        103,
+        8,
+        103,
+        41
+      ],
+      "identifier_text": "assemble_preserves_blockInduction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assemble_preserves_sector",
+      "compiled_identifier_position_zero_based": [
+        111,
+        8,
+        111,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        111,
+        8,
+        111,
+        33
+      ],
+      "identifier_text": "assemble_preserves_sector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assembledBlockEquiv",
+      "compiled_identifier_position_zero_based": [
+        118,
+        4,
+        118,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        118,
+        4,
+        118,
+        23
+      ],
+      "identifier_text": "assembledBlockEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assembledLocalEquiv",
+      "compiled_identifier_position_zero_based": [
+        163,
+        4,
+        163,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        163,
+        4,
+        163,
+        23
+      ],
+      "identifier_text": "assembledLocalEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assembled_characterTriple",
+      "compiled_identifier_position_zero_based": [
+        200,
+        8,
+        200,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        200,
+        8,
+        200,
+        33
+      ],
+      "identifier_text": "assembled_characterTriple"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assembled_compatibleExtensions",
+      "compiled_identifier_position_zero_based": [
+        220,
+        8,
+        220,
+        38
+      ],
+      "current_identifier_position_zero_based": [
+        220,
+        8,
+        220,
+        38
+      ],
+      "identifier_text": "assembled_compatibleExtensions"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.assembled_intermediateBlockEqualities",
+      "compiled_identifier_position_zero_based": [
+        207,
+        8,
+        207,
+        45
+      ],
+      "current_identifier_position_zero_based": [
+        207,
+        8,
+        207,
+        45
+      ],
+      "identifier_text": "assembled_intermediateBlockEqualities"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.part",
+      "compiled_identifier_position_zero_based": [
+        144,
+        4,
+        144,
+        8
+      ],
+      "current_identifier_position_zero_based": [
+        144,
+        4,
+        144,
+        8
+      ],
+      "identifier_text": "part"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.part_equivariant",
+      "compiled_identifier_position_zero_based": [
+        149,
+        8,
+        149,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        149,
+        8,
+        149,
+        24
+      ],
+      "identifier_text": "part_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.AnDietrichSectorInput.partitionEquiv",
+      "compiled_identifier_position_zero_based": [
+        157,
+        4,
+        157,
+        18
+      ],
+      "current_identifier_position_zero_based": [
+        157,
+        4,
+        157,
+        18
+      ],
+      "identifier_text": "partitionEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.Fi24AssembledClauses",
+      "compiled_identifier_position_zero_based": [
+        234,
+        10,
+        234,
+        30
+      ],
+      "current_identifier_position_zero_based": [
+        234,
+        10,
+        234,
+        30
+      ],
+      "identifier_text": "Fi24AssembledClauses"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.SpathLemma61Input",
+      "compiled_identifier_position_zero_based": [
+        64,
+        10,
+        64,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        64,
+        10,
+        64,
+        27
+      ],
+      "identifier_text": "SpathLemma61Input"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.centerFintypeAssembly",
+      "compiled_identifier_position_zero_based": [
+        28,
+        29,
+        28,
+        50
+      ],
+      "current_identifier_position_zero_based": [
+        28,
+        29,
+        28,
+        50
+      ],
+      "identifier_text": "centerFintypeAssembly"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentralSectorAssemblyLemma56Actual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentralSectorAssemblyLemma56Actual.fi24_source_shaped_assembly",
+      "compiled_identifier_position_zero_based": [
+        279,
+        4,
+        279,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        279,
+        4,
+        279,
+        31
+      ],
+      "identifier_text": "fi24_source_shaped_assembly"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24ThreeBlockCharacterTripleRetentionActual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24ThreeBlockCharacterTripleRetentionActual.CharacterTripleRetentionSource",
+      "compiled_identifier_position_zero_based": [
+        53,
+        10,
+        53,
+        40
+      ],
+      "current_identifier_position_zero_based": [
+        53,
+        10,
+        53,
+        40
+      ],
+      "identifier_text": "CharacterTripleRetentionSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24ThreeBlockCharacterTripleRetentionActual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24ThreeBlockCharacterTripleRetentionActual.centerFintype",
+      "compiled_identifier_position_zero_based": [
+        38,
+        29,
+        38,
+        42
+      ],
+      "current_identifier_position_zero_based": [
+        38,
+        29,
+        38,
+        42
+      ],
+      "identifier_text": "centerFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24ThreeBlockCharacterTripleRetentionActual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24ThreeBlockCharacterTripleRetentionActual.exists_threeBlockAutEquivariantEquiv_retaining_characterTriples",
+      "compiled_identifier_position_zero_based": [
+        93,
+        8,
+        93,
+        71
+      ],
+      "current_identifier_position_zero_based": [
+        93,
+        8,
+        93,
+        71
+      ],
+      "identifier_text": "exists_threeBlockAutEquivariantEquiv_retaining_characterTriples"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24ThreeBlockCharacterTripleRetentionActual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24ThreeBlockCharacterTripleRetentionActual.matched_stabilizers",
+      "compiled_identifier_position_zero_based": [
+        80,
+        8,
+        80,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        80,
+        8,
+        80,
+        27
+      ],
+      "identifier_text": "matched_stabilizers"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24ThreeBlockCharacterTripleRetentionActual.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24ThreeBlockCharacterTripleRetentionActual.same_sector_of_block_preserving",
+      "compiled_identifier_position_zero_based": [
+        67,
+        8,
+        67,
+        39
+      ],
+      "current_identifier_position_zero_based": [
+        67,
+        8,
+        67,
+        39
+      ],
+      "identifier_text": "same_sector_of_block_preserving"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.FaithfulCharacterTriple",
+      "compiled_identifier_position_zero_based": [
+        114,
+        7,
+        114,
+        30
+      ],
+      "current_identifier_position_zero_based": [
+        114,
+        7,
+        114,
+        30
+      ],
+      "identifier_text": "FaithfulCharacterTriple"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.ThreeSectorCoverage",
+      "compiled_identifier_position_zero_based": [
+        67,
+        10,
+        67,
+        29
+      ],
+      "current_identifier_position_zero_based": [
+        67,
+        10,
+        67,
+        29
+      ],
+      "identifier_text": "ThreeSectorCoverage"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.ThreeSectorCoverage.brauerComplementEquivFaithful",
+      "compiled_identifier_position_zero_based": [
+        125,
+        4,
+        125,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        125,
+        4,
+        125,
+        33
+      ],
+      "identifier_text": "brauerComplementEquivFaithful"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.ThreeSectorCoverage.weightComplementEquivFaithful",
+      "compiled_identifier_position_zero_based": [
+        145,
+        4,
+        145,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        145,
+        4,
+        145,
+        33
+      ],
+      "identifier_text": "weightComplementEquivFaithful"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.TrivialSectorQuotientSource",
+      "compiled_identifier_position_zero_based": [
+        80,
+        10,
+        80,
+        37
+      ],
+      "current_identifier_position_zero_based": [
+        80,
+        10,
+        80,
+        37
+      ],
+      "identifier_text": "TrivialSectorQuotientSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.anDietrichSectorInput",
+      "compiled_identifier_position_zero_based": [
+        411,
+        4,
+        411,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        411,
+        4,
+        411,
+        25
+      ],
+      "identifier_text": "anDietrichSectorInput"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.centerFintype",
+      "compiled_identifier_position_zero_based": [
+        36,
+        29,
+        36,
+        42
+      ],
+      "current_identifier_position_zero_based": [
+        36,
+        29,
+        36,
+        42
+      ],
+      "identifier_text": "centerFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv",
+      "compiled_identifier_position_zero_based": [
+        209,
+        4,
+        209,
+        14
+      ],
+      "current_identifier_position_zero_based": [
+        209,
+        4,
+        209,
+        14
+      ],
+      "identifier_text": "gluedEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv_apply_faithful",
+      "compiled_identifier_position_zero_based": [
+        235,
+        8,
+        235,
+        33
+      ],
+      "current_identifier_position_zero_based": [
+        235,
+        8,
+        235,
+        33
+      ],
+      "identifier_text": "gluedEquiv_apply_faithful"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv_apply_trivial",
+      "compiled_identifier_position_zero_based": [
+        225,
+        8,
+        225,
+        32
+      ],
+      "current_identifier_position_zero_based": [
+        225,
+        8,
+        225,
+        32
+      ],
+      "identifier_text": "gluedEquiv_apply_trivial"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv_characterTriple",
+      "compiled_identifier_position_zero_based": [
+        338,
+        8,
+        338,
+        34
+      ],
+      "current_identifier_position_zero_based": [
+        338,
+        8,
+        338,
+        34
+      ],
+      "identifier_text": "gluedEquiv_characterTriple"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv_equivariant",
+      "compiled_identifier_position_zero_based": [
+        275,
+        8,
+        275,
+        30
+      ],
+      "current_identifier_position_zero_based": [
+        275,
+        8,
+        275,
+        30
+      ],
+      "identifier_text": "gluedEquiv_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv_preserves_blockInduction",
+      "compiled_identifier_position_zero_based": [
+        316,
+        8,
+        316,
+        43
+      ],
+      "current_identifier_position_zero_based": [
+        316,
+        8,
+        316,
+        43
+      ],
+      "identifier_text": "gluedEquiv_preserves_blockInduction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedEquiv_preserves_sector",
+      "compiled_identifier_position_zero_based": [
+        251,
+        8,
+        251,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        251,
+        8,
+        251,
+        35
+      ],
+      "identifier_text": "gluedEquiv_preserves_sector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.gluedFamily",
+      "compiled_identifier_position_zero_based": [
+        360,
+        4,
+        360,
+        15
+      ],
+      "current_identifier_position_zero_based": [
+        360,
+        4,
+        360,
+        15
+      ],
+      "identifier_text": "gluedFamily"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.smul_trivialSector",
+      "compiled_identifier_position_zero_based": [
+        57,
+        8,
+        57,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        57,
+        8,
+        57,
+        26
+      ],
+      "identifier_text": "smul_trivialSector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "_private.ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.0.ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.faithfulClauses",
+      "compiled_identifier_position_zero_based": [
+        183,
+        12,
+        183,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        183,
+        12,
+        183,
+        27
+      ],
+      "identifier_text": "faithfulClauses"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialFaithfulSectorGlue.lean",
+      "name": "_private.ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.0.ModularRep.PaperProofs.SporadicFi24TrivialFaithfulSectorGlue.faithfulComplementEquiv",
+      "compiled_identifier_position_zero_based": [
+        192,
+        12,
+        192,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        192,
+        12,
+        192,
+        35
+      ],
+      "identifier_text": "faithfulComplementEquiv"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.CentrelessQuotient",
+      "compiled_identifier_position_zero_based": [
+        140,
+        10,
+        140,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        140,
+        10,
+        140,
+        28
+      ],
+      "identifier_text": "CentrelessQuotient"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.CoverBrauer",
+      "compiled_identifier_position_zero_based": [
+        73,
+        7,
+        73,
+        18
+      ],
+      "current_identifier_position_zero_based": [
+        73,
+        7,
+        73,
+        18
+      ],
+      "identifier_text": "CoverBrauer"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.CoverPair",
+      "compiled_identifier_position_zero_based": [
+        132,
+        7,
+        132,
+        16
+      ],
+      "current_identifier_position_zero_based": [
+        132,
+        7,
+        132,
+        16
+      ],
+      "identifier_text": "CoverPair"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.CoverTrivialBlock",
+      "compiled_identifier_position_zero_based": [
+        84,
+        7,
+        84,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        84,
+        7,
+        84,
+        24
+      ],
+      "identifier_text": "CoverTrivialBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.CoverWeight",
+      "compiled_identifier_position_zero_based": [
+        78,
+        7,
+        78,
+        18
+      ],
+      "current_identifier_position_zero_based": [
+        78,
+        7,
+        78,
+        18
+      ],
+      "identifier_text": "CoverWeight"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.QuotientBrauer",
+      "compiled_identifier_position_zero_based": [
+        90,
+        7,
+        90,
+        21
+      ],
+      "current_identifier_position_zero_based": [
+        90,
+        7,
+        90,
+        21
+      ],
+      "identifier_text": "QuotientBrauer"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.QuotientWeight",
+      "compiled_identifier_position_zero_based": [
+        95,
+        7,
+        95,
+        21
+      ],
+      "current_identifier_position_zero_based": [
+        95,
+        7,
+        95,
+        21
+      ],
+      "identifier_text": "QuotientWeight"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.centrelessOneSectorSource",
+      "compiled_identifier_position_zero_based": [
+        157,
+        4,
+        157,
+        29
+      ],
+      "current_identifier_position_zero_based": [
+        157,
+        4,
+        157,
+        29
+      ],
+      "identifier_text": "centrelessOneSectorSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.coverBrauerBlock",
+      "compiled_identifier_position_zero_based": [
+        100,
+        4,
+        100,
+        20
+      ],
+      "current_identifier_position_zero_based": [
+        100,
+        4,
+        100,
+        20
+      ],
+      "identifier_text": "coverBrauerBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.coverBrauerMulAction",
+      "compiled_identifier_position_zero_based": [
+        190,
+        4,
+        190,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        190,
+        4,
+        190,
+        24
+      ],
+      "identifier_text": "coverBrauerMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.coverCenterFintype",
+      "compiled_identifier_position_zero_based": [
+        39,
+        29,
+        39,
+        47
+      ],
+      "current_identifier_position_zero_based": [
+        39,
+        29,
+        39,
+        47
+      ],
+      "identifier_text": "coverCenterFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.coverWeightBlock",
+      "compiled_identifier_position_zero_based": [
+        108,
+        4,
+        108,
+        20
+      ],
+      "current_identifier_position_zero_based": [
+        108,
+        4,
+        108,
+        20
+      ],
+      "identifier_text": "coverWeightBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.coverWeightMulAction",
+      "compiled_identifier_position_zero_based": [
+        208,
+        4,
+        208,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        208,
+        4,
+        208,
+        24
+      ],
+      "identifier_text": "coverWeightMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.faithfulSector_unique",
+      "compiled_identifier_position_zero_based": [
+        146,
+        8,
+        146,
+        29
+      ],
+      "current_identifier_position_zero_based": [
+        146,
+        8,
+        146,
+        29
+      ],
+      "identifier_text": "faithfulSector_unique"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.quotientBrauerBlock",
+      "compiled_identifier_position_zero_based": [
+        116,
+        4,
+        116,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        116,
+        4,
+        116,
+        23
+      ],
+      "identifier_text": "quotientBrauerBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.quotientBrauerMulAction",
+      "compiled_identifier_position_zero_based": [
+        228,
+        4,
+        228,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        228,
+        4,
+        228,
+        27
+      ],
+      "identifier_text": "quotientBrauerMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.quotientCenterFintype",
+      "compiled_identifier_position_zero_based": [
+        43,
+        29,
+        43,
+        50
+      ],
+      "current_identifier_position_zero_based": [
+        43,
+        29,
+        43,
+        50
+      ],
+      "identifier_text": "quotientCenterFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.quotientCorrespondence",
+      "compiled_identifier_position_zero_based": [
+        271,
+        4,
+        271,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        271,
+        4,
+        271,
+        26
+      ],
+      "identifier_text": "quotientCorrespondence"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.quotientWeightBlock",
+      "compiled_identifier_position_zero_based": [
+        124,
+        4,
+        124,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        124,
+        4,
+        124,
+        23
+      ],
+      "identifier_text": "quotientWeightBlock"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.quotientWeightMulAction",
+      "compiled_identifier_position_zero_based": [
+        238,
+        4,
+        238,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        238,
+        4,
+        238,
+        27
+      ],
+      "identifier_text": "quotientWeightMulAction"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientSpecialisation.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientSpecialisation.trivialSectorQuotientSource",
+      "compiled_identifier_position_zero_based": [
+        346,
+        4,
+        346,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        346,
+        4,
+        346,
+        31
+      ],
+      "identifier_text": "trivialSectorQuotientSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentrelessOneSectorSourceReduction.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentrelessOneSectorSourceReduction.CentrelessOneSectorInput",
+      "compiled_identifier_position_zero_based": [
+        74,
+        10,
+        74,
+        34
+      ],
+      "current_identifier_position_zero_based": [
+        74,
+        10,
+        74,
+        34
+      ],
+      "identifier_text": "CentrelessOneSectorInput"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentrelessOneSectorSourceReduction.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentrelessOneSectorSourceReduction.anDietrichFaithfulSectorSource_ofCentreless",
+      "compiled_identifier_position_zero_based": [
+        127,
+        4,
+        127,
+        47
+      ],
+      "current_identifier_position_zero_based": [
+        127,
+        4,
+        127,
+        47
+      ],
+      "identifier_text": "anDietrichFaithfulSectorSource_ofCentreless"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentrelessOneSectorSourceReduction.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentrelessOneSectorSourceReduction.centerFintype",
+      "compiled_identifier_position_zero_based": [
+        42,
+        29,
+        42,
+        42
+      ],
+      "current_identifier_position_zero_based": [
+        42,
+        29,
+        42,
+        42
+      ],
+      "identifier_text": "centerFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CentrelessOneSectorSourceReduction.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CentrelessOneSectorSourceReduction.centrelessFaithfulSector",
+      "compiled_identifier_position_zero_based": [
+        58,
+        4,
+        58,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        58,
+        4,
+        58,
+        28
+      ],
+      "identifier_text": "centrelessFaithfulSector"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientPostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientPostFactory.coverCenterFintype",
+      "compiled_identifier_position_zero_based": [
+        51,
+        29,
+        51,
+        47
+      ],
+      "current_identifier_position_zero_based": [
+        51,
+        29,
+        51,
+        47
+      ],
+      "identifier_text": "coverCenterFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientPostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientPostFactory.quotientCenterFintype",
+      "compiled_identifier_position_zero_based": [
+        59,
+        29,
+        59,
+        50
+      ],
+      "current_identifier_position_zero_based": [
+        59,
+        29,
+        59,
+        50
+      ],
+      "identifier_text": "quotientCenterFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientPostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientPostFactory.quotientFintype",
+      "compiled_identifier_position_zero_based": [
+        55,
+        29,
+        55,
+        44
+      ],
+      "current_identifier_position_zero_based": [
+        55,
+        29,
+        55,
+        44
+      ],
+      "identifier_text": "quotientFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24TrivialSectorQuotientPostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24TrivialSectorQuotientPostFactory.trivialSectorQuotientSource_ofCentralIBr",
+      "compiled_identifier_position_zero_based": [
+        96,
+        4,
+        96,
+        44
+      ],
+      "current_identifier_position_zero_based": [
+        96,
+        4,
+        96,
+        44
+      ],
+      "identifier_text": "trivialSectorQuotientSource_ofCentralIBr"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CoverFaithfulGluePostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CoverFaithfulGluePostFactory.CoverFaithfulGlueInput",
+      "compiled_identifier_position_zero_based": [
+        99,
+        10,
+        99,
+        32
+      ],
+      "current_identifier_position_zero_based": [
+        99,
+        10,
+        99,
+        32
+      ],
+      "identifier_text": "CoverFaithfulGlueInput"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CoverFaithfulGluePostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CoverFaithfulGluePostFactory.anDietrichSectorInput_ofCentralIBr",
+      "compiled_identifier_position_zero_based": [
+        126,
+        4,
+        126,
+        38
+      ],
+      "current_identifier_position_zero_based": [
+        126,
+        4,
+        126,
+        38
+      ],
+      "identifier_text": "anDietrichSectorInput_ofCentralIBr"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CoverFaithfulGluePostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CoverFaithfulGluePostFactory.coverCenterFintype",
+      "compiled_identifier_position_zero_based": [
+        52,
+        29,
+        52,
+        47
+      ],
+      "current_identifier_position_zero_based": [
+        52,
+        29,
+        52,
+        47
+      ],
+      "identifier_text": "coverCenterFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CoverFaithfulGluePostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CoverFaithfulGluePostFactory.quotientCenterFintype",
+      "compiled_identifier_position_zero_based": [
+        60,
+        29,
+        60,
+        50
+      ],
+      "current_identifier_position_zero_based": [
+        60,
+        29,
+        60,
+        50
+      ],
+      "identifier_text": "quotientCenterFintype"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24CoverFaithfulGluePostFactory.lean",
+      "name": "ModularRep.PaperProofs.SporadicFi24CoverFaithfulGluePostFactory.quotientFintype",
+      "compiled_identifier_position_zero_based": [
+        56,
+        29,
+        56,
+        44
+      ],
+      "current_identifier_position_zero_based": [
+        56,
+        29,
+        56,
+        44
+      ],
+      "identifier_text": "quotientFintype"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.CriterionSource",
+      "compiled_identifier_position_zero_based": [
+        106,
+        10,
+        106,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        106,
+        10,
+        106,
+        25
+      ],
+      "identifier_text": "CriterionSource"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.RelationPassage",
+      "compiled_identifier_position_zero_based": [
+        159,
+        10,
+        159,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        159,
+        10,
+        159,
+        25
+      ],
+      "identifier_text": "RelationPassage"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.SelfCoverAmbient",
+      "compiled_identifier_position_zero_based": [
+        51,
+        10,
+        51,
+        26
+      ],
+      "current_identifier_position_zero_based": [
+        51,
+        10,
+        51,
+        26
+      ],
+      "identifier_text": "SelfCoverAmbient"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.SelfCoverAmbient.structural",
+      "compiled_identifier_position_zero_based": [
+        63,
+        4,
+        63,
+        31
+      ],
+      "current_identifier_position_zero_based": [
+        63,
+        4,
+        63,
+        31
+      ],
+      "identifier_text": "SelfCoverAmbient.structural"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.currentAutomorphisms",
+      "compiled_identifier_position_zero_based": [
+        82,
+        7,
+        82,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        82,
+        7,
+        82,
+        27
+      ],
+      "identifier_text": "currentAutomorphisms"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.currentProblem",
+      "compiled_identifier_position_zero_based": [
+        74,
+        7,
+        74,
+        21
+      ],
+      "current_identifier_position_zero_based": [
+        74,
+        7,
+        74,
+        21
+      ],
+      "identifier_text": "currentProblem"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.unipotent_bawGood",
+      "compiled_identifier_position_zero_based": [
+        143,
+        8,
+        143,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        143,
+        8,
+        143,
+        25
+      ],
+      "identifier_text": "unipotent_bawGood"
+    },
+    {
+      "path": "ManuscriptIBAW/TypeC/EvenApplicationCriterion.lean",
+      "name": "ManuscriptIBAW.TypeC.EvenApplication.unipotent_definition35",
+      "compiled_identifier_position_zero_based": [
+        165,
+        8,
+        165,
+        30
+      ],
+      "current_identifier_position_zero_based": [
+        165,
+        8,
+        165,
+        30
+      ],
+      "identifier_text": "unipotent_definition35"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/CurrentSpathFiniteSplittingDescent.lean",
+      "name": "ModularRep.CurrentSpathFiniteSplittingDescent.BlockTransport",
+      "compiled_identifier_position_zero_based": [
+        36,
+        10,
+        36,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        36,
+        10,
+        36,
+        24
+      ],
+      "identifier_text": "BlockTransport"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/CurrentSpathFiniteSplittingDescent.lean",
+      "name": "ModularRep.CurrentSpathFiniteSplittingDescent.BlockTransport.bijection",
+      "compiled_identifier_position_zero_based": [
+        91,
+        4,
+        91,
+        28
+      ],
+      "current_identifier_position_zero_based": [
+        91,
+        4,
+        91,
+        28
+      ],
+      "identifier_text": "BlockTransport.bijection"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/CurrentSpathFiniteSplittingDescent.lean",
+      "name": "ModularRep.CurrentSpathFiniteSplittingDescent.BlockTransport.bijection_equivariant",
+      "compiled_identifier_position_zero_based": [
+        98,
+        8,
+        98,
+        44
+      ],
+      "current_identifier_position_zero_based": [
+        98,
+        8,
+        98,
+        44
+      ],
+      "identifier_text": "BlockTransport.bijection_equivariant"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/CurrentSpathFiniteSplittingDescent.lean",
+      "name": "ModularRep.CurrentSpathFiniteSplittingDescent.CoefficientAdequacy",
+      "compiled_identifier_position_zero_based": [
+        118,
+        4,
+        118,
+        23
+      ],
+      "current_identifier_position_zero_based": [
+        118,
+        4,
+        118,
+        23
+      ],
+      "identifier_text": "CoefficientAdequacy"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/CurrentSpathFiniteSplittingDescent.lean",
+      "name": "ModularRep.CurrentSpathFiniteSplittingDescent.Source",
+      "compiled_identifier_position_zero_based": [
+        132,
+        10,
+        132,
+        16
+      ],
+      "current_identifier_position_zero_based": [
+        132,
+        10,
+        132,
+        16
+      ],
+      "identifier_text": "Source"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/CurrentSpathFiniteSplittingDescent.lean",
+      "name": "ModularRep.CurrentSpathFiniteSplittingDescent.current_corollary_2_5_block",
+      "compiled_identifier_position_zero_based": [
+        150,
+        8,
+        150,
+        35
+      ],
+      "current_identifier_position_zero_based": [
+        150,
+        8,
+        150,
+        35
+      ],
+      "identifier_text": "current_corollary_2_5_block"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeBCurrentBrauerSource.lean",
+      "name": "ModularRep.PaperProofs.TypeBCurrentBrauerHypothesis.LeviGeometry",
+      "compiled_identifier_position_zero_based": [
+        85,
+        10,
+        85,
+        22
+      ],
+      "current_identifier_position_zero_based": [
+        87,
+        10,
+        87,
+        22
+      ],
+      "identifier_text": "LeviGeometry"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeBCurrentBrauerSource.lean",
+      "name": "ModularRep.PaperProofs.TypeBCurrentBrauerHypothesis.LeviLocalSource",
+      "compiled_identifier_position_zero_based": [
+        100,
+        10,
+        100,
+        25
+      ],
+      "current_identifier_position_zero_based": [
+        102,
+        10,
+        102,
+        25
+      ],
+      "identifier_text": "LeviLocalSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeBCurrentBrauerSource.lean",
+      "name": "ModularRep.PaperProofs.TypeBCurrentBrauerHypothesis.LeviSource",
+      "compiled_identifier_position_zero_based": [
+        130,
+        10,
+        130,
+        20
+      ],
+      "current_identifier_position_zero_based": [
+        132,
+        10,
+        132,
+        20
+      ],
+      "identifier_text": "LeviSource"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeCCurrentOddPrimeLiSource.lean",
+      "name": "ModularRep.PaperProofs.TypeCCurrentOddPrimeLiSource.Li55SplittingCertificate",
+      "compiled_identifier_position_zero_based": [
+        34,
+        10,
+        34,
+        34
+      ],
+      "current_identifier_position_zero_based": [
+        34,
+        10,
+        34,
+        34
+      ],
+      "identifier_text": "Li55SplittingCertificate"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeCCurrentOddPrimeLiSource.lean",
+      "name": "ModularRep.PaperProofs.TypeCCurrentOddPrimeLiSource.extensionClauses",
+      "compiled_identifier_position_zero_based": [
+        74,
+        8,
+        74,
+        24
+      ],
+      "current_identifier_position_zero_based": [
+        74,
+        8,
+        74,
+        24
+      ],
+      "identifier_text": "extensionClauses"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeCCurrentOddPrimeLiSource.lean",
+      "name": "ModularRep.PaperProofs.TypeCCurrentOddPrimeLiSource.rawNormalizerClause",
+      "compiled_identifier_position_zero_based": [
+        57,
+        8,
+        57,
+        27
+      ],
+      "current_identifier_position_zero_based": [
+        57,
+        8,
+        57,
+        27
+      ],
+      "identifier_text": "rawNormalizerClause"
+    },
+    {
+      "path": "packages/ModularRep/ModularRep/PaperProofs/TypeCCurrentOddPrimeLiSource.lean",
+      "name": "ModularRep.PaperProofs.TypeCCurrentOddPrimeLiSource.standardFamily",
+      "compiled_identifier_position_zero_based": [
+        49,
+        4,
+        49,
+        18
+      ],
+      "current_identifier_position_zero_based": [
+        49,
+        4,
+        49,
+        18
+      ],
+      "identifier_text": "standardFamily"
+    }
+  ],
+  "scope": "Identifier positions from fresh compiler interface files, translated only through proved-identical noncomment segments. Documentation ranges inside changed comments are not asserted unchanged."
+}

@@ -1,0 +1,1061 @@
+{
+  "schema_version": 2,
+  "manuscript_path": "manuscript/current/main.tex",
+  "manuscript_sha256": "bf84e40ba14ac1ba46aad1279df15b6d9f61b2da97b35cca3cdbd481dd28871d",
+  "offset_basis": "Unicode characters after newline normalization and comment removal",
+  "scope": "Current manuscript index and editorial correspondence. The mapped deductions retain their stated external assumptions. This index does not establish their truth, independence or joint satisfiability.",
+  "proofs": [
+    {
+      "id": "current-proof-001",
+      "line": 307,
+      "start_offset": 15147,
+      "end_offset": 15875,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:linear-block-stabilizer"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $Z_{\\ell'}$ be the subgroup of $Z(G)$ consisting of its\n$\\ell$-regular elements. Since $Z_{\\ell'}$ is a central\n$\\ell'$-subgroup, all characters in $\\IBr(b)$ lie over the same character\n$\\nu\\in\\IBr(Z_{\\ell'})$. For $\\lambda\\in C_b$, tensoring preserves\n$b$, so $(\\lambda^0|_{Z_{\\ell'}})\\nu=\\nu$. Thus $\\lambda$ is\ntrivial on $Z_{\\ell'}$. Its $\\ell'$-order also makes it trivial on\n$O_\\ell(Z(G))$, and hence on $Z(G)$. Since $\\lambda$ is already trivial on $N$, it factors through\n$G/NZ(G)$. Thus $|C_b|\\leq |G:NZ(G)|$.\nReduction identifies ordinary linear characters of $\\ell'$-order\nwith linear Brauer characters and commutes with tensoring, so the\nsame argument applies to their action on blocks.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "1d4fffd37f61327480929147412445248605b3d722ffe4b73157021da3df6270"
+    },
+    {
+      "id": "current-proof-002",
+      "line": 429,
+      "start_offset": 21283,
+      "end_offset": 21532,
+      "title_tex": null,
+      "associated_labels": [
+        "cor:fixed-point-descent"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nApply \\cite[Proposition~4.6(a)--(c)]{Spath2013} with $K=S$,\n$G=\\Aut(S)$ and $r=1$. The resulting blockwise bijections satisfy\nthe character triple condition by\n\\cite[Proposition~3.6(b) and Theorem~3.5(b)]{Spath2017Triples}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0035",
+        "current-citation-0036"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "a9867e1616ad95fae5996a4d39b68f94eeab8fbb447de8b4d243cd434dd614c5"
+    },
+    {
+      "id": "current-proof-003",
+      "line": 448,
+      "start_offset": 22079,
+      "end_offset": 23354,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-normal-core"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nSince $P$ is central in $G$, the block correspondence for\n$G\\longrightarrow\\overline G$ identifies the irreducible Brauer\ncharacters of $b$ and $\\overline b$ under inflation\n\\cite[Theorem~9.10]{Navarro1998}.\nEvery $\\ell$-radical subgroup $Q$ of $G$ contains $P$. Writing\n$\\overline Q=Q/P$, the map $Q\\longmapsto\\overline Q$ gives a bijection\nbetween the $\\ell$-radical subgroups of $G$ and $\\overline G$, with\n\\[\n N_G(Q)/Q\\cong N_{\\overline G}(\\overline Q)/\\overline Q.\n\\]\nBy \\cite[Lemma~2.1]{FengLiZhang2019} and the block correspondence above,\nthese identifications also give a bijection between $\\Alp(b)$ and\n$\\Alp(\\overline b)$. All these maps commute with the action of $A$.\n\nComposing these correspondences with the given iBAW bijection for\n$\\overline b$ gives an $A$-equivariant bijection\n$\\IBr(b)\\longrightarrow\\Alp(b)$. For $\\chi\\in\\IBr(b)$, let\n$(Q,\\varphi)$ represent its image. Then $P$ is\nnormal in $A_\\chi$, lies in $N_G(Q)$, and is contained\nin the kernels of $\\chi$ and $\\varphi^0$.\nThe quotient maps identify $A_\\chi/P$ and $N_A(Q)_\\varphi/P$ with\nthe corresponding stabilisers in $\\overline A$.\nHence \\cite[Lemma~3.14]{MartinezRizoRossi2026} lifts the required\nblock isomorphism of modular character triples, proving the assertion.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0038",
+        "current-citation-0039",
+        "current-citation-0040"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "5b64407f50de6155fc9034b346333daf5a4d4d059c8596d9d6e1b6f024289bf9"
+    },
+    {
+      "id": "current-proof-004",
+      "line": 529,
+      "start_offset": 25844,
+      "end_offset": 26055,
+      "title_tex": null,
+      "associated_labels": [
+        "cor:conlon-mark"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nEvery subgroup of $A$ is $r$-hypoelementary. Conlon's theorem therefore\ngives $|Y^U|=|Y'^U|$ for every $U\\leq A$. The injectivity of the mark\nhomomorphism gives $Y\\cong Y'$ as $A$-sets.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "1c3eaaddc9d45aa5c110a1a85e2e28b32e3921c8df14617125b5dc7671bde703"
+    },
+    {
+      "id": "current-proof-005",
+      "line": 554,
+      "start_offset": 26892,
+      "end_offset": 27189,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:basicset-bridge"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nBy the definition of an integral basic set, this restriction is an\nisomorphism of $\\Z$-modules.  Its $A$-equivariance makes it an isomorphism\nof $\\Z A$-permutation lattices.\nIf $A$ is $2$-hypoelementary, extend scalars to $\\Z_2$ and apply\nCorollary~\\ref{cor:conlon-mark}.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "375d64adcbedc15ef4fbaaae4120699c79b0e0f1b493b09001f7801e5a771269"
+    },
+    {
+      "id": "current-proof-006",
+      "line": 569,
+      "start_offset": 27468,
+      "end_offset": 27618,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:cyclic-extension"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nApply \\cite[Corollary~11.22]{Isaacs1976} for ordinary characters and\n\\cite[Theorem~8.12]{Navarro1998} for Brauer characters.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0047",
+        "current-citation-0048"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "b917fc4a7863fadc020afa904f1c0953c46fff2a2f57c32179d475cc056ed394"
+    },
+    {
+      "id": "current-proof-007",
+      "line": 589,
+      "start_offset": 28200,
+      "end_offset": 29640,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:cyclic-outer-baw"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nApply Brough--Sp\\\"ath's criterion\n\\cite[Theorem~3.18]{FengLiZhang2022Jordan} with\n$\\widetilde G=G$, $\\mathcal B=\\{b\\}$, and\n$\\Omega=\\widetilde\\Omega=\\Omega_b$.\nThe group $G$ is perfect, $E$ is abelian, and\n$C_{G\\rtimes E}(G)=1=Z(G)$, so conditions~\\textup{(i)(a)} and\n\\textup{(i)(b)} of the criterion hold.\nInner automorphisms act trivially on $\\IBr(b)$ and on the $G$-classes\nof weights, so $\\Omega_b$ is $G\\rtimes E$-equivariant.\nFor $\\varphi\\in\\IBr(b)$, the quotient\n$(G\\rtimes E)_\\varphi/G$ is cyclic, so\nLemma~\\ref{lem:cyclic-extension} extends $\\varphi$ to its stabiliser.\nChoose a representative $(Q,\\theta)$ of $\\Omega_b(\\varphi)$.\nIdentifying $\\theta$ with its inflation to $N_{G}(Q)$, we have\n$\\bl(\\varphi)=\\bl(\\theta)^{G}=b$ because $(Q,\\theta)$ belongs to $b$.\nThis verifies the block induction condition~\\textup{(iii)(c)} of the\ncriterion.\n\nSet $D=(G\\rtimes E)_{Q,\\theta}$.\nThen $D\\cap G=N_{G}(Q)$ and $D/N_{G}(Q)$ embeds in $E$.\nThe irreducible Brauer reduction $\\theta^0$ of $\\theta$, viewed as a\ncharacter of $N_{G}(Q)/Q$, is $D/Q$-invariant.\nLemma~\\ref{lem:cyclic-extension} extends it to $D/Q$, and inflation\ngives the required extension to $D$.\nSince $G=\\widetilde G$ and $Z(G)=1$, the remaining conditions on\nrestriction, covering, central characters and stabiliser products are\nimmediate, and the extensions within $\\widetilde G$ are given by the\ncharacters themselves.  Hence $b$ is BAW-good.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0050"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "402a02af8af162f66605ae0b1f9c36f6f689b9e5d1a30727af5e0484b0c8d836"
+    },
+    {
+      "id": "current-proof-008",
+      "line": 821,
+      "start_offset": 39537,
+      "end_offset": 39996,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:jordan-reduction"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nIn \\cite[Section~5]{FengLiZhang2022Jordan}, the group $A$ is chosen after\nfixing the semisimple element $s$. Condition~\\textup{(i)} supplies\n\\cite[Assumption~5.3]{FengLiZhang2022Jordan} for this choice $A_s$, for\neach $s$, as required by \\cite[Hypothesis~5.5(a)]{FengLiZhang2022Jordan}.\nCondition~\\textup{(ii)} is \\cite[Hypothesis~5.5(b)]{FengLiZhang2022Jordan}.\nThe conclusion follows from \\cite[Theorem~5.7]{FengLiZhang2022Jordan}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0074",
+        "current-citation-0075",
+        "current-citation-0076",
+        "current-citation-0077",
+        "current-citation-0078"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "4a46bab91296e00c4a5efbba65076c744acf98f5286d7bfdd680e497ce18d497"
+    },
+    {
+      "id": "current-proof-009",
+      "line": 882,
+      "start_offset": 42525,
+      "end_offset": 56531,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:odd-two"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nBy \\cite[Theorem~1.1]{LiLi2019}, $\\PSp_4(q_0)$ satisfies iBAW\nat $2$ for every odd prime power $q_0$. This proves the assertion\nwhen $n=2$. For later use in condition~\\textup{(ii)} of\nLemma~\\ref{lem:jordan-reduction}, we also need an iBAW bijection\nfor the principal $2$-block of $\\Sp_4(q_0)$.\nLet $K=\\Sp_4(q_0)$ and $\\overline K=K/Z(K)$.\nCorollary~\\ref{cor:fixed-point-descent}, applied to $\\overline K$,\ngives an iBAW bijection for its principal $2$-block.\nSince $O_2(K)=Z(K)$ and $\\Aut(K)\\cong\\Aut(\\overline K)$,\nLemma~\\ref{lem:type-b-normal-core}, applied with $G=K$,\n$P=Z(K)$ and $A=K\\rtimes\\Aut(K)$, lifts this bijection to the\nprincipal $2$-block of $K$.\n\n\\enlargethispage{2pt}\nAssume henceforth that $n\\geq3$.\nWe now establish the principal block result in higher rank.\nLet $G_0=\\Sp_{2m}(q_0)$, where $q_0$ is an odd prime power and\n$m\\geq3$, and let $B_1$ be its principal $2$-block.\nIn the notation of \\cite[Section~5]{FengMalle2022}, this is the\nblock labelled by $s=1$.\nLet $(R,\\varphi)$ be a weight belonging to $B_1$.\nBy \\cite[Lemma~2.3]{FengYuZhang2024},\n$Z(R)\\in\\Syl_2(C_{G_0}(R))$.\nBy \\cite[Theorem~3.37]{FengYuZhang2024}, choose a decomposition of\n$R$ as a direct product of basic subgroups in the classification used there, each acting on its\ncorresponding summand in an orthogonal decomposition of the natural\nmodule.\nThe omitted family does not occur in a principal weight\n\\cite[Remark~3.50]{FengYuZhang2024}. Indeed, suppose that a factor from this\nfamily occurs in the decomposition.\nBy \\cite[Proposition~3.48(4)]{FengYuZhang2024}, it has the form\n$R^{0,-}_{d,1,1,\\mathbf c}$ with $d$ even.  Let\n\\[\n R_0=I_W\\otimes E_-^3\\leq\\Sp(W\\otimes U),\n\\]\nwhere $W$ is a nondegenerate orthogonal space over $\\F_{q_0}$ of even\ndimension $d\\geq2$ and nonsquare discriminant, and\n$E_-^3\\cong Q_8$ acts on its symplectic module $U$.\nThe group $E_-^3$ acts trivially on $W$.  Thus, as an $E_-^3$-module,\n$W\\otimes U$ is a direct sum of $d$ copies of $U$, with multiplicity space $W$.\nThe omitted factor is a wreath product whose base group is a direct\nproduct of copies of $R_0$. Choose a nonscalar orthogonal reflection\n$t$ of $W$, acting as $-1$ on a nonsingular line and as $1$ on its\northogonal complement. On the summand corresponding to this factor, set\n$\\widehat t=\\operatorname{diag}(t\\otimes I_U,\\ldots,t\\otimes I_U)$.  This is a symplectic\ninvolution which centralises each copy of $R_0$ and the coordinate\npermutations.  Extending it by the identity on the other summands gives\n  $\\widehat t\\in C_{G_0}(R)$.  It does not lie in $R$: its permutation part is\ntrivial, while its action on the multiplicity space $W$ is nonscalar.\n  Thus $\\langle Z(R),\\widehat t\\rangle$ is a $2$-subgroup of $C_{G_0}(R)$\nproperly containing $Z(R)$, a contradiction. Together with the other\nexclusions in \\cite[Remark~3.50]{FengYuZhang2024}, this leaves cases~(3) and~(6) of\n\\cite[Proposition~3.48]{FengYuZhang2024}.\nUp to conjugacy, the basic subgroups in these cases are those attached to\nthe elementary divisor $\\Gamma=x-1$ in \\cite[Section~5.1]{FengMalle2022}.\nThat section also describes the irreducible characters of $2$-defect zero\nof their normaliser quotients, with normalisers taken in the symplectic\ngroups on the corresponding summands.  To specialise this parametrisation to $B_1$, recall that its\nsemisimple label is $s=1$.  Consequently, $m_\\Gamma(1)=w_\\Gamma(1)=0$ for\nevery elementary divisor $\\Gamma\\in\\mathcal F_1\\cup\\mathcal F_2$.  Thus the product\nof the sets $\\mathcal P(w_\\Gamma)$ over these elementary divisors in\n\\cite[Proposition~5.4]{FengMalle2022} is a singleton, and only the\nparameters associated with the elementary divisor $\\Gamma=x-1$ occur.  In particular, the cases involving the corrected\n$E_{d_\\Gamma,1,1}$ factor do not enter the calculation for the principal\nblock.  By \\cite[Proposition~3.48]{FengYuZhang2024},\nevery remaining factor of type $R^0$ has multiplicity space of dimension\none. Its isometry group is therefore $\\{I,-I\\}$, as in the centraliser\ncalculation in \\cite[proof of Proposition~3.48]{FengYuZhang2024}.\nEqual factors may still occur repeatedly in the direct product\ndecomposition of $R$. For these repeated factors, we use\nthe construction of characters of wreath products in \\cite[(6D)]{An1993},\nrecalled after \\cite[Proposition~5.4]{FengMalle2022}.  This construction assigns to\neach irreducible character of $2$-defect zero of the corresponding normaliser\nquotient a partition of the form $(r,r-1,\\ldots,1)$ for some $r\\geq 0$,\nwith the empty partition understood when $r=0$.  Its size is\n$r(r+1)/2$, a triangular number.  The sizes of these partitions\nsum to the number of copies of the corresponding basic subgroup.\nThis sum need not be triangular, as the example in\nRemark~\\ref{rem:triangular-multiplicity} shows.\n\nLet $(R,\\varphi)$ be a pair produced by this construction, with\n$\\varphi\\in\\dz(N_{G_0}(R)/R)$.\nIn each of the two remaining families, a basic subgroup, including its\nwreath extension, has centraliser $\\{I,-I\\}$ on its corresponding summand\n\\cite[p.~198]{An1993}.\nThe central elements acting as $-I$ on one summand and as $I$ on all the\nothers force every element of $C_{G_0}(R)$ to preserve each summand.  Thus $C_{G_0}(R)=Z(R)$, so $Z(R)$ is a Sylow $2$-subgroup\nof $C_{G_0}(R)$ and $RC_{G_0}(R)=R$.\nThe inflation of $\\varphi$ to $N_{G_0}(R)$ has $R$ in its kernel\nand has defect zero on $N_{G_0}(R)/(RC_{G_0}(R))$.\nHence \\cite[Lemma~2.3]{FengYuZhang2024} shows that\n$(R,\\varphi)$ is a weight belonging to $B_1$.\nThe construction following \\cite[Proposition~5.4]{FengMalle2022}\nrecovers from each $x-1$ parameter the conjugacy types and\nmultiplicities of the basic factors and the character $\\varphi$.\nThe $G_0$-conjugacy class of $(R,\\varphi)$ also determines\nits parameter. Thus this construction identifies $\\Alp(B_1)$\nwith the $x-1$ parameter set.\n\n\\enlargethispage{3pt}For the principal block Brauer character calculation, we use\n\\cite[Corollary~4.3]{FengMalle2022}.\nThe required unitriangularity is stated in\n\\cite[Theorem~2.9]{Chaneb2021} for every odd $q_0$.\nIts proof uses the character selection in\n\\cite[Proposition~2.8]{Chaneb2021}, based on\n\\cite[Proposition~4.3]{GeckHezard2008} and\n\\cite[Proposition~5.4]{Taylor2013}.\nWe verify this character selection for the families used in the automorphism\nargument in \\cite[Section~4.1]{FengMalle2022}.\nLet $\\mathbf G_0=\\Sp_{2m}\\subseteq\\mathbf H=\\CSp_{2m}$,\nwith the split Frobenius endomorphism $F_0$ defining the given\ngroup $G_0$, and set $H=\\mathbf H^{F_0}$.\nThe partition parametrisation shows that every geometric unipotent\nclass of $\\mathbf H$ is stable under $F_0$.\nFor each such class $\\mathcal C$,\nLemma~\\ref{lem:symplectic-gggr-selection} supplies the characters\nof $H$ with the required Kronecker delta scalar products.\nFor unipotent elements $u\\in\\mathbf G_0$, the component groups\n$A_{\\mathbf G_0}(u)$ are elementary abelian $2$-groups \\cite[proof of Proposition~2.4]{Taylor2013}.\nFor each geometric unipotent class, choose a representative as in\n\\cite[Definition~2.1]{Taylor2013}, which is possible by\nProposition~2.8 of the same paper.\nFor the split pair $(\\widetilde s,\\mathcal F)$ selected in\nLemma~\\ref{lem:symplectic-gggr-selection}, the symbols in any type\n$\\mathsf D$ factor of the selected family are nondegenerate. Hence\nthe argument in\n\\cite[10.3]{Taylor2014Maximal} gives condition~\\textup{(P5)} of\n\\cite[Theorem~3.2]{Taylor2013}.\n\nWe follow the restriction argument in the proof of\n\\cite[Proposition~5.4]{Taylor2013}, using\nLemma~\\ref{lem:symplectic-gggr-selection} for the selection\nsupplied there by \\cite[Proposition~4.3]{GeckHezard2008}.\nThe induction identity for generalised Gelfand--Graev characters\n\\cite[proof of Lemma~14.12]{Taylor2016}, compatibility of Alvis--Curtis duality\nwith restriction \\cite[Proposition~3.4.3]{GeckMalle2020}, Frobenius reciprocity\nand condition~\\textup{(P5)} of \\cite[Theorem~3.2]{Taylor2013}\ngive the required scalar products on restriction to $G_0$.\nThe class count and Clifford theory argument in the proof of\n\\cite[Proposition~5.4]{Taylor2013} match the irreducible constituents\nwith the $G_0$-classes contained in each $H$-class.\n\nThe selected characters have unipotent support $\\mathcal C$ by the\nproof of Lemma~\\ref{lem:symplectic-gggr-selection} in\nAppendix~\\ref{app:gggr-proofs}, and so do their restriction constituents \\cite[Example~2.7.18]{GeckMalle2020}.\nThese constituents lie in $\\mathcal E(G_0,s)$, where $s$ is the\nimage of $\\widetilde s$ in $(\\mathbf G_0^*)^{F_0}$, by\n\\cite[Proposition~2.6.16]{GeckMalle2020}.\nSince $s^2=1$ and Alvis--Curtis duality preserves rational Lusztig\nseries \\cite[Proposition~9.8(iv)]{CabanesEnguehard2004}, these\nconstituents and their duals belong to $B_1$ by\n\\cite[Theorem~21.14]{CabanesEnguehard2004}.\nTogether with the vanishing results for wave front sets in\n\\cite[Lemma~14.15 and Proposition~15.2]{Taylor2016}, this gives\nthe identity diagonal blocks and the vanishing entries used in\n\\cite[Theorem~2.9]{Chaneb2021}.\nThus, for $m\\geq3$ and every odd $q_0$, this establishes the\ncharacter selection and unitriangularity used in the principal\nblock argument of \\cite[Section~4.1]{FengMalle2022}.\n\nFor the principal $x-1$ parameters obtained above,\n\\cite[Lemma~5.1]{FengMalle2022} gives the field and diagonal actions on\nthe characters of the normaliser quotients of the basic subgroups. Applying these actions\nto the wreath product construction, as in the proof of\n\\cite[Proposition~5.5]{FengMalle2022}, gives the weight actions described\nin \\cite[Proposition~5.9]{FengMalle2022}.\nTogether with \\cite[Corollary~4.3]{FengMalle2022}, the counting arguments in\n\\cite[Proposition~6.1 and the proof of Theorem~6.2]{FengMalle2022} show that\n$\\IBr(B_1)$ and $\\Alp(B_1)$ have equal cardinalities and equal numbers of\nelements fixed by the nontrivial diagonal outer automorphism, while field\nautomorphisms fix both sets pointwise.  Matching the diagonal orbits of\nsizes one and two gives an $\\Aut(G_0)$-equivariant bijection from\n$\\IBr(B_1)$ to $\\Alp(B_1)$.\nSet $Z_0=Z(G_0)$ and $\\overline G_0=G_0/Z_0$.\nThe correspondences in the proof of Lemma~\\ref{lem:type-b-normal-core},\nwith $P=Z_0$, give a corresponding\n$\\Aut(\\overline G_0)$-equivariant bijection for the principal\n$2$-block of $\\overline G_0$.\nFor $B_1$, the equivariant bijection gives condition~(1) of\n\\cite[Proposition~3.4]{FengMalle2022}, and the trivial action of field\nautomorphisms gives conditions~(2) and~(3).  The blockwise argument in the\nproof of that proposition therefore verifies the inductive BAW condition\nfor the principal block of $\\overline G_0$.\nApply Lemma~\\ref{lem:type-b-normal-core} with\n$G=G_0$, $P=Z_0=O_2(G_0)$ and $A=G_0\\rtimes\\Aut(G_0)$.\nThe required iBAW bijection for the principal block of $\\overline G_0$ follows\nfrom Theorem~\\ref{thm:spath-triples}, using the natural isomorphism\n$\\Aut(G_0)\\cong\\Aut(\\overline G_0)$.\nThus $B_1$ admits the required iBAW bijection.\n\nLet $\\mathbf G$ be a simply connected algebraic group of type $\\mathsf C_n$\nwith Frobenius endomorphism $F$ such that\n$\\mathbf G^F=G=\\Sp_{2n}(q)$.  We verify the two assumptions of\nLemma~\\ref{lem:jordan-reduction} at $\\ell=2$.\nFor each semisimple $2'$-element $s\\in(\\mathbf G^*)^F$, conjugate the Levi\nsubgroup associated with $s$ and its series idempotent by a suitable element\nof $G$. By \\cite[Corollary~4.2 and Lemmas~4.3 and~4.5]{Ruhstorfer2022Derived},\nthe group $A_s$ in condition~\\textup{(i)} of Lemma~\\ref{lem:jordan-reduction}\ncan then be chosen inside the field automorphism group. By \\cite[Corollary~4.6]{FengMalle2022}, if a diagonal\nautomorphism and a field automorphism have the same action on a Brauer\ncharacter, then both fix it. Thus, for $\\widetilde G=\\CSp_{2n}(q)$,\n\\[\n (\\widetilde G A_s)_\\psi=\\widetilde G_\\psi(A_s)_\\psi\n \\qquad(\\psi\\in\\IBr(G)).\n\\]\nSince $(A_s)_\\psi$ is cyclic, Lemma~\\ref{lem:cyclic-extension} gives\nthe required extension.\nA connected Dynkin subdiagram of\n$\\mathsf C_n$ has type $\\mathsf A_r$ or $\\mathsf C_r$.\nLet $\\mathbf K$ and $F'$ be as in condition~\\textup{(ii)} of\nLemma~\\ref{lem:jordan-reduction}. If $\\mathbf K$ has type $\\mathsf A_r$,\nthen $\\mathbf K^{F'}$ is a special linear or unitary group.\nThe result for special linear and unitary groups established after\nLemma~\\ref{lem:jordan-reduction} gives the required iBAW bijections\nfor its $2$-blocks.\nThis also covers type~$\\mathsf C_1$, since $\\mathsf C_1=\\mathsf A_1$.\n\nSuppose now that $\\mathbf K$ has type $\\mathsf C_r$, where $r\\geq2$,\nand let $c$ be a strictly quasi-isolated $2$-block of $\\mathbf K^{F'}$.  Choose a strictly\nquasi-isolated semisimple $2'$-element $s\\in\\mathbf K^{*F'}$ such that\n$\\Irr(c)\\subseteq\\mathcal E_2(\\mathbf K^{F'},s)$, where\n$\\mathbf K^*\\cong\\operatorname{SO}_{2r+1}$.\nSince $s$ is quasi-isolated and the defining characteristic is odd,\n\\cite[Proposition~4.11(a)]{Bonnafe2005} gives $s^2=1$.  The element $s$\nhas odd order, so $s=1$.  Thus $c$ is the principal $2$-block, the unique\nunipotent $2$-block of $\\mathbf K^{F'}$\n\\cite[Theorem~21.14]{CabanesEnguehard2004}.  We have $\\mathbf K^{F'}\\cong\\Sp_{2r}(q_0)$ for an odd prime\npower $q_0$. If $r=2$, the rank two construction at the start\nof this proof gives an iBAW bijection for $c$.\nIf $r\\geq3$, the principal block result proved above, applied\nwith $m=r$, gives such a bijection.\nHence both hypotheses of Lemma~\\ref{lem:jordan-reduction} hold.\n\nSince $G$ is the full universal covering group of $S$,\nLemma~\\ref{lem:jordan-reduction} shows that every $2$-block of $G$ is\nBAW-good. Applying Remark~\\ref{rem:block-aggregation}\\textup{(b)} to the blockwise\nequivariant bijections gives an $\\Aut(G)$-equivariant\nbijection $\\IBr(G)\\longrightarrow\\Alp(G)$ that preserves blocks.\nThis verifies condition~\\textup{(1)} of Feng and Malle's criterion\n\\cite[Proposition~3.4]{FengMalle2022}.  Condition~\\textup{(2)} follows\nfrom \\cite[Corollary~4.6]{FengMalle2022}, and\n\\cite[Remark~3.5]{FengMalle2022} then gives condition~\\textup{(3)}.\nThe criterion therefore shows that $S$ satisfies iBAW at $2$ on\n$X_2(S)=S$.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0087",
+        "current-citation-0088",
+        "current-citation-0089",
+        "current-citation-0090",
+        "current-citation-0091",
+        "current-citation-0092",
+        "current-citation-0093",
+        "current-citation-0094",
+        "current-citation-0095",
+        "current-citation-0096",
+        "current-citation-0097",
+        "current-citation-0098",
+        "current-citation-0099",
+        "current-citation-0100",
+        "current-citation-0101",
+        "current-citation-0102",
+        "current-citation-0103",
+        "current-citation-0104",
+        "current-citation-0105",
+        "current-citation-0106",
+        "current-citation-0107",
+        "current-citation-0108",
+        "current-citation-0109",
+        "current-citation-0110",
+        "current-citation-0111",
+        "current-citation-0112",
+        "current-citation-0113",
+        "current-citation-0114",
+        "current-citation-0115",
+        "current-citation-0116",
+        "current-citation-0117",
+        "current-citation-0118",
+        "current-citation-0119",
+        "current-citation-0120",
+        "current-citation-0121",
+        "current-citation-0122",
+        "current-citation-0123",
+        "current-citation-0124",
+        "current-citation-0125",
+        "current-citation-0126",
+        "current-citation-0127",
+        "current-citation-0128",
+        "current-citation-0129",
+        "current-citation-0130",
+        "current-citation-0131",
+        "current-citation-0132",
+        "current-citation-0133",
+        "current-citation-0134",
+        "current-citation-0135",
+        "current-citation-0136",
+        "current-citation-0137",
+        "current-citation-0138",
+        "current-citation-0139"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "598b0d85ff5c9e20526c247f0e0c2d1ff3fe3bdc3e3085ae145f3a6e41421307"
+    },
+    {
+      "id": "current-proof-010",
+      "line": 1167,
+      "start_offset": 58595,
+      "end_offset": 59038,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:rank-two"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nWrite $q=p^f$, and let $\\ell$ be a prime dividing $|S|$.\nIf $\\ell=p$, the result follows from \\cite[Theorem~C]{Spath2013}.\nIf $q$ is odd, the result for every $\\ell\\neq p$ is proved in\n\\cite[Theorem~1.1]{LiLi2019}, with the cases $\\ell\\mid q^2-1$\nalso proved by Brough and Schaeffer Fry\n\\cite[Theorem~1.1]{BroughSchaefferFry2020}.\nIf $\\ell\\neq p$ and $q$ is even, it follows from\n\\cite[Theorem~5.5]{SchaefferFry2014}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0146",
+        "current-citation-0147",
+        "current-citation-0148",
+        "current-citation-0149"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "c8daa249469b74d805490d05120e3439c416ee18ccf3b553d340fdf4becb2a0b"
+    },
+    {
+      "id": "current-proof-011",
+      "line": 1221,
+      "start_offset": 61187,
+      "end_offset": 69355,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:even-field-fixed"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nBy \\cite[Theorem~4.4(iii)]{CabanesEnguehard1994}, the characters in\n$\\Irr(C)$ lie in rational Lusztig series labelled by semisimple\n$\\ell$-elements.  The disjointness of these series therefore gives\n$\\mathcal X_C=\\Irr(C)\\cap\\mathcal E(H,1)$.\nBy \\cite[Theorem~4.4(i)]{CabanesEnguehard1994}, this is the generalised\n$e$-Harish-Chandra series belonging to $C$.\nSince field automorphisms fix the unipotent characters of $H$\n\\cite[p.~700]{CabanesSpath2013}, the group $E_H$\nfixes $\\mathcal X_C$ pointwise.\n\nLet $(\\mathbf T,\\eta)$ represent an element of $\\mathcal W(C)$\nand set $\\mathbf M=C_{\\mathbf H}(\\mathbf T)$.\nBy the definition of a generic weight,\n$\\mathbf T=Z^\\circ(\\mathbf M)_{\\phi_e}$ and there is an\n$e$-JGC character $\\lambda\\in\\mathcal E(\\mathbf M^{F'},\\ell')$\nsuch that $\\eta\\in\\Irr\\bigl(N_H(\\mathbf T)\\mid\\lambda\\bigr)$\nand some $\\chi\\in\\Irr(C)$ occurs in the Lusztig induction of\n$\\lambda$ to $H$.\nSince $\\mathbf M=C_{\\mathbf H}(\\mathbf T)$ and\n$\\mathbf T=Z^\\circ(\\mathbf M)_{\\phi_e}$, we have\n$N_H(\\mathbf T)=N_H(\\mathbf M)$.\nBy compatibility of Lusztig induction with rational Lusztig series\n\\cite[Proposition~15.7]{CabanesEnguehard2004}, every constituent of the\nLusztig induction of $\\lambda$ lies in a series labelled by an\n$\\ell'$-element. Hence $\\chi\\in\\mathcal X_C$.\nSince $\\mathcal X_C\\subseteq\\mathcal E(H,1)$, the same compatibility\nforces the semisimple label of $\\lambda$ to be trivial, so $\\lambda$\nis unipotent.\n\n  Let $\\sigma\\in E_H$ be arbitrary. Choose $0\\leq j<a$ such that\n  $\\sigma=F_2^j|_H$, and use the same symbol $\\sigma$ for the\n  endomorphism $F_2^j$ of $\\mathbf H$. Let\n  $\\mathbf T_0\\leq\\mathbf B_0$ be an $F_2$-stable maximal torus and Borel\n  subgroup, and let $\\Pi$ be the corresponding set of simple roots.\n  Let $W=N_{\\mathbf H}(\\mathbf T_0)/\\mathbf T_0$ be the Weyl group.\n  For~$I\\subseteq\\Pi$, let $\\mathbf L_I$ be the corresponding standard\n  Levi subgroup.  By the rational parametrisation of $F'$-stable Levi\n  subgroups in \\cite[Section~2.3]{CabanesSpath2013}, choose a pair\n  $(I,w)$ representing the $H$-conjugacy class of $\\mathbf M$, where\n  $w\\in W$ satisfies $w(I)=I$.  Choose a representative\n  $\\dot w\\in N_{\\mathbf H}(\\mathbf T_0)$ of $w$ such that\n  $F_2(\\dot w)=\\dot w$.  By Lang's theorem, there is $g\\in\\mathbf H$ such that\n  $g^{-1}F'(g)=\\dot w$.\n  After replacing $(\\mathbf T,\\eta)$ by an $H$-conjugate and $\\lambda$ by\n  the corresponding conjugate, we may assume $\\mathbf M=g\\mathbf L_Ig^{-1}$.\n  Since $\\mathbf L_I$ and $\\dot w$ are\n  defined over $\\F_2$,\n  $\\sigma(\\mathbf L_I)=\\mathbf L_I$ and\n  $\\sigma(\\dot w)=\\dot w$.  Define $h_\\sigma=g\\sigma(g)^{-1}$ and set\n  $\\tau=\\operatorname{Int}(h_\\sigma)\\circ\\sigma$, where\n  $\\operatorname{Int}(x)$ denotes conjugation by $x$.\n  Since $F'(g)=g\\dot w$ and $F'$ commutes with $\\sigma$, we have\n  \\[\n       F'(h_\\sigma)\n       =g\\dot w\\,\\sigma(g\\dot w)^{-1}\n       =g\\sigma(g)^{-1}=h_\\sigma.\n  \\]\n  Hence $h_\\sigma\\in H$, and $\\tau$ commutes with $F'$.  Since $w$\n  stabilises $I$, the endomorphism\n  $F_w=\\operatorname{Int}(\\dot w)\\circ F'$ restricts to a Frobenius\n  endomorphism of $\\mathbf L_I$.  Moreover, $\\sigma$ commutes with $F_w$.\n  Conjugation by $g$\n  maps $\\mathbf L_I^{F_w}$ onto $\\mathbf M^{F'}$ and intertwines $\\sigma$\n  with $\\tau$:\n  \\begin{equation}\\label{eq:even-field-intertwining}\n       \\tau(gxg^{-1})=g\\sigma(x)g^{-1}\\qquad(x\\in\\mathbf H).\n  \\end{equation}\nEquation~\\eqref{eq:even-field-intertwining} shows that $\\tau$ stabilises $\\mathbf M$.\nSince $\\tau$ commutes with $F'$, it also stabilises\n$\\mathbf T=Z^\\circ(\\mathbf M)_{\\phi_e}$.\nDefine\n\\[\n  \\lambda_I(x)=\\lambda(gxg^{-1})\n  \\qquad(x\\in\\mathbf L_I^{F_w}).\n\\]\nThen $\\lambda_I$ is a unipotent character of $\\mathbf L_I^{F_w}$.\nBy \\eqref{eq:even-field-intertwining}, it suffices to prove\n$\\lambda_I^\\sigma=\\lambda_I$ to obtain $\\lambda^\\tau=\\lambda$.\nThe map $\\sigma$ preserves each simple component of\n$[\\mathbf L_I,\\mathbf L_I]$ and commutes with $F_w$, so it preserves\neach $F_w$-orbit of components.\nProjection onto one component in each orbit identifies the corresponding\nfinite factor with the fixed points of a power of $F_w$.\nSince $\\sigma=F_2^j$ preserves each component, it commutes with this\nprojection. Thus its action on each finite factor is induced by\n$F_2^j$ and is a field automorphism.\nThese factors have type $\\mathsf A$ or $\\mathsf C$, and their unipotent\ncharacters are fixed by field automorphisms\n\\cite[p.~700]{CabanesSpath2013}.\nThe standard parametrisation of unipotent characters under central isogenies\nand direct products identifies the unipotent characters of $\\mathbf L_I^{F_w}$\nwith tuples of unipotent characters of these finite factors\n\\cite[Remark~4.2.1]{GeckMalle2020}.\nThis identification commutes with $\\sigma$, and the torus\ncontributes only its trivial character.\nHence $\\lambda_I^\\sigma=\\lambda_I$, and\n\\eqref{eq:even-field-intertwining} gives $\\lambda^\\tau=\\lambda$.\n\n  We next show that $\\tau$ acts trivially on\n  $N_H(\\mathbf M)/\\mathbf M^{F'}$.\n  Let $W_I=N_{\\mathbf L_I}(\\mathbf T_0)/\\mathbf T_0$.  The quotient\n  $N_{\\mathbf H}(\\mathbf L_I)/\\mathbf L_I$ identifies with\n  $N_W(W_I)/W_I$.  Every element of $W$ has a representative fixed by\n  $F_2$, so $\\sigma=F_2^j$ acts trivially on $W$ and on this quotient.\n  For $y\\in N_{\\mathbf H}(\\mathbf L_I)^{F_w}$, the element\n  $y^{-1}\\sigma(y)$ belongs to $\\mathbf L_I$ and is fixed by $F_w$,\n  since $\\sigma$ commutes with $F_w$.  Thus $\\sigma$ acts trivially on\n  $N_{\\mathbf H}(\\mathbf L_I)^{F_w}/\\mathbf L_I^{F_w}$.\n  Conjugation by $g$ identifies this quotient with\n  $N_H(\\mathbf M)/\\mathbf M^{F'}$. By \\eqref{eq:even-field-intertwining},\n  $\\tau$ acts trivially on $N_H(\\mathbf M)/\\mathbf M^{F'}$.\n\n  Set $N=N_H(\\mathbf T)=N_H(\\mathbf M)$ and\n  $N_\\lambda=N_H(\\mathbf M,\\lambda)$. To obtain a $\\tau$-invariant\n  extension of $\\lambda$ to $N_\\lambda$, embed $\\mathbf H$ in\n  $\\mathbf K=\\operatorname{PGL}_{2r+1}$ by\n  $A\\mapsto\\pi(\\operatorname{diag}(A,1))$, where\n  $\\pi\\colon\\operatorname{GL}_{2r+1}\\to\\operatorname{PGL}_{2r+1}$ is the\n  quotient map.  This embedding is defined over $\\F_2$ and commutes with\n  $F'$ and the standard field endomorphisms.  We identify $\\mathbf H$, and hence $\\mathbf M$, with\n  their images in $\\mathbf K$.  The group $\\mathbf K$ is simple of adjoint type, and\n  $\\mathbf M$ is a closed connected $F'$-stable reductive subgroup of\n  $\\mathbf K$.  Let $E(\\mathbf K^{F'})$ denote the subgroup of\n  $\\Aut(\\mathbf K^{F'})$ generated by the standard field and graph\n  automorphisms.  The element\n  $h_\\sigma\\sigma\\in\\mathbf K^{F'}E(\\mathbf K^{F'})$ induces $\\tau$ on $H$\n  by conjugation.  We use the same symbol $\\tau$ for this element.  Define\n  $\\widehat N_\\lambda=\n  \\bigl(\\mathbf K^{F'}E(\\mathbf K^{F'})\\bigr)_{\\mathbf M,\\lambda}$,\n  where the subscript denotes the stabiliser of the pair\n  $(\\mathbf M,\\lambda)$.  Since $\\lambda$ is unipotent, Sp\\\"ath's theorem\n  \\cite[Theorem~3.3]{Spath2025Extensions} shows that $\\lambda$ extends to\n  $\\widehat N_\\lambda$.  Both $N_\\lambda$ and $\\tau$ lie in\n  $\\widehat N_\\lambda$.  Choose\n  $\\widetilde\\lambda\\in\\Irr(\\widehat N_\\lambda)$ extending $\\lambda$.\n  Since $\\tau$ normalises $N$ and $N_\\lambda$, the restriction\n  $\\widehat\\lambda=\\operatorname{Res}_{N_\\lambda}^{\\widehat N_\\lambda}\n  \\widetilde\\lambda$ is a $\\tau$-invariant extension of $\\lambda$.\n\n  Since $\\eta\\in\\Irr(N\\mid\\lambda)$ and $N_\\lambda$ is the inertia group\n  of $\\lambda$ in $N$, Clifford theory and Gallagher's theorem give\n  \\[\n    \\eta=\\operatorname{Ind}_{N_\\lambda}^N(\\widehat\\lambda\\xi)\n    \\qquad\\text{for some }\\xi\\in\\Irr(N_\\lambda/\\mathbf M^{F'}),\n  \\]\n  where $\\xi$ is inflated to $N_\\lambda$.\n  The automorphism $\\tau$ fixes $\\widehat\\lambda$ and acts trivially on\n  $N_\\lambda/\\mathbf M^{F'}$, so it fixes $\\xi$ and hence $\\eta$.\n  Thus $\\tau$ fixes $(\\mathbf T,\\eta)$.\n  Because $h_\\sigma\\in H$ and\n  $\\tau=\\operatorname{Int}(h_\\sigma)\\circ\\sigma$, the automorphisms\n  $\\tau$ and $\\sigma$ induce the same action on $H$-conjugacy classes of\n  generic weights.  Hence $\\sigma$ fixes the $H$-conjugacy class of\n  $(\\mathbf T,\\eta)$.  This proves that $E_H$ fixes $\\mathcal W(C)$\n  pointwise.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0156",
+        "current-citation-0157",
+        "current-citation-0158",
+        "current-citation-0159",
+        "current-citation-0160",
+        "current-citation-0161",
+        "current-citation-0162",
+        "current-citation-0163"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "d2a9843d6cbbdf793739f9f4e69f7b376eb2d096f0fa2a71497c8075db68e29a"
+    },
+    {
+      "id": "current-proof-012",
+      "line": 1388,
+      "start_offset": 69771,
+      "end_offset": 71342,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:even-unipotent-correspondence"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $(\\mathbf L_0,\\lambda_0)$ be the unipotent $e$-cuspidal pair\nlabelling $C$.  As shown in the proof of\nLemma~\\ref{lem:even-field-fixed}, the set\n$\\mathcal X_C=\\Irr(C)\\cap\\mathcal E(H,1)$ is the generalised\n$e$-Harish-Chandra series attached to $(\\mathbf L_0,\\lambda_0)$.\nTaking the inverse of the parametrisation in\n\\cite[Theorem~2.8]{CabanesSpath2013} gives a bijection\n$\\mathcal X_C\\longrightarrow\\Irr\\bigl(W_H(\\mathbf L_0,\\lambda_0)\\bigr)$.\nFor unipotent characters, $e$-cuspidality and $e$-Jordan-cuspidality coincide\n\\cite[Definition~2.1 and Remark~2.2]{KessarMalle2015}.\nThe block labellings in \\cite[Theorem~4.4(i)]{CabanesEnguehard1994} and\n\\cite[Theorem~A(e)]{KessarMalle2015} therefore assign $C$ to the same pair\n$(\\mathbf L_0,\\lambda_0)$.  Thus\n\\cite[Theorem~7.5]{FengMalleZhang2026} gives a bijection from\n$\\Irr\\bigl(W_H(\\mathbf L_0,\\lambda_0)\\bigr)$ to\n\\[\n \\bigsqcup_{(\\mathbf M,\\lambda)}\n \\dz\\bigl(W_H(\\mathbf M,\\lambda)\\bigr),\n\\]\nwhere the pairs run through the $H$-classes of $e$-JGC pairs\nwith $\\lambda\\in\\mathcal E(\\mathbf M^{F'},\\ell')$\nwhose induced block is $C$.  The maximal extendibility condition holds\nhere by the type $\\mathsf C$ case of\n\\cite[Proposition~3.20]{FengMalleZhang2026}.  By\n\\cite[Lemma~3.21]{FengMalleZhang2026} and the definition of\n$\\mathcal W(C)$, this disjoint union is in bijection with $\\mathcal W(C)$.\nComposing these maps gives a bijection\n$\\mathcal X_C\\longrightarrow\\mathcal W(C)$.  By\nLemma~\\ref{lem:even-field-fixed}, $E_H$ fixes both sets pointwise, so this\nbijection is $E_H$-equivariant.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0165",
+        "current-citation-0166",
+        "current-citation-0167",
+        "current-citation-0168",
+        "current-citation-0169",
+        "current-citation-0170",
+        "current-citation-0171"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "d82debcb012476f18466459eca0b6b6d471ad9a4456f2b7843efd274b15cd2d5"
+    },
+    {
+      "id": "current-proof-013",
+      "line": 1430,
+      "start_offset": 71688,
+      "end_offset": 73437,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:even-unipotent"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $C$ be a unipotent $\\ell$-block of $H$.\nThe hypotheses of \\cite[Condition~6.1]{FengMalleZhang2026} hold:\n$\\mathbf H$ is simple and simply connected, $\\ell$ is odd and good, and\n$\\ell\\nmid 2^{a+1}|Z(\\mathbf H)^{F'}|$.\nThe group $\\mathcal B$ of field and graph automorphisms in\n\\cite[Condition~6.1]{FengMalleZhang2026} is $E_H$, since type\n$\\mathsf C_r$ has no nontrivial graph automorphisms.\n\nSince $Z(\\mathbf H)/Z^\\circ(\\mathbf H)=1$, the hypothesis of\n\\cite[Theorem~A]{Geck1993} holds.  The blockwise consequence stated\nimmediately after that theorem, together with the equality\n$\\mathcal X_C=\\Irr(C)\\cap\\mathcal E(H,1)$ established in the proof of\nLemma~\\ref{lem:even-field-fixed}, shows that $\\mathcal X_C$ is an integral\nbasic set for $C$.  By Lemma~\\ref{lem:even-field-fixed}, $E_H$ fixes\n$\\mathcal X_C$ pointwise, so $C$ is $E_H$-stable.\nThe decomposition map is $E_H$-equivariant and maps $\\mathcal X_C$ to a\nbasis of $\\mathbb Z\\IBr(C)$.  Hence $E_H$ also fixes $\\IBr(C)$ pointwise,\nand any bijection $\\IBr(C)\\longrightarrow\\mathcal X_C$ is $E_H$-equivariant.  Since\n$\\mathcal B=E_H$,\n  \\cite[Theorem~6.2]{FengMalleZhang2026} gives an\n$E_H$-equivariant bijection $\\mathcal W(C)\\longrightarrow\\Alp(C)$.\nComposing this map with the preceding bijection\n$\\IBr(C)\\longrightarrow\\mathcal X_C$ and the bijection\n$\\mathcal X_C\\longrightarrow\\mathcal W(C)$ from\nLemma~\\ref{lem:even-unipotent-correspondence} gives an $E_H$-equivariant\nbijection\n\\[\n  \\Omega_C:\\IBr(C)\\longrightarrow\\Alp(C).\n\\]\n\nFor $r\\geq4$, the group $H=\\Sp_{2r}(2^a)$ is nonabelian simple,\nwith $\\Aut(H)=H\\rtimes E_H$.\nBy Table~\\ref{tab:typec-carriers}, $H$ is its own universal covering\ngroup.  Hence Lemma~\\ref{lem:cyclic-outer-baw} proves the result.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0173",
+        "current-citation-0174",
+        "current-citation-0175",
+        "current-citation-0176"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "cc7e2a22856258e83a8bc373193fa2d2ff1d54d87bb08bc8473799567efea5d5"
+    },
+    {
+      "id": "current-proof-014",
+      "line": 1481,
+      "start_offset": 74110,
+      "end_offset": 78468,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:even-bridge"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $\\mathbf G$ be a simple, simply connected algebraic group of type\n$\\mathsf C_n$ in characteristic $2$, and let $F$ be a Frobenius endomorphism\nsuch that $\\mathbf G^F=G$.  We verify the two hypotheses of\nLemma~\\ref{lem:jordan-reduction}.  Choose the standard regular embedding\n$\\mathbf G=\\Sp_{2n}\\hookrightarrow\\widetilde{\\mathbf G}=\\CSp_{2n}$,\nand set $\\widetilde G=\\widetilde{\\mathbf G}^F=\\CSp_{2n}(q)$.\nLet $\\mu:\\widetilde G\\to\\F_q^\\times$ be the multiplier homomorphism,\ncharacterised by $\\langle gv,gw\\rangle=\\mu(g)\\langle v,w\\rangle$ for\n$g\\in\\widetilde G$ and $v,w\\in\\F_q^{2n}$, where\n$\\langle\\cdot,\\cdot\\rangle$ is the defining symplectic form.\nSince $q$ is even, for each $g\\in\\widetilde G$ there is\n$c\\in\\F_q^\\times$ with $c^2=\\mu(g)$.  Then $c^{-1}g\\in G$, so\n$\\widetilde G=GZ(\\widetilde G)$ and $\\widetilde G$ acts on $G$\nby inner automorphisms. Let $E\\cong C_f$ act on $G$ and\n$\\widetilde G$ by the field automorphisms induced by entrywise squaring.\nThen\n$\\Aut(G)=G\\rtimes E$.  For every $\\psi\\in\\IBr(G)$, the group\n$\\widetilde G$ fixes $\\psi$, and hence\n\\[\n (\\widetilde G\\rtimes E)_\\psi=\\widetilde G\\rtimes E_\\psi.\n\\]\nThe group $E_\\psi$ is cyclic, so by Lemma~\\ref{lem:cyclic-extension},\n$\\psi$ extends to $G\\rtimes E_\\psi$.\nFor every semisimple $\\ell'$-element $s\\in(\\mathbf G^*)^F$, the\nconstruction in \\cite[Corollary~4.2 and Lemmas~4.3 and~4.5]{Ruhstorfer2022Derived}\nallows us, after conjugating the Levi subgroup associated with $s$ and\nits series idempotent by an element of $G$, to choose the group $A_s$ in\nLemma~\\ref{lem:jordan-reduction} inside $E$, since type~$\\mathsf C_n$\nwith $n\\geq4$ has no graph automorphism.\nRestricting the preceding factorisation and extensions to $A_s$ verifies\ncondition~\\textup{(i)} of that lemma.\n\nTo verify condition~\\textup{(ii)} of\nLemma~\\ref{lem:jordan-reduction}, let $(\\mathbf K,F')$ be a pair\nas in that condition.  If $\\ell\\nmid|\\mathbf K^{F'}|$, then every $\\ell$-block $c$ has defect\nzero.  Writing $\\Irr(c)=\\{\\chi\\}$, the map $\\chi^0\\mapsto(1,\\chi)$ is\nan iBAW bijection for $c$, since the global and local modular character\ntriples are identical.  We may therefore assume that\n$\\ell\\mid|\\mathbf K^{F'}|$.\n\nA connected Dynkin subdiagram of $\\mathsf C_n$ has type $\\mathsf A_m$ or\n$\\mathsf C_m$. If $\\mathbf K$ has type~$\\mathsf A_m$\n(including $\\mathsf C_1=\\mathsf A_1$), then $\\mathbf K^{F'}$\nis a special linear or unitary group. The result for these groups\nestablished after Lemma~\\ref{lem:jordan-reduction} gives the required\niBAW bijections for its $\\ell$-blocks.\n\nSuppose that $\\mathbf K$ has type $\\mathsf C_m$, where $m\\geq2$, and let\n$c$ be a strictly quasi-isolated $\\ell$-block of $\\mathbf K^{F'}$.  Choose a\nstrictly quasi-isolated semisimple $\\ell'$-element\n$s\\in\\mathbf K^{*F'}$ such that\n$\\Irr(c)\\subseteq\\mathcal E_\\ell(\\mathbf K^{F'},s)$.\nSince $\\mathbf K^*$ has type $\\mathsf B_m$ in characteristic $2$\nand $s$ is quasi-isolated, \\cite[Example~4.8]{Bonnafe2005} gives\n$s=1$.  Hence $c$ is unipotent.\n\nFirst suppose that $F'$ is split, and write\n$\\mathbf K^{F'}=\\Sp_{2m}(2^a)$. For $m\\geq4$,\nProposition~\\ref{prop:even-unipotent} gives the required iBAW bijection\nfor $c$. The groups $\\Sp_4(2^a)$ with $a\\geq2$ and\n$\\Sp_6(2^a)$ with $a\\geq1$ satisfy iBAW at $\\ell$ by\n\\cite[Theorem~5.5]{SchaefferFry2014}.  Corollary~\\ref{cor:fixed-point-descent}\ntherefore gives the required iBAW bijections for their $\\ell$-blocks.\nThe simplicity assumption in Lemma~\\ref{lem:jordan-reduction}\\textup{(ii)}\nexcludes $\\Sp_4(2)$.\nThe program \\path{sp6.g}, described in\nSection~\\ref{app:sp6}, supplies the numerical details of the\ncalculation on $2.\\Sp_6(2)$ at $\\ell=3$ in the proof of\n\\cite[Theorem~5.5]{SchaefferFry2014}.\nIf $F'$ is not split, then $m=2$ and $\\mathbf K^{F'}$ is a\nSuzuki group.  Each simple Suzuki group satisfies iBAW at $\\ell$\nby \\cite[Corollary~6.3]{Spath2013}, so\nCorollary~\\ref{cor:fixed-point-descent} gives the required iBAW\nbijections for its $\\ell$-blocks.\n\nThis proves condition~\\textup{(ii)} of\nLemma~\\ref{lem:jordan-reduction}. Condition~\\textup{(i)} was verified above.\nSince $G=S$ is its own universal covering group by\nTable~\\ref{tab:typec-carriers}, Lemma~\\ref{lem:jordan-reduction}\nshows that every\n$\\ell$-block of $G$ is BAW-good.  Since $G=X_\\ell(S)$,\nRemark~\\ref{rem:block-aggregation}\\textup{(a)} gives the final assertion.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0180",
+        "current-citation-0181",
+        "current-citation-0182",
+        "current-citation-0183",
+        "current-citation-0184"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "227916413bf74513d798f1975135bf6beacc9a427fe451a1141510a8f1bbb471"
+    },
+    {
+      "id": "current-proof-015",
+      "line": 1601,
+      "start_offset": 80088,
+      "end_offset": 80800,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:exact-stabilizer"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nThe multiplier homomorphism $\\mu:\\widetilde G\\to\\F_q^\\times$ is\nsurjective with kernel $G$, and $\\mu(cI)=c^2$ for $c\\in\\F_q^\\times$.\nThus it identifies $\\widetilde G/G$ with $\\F_q^\\times$ and sends\n$Z(\\widetilde G)$ onto $(\\F_q^\\times)^2$.\nHence $|\\widetilde G:GZ(\\widetilde G)|=2$.\nApplying Lemma~\\ref{lem:linear-block-stabilizer} to\n$G\\lhd\\widetilde G$ and $\\widetilde B$, using reduction to identify\nthe linear characters, gives $|D|\\leq2$.\nSince $N\\triangleleft A$, we have $D\\triangleleft J$.\nThe projection $A\\to E$ embeds $J/D$ in $E$, so $J/D$ is cyclic.\nAs $|D|\\leq2$, we have $D\\leq O_2(J)$, and $J/O_2(J)$ is cyclic.\nThus $J$ and every subgroup of $J$ are $2$-hypoelementary.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "44b1373e81b589668bd014d809e994a14244a2d1eaa85b3560306a36adcd54d9"
+    },
+    {
+      "id": "current-proof-016",
+      "line": 1630,
+      "start_offset": 81355,
+      "end_offset": 82170,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:odd-conformal-bridge"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nThe prime $\\ell$ is odd and hence good for type $\\mathsf C$.\nThe conformal algebraic group has connected centre.  By\n\\cite[Theorem~5.1]{GeckHiss1991}, $\\mathcal E(\\widetilde G,\\ell')$\nis an integral basic set for $\\widetilde G$.\nSince the decomposition map respects the block decomposition, $Z_{\\widetilde B}$\nis an integral basic set for $\\widetilde B$.\n\nIdentify $N$ with the group of ordinary linear $\\ell'$-characters of\n$\\widetilde G/G$ via reduction.  This identification is $E$-equivariant,\nand the decomposition map commutes with tensoring and field\nautomorphisms.  Hence $d_{\\widetilde B}$ is $J$-equivariant.\nThe set $Z_{\\widetilde B}$ is $J$-stable, and $J$ is\n$2$-hypoelementary by Lemma~\\ref{lem:exact-stabilizer}.\nLemma~\\ref{lem:basicset-bridge} gives the asserted bijection.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0190"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "f0739391f7db09c714f17dda3324882a287c83b738860ce9b5358cf2e3e24c14"
+    },
+    {
+      "id": "current-proof-017",
+      "line": 1667,
+      "start_offset": 82660,
+      "end_offset": 84496,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:odd-g-factorization"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $\\mathbf G$ be the simply connected symplectic algebraic group and let\n$F$ be its defining Frobenius endomorphism, so that $\\mathbf G^F=G$.\nSince $\\ell$ is odd and $Z(\\mathbf G)=\\{\\pm I\\}$,\n\\cite[Theorem~A]{Geck1993} shows that $\\mathcal E(G,\\ell')$ is an\nintegral basic set for $G$.\nFix an $\\ell$-block $B$ of $G$ and set\n$\\mathcal X_B=\\Irr(B)\\cap\\mathcal E(G,\\ell')$.\nSince the decomposition map respects the block decomposition, $\\mathcal X_B$ is an\nintegral basic set for $B$.\n\nDiagonal automorphisms preserve each rational Lusztig series\n\\cite[Proposition~15.6(i)]{CabanesEnguehard2004}. Field automorphisms\nsend a series $\\mathcal E(G,s)$ to a series $\\mathcal E(G,s')$ with\n$|s'|=|s|$ \\cite[Proposition~7.2]{Taylor2018Automorphisms}. Thus\n$\\mathcal E(G,\\ell')$ is $\\Aut(G)$-stable, and $\\mathcal X_B$ is\n$\\Aut(G)_B$-stable.\nThe actions on $\\mathcal X_B$ and $\\IBr(B)$ factor through\n$L=\\Aut(G)_B/\\Inn(G)$, and the decomposition map is $L$-equivariant.\nThe group $\\Out(G)\\cong C_2\\times C_f$ is $2$-hypoelementary, so\nthe same holds for $L$.\nLemma~\\ref{lem:basicset-bridge} gives an $\\Aut(G)_B$-equivariant\nbijection $\\beta_B:\\IBr(B)\\longrightarrow\\mathcal X_B$.\nApplying Remark~\\ref{rem:block-aggregation}\\textup{(b)} to these blockwise\nbijections gives the required map $\\beta$.\n\nLet $\\varphi\\in\\IBr(G)$ and write $\\chi=\\beta(\\varphi)$.\nApplying \\cite[Theorem~3.1]{CabanesSpath2017TypeC} to the ordinary\ncharacter $\\chi$ gives\n$(\\widetilde G\\rtimes E)_\\chi=\\widetilde G_\\chi\\rtimes E_\\chi$.\nEquivariance and bijectivity of $\\beta$ therefore give\n\\[\n  (\\widetilde G\\rtimes E)_\\varphi\n    =(\\widetilde G\\rtimes E)_\\chi\n    =\\widetilde G_\\chi\\rtimes E_\\chi\n    =\\widetilde G_\\varphi\\rtimes E_\\varphi.\n\\]\nFinally, $E_\\varphi$ is cyclic, so Lemma~\\ref{lem:cyclic-extension}\ngives the required extension.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0191",
+        "current-citation-0192",
+        "current-citation-0193",
+        "current-citation-0194"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "1e7a2e7bfbcbe044ce3d0f9550b6e2aa2f53b63aeca092cb0cda910a05ae4c0f"
+    },
+    {
+      "id": "current-proof-018",
+      "line": 1730,
+      "start_offset": 85567,
+      "end_offset": 88995,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:odd-conlon"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nWe apply \\cite[Theorem~4.5]{BroughSpath2022} with $\\mathcal B$ equal to\nthe set of all $\\ell$-blocks of $G$ and with $\\widetilde G$ and $E$ as\nabove.  The group $E$ is cyclic, $G=[\\widetilde G,\\widetilde G]$, and\n\\[\n C_{\\widetilde G\\rtimes E}(G)=Z(\\widetilde G),\n \\qquad\n (\\widetilde G\\rtimes E)/Z(\\widetilde G)\\cong\\Aut(G).\n\\]\nSince $\\widetilde G/G$ is cyclic, every\n$\\varphi\\in\\IBr(G)$ extends to $\\widetilde G_\\varphi$ by\nLemma~\\ref{lem:cyclic-extension}.\nFor a weight $(Q,\\theta)$ of $G$, the quotient\n$(N_{\\widetilde G}(Q)/Q)_\\theta/(N_G(Q)/Q)$ is also cyclic,\nso the same lemma extends $\\theta$ to\n$(N_{\\widetilde G}(Q)/Q)_\\theta$.\nThis verifies condition~\\textup{(i)} of\n\\cite[Theorem~4.5]{BroughSpath2022}.\n\nThe parametrisations of ordinary characters in \\cite[Lemma~3.13]{Li2021} and\nof weights in \\cite[Theorem~4.13 and Remarks~4.7--4.8]{Li2021} give a\nbijection\n\\[\n \\rho:\\mathcal E(\\widetilde G,\\ell')\n       \\longrightarrow\\Alp(\\widetilde G)\n\\]\nthat preserves blocks.\nThe proofs of \\cite[Lemmas~5.1 and~5.3]{Li2021} show that field\nautomorphisms and tensoring by $N$ induce the same changes of labels on\nthe ordinary characters and on the corresponding weights.\nIn the proof of \\cite[Lemma~5.1]{Li2021},\nunitriangularity identifies the field action on Brauer character labels\nwith that on ordinary character labels. In the proof of\n\\cite[Lemma~5.3]{Li2021}, it identifies the corresponding actions of\ntensoring with linear characters. The comparison between ordinary\ncharacters and weights uses neither identification. Thus $\\rho$ is\n$A$-equivariant.\n\nChoose one block $\\widetilde B$ in each $A$-orbit and let\n$J=A_{\\widetilde B}$.\nProposition~\\ref{prop:odd-conformal-bridge} gives a $J$-equivariant\nbijection\n\\[\n \\alpha_{\\widetilde B}:\\IBr(\\widetilde B)\n       \\longrightarrow Z_{\\widetilde B}.\n\\]\nComposing with $\\rho$ and applying Remark~\\ref{rem:block-aggregation}\\textup{(b)}\nto the $A$-orbits gives an\n$A$-equivariant bijection\n\\[\n \\widetilde\\Omega:\\IBr(\\widetilde G)\\longrightarrow\\Alp(\\widetilde G)\n\\]\nthat preserves blocks.\nIn the notation of \\cite[Theorem~4.5(ii)]{BroughSpath2022},\n\\[\n J_G(\\widetilde\\varphi)\n   =J_G(\\widetilde\\Omega(\\widetilde\\varphi))\n   =\\widetilde G\n \\qquad(\\widetilde\\varphi\\in\\IBr(\\widetilde G))\n\\]\nby \\cite[Remark~2.2(1)]{Li2021}.\nThis verifies condition~\\textup{(ii)} of\n\\cite[Theorem~4.5]{BroughSpath2022}.\nFor every $\\varphi\\in\\IBr(G)$,\nLemma~\\ref{lem:odd-g-factorization} gives the stabiliser factorisation\nand extension required by condition~\\textup{(iii)} of\n\\cite[Theorem~4.5]{BroughSpath2022}.\n\nLet $\\omega\\in\\Alp(G)$.\nBy \\cite[Section~2.C]{Li2021}, choose a representative $(R,\\psi)$\nwith $R$ in the standard family used in \\cite[Lemma~5.5]{Li2021}.\nBy \\cite[Lemma~5.5(1)--(2)]{Li2021},\n\\[\n (\\widetilde GE)_{R,\\psi}\n   =\\widetilde G_{R,\\psi}(GE)_{R,\\psi},\n\\]\nand $\\psi$ extends to $(GE)_{R,\\psi}/R$.\nFor $H\\in\\{\\widetilde GE,\\widetilde G,GE\\}$, the stabiliser of the\nconjugacy class $\\omega$ satisfies $H_\\omega=GH_{R,\\psi}$.  Hence\n\\[\n (\\widetilde GE)_\\omega\n   =\\widetilde G_\\omega(GE)_\\omega\n   =\\widetilde G_\\omega E_\\omega.\n\\]\nThis verifies condition~\\textup{(iv)} of\n\\cite[Theorem~4.5]{BroughSpath2022}.\n\nSince $\\Out(G)$ is abelian, \\cite[Theorem~4.5]{BroughSpath2022} proves\nthe inductive BAW condition for every $\\ell$-block of $G$.\nAs $G=X_\\ell(S)$, Remark~\\ref{rem:block-aggregation}\\textup{(a)} shows that $S$\nsatisfies iBAW at $\\ell$.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0197",
+        "current-citation-0198",
+        "current-citation-0199",
+        "current-citation-0200",
+        "current-citation-0201",
+        "current-citation-0202",
+        "current-citation-0203",
+        "current-citation-0204",
+        "current-citation-0205",
+        "current-citation-0206",
+        "current-citation-0207",
+        "current-citation-0208",
+        "current-citation-0209",
+        "current-citation-0210",
+        "current-citation-0211",
+        "current-citation-0212"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "f7582f74ff21820661423583e05a5d44a816d9969437cd1ff20d63d30ef634d5"
+    },
+    {
+      "id": "current-proof-019",
+      "line": 1826,
+      "start_offset": 89076,
+      "end_offset": 89604,
+      "title_tex": null,
+      "associated_labels": [
+        "thm:symplectic"
+      ],
+      "association_basis": "preceding section title",
+      "proof_tex": "\\begin{proof}\nIf $n=2$, Proposition~\\ref{prop:rank-two} gives the result.\nWe may therefore assume that $n\\geq3$.\nThe case $\\ell=p$ follows from \\cite[Theorem~C]{Spath2013}, so\nassume that $\\ell\\neq p$.\n\nIf $q$ is odd, Proposition~\\ref{prop:odd-two} applies when $\\ell=2$,\nand Proposition~\\ref{prop:odd-conlon} applies when $\\ell$ is odd.\nIf $q$ is even, then $\\ell$ is odd.  For $n=3$, the result follows\nfrom \\cite[Theorem~5.5]{SchaefferFry2014}, and for $n\\geq4$ it follows\nfrom Proposition~\\ref{prop:even-bridge}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0213",
+        "current-citation-0214"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "7283fa6b3564c103c61b2607a55957bdd90ceca3638db6fb9a997811f8bc5c3b"
+    },
+    {
+      "id": "current-proof-020",
+      "line": 1947,
+      "start_offset": 94031,
+      "end_offset": 96342,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-conlon-block"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nThe connected reductive algebraic groups defining $G$ and $\\widetilde G$\nhave type $\\mathsf B_n$.  Their centres have component groups\n$Z(\\mathbf H)/Z^\\circ(\\mathbf H)$ of orders $2$ and $1$, respectively,\nwhere $\\mathbf H$ denotes the corresponding algebraic group.\nSince the odd prime $\\ell$ is good for type $\\mathsf B_n$ and\ndivides the order of neither component group, the hypotheses\nof \\cite[Theorem~2.3]{FengLiZhang2022TypeB} hold for both groups.  Applying that theorem to all rational $\\ell'$-series\nshows that $\\mathcal E(G,\\ell')$ and $\\mathcal E(\\widetilde G,\\ell')$\nare integral basic sets.  Since the decomposition map is block diagonal,\n$\\mathcal X_B$ is an integral basic set for $B$.\n\nDiagonal automorphisms preserve each rational Lusztig series\n\\cite[Proposition~15.6(i)]{CabanesEnguehard2004}. For\n$M\\in\\{G,\\widetilde G\\}$, field automorphisms send a series\n$\\mathcal E(M,s)$ to a series $\\mathcal E(M,s')$ with $|s'|=|s|$\n\\cite[Proposition~7.2]{Taylor2018Automorphisms}. Thus field and diagonal\nautomorphisms preserve $\\mathcal E(G,\\ell')$, and field automorphisms\npreserve $\\mathcal E(\\widetilde G,\\ell')$.\nTensoring with the inflation of an ordinary linear character of\n$\\widetilde G/G$ of $\\ell'$-order also preserves\n$\\mathcal E(\\widetilde G,\\ell')$, since it multiplies the semisimple\nelement labelling the series by a central $\\ell'$-element\n\\cite[Theorem~4.7.1(3)]{GeckMalle2020}.\nHence $\\mathcal X_B$ is $J_B$-stable.  The decomposition map commutes\nwith automorphisms and with tensoring by linear characters, so its\nrestriction to $\\mathbb Z[\\mathcal X_B]$ is $J_B$-equivariant.\nFor $M=G$, we have\n$\\Out(G)\\cong C_2\\times E$.  This group is $2$-hypoelementary, and\ntherefore so is its subgroup $J_B$.\n\nNow let $M=\\widetilde G$, write $J=A_B$, and set $D=J\\cap C$.\nWe have $|\\widetilde G:GZ(\\widetilde G)|=2$\n\\cite[proof of Lemma~5.16]{FengLiZhang2022TypeB}.\nApplying Lemma~\\ref{lem:linear-block-stabilizer} to\n$G\\lhd\\widetilde G$ and $B$ gives $|D|\\leq2$.\nSince $C\\lhd A$, we have $D\\lhd J$, and hence $D\\leq O_2(J)$.\nProjection to $E$ embeds $J/D$ in the cyclic group $E$.\nTherefore $J/O_2(J)$ is cyclic, so $J=J_B$ is $2$-hypoelementary.\nLemma~\\ref{lem:basicset-bridge} now gives the asserted lattice isomorphism\nand equivariant bijection in both cases.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0219",
+        "current-citation-0220",
+        "current-citation-0221",
+        "current-citation-0222",
+        "current-citation-0223"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "ad739d2030809a72daa28535d477f17e022f33603233302524f01da657d98598"
+    },
+    {
+      "id": "current-proof-021",
+      "line": 1997,
+      "start_offset": 96581,
+      "end_offset": 99013,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:type-b-odd-primes"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nFirst suppose $(n,q)\\neq(3,3)$.  Then $G=X_\\ell(S)$ by\nTable~\\ref{tab:typeb-covers}.  We apply Brough--Sp\\\"ath's criterion in\nthe form of \\cite[Theorem~2.1]{FengLiZhang2022TypeB} and verify its\nconditions~\\textup{(1)--(4)}.\nThe structural hypotheses in condition~\\textup{(1)} hold for $G$,\n$\\widetilde G$, and $E$, as noted in the proof of\n\\cite[Theorem~1]{FengLiZhang2022TypeB}.\n\nFor each $A$-orbit of blocks of $\\widetilde G$, choose a\nrepresentative $\\widetilde B$. Compose the\n$A_{\\widetilde B}$-equivariant bijection\n$\\IBr(\\widetilde B)\\longrightarrow\\mathcal X_{\\widetilde B}$\nof Lemma~\\ref{lem:type-b-conlon-block} with the restriction\n$\\mathcal X_{\\widetilde B}\\longrightarrow\\Alp(\\widetilde B)$\nof the blockwise $A$-equivariant bijection in\n\\cite[Proposition~7.2]{FengLiZhang2022TypeB}.\nExtending these bijections to the remaining blocks by\nRemark~\\ref{rem:block-aggregation}\\textup{(b)} gives the blockwise $A$-equivariant\nbijection required by condition~\\textup{(2)(i)} of the\ncriterion. Condition~\\textup{(2)(ii)} holds by\n\\cite[Remark~2.2]{FengLiZhang2022TypeB}, since $\\ell$ is odd.\n\nLet $B$ be an $\\ell$-block of $G$, let $\\varphi\\in\\IBr(B)$, and let\n$\\chi\\in\\mathcal X_B$ be its image under the bijection of\nLemma~\\ref{lem:type-b-conlon-block}. Equivariance and the fact that each\ncharacter determines its block give $\\Aut(G)_\\varphi=\\Aut(G)_\\chi$.\nThe ordinary character stabiliser theorem for type $\\mathsf B$ due to\nCabanes and Sp\\\"ath, stated in\n\\cite[Theorem~3.10]{FengLiZhang2022TypeB}, gives\n$(\\widetilde G\\rtimes E)_\\chi=\\widetilde G_\\chi\\rtimes E_\\chi$.\nThe equality of the automorphism stabilisers identifies the stabilisers of\n$\\varphi$ and $\\chi$ in $\\widetilde G\\rtimes E$, $\\widetilde G$ and $E$.\nHence\n\\[\n (\\widetilde G\\rtimes E)_\\varphi\n   =\\widetilde G_\\varphi\\rtimes E_\\varphi.\n\\]\nThis verifies condition~\\textup{(3)} of the criterion.\nThe weight stabiliser factorisation required by condition~\\textup{(4)}\nfollows from \\cite[Proposition~7.5]{FengLiZhang2022TypeB}.\nThe criterion therefore proves the inductive BAW condition for every\n$\\ell$-block of $G$.\n\nIf $(n,q)=(3,3)$, then $\\ell\\in\\{5,7,13\\}$ and\n$X_\\ell(S)=6.\\Omega_7(3)$ by Table~\\ref{tab:typeb-covers}.\nIts Sylow $\\ell$-subgroups have order $\\ell$, so every $\\ell$-block has\ncyclic defect. As in the proof of \\cite[Theorem~1]{FengLiZhang2022TypeB},\nthe result follows from \\cite[Theorem~1.1]{KoshitaniSpath2016}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0224",
+        "current-citation-0225",
+        "current-citation-0226",
+        "current-citation-0227",
+        "current-citation-0228",
+        "current-citation-0229",
+        "current-citation-0230",
+        "current-citation-0231"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "46f12dca883e2b77b85a866e92a7b66563287daf56d4865a56ca8a6a49b7f7f3"
+    },
+    {
+      "id": "current-proof-022",
+      "line": 2092,
+      "start_offset": 100902,
+      "end_offset": 101549,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-component-return"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nSince $\\Delta$ acts componentwise, $\\mathcal O$ consists of the products\nof characters in the orbits $\\mathcal O_i$, and $\\tau$ sends\n$\\mathcal O_i$ to $\\mathcal O_{i^\\tau}$. For a cycle $C$ of length $t$,\nchoose $i$ and $\\theta_i$ as in the hypothesis. Some element of\n$\\Delta_i\\tau^t$ fixes $\\theta_i$, and projection of the assumed\nstabiliser equality onto $\\langle\\tau^t\\rangle$ shows that $\\tau^t$\nfixes $\\theta_i$. Set $\\theta_{i^{\\tau^j}}=\\theta_i^{\\tau^j}$ for\n$0\\leq j<t$ on each cycle. Their product belongs to $\\mathcal O$ and is\nfixed by $\\tau$, hence by $E_{\\mathcal O}$, which gives the stabiliser\nequality.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "5d55a6e1b252fd96f5e3c5616c7ea0465700c9cc0436a69a10e4df8dd2d0a7e9"
+    },
+    {
+      "id": "current-proof-023",
+      "line": 2153,
+      "start_offset": 103629,
+      "end_offset": 105769,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-regular-levi-orbits"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\n\\textup{(1)} Since $\\mathbf G$ is simply connected,\n\\cite[Proposition~12.14]{MalleTesterman2011} shows that\n$\\mathbf H=[\\mathbf L,\\mathbf L]$ is simply connected.\nIt is therefore a direct product of its simple components.\nFor $1\\leq i\\leq r$, set\n\\[\n \\mathbf K_i=\\prod_{j\\in C_i}\\mathbf H_j.\n\\]\nEach $\\mathbf K_i$ is $F$-stable, and projection onto the component\n$\\mathbf H_{x_i}$ gives an isomorphism\n\\[\n \\mathbf K_i^F\\longrightarrow\\mathbf H_{x_i}^{F^{n_i}}=H_i.\n\\]\nTaking the product over the $F$-orbits gives\n\\eqref{eq:type-b-regular-levi-product}.\n\nSet $\\mathbf M=\\mathbf LZ(\\widetilde{\\mathbf G})$.\nThis is an $F$-stable Levi subgroup of $\\widetilde{\\mathbf G}$.\nIts centre is connected because $Z(\\widetilde{\\mathbf G})$ is connected.\nWe have $[\\mathbf M,\\mathbf M]=\\mathbf H$ and\n$\\mathbf M=\\mathbf HZ(\\mathbf M)$. Thus conjugation by $\\mathbf M$\npreserves each direct factor of $\\mathbf H$, and\n\\[\n \\mathbf M/Z(\\mathbf M)\\cong\\mathbf H/Z(\\mathbf H)\n \\cong\\prod_i\\mathbf K_i/Z(\\mathbf K_i).\n\\]\nSince $Z(\\mathbf M)$ is connected, Lang's theorem makes the natural\nhomomorphism\n\\begin{equation}\\tag{\\ref{lem:type-b-regular-levi-orbits}.2}\\label{eq:type-b-regular-levi-action}\n \\widetilde L=\\mathbf M^F\\longrightarrow\n (\\mathbf M/Z(\\mathbf M))^F\n \\cong\\prod_i(\\mathbf K_i/Z(\\mathbf K_i))^F\n\\end{equation}\nsurjective. Conjugation by $(\\mathbf K_i/Z(\\mathbf K_i))^F$ induces\nthe full group of inner and diagonal automorphisms of\n$\\mathbf K_i^F\\cong H_i$\n(see, for example, \\cite[Remark~1.5.12]{GeckMalle2020}). Hence $\\Delta_i$\nis this group, and the homomorphism $\\widetilde L\\longrightarrow\\prod_i\\Delta_i$\nis surjective.\n\n\\textup{(2)} Products of characters identify $\\IBr(L_0)$ with\n$\\prod_i\\IBr(H_i)$.  The orbit description follows from\n\\textup{(1)}.\n\n\\textup{(3)} The normal inclusions follow from\n$\\mathbf H\\lhd\\mathbf L\\lhd\\mathbf M$, and\n$[\\widetilde L,\\widetilde L]\\leq[\\mathbf M,\\mathbf M]^F=L_0$.\nHence $\\widetilde L/L_0$ is abelian.\nSince $\\sigma$ preserves $\\mathbf L$, $[\\mathbf L,\\mathbf L]$ and\n$Z(\\widetilde{\\mathbf G})$, and commutes with $F$, it also preserves\n$L_0$, $L$ and $\\widetilde L$.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0232",
+        "current-citation-0233"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "4320d2c49fb3c2d7c98cae068d017675cb6d86003db38c76ab7c81b073767799"
+    },
+    {
+      "id": "current-proof-024",
+      "line": 2225,
+      "start_offset": 106316,
+      "end_offset": 107294,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-char2-clifford"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nSet $I=H_\\theta$, choose an extension\n$\\widehat\\theta\\in\\IBr(G_\\theta)$ of $\\theta$, and let\n$\\eta\\in\\IBr(I\\mid\\theta)$ be the Clifford correspondent of $\\psi$.\nBy Gallagher's theorem for Brauer characters, we have\n$\\eta=(\\widehat\\theta)_I\\lambda$ for some\n$\\lambda\\in\\IBr(I/N)$, inflated to $I$.\nThe character $(\\widehat\\theta)_I$ is fixed by\n$G_\\theta$, as it is the restriction of a character of that\ngroup.  Since $G/N$ is abelian, conjugation by\n$G_\\theta$ acts trivially on $I/N$ and therefore fixes\n$\\lambda$.  Thus $G_\\theta$ fixes $\\eta$ and, by induction\nfrom $I$ to $H$, also fixes $\\psi$.\n\nLet $g\\in(G\\rtimes E)_\\psi$.  The constituents of\n$\\psi_N$ form a single $H$-orbit, so there is $h\\in H$ such that\n$hg$ fixes $\\theta$.  By hypothesis, write $hg=ae$ with\n$a\\in G_\\theta$ and $e\\in E_\\theta$.\nThe elements $h$, $g$ and $a$ fix $\\psi$, so $e$ fixes $\\psi$.\nConsequently $g=h^{-1}ae\\in G_\\psi E_\\psi$.\nThe reverse inclusion is immediate.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "7252d0005b130079dd1bfbd475572a69de25bcc31596c30ba3932c081e90a0f7"
+    },
+    {
+      "id": "current-proof-025",
+      "line": 2280,
+      "start_offset": 108878,
+      "end_offset": 109816,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-rational-field"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $\\mathcal C$ be a geometric unipotent class of $\\mathbf G$.\nUnipotent classes in type $\\mathsf B$ are parametrised by the Jordan block\nsizes in the natural orthogonal representation.  Since $F_0$ preserves\nthese sizes, $\\mathcal C$ is $F_0$-stable.  By the discussion of spin groups in\n\\cite[Section~2]{Taylor2013}, choose\n$u_0\\in\\mathcal C^{F_0}$ such that $F_0$ acts trivially on\n$A=A_{\\mathbf G}(u_0)$.  Then $F=F_0^f$ also acts trivially on $A$, so\n\\cite[Theorem~21.11]{MalleTesterman2011} identifies the $G$-classes in\n$\\mathcal C^F$ with the ordinary conjugacy classes of $A$.\nThis identification commutes with $F_0$, which acts trivially on $A$.\nHence every power of $F_0$ fixes every $G$-class in $\\mathcal C^F$.\n\nThe equivariance of generalised Gelfand--Graev characters\n\\cite[Proposition~11.10]{Taylor2018Automorphisms} now shows that every\ncharacter $\\Gamma_u$ is fixed by the field automorphisms.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0236",
+        "current-citation-0237",
+        "current-citation-0238"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "38c5ea72ec8e75ca19823266d98e77a5e6b69aef0ab50e0bbfa495b0c27277af"
+    },
+    {
+      "id": "current-proof-026",
+      "line": 2309,
+      "start_offset": 110187,
+      "end_offset": 110888,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-principal-series"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nThe equality is \\cite[Theorem~21.14]{CabanesEnguehard2004}.\nThe dual algebraic group is adjoint of type $\\mathsf C_m$, and its\nquasi-isolated semisimple elements have order dividing $4$ by\n\\cite[Proposition~5.3(a)]{Bonnafe2005}.\nHence every rational Lusztig series with such a label is contained\nin $\\mathcal E_2(H,1)$, proving the assertion about ordinary characters.\nIf a $2$-block $b$ is strictly quasi-isolated, its strictly\nquasi-isolated semisimple label $s$ has odd order. Since $s$ is also\nquasi-isolated, its order divides $4$, so $s=1$.\nThe equality then gives $b=B_0(H)$.\nConversely, the identity is strictly quasi-isolated, so $B_0(H)$ is\nstrictly quasi-isolated.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0239",
+        "current-citation-0240"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "9bc675fb0e10fc78fa066335c9d518b795dcab72b3f749f2707830a11d9a7b23"
+    },
+    {
+      "id": "current-proof-027",
+      "line": 2347,
+      "start_offset": 111971,
+      "end_offset": 124788,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:type-b-gggr-rank"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nFix a geometric unipotent class $\\mathcal C$. As in the proof of\nLemma~\\ref{lem:type-b-rational-field}, choose $u_0\\in\\mathcal C^F$ such\nthat $F$ acts trivially on $A=A_{\\mathbf G}(u_0)$.\nLet $Z_{\\mathcal C}$ be the image of $Z(\\mathbf G)$ in $A$. The regular\nembedding gives\n\\[\n V=A/Z_{\\mathcal C}\\cong A_{\\widetilde{\\mathbf G}}(u_0).\n\\]\nBy \\cite[Section~2]{Taylor2013}, $V$ is an elementary abelian $2$-group.\nSince $F$ acts trivially on $A$, it also acts trivially on $V$.\nThe parametrisation of rational classes identifies the map from\n$G$-classes to $\\widetilde G$-classes in $\\mathcal C^F$ with the map\nfrom conjugacy classes of $A$ to elements of $V$.\nFor each representative $\\widetilde u$ of a $\\widetilde G$-class in\n$\\mathcal C^F$, let $\\widetilde\\Gamma_{\\widetilde u}$ denote the\ncorresponding generalised Gelfand--Graev character.\n\nWe first choose an isolated family for\n$\\widetilde{\\mathbf G}$. By\n\\cite[Proposition~2.4]{GeckHezard2008}, there is a geometric isolated\npair associated with $\\mathcal C$ whose family group has order $|V|$.\nLet $\\mathbf D=[\\widetilde{\\mathbf G}^*,\\widetilde{\\mathbf G}^*]\n\\cong\\operatorname{Sp}_{2n}$. Write the semisimple element in the\nchosen pair as $zt$, where $z$ is central and $t\\in\\mathbf D$.\nMultiplication by $z$ leaves the centraliser unchanged, so $t$\nis isolated. Its eigenvalues belong to $\\{1,-1\\}$, since any\nother reciprocal pair of eigenvalues would give a general linear\nfactor and place the centraliser in a proper Levi subgroup.\nLet $2a$ and $2b$ be the dimensions of its $1$ and $-1$\neigenspaces, respectively, where $a+b=n$.\n\nChoose an $F$-stable maximal torus $\\widetilde{\\mathbf T}^*$\ncontained in an $F$-stable Borel subgroup, and set\n$\\mathbf T_{\\mathbf D}=\\widetilde{\\mathbf T}^*\\cap\\mathbf D$.\nRelative to a symplectic basis diagonalising\n$\\mathbf T_{\\mathbf D}$, let\n$t'=\\operatorname{diag}(I_a,-I_b,I_a,-I_b)$.\nIts centraliser in $\\mathbf D$ is\n$\\operatorname{Sp}_{2a}\\times\\operatorname{Sp}_{2b}$, with root\nsystem $\\mathsf C_a\\sqcup\\mathsf C_b$, omitting factors of rank zero.\nThe eigenspace dimensions show that $t'$ is conjugate to $t$\nin $\\mathbf D$ and is therefore isolated.\nSince $\\mathsf C_n$ has no nontrivial graph automorphism, $F$\nacts by the $q$-power map on $\\mathbf T_{\\mathbf D}$.\nThus $t'$ is fixed by $F$ for odd $q$.\n\nLet $W$ be the Weyl group of $\\widetilde{\\mathbf G}^*$, and let $W_t\\leq W$\nbe the Weyl group of $C_{\\widetilde{\\mathbf G}^*}(t)$.\nRemoving the central factor and replacing $t$ by $t'$ replace $W_t$\nby a conjugate in $W$. Apply this conjugacy to the family and its\nunique special irreducible character. Conjugating $W_t$ and its\ncharacter leaves induction from $W_t$ to $W$ unchanged and preserves\nthe $b$-invariant. Hence the constituent selected by $j$-induction\nis unchanged. The associated unipotent class is the class corresponding\nto this constituent under the Springer correspondence\n\\cite[p.~821]{GeckHezard2008}, so it remains $\\mathcal C$.\nThe order of the group attached to the resulting family is also unchanged.\n\nSet $\\widetilde s'=t'$, and denote the resulting family by $\\mathcal F'$.\nThus $\\widetilde s'\\in(\\widetilde{\\mathbf T}^*)^F$ is isolated and\n$|\\mathcal G_{\\mathcal F'}|=|V|$. The group $\\mathcal G_{\\mathcal F'}$\nis elementary abelian \\cite[Remark~4.2.17]{GeckMalle2020}.\nLemma~\\ref{lem:type-b-isolated-coverage} gives characters\n$\\widetilde\\rho_{\\widetilde u}$ belonging to the family in\n$\\mathcal E(\\widetilde G,\\widetilde s')$ corresponding to $\\mathcal F'$\nsuch that\n\\[\n \\langle\\widetilde\\rho_{\\widetilde u}^{*},\n       \\widetilde\\Gamma_{\\widetilde v}\\rangle_{\\widetilde G}\n =\\delta_{\\widetilde u,\\widetilde v}\n\\]\nfor all chosen representatives $\\widetilde u,\\widetilde v$.\n\nIndependently of this family, choose a pair $(\\widetilde s,\\psi)$\nassociated with $\\mathcal C$ as in \\cite[Theorem~3.2]{Taylor2013},\nwith the image $s$ of $\\widetilde s$ in $\\mathbf G^*$ quasi-isolated.\nThe character $\\psi$ is unipotent on $C^\\circ_{\\mathbf G^*}(s)^F$.\nLet $\\widetilde\\psi\\in\\mathcal E(\\widetilde G,\\widetilde s)$ be the\ncharacter corresponding to $\\psi$ under the bijections in\n\\cite[(3.2)]{Taylor2013}.\nProperty~(P3) of \\cite[Theorem~3.2]{Taylor2013} shows that\n$\\widetilde\\psi$ has unipotent support $\\mathcal C$.\nProperty~(P1) of the same theorem and the degree calculation in the\nproof of \\cite[Theorem~3.1]{Taylor2013} give\n$n_{\\widetilde\\psi}=n_\\psi=|V|$.\nAlso $n_{\\widetilde\\psi^*}=n_{\\widetilde\\psi}$ by\n\\cite[Proposition~3.4.21]{GeckMalle2020}.\nFor each chosen representative $\\widetilde u$ of a $\\widetilde G$-class\nin $\\mathcal C^F$, the Frobenius action on its component group differs\nfrom that at $u_0$ by an inner automorphism of $V$. Since $V$ is abelian,\n$[A_{\\widetilde{\\mathbf G}}(\\widetilde u):\nA_{\\widetilde{\\mathbf G}}(\\widetilde u)^F]=1$.\nChoose the Frobenius structure on the constant local system on\n$\\mathcal C$ for which the trace function takes the value $1$ at every\npoint of $\\mathcal C^F$.\nThe wave front set\nof $\\widetilde\\psi^*$ is $\\mathcal C$ by \\cite[Lemma~14.15]{Taylor2016}.\nThus \\cite[Proposition~15.4]{Taylor2016}, with the expansion in\n\\cite[(11.15)]{Taylor2016}, gives\n\\[\n \\sum_{\\widetilde u}\n \\langle\\widetilde\\psi^*,\\widetilde\\Gamma_{\\widetilde u}\n \\rangle_{\\widetilde G}\n =\\frac{|A_{\\widetilde{\\mathbf G}}(u_0)|}{n_{\\widetilde\\psi^*}}=1,\n\\]\nwhere the sum ranges over the chosen representatives.\nEach summand is a nonnegative integer, so exactly one scalar product\nis $1$ and all the others vanish.\n\nEvery irreducible character of $\\widetilde G$ has multiplicity free\nrestriction to $G$ \\cite[Theorem~1.7.15]{GeckMalle2020}.\nFor $\\widetilde\\rho=\\widetilde\\psi$ or one of the characters\n$\\widetilde\\rho_{\\widetilde u}$ just chosen, write\n\\[\n \\operatorname{Res}^{\\widetilde G}_G(\\widetilde\\rho)\n =\\rho_1+\\cdots+\\rho_r.\n\\]\nAlvis--Curtis duality commutes with restriction from $\\widetilde G$ to\n$G$ and is an involution\n\\cite[Proposition~3.4.3 and Corollary~3.4.5]{GeckMalle2020}.\nConsequently, $\\operatorname{Res}^{\\widetilde G}_G(\\widetilde\\rho^*)$\nis a sum of the distinct irreducible characters $\\rho_i^*$ with\ncoefficients in $\\{1,-1\\}$. Since this restriction is a character,\nevery coefficient is $1$. Together with the identity\n$\\widetilde\\Gamma_v=\\operatorname{Ind}_G^{\\widetilde G}\\Gamma_v$\nin the proof of \\cite[Lemma~14.12]{Taylor2016} and Frobenius\nreciprocity, this gives\n\\[\n \\sum_{i=1}^r\\langle\\rho_i^*,\\Gamma_v\\rangle_G\n =\\langle\\widetilde\\rho^*,\\widetilde\\Gamma_v\\rangle_{\\widetilde G}\n \\qquad(v\\in\\mathcal C^F).\n \\tag{\\ref{prop:type-b-gggr-rank}.1}\n \\label{eq:type-b-fibre-clifford}\n\\]\nFor these selected characters, the right hand side belongs to\n$\\{0,1\\}$ by their construction above. We now choose characters $\\rho_u$,\nindexed by $u\\in\\mathcal U\\cap\\mathcal C^F$, such that\n$\\bigl(\\langle\\rho_u^*,\\Gamma_v\\rangle_G\\bigr)_{u,v\\in\\mathcal U\\cap\\mathcal C^F}$\nis a permutation matrix.\n\nWhenever a $\\widetilde G$-class in $\\mathcal C^F$ is a single\n$G$-class, restrict the character $\\widetilde\\rho_{\\widetilde u}$\nchosen for that class. Conjugation by $\\widetilde G$ acts transitively\non the restriction constituents and fixes the $G$-class.\nThe equivariance of generalised Gelfand--Graev characters\n\\cite[Proposition~2.2]{Geck1993} makes the summands in\n\\eqref{eq:type-b-fibre-clifford} equal for $v=\\widetilde u$.\nThey are nonnegative integers with sum one, so $r=1$.\nEquation~\\eqref{eq:type-b-fibre-clifford} also shows that zero scalar\nproducts in $\\widetilde G$ remain zero for every restriction constituent.\n\nIf $Z_{\\mathcal C}=1$, then $A\\cong V$ and every\n$\\widetilde G$-class in $\\mathcal C^F$ is a single $G$-class.\nThe irreducible restrictions just obtained therefore give the required\ncharacters $\\rho_u$, indexed by $u\\in\\mathcal U\\cap\\mathcal C^F$,\nfor this geometric class.\n\nSuppose now that $Z_{\\mathcal C}\\ne1$, and denote its nonidentity\nelement by $\\vartheta$. If $A$ is abelian, Lusztig's presentation of\n$A$, as recalled in \\cite[pp.~45--46]{Taylor2013}, gives\n$A=Z_{\\mathcal C}\\cong C_2$. Indeed, nontrivial central image requires\neach odd part of the orthogonal partition to occur once. The number\nof odd parts is odd. If there were at least three, the generators\n$y_2,y_3$ in that presentation would have nontrivial commutator\n$\\vartheta$, contradicting commutativity. Thus there is only one odd\npart and $A$ is generated by $\\vartheta$. In this case $V=1$, and the\nunique $\\widetilde G$-class contains two $G$-classes.\n\nIf $A$ is nonabelian, Lusztig's presentation recalled in\n\\cite[pp.~45--46]{Taylor2013} shows that $A$ is an extraspecial\n$2$-group, with\n$Z(A)=Z_{\\mathcal C}=\\langle\\vartheta\\rangle$.\nThe $\\widetilde G$-class corresponding to $0\\in V$ contains the two\n$G$-classes corresponding to $1$ and $\\vartheta$.\nEvery other $\\widetilde G$-class is a single $G$-class, since the\ninverse image of a nonzero element of $V$ is a conjugacy class\n$\\{x,x\\vartheta\\}$ of $A$.\n\nIn both cases with $Z_{\\mathcal C}\\ne1$, there is exactly one $\\widetilde\nG$-class containing two $G$-classes, and the required characters have already\nbeen chosen for every other $\\widetilde G$-class. Property~(P2) of\n\\cite[Theorem~3.2]{Taylor2013} and the restriction\nformula in the proof of \\cite[Theorem~3.1]{Taylor2013} give\nexactly $|Z_{\\mathcal C}|=2$ irreducible constituents of\n$\\operatorname{Res}^{\\widetilde G}_G\\widetilde\\psi$.\nOn a $\\widetilde G$-class consisting of one $G$-class, conjugation\nmakes the two summands in \\eqref{eq:type-b-fibre-clifford} equal.\nThey are nonnegative integers, so their sum cannot be one.\nHence the unique nonzero scalar product of $\\widetilde\\psi^*$ occurs\non the class containing two $G$-classes.\nLet $u_1,u_2$ represent those classes, and write\n$\\operatorname{Res}^{\\widetilde G}_G\\widetilde\\psi=\\rho_1+\\rho_2$.\nEquation~\\eqref{eq:type-b-fibre-clifford} gives\n\\[\n \\langle\\rho_1^*,\\Gamma_{u_j}\\rangle_G+\n \\langle\\rho_2^*,\\Gamma_{u_j}\\rangle_G=1\n \\qquad(j=1,2).\n\\]\nAn element interchanging the two constituents must interchange the\ntwo $G$-classes. Otherwise equivariance would make the two entries\nin either column equal, although they are nonnegative integers with\nsum one. The scalar product matrix on these classes is consequently\n\\[\n \\begin{pmatrix}a&b\\\\ b&a\\end{pmatrix},\n \\qquad a,b\\in\\mathbb Z_{\\geq0},\\qquad a+b=1,\n\\]\nand is a permutation matrix. Together with the characters chosen for\nthe $\\widetilde G$-classes containing a single $G$-class, this gives characters $\\rho_u$ for which\n$\\bigl(\\langle\\rho_u^*,\\Gamma_v\\rangle_G\\bigr)_{u,v\\in\\mathcal U\\cap\\mathcal C^F}$\nis a permutation matrix.\n\nAll the selected characters of $\\widetilde G$ have unipotent support\n$\\mathcal C$. Compatibility with duality and\n\\cite[Lemmas~14.12 and~14.15]{Taylor2016} show that each restriction\nconstituent $\\rho_u$ has the same support.\nIts semisimple label is the image of $\\widetilde s$ or\n$\\widetilde s'$ in $\\mathbf G^*$, according to the character selected.\nThe image of $\\widetilde s$ is quasi-isolated by its choice. The image of $\\widetilde s'$ is isolated by\n\\cite[Proposition~2.3(b)]{Bonnafe2005}.\nBoth images are therefore quasi-isolated $2$-elements\n\\cite[Proposition~5.3(a)]{Bonnafe2005}.\n\nFor every $u\\in\\mathcal U$, set $\\eta_u=\\rho_u^*$.\nThe semisimple label of $\\rho_u$ is quasi-isolated, so\nLemma~\\ref{lem:type-b-principal-series} gives\n$\\rho_u\\in\\Irr(B_0(G))$.\nAlvis--Curtis duality preserves rational Lusztig series\n\\cite[Proposition~9.8(iv)]{CabanesEnguehard2004}, and therefore\n$\\eta_u$ lies in the same series and also belongs to $B_0(G)$. Hence\n$\\langle\\eta_u,P_v\\rangle_G=\\langle\\eta_u,\\Gamma_v\\rangle_G$ for all\n$u,v\\in\\mathcal U$.\n\nLet $\\mathcal C_u$ be the geometric class containing $u$.\nBy \\cite[Lemma~14.15]{Taylor2016}, $\\mathcal C_u$ is the wave front\nset of $\\eta_u$. The result of Achar and Aubert in the form of\n\\cite[Proposition~15.2]{Taylor2016} shows that\n$\\langle\\eta_u,\\Gamma_v\\rangle_G\\neq0$ only if\n$\\mathcal C_v\\subseteq\\overline{\\mathcal C_u}$, where $\\overline{\\mathcal\nC_u}$ denotes the Zariski closure of $\\mathcal C_u$ in $\\mathbf G$. For\ndistinct classes, this inclusion implies $\\dim\\mathcal C_v<\\dim\\mathcal C_u$.\nThe chosen ordering therefore makes the full scalar product matrix block lower\ntriangular, with the permutation matrices obtained above on its diagonal.\n\nBy the equality $\\mathcal E_2(G,1)=\\Irr(B_0(G))$ in\nLemma~\\ref{lem:type-b-principal-series},\n\\cite[Proposition~2.7]{Chaneb2021} gives\n$|\\mathcal U|=|\\IBr(B_0(G))|$.\nEach $\\Gamma_u$ is induced from a linear character of a $p$-subgroup.\nSince $p$ is odd, $P_u$ is projective in characteristic $2$.\nThe scalar product matrix is nonsingular, so the $P_u$ are linearly\nindependent. Their number equals the dimension of the $\\mathbb Q$-span\nof the projective indecomposable characters of $B_0(G)$, and they\ntherefore form a basis of that space.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0243",
+        "current-citation-0244",
+        "current-citation-0245",
+        "current-citation-0246",
+        "current-citation-0247",
+        "current-citation-0248",
+        "current-citation-0249",
+        "current-citation-0250",
+        "current-citation-0251",
+        "current-citation-0252",
+        "current-citation-0253",
+        "current-citation-0254",
+        "current-citation-0255",
+        "current-citation-0256",
+        "current-citation-0257",
+        "current-citation-0258",
+        "current-citation-0259",
+        "current-citation-0260",
+        "current-citation-0261",
+        "current-citation-0262",
+        "current-citation-0263",
+        "current-citation-0264",
+        "current-citation-0265",
+        "current-citation-0266",
+        "current-citation-0267",
+        "current-citation-0268",
+        "current-citation-0269"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "fe783ca46fd9dd1c5fea1255cd920a6164faa6b92ff4a6bca39eba90b9e56a10"
+    },
+    {
+      "id": "current-proof-028",
+      "line": 2613,
+      "start_offset": 125195,
+      "end_offset": 126895,
+      "title_tex": null,
+      "associated_labels": [
+        "cor:type-b-principal-selector"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nBy Lemma~\\ref{lem:type-b-rational-field}, $E$ fixes every $\\Gamma_u$\nand therefore every principal block component $P_u$.\nProposition~\\ref{prop:type-b-gggr-rank} shows that the $P_u$ form a\nbasis over $\\mathbb Q$ of the space spanned by the projective\nindecomposable characters of $B_0(G)$.\nThus $E$ acts trivially on this space. It fixes every projective\nindecomposable character and, by duality, every irreducible Brauer\ncharacter of $B_0(G)$. In particular, $E$ fixes every\n$\\widetilde G$-conjugate of $\\psi$, which gives the stabiliser equality.\nSince $E$ is cyclic, Lemma~\\ref{lem:cyclic-extension} extends $\\psi$\nto $G\\rtimes E$.\n\nSuppose that $(n,q)\\neq(3,3)$. By Table~\\ref{tab:typeb-covers},\n$S=\\Omega_{2n+1}(q)$ is its own universal $2'$-covering group.\nSet $H=\\operatorname{SO}_{2n+1}(q)$.\nSince $Z(G)$ is a central $2$-group, inflation identifies\n$\\IBr(B_0(S))$ with $\\IBr(B_0(G))$\n\\cite[Theorem~9.10]{Navarro1998}. Thus field automorphisms\nfix every character in $\\IBr(B_0(S))$.\nThe principal block of $H$ covers $B_0(S)$.\nAs $|H:S|=2$, each irreducible Brauer character of $S$ lies\nunder a unique irreducible Brauer character of $H$\n\\cite[Theorem~8.11]{Navarro1998}.\nConsequently field automorphisms also fix every character in\n$\\IBr(B_0(H))$.\nThis gives the instance of\n\\cite[Corollary~5.15]{FengYuZhang2024} used in the proof of\nTheorem~5.16 of that paper.\nThe preceding argument verifies the field invariance hypothesis of\n\\cite[Theorem~5.16]{FengYuZhang2024} and Assumption~5.1 of the same paper\nfor $B_0(G)$. That theorem therefore gives the inductive BAW condition\nfor the principal $2$-block of $S$, which is BAW-good by\nTheorem~\\ref{thm:spath-triples}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0270",
+        "current-citation-0271",
+        "current-citation-0272",
+        "current-citation-0273"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "6abb2caa3c48caf69fde7b4781fc07a566a8619c087b3d5b685f4f85c44d7452"
+    },
+    {
+      "id": "current-proof-029",
+      "line": 2676,
+      "start_offset": 128191,
+      "end_offset": 132665,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:type-b-q3"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nLet $S=\\Omega_7(3)$ and $H=\\operatorname{SO}_7(3)$.  Since $X=X_2(S)$\nand $\\Out(S)\\cong C_2$, \\cite[Corollary~2.13]{FengLiZhang2019} shows\nthat a $2$-block $B$ of $X$ satisfies the inductive BAW condition whenever\nthere is an $\\Aut(X)_B$-equivariant bijection\n$\\IBr(B)\\to\\Alp(B)$.  The calculations in\nSection~\\ref{app:type-b-computation} give the nine blocks\n$B_1,\\ldots,B_9$, with $B_1=B_0(X)$, and the data in\nTable~\\ref{tab:typeb-q3-blocks} below.\n\nConjugation by $H$ induces $\\Aut(S)$.\nBy \\cite[Lemma~5.7 and the proof of Proposition~5.11]{FengYuZhang2024},\nthe numbers of principal weight classes of $H$ and $S$ equal\n$|\\IBr(B_0(H))|$ and $|\\IBr(B_0(S))|$, respectively.\nThe proof of \\cite[Proposition~5.11]{FengYuZhang2024} applies to\n$\\operatorname{Spin}_7(3)$, whose principal\nBrauer characters and principal weight classes correspond bijectively\nto those of $S$ under the central quotient with kernel of order $2$.\nThe calculation in Section~\\ref{app:type-b-computation} gives\n$|\\IBr(B_0(H))|=10$ and $|\\IBr(B_0(S))|=12$.\nThe proof of \\cite[Proposition~5.11]{FengYuZhang2024} also shows that\nevery principal weight class of $S$ is covered by a unique principal\nweight class of $H$.\nBy \\cite[Corollary~2.22(2)]{FengYuZhang2024}, the classes of $S$\ncovered by each class of $H$ form one orbit under $H/S$.\nConsequently, $H/S\\cong C_2$ has eight singleton orbits and two\norbits of size two on the principal weight classes of $S$.\nThe calculation in \\path{o7brauer.g}, described in\nSection~\\ref{app:type-b-computation}, shows that eight of the ten\nirreducible Brauer characters of $B_0(H)$ restrict irreducibly to $S$,\nwhile the other two each restrict to a sum of two distinct irreducible\nBrauer characters. The irreducible constituents of these ten\nrestrictions are precisely the characters in $\\IBr(B_0(S))$.\nBy Clifford theory, the action of $H/S$ on this set has eight singleton\norbits and two orbits of size two.  Comparing this with the action on\n$\\Alp(B_0(S))$, we obtain an $\\Aut(S)$-equivariant bijection\n\\[\n \\IBr(B_0(S))\\longrightarrow\\Alp(B_0(S)).\n\\]\nSince $X\\to S$ has central\n$2'$-kernel, \\cite[Lemma~2.5]{FengLiZhang2019} lifts this to an\n$\\Aut(X)$-equivariant bijection $\\IBr(B_1)\\to\\Alp(B_1)$.\n\nFor $B_2$, the character table calculation in\nSection~\\ref{app:type-b-computation} gives defect order $8$, five ordinary\ncharacters and two Brauer characters. One ordinary character has\nheight $1$, so Kessar--Malle's theorem\n\\cite[Theorem~1.1]{KessarMalle2013} excludes abelian defect groups.\nThe defect group of $B_2$ is therefore dihedral or quaternion.\nA block with quaternion defect group of order $8$ has one or three\nirreducible Brauer characters\n\\cite[Theorem~8.1]{Sambale2014}.\nHence the defect group of $B_2$ is $D_8$.  By the proof of\n\\cite[Theorem~4.1]{Sambale2012}, $B_2$ has exactly two $X$-conjugacy\nclasses of weights, represented by weights whose radical subgroups\nhave orders $8$ and $4$, respectively.  Since automorphisms preserve\nsubgroup order, the outer involution fixes both classes.  The program\n\\path{o7block2.g} verifies that the outer involution also fixes\nboth irreducible Brauer characters of $B_2$.  Hence any bijection\n$\\IBr(B_2)\\to\\Alp(B_2)$ is $\\Aut(X)_{B_2}$-equivariant.\nThe block $B_3$ has defect group $C_2$ and is therefore nilpotent. It satisfies the inductive BAW condition by\n\\cite[Theorem~1.3]{KoshitaniSpath2016}. The blocks $B_4$ and $B_5$\nhave defect zero and satisfy the condition trivially.\n\nTable~\\ref{tab:typeb-q3-blocks} below shows that $B_8$ and $B_9$\nare the only blocks of defect $3$ with nontrivial central\ncharacters. They are therefore the two faithful blocks with\ndihedral defect groups of order $8$ described in\n\\cite[Section~5.5]{Macgregor2022}.  Each has two irreducible\nBrauer characters, so \\cite[Theorem~4.1]{Sambale2012} gives two\nweight classes in each.\nThe exhaustive radical computation in\nSection~\\ref{app:type-b-computation} gives eight weight classes in\neach faithful sector.  Since $B_8$ and $B_9$ account for two\nin their respective sectors, $B_6$ and $B_7$ each have six, equal to\ntheir numbers of Brauer characters.  The outer involution swaps\n$B_6$ with $B_7$ and $B_8$ with $B_9$, so\n$\\Aut(X)_{B_i}=\\Inn(X)$ for $i\\in\\{6,7,8,9\\}$, so any bijection\n$\\IBr(B_i)\\to\\Alp(B_i)$ is $\\Aut(X)_{B_i}$-equivariant for each such $i$.\nThe criterion of \\cite[Corollary~2.13]{FengLiZhang2019} now proves the\ninductive BAW condition for\n$B_1,B_2,B_6,B_7,B_8$ and $B_9$.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0280",
+        "current-citation-0281",
+        "current-citation-0282",
+        "current-citation-0283",
+        "current-citation-0284",
+        "current-citation-0285",
+        "current-citation-0286",
+        "current-citation-0287",
+        "current-citation-0288",
+        "current-citation-0289",
+        "current-citation-0290",
+        "current-citation-0291",
+        "current-citation-0292"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "4fd09fcff0e3fe7a04618ba5898e2a285de4bd3809a0753c4e9f045a06b3025e"
+    },
+    {
+      "id": "current-proof-030",
+      "line": 2809,
+      "start_offset": 134406,
+      "end_offset": 136860,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:type-b-localized-return"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nSet $G=\\mathbf G^F$ and $S=\\Omega_{2n+1}(q)$. By\nSection~\\ref{subsec:type-b-covers}, $G$ is the universal covering group of $S$.\nWe apply Lemma~\\ref{lem:jordan-reduction} with $\\ell=2$.\nThe hypothesis gives the character representatives, stabiliser\nfactorisation and extensions required in part~\\textup{(i)} of\nLemma~\\ref{lem:jordan-reduction}.\n\nLet $\\mathbf K$ and $F'$ be as in\nLemma~\\ref{lem:jordan-reduction}\\textup{(ii)}. A connected Dynkin\nsubdiagram of $\\mathsf B_n$ has type $\\mathsf A_m$ or $\\mathsf B_m$.\nIf $\\mathbf K$ has type~$\\mathsf A_m$, then $\\mathbf K^{F'}$ is a\nspecial linear or unitary group. The consequence of the type~$\\mathsf A$ results stated after\nLemma~\\ref{lem:jordan-reduction} gives the required iBAW bijection\nfor every $2$-block of $\\mathbf K^{F'}$. This also covers $\\mathsf B_1=\\mathsf A_1$.\n\nSuppose that $\\mathbf K$ has type $\\mathsf B_m$, where $m\\geq2$.\nThen $H=\\mathbf K^{F'}\\cong\\operatorname{Spin}_{2m+1}(q_0)$ for some\npower $q_0$ of $p$. By Lemma~\\ref{lem:type-b-principal-series},\nthe only strictly quasi-isolated $2$-block of $H$ is its principal block.\nFor $m=2$, we have $\\operatorname{Spin}_5(q_0)\\cong\\Sp_4(q_0)$.\nThe rank two construction at the start of the proof of\nProposition~\\ref{prop:odd-two} gives the required iBAW bijection\nfor its principal block.\n\nFor $m\\geq3$, set $T=\\Omega_{2m+1}(q_0)$.\nIf $(m,q_0)\\neq(3,3)$, Corollary~\\ref{cor:type-b-principal-selector}\nshows that the principal $2$-block of $T$ is BAW-good and therefore\nadmits an iBAW bijection. In the exceptional case, Proposition~\\ref{prop:type-b-q3}\nand Remark~\\ref{rem:block-aggregation}\\textup{(a)} show that $T$ satisfies iBAW at\n$2$, so Corollary~\\ref{cor:fixed-point-descent} gives the required\nprincipal block bijection on $T$.\nWe have $Z(H)=O_2(H)$ and $H/Z(H)\\cong T$.\nBy Section~\\ref{subsec:type-b-covers}, $H$ is the universal covering group of\n$T$ unless $(m,q_0)=(3,3)$, in which case\n$H=\\operatorname{Spin}_7(3)=X_3(T)$. Thus the natural isomorphism\n$\\Aut(H)\\cong\\Aut(T)$ identifies $(H\\rtimes\\Aut(H))/Z(H)$ with\n$T\\rtimes\\Aut(T)$.\nLemma~\\ref{lem:type-b-normal-core} therefore lifts this bijection to\nan iBAW bijection for the principal $2$-block of $H$.\n\nThis verifies the second hypothesis of Lemma~\\ref{lem:jordan-reduction},\nwhich shows that every $2$-block of $G$ is BAW-good.\nSince $G/O_2(Z(G))=S$, every $2$-block of $S$ is dominated by a\n$2$-block of $G$ and is consequently BAW-good.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "a3a277e43c1cdb2528ae815952b74c93debf26874370b6a8e8b613c8b4b2dc56"
+    },
+    {
+      "id": "current-proof-031",
+      "line": 2876,
+      "start_offset": 137699,
+      "end_offset": 148512,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:type-b-brauer-hypothesis"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nIf $f=1$, then $E=1$ and both assertions are immediate.\nAssume that $f>1$.\nCorollary~\\ref{cor:type-b-principal-selector} supplies the required\nrepresentatives for the principal block of $G$.\n\nLet $b$ be a nonprincipal $2$-block of $G$.\nWe use the idempotents $e_s^G$ defined in Section~\\ref{sec:symplectic}.\nBy \\cite[Theorem~9.12]{CabanesEnguehard2004}, choose a semisimple\nelement $s\\in(\\mathbf G^*)^F$ of odd order such that $b$ belongs to\n$e_s^G$.\nSince $b$ is nonprincipal, Lemma~\\ref{lem:type-b-principal-series}\nshows that $s$ is not strictly quasi-isolated.\n\nAs in the proof of \\cite[Theorem~5.7]{FengLiZhang2022Jordan}, choose\na minimal Levi subgroup $\\mathbf L^*$ of $\\mathbf G^*$ containing\n$C_{\\mathbf G^*}^{\\circ}(s)C_{\\mathbf G^*}(s)^F$.\nThis product contains a maximal torus, and intersections of Levi\nsubgroups containing a common maximal torus are Levi subgroups.\nHence $\\mathbf L^*$ is unique and therefore $F$-stable. It is proper\nbecause $s$ is not strictly quasi-isolated.\n\nThe action of $\\widetilde G$ fixes $e_s^G$ by\n\\cite[Lemma~7.4]{BonnafeDatRouquier2017}. Set $D=E_{e_s^G}$.\nChoose a positive divisor $c$ of $f$ such that $F_0=\\phi^c$ induces\na generator of $D$, and set $h=f/c$, so that $F=F_0^h$.\nBy \\cite[Lemma~4.5(a)--(b)]{Ruhstorfer2022Derived}, there is a Frobenius\nendomorphism conjugate to $F_0$ by an element of $G$ which stabilises\na Levi subgroup $\\mathbf L$ in duality with $\\mathbf L^*$ and its\nidempotent $e_s^L$. Conjugating this Levi subgroup and making the\ncorresponding rational conjugation of $(s,\\mathbf L^*)$, we may therefore\nassume that $F_0$ itself stabilises $\\mathbf L$ and $e_s^L$,\nwhere $L=\\mathbf L^F$. Set\n\\[\n L_0=[\\mathbf L,\\mathbf L]^F,\\qquad\n \\widetilde L=(\\mathbf LZ(\\widetilde{\\mathbf G}))^F.\n\\]\n\nWrite $L_0\\cong\\prod_i H_i$ as in\nLemma~\\ref{lem:type-b-regular-levi-orbits}.\nThe factors arising from components of type $\\mathsf A$ are special\nlinear or unitary groups over extension fields.\nThere is at most one component containing a short root.\nIf such a component occurs, then $F_0$ preserves it because $F_0$\npreserves root lengths. Its Dynkin diagram has no nontrivial\nautomorphism preserving root lengths. The group of points fixed by\n$F$ on this component is therefore $\\operatorname{Spin}_{2m+1}(q)$\nfor some $m<n$.\nIf $d$ is a block of $L$ belonging to $e_s^L$ and $d_0$ is a block\nof $L_0$ covered by $d$, then $d_0$ is strictly quasi-isolated by\nthe proof of \\cite[Theorem~5.7]{FengLiZhang2022Jordan}.\nWrite $d_0=d_1\\otimes\\cdots\\otimes d_r$, where $d_i$ is a block of\n$H_i$. The proof of \\cite[Proposition~5.6]{FengLiZhang2022Jordan}\nshows that each $d_i$ is strictly quasi-isolated.\nIf $H_i$ has type $\\mathsf B_m$ with $m\\geq2$, then $d_i$ is\nprincipal by Lemma~\\ref{lem:type-b-principal-series}.\n\nFor a type $\\mathsf A$ factor, the representatives and stabiliser\nfactorisation for the diagonal, field and graph automorphisms are\nprovided by \\cite[Theorem~8.1]{FengLiZhang2021Equivariant}.\nThis includes $\\mathsf B_1=\\mathsf A_1$ and the group\n$\\operatorname{SL}_2(3)$.\nFor a factor $H_i$ of type $\\mathsf B_m$, let $\\Delta_i$ be the\ngroup induced by $\\widetilde L$ on $H_i$, as in\nLemma~\\ref{lem:type-b-regular-levi-orbits}, and let $E_i$ denote\nthe group of field automorphisms of $H_i$.\nFor $m=2$, identify $H_i$ with $\\Sp_4(q)$.\nHere $f>1$, so $q\\geq9$.\nThe verification following Lemma~4.5 of Brough and Schaeffer Fry\n\\cite[p.~1203]{BroughSchaefferFry2020} gives a representative in each\ndiagonal orbit with the required stabiliser factorisation.\nHere $\\Delta_i/\\Inn(H_i)$ has order two, so field automorphisms\ncentralise this quotient and the factorisation is preserved by\ndiagonal conjugation. Thus\n\\begin{equation}\\label{eq:type-b-factor-stabiliser}\n (\\Delta_i E_i)_\\chi=(\\Delta_i)_\\chi(E_i)_\\chi\n \\qquad(\\chi\\in\\IBr(B_0(H_i))).\n\\end{equation}\nFor $m\\geq3$, Corollary~\\ref{cor:type-b-principal-selector} shows\nthat $E_i$ fixes every character in $\\IBr(B_0(H_i))$, so\n\\eqref{eq:type-b-factor-stabiliser} also holds. In particular, it holds\nwith $E_i$ replaced by any subgroup of $E_i$.\n\nRecall that $\\IBr(L,e_s^L)$ is the union of $\\IBr(d)$ over the\n$2$-blocks $d$ of $L$ belonging to $e_s^L$.\nFix an $\\widetilde L$-orbit $\\mathcal P$ in $\\IBr(L,e_s^L)$ and choose\n$\\psi_0\\in\\mathcal P$. Let $\\theta_0$ be an irreducible constituent\nof $(\\psi_0)_{L_0}$, and let $\\mathcal O$ be its $\\widetilde L$-orbit.\nLet $d=\\bl(\\psi_0)$, and let $d_0$ be the block containing $\\theta_0$.\nThen $d$ covers $d_0$. Since $d$ belongs to $e_s^L$, the argument above\nshows that every factor block of $d_0$ is strictly quasi-isolated.\nThe type $\\mathsf A$ factors therefore satisfy\n\\cite[Theorem~8.1]{FengLiZhang2021Equivariant}, while the type\n$\\mathsf B$ factors of rank at least two are principal and satisfy\n\\eqref{eq:type-b-factor-stabiliser}.\nBy Lemma~\\ref{lem:type-b-regular-levi-orbits}, the image of the\nconjugation action of $\\widetilde L$ on $L_0$ is $\\prod_i\\Delta_i$. If\n$\\theta_0=\\theta_{0,1}\\times\\cdots\\times\\theta_{0,r}$, then\n$\\mathcal O$ consists of the products of characters in the\n$\\Delta_i$-orbits of $\\theta_{0,i}$.\n\nLet $D_{\\mathcal O}$ be the stabiliser of $\\mathcal O$ in $D$, and\nchoose a generator $\\tau$ induced by $F_0^a$, with $a>0$.\nConsider a cycle $C$ of the permutation of the factors $H_i$\ninduced by $\\tau$, and set\n$t=|C|$. Choose one index $i$ from the cycle $C$, and let\n$\\mathbf H_j$ be the algebraic component used to define $H_i$ in\nLemma~\\ref{lem:type-b-regular-levi-orbits}.\nThus $H_i=\\mathbf H_j^{F^{n_i}}$, where $n_i$ is the length of the\n$F$-orbit of $\\mathbf H_j$.\nSince $\\tau^t$ stabilises this factor, there is an integer $k$ such\nthat $F_0^{at}(\\mathbf H_j)=F^k(\\mathbf H_j)$.\nReplacing $k$ by a congruent integer modulo $n_i$, choose $k\\leq0$,\nwhich gives $at-hk\\geq0$.\nUnder the projection onto $\\mathbf H_j$ in the proof of\nLemma~\\ref{lem:type-b-regular-levi-orbits}, the action of $\\tau^t$ on\n$\\mathbf H_j^{F^{n_i}}$ is induced by\n\\[\n F^{-k}F_0^{at}=F_0^{at-hk}.\n\\]\nIf $u$ is the $F_0$-orbit length of $\\mathbf H_j$, both $at-hk$\nand $hn_i$ are multiples of $u$.\nThus $F_0^{at-hk}$ and $F^{n_i}$ are powers of $F_0^u$ on\n$\\mathbf H_j$.\nBy the classification of Steinberg endomorphisms\n\\cite[Theorem~22.5]{MalleTesterman2011} and Lang's theorem,\nwe may conjugate $F_0^u$ to a standard Frobenius endomorphism, possibly\ncomposed with a graph automorphism.\nThe same conjugation identifies both powers with powers of this\nstandard endomorphism.\nConsequently, $\\tau^t$ acts on $\\mathbf H_j^{F^{n_i}}$ as a field\nautomorphism in type $\\mathsf B$, and as a field automorphism possibly\ncomposed with a graph automorphism in type $\\mathsf A$.\nLet $\\Phi_i\\leq\\Aut(H_i)$ be the group generated by the field\nautomorphisms and, when $H_i$ has type $\\mathsf A$, the graph\nautomorphisms. Thus $\\Phi_i=E_i$ in type $\\mathsf B$.\nThe automorphism induced by $\\tau^t$ belongs to $\\Phi_i$.\nIn type $\\mathsf B$,\n$\\Delta_i\\cap E_i=1$, so \\eqref{eq:type-b-factor-stabiliser} holds in\n$\\Delta_i\\rtimes\\Phi_i$. In type $\\mathsf A$,\n\\cite[Theorem~8.1]{FengLiZhang2021Equivariant} gives the corresponding\nfactorisation in $\\Delta_i\\rtimes\\Phi_i$ for a suitable representative\nof each $\\Delta_i$-orbit. The action just described defines a homomorphism\n$\\alpha_i:\\langle\\tau^t\\rangle\\longrightarrow\\Phi_i$.\nTaking inverse images under the homomorphism\n$(\\delta,\\sigma)\\longmapsto(\\delta,\\alpha_i(\\sigma))$ from\n$\\Delta_i\\rtimes\\langle\\tau^t\\rangle$ to $\\Delta_i\\rtimes\\Phi_i$\nverifies the hypothesis of Lemma~\\ref{lem:type-b-component-return},\nwhich gives $\\theta\\in\\mathcal O$ fixed by $D_{\\mathcal O}$. Hence\n\\[\n (\\widetilde L D_{\\mathcal O})_\\theta\n =\\widetilde L_\\theta D_{\\mathcal O}.\n\\]\nChoose $y\\in\\widetilde L$ such that $\\theta_0^y=\\theta$, and set\n$\\psi=\\psi_0^y$. Then $\\psi\\in\\mathcal P\\subseteq\\IBr(L,e_s^L)$,\nand $\\theta$ is a constituent of $\\psi_{L_0}$.\n\nThe proof of Lemma~\\ref{lem:type-b-regular-levi-orbits} shows that\n$[\\mathbf L,\\mathbf L]\\hookrightarrow\\mathbf LZ(\\widetilde{\\mathbf G})$\nis a regular embedding. Apply \\cite[Theorem~1.7.15]{GeckMalle2020}\nto this embedding.\nThe restriction to $L_0$ of every irreducible $2$-modular\nrepresentation of $\\widetilde L$ is multiplicity free.\nChoosing a representation lying over $\\theta$, modular Clifford\ntheory therefore shows that $\\theta$ extends to $\\widetilde L_\\theta$.\nLemma~\\ref{lem:type-b-regular-levi-orbits} also shows that\n$L_0\\lhd L\\lhd\\widetilde L$, that $\\widetilde L/L_0$ is abelian,\nand that $D_{\\mathcal O}$ normalises this chain.\nLemma~\\ref{lem:type-b-char2-clifford} now gives\n\\[\n (\\widetilde L D_{\\mathcal O})_\\psi\n =\\widetilde L_\\psi(D_{\\mathcal O})_\\psi.\n\\]\nIf $x=\\widetilde g\\delta\\in(\\widetilde L D)_\\psi$, with\n$\\widetilde g\\in\\widetilde L$ and $\\delta\\in D$, then Clifford\ntheory shows that $\\theta^x$ is an $L$-conjugate of $\\theta$.\nThus $\\mathcal O^\\delta\\cap\\mathcal O\\neq\\varnothing$, so\n$\\delta\\in D_{\\mathcal O}$.\nConsequently,\n\\[\n (\\widetilde L D)_\\psi=\\widetilde L_\\psi D_\\psi,\n \\qquad (D_{\\mathcal O})_\\psi=D_\\psi.\n\\]\n\nLet $\\Psi$ be the image of $\\psi$ under the bijection\n$\\IBr(L,e_s^L)\\longrightarrow\\IBr(G,e_s^G)$ induced by Jordan\ndecomposition. This bijection preserves the block correspondence and is\n$\\widetilde L D$-equivariant by\n\\cite[Lemma~5.1 and the proof of Proposition~5.2]{FengLiZhang2022Jordan}.\nSince $Z(\\mathbf G)\\leq\\mathbf L$, the intersection\n$\\mathbf G\\cap\\mathbf LZ(\\widetilde{\\mathbf G})=\\mathbf L$ is connected.\nLang's theorem applied to\n$\\widetilde{\\mathbf G}=\\mathbf G(\\mathbf LZ(\\widetilde{\\mathbf G}))$\ntherefore gives $\\widetilde G=G\\widetilde L$, with\n$G\\cap\\widetilde L=L$. Inclusion induces an isomorphism\n$\\widetilde L/L\\cong\\widetilde G/G$.\nUnder the equivariant Jordan bijection, this isomorphism identifies\nthe diagonal actions on $\\psi$ and $\\Psi$. Hence\n\\[\n (\\widetilde G D)_\\Psi=\\widetilde G_\\Psi D_\\Psi,\n \\qquad D_\\Psi=D_\\psi.\n\\]\nThe equivariance of rational Lusztig series\n\\cite[Proposition~7.2]{Taylor2018Automorphisms} also shows that field\nautomorphisms permute the idempotents $e_s^G$.\nSince each block belongs to exactly one of these idempotents,\nevery element of $(\\widetilde G E)_\\Psi$ fixes $e_s^G$.\nThe group $\\widetilde G$ fixes this idempotent, so the image of any\nsuch element under the projection $\\widetilde G\\rtimes E\\longrightarrow E$\nlies in $D$. Consequently,\n\\[\n (\\widetilde G E)_\\Psi=(\\widetilde G D)_\\Psi\n =\\widetilde G_\\Psi E_\\Psi,\\qquad E_\\Psi=D_\\Psi.\n\\]\nThe group $E_\\Psi$ is cyclic, so Lemma~\\ref{lem:cyclic-extension}\nextends $\\Psi$ to $G\\rtimes E_\\Psi$.\n\nSince $\\mathcal P$ was arbitrary, the required representatives\nexist on every $\\widetilde G$-orbit in $\\IBr(G,e_s^G)$.\nVarying $s$ covers all nonprincipal orbits, while\nCorollary~\\ref{cor:type-b-principal-selector} covers the principal\nones. This proves the assertion.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0296",
+        "current-citation-0297",
+        "current-citation-0298",
+        "current-citation-0299",
+        "current-citation-0300",
+        "current-citation-0301",
+        "current-citation-0302",
+        "current-citation-0303",
+        "current-citation-0304",
+        "current-citation-0305",
+        "current-citation-0306",
+        "current-citation-0307",
+        "current-citation-0308",
+        "current-citation-0309"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "04a3298bbc1e57c75654c63924a3be60f77aa76794e4bcda47b6503fe02e7700"
+    },
+    {
+      "id": "current-proof-032",
+      "line": 3105,
+      "start_offset": 148684,
+      "end_offset": 149909,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:type-b-two-high-rank"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nIf $(n,q)=(3,3)$, the result is Proposition~\\ref{prop:type-b-q3}.\nOtherwise, $X_2(S)=S$ by Table~\\ref{tab:typeb-covers}.\nLet $\\mathbf G$ be simply connected of type $\\mathsf B_n$, and\nchoose $F$ with $G=\\mathbf G^F=\\operatorname{Spin}_{2n+1}(q)$.\nFor every semisimple $2'$-element $s\\in(\\mathbf G^*)^F$,\n\\cite[Corollary~4.2]{Ruhstorfer2022Derived} describes the stabiliser\nof $e_s^G$ in $\\Out(G)$ using diagonal automorphisms and a power of\nthe standard field automorphism, since type~$\\mathsf B$ has no\ngraph automorphisms.\nBy \\cite[Lemma~4.5(a)--(b)]{Ruhstorfer2022Derived}, after conjugation\nby $G$, the associated Levi subgroup and its idempotent may be chosen\nstable under this field automorphism. Thus the group $A_s$ in\nLemma~\\ref{lem:jordan-reduction} may be chosen inside the field\nautomorphism group $E$ of Proposition~\\ref{prop:type-b-brauer-hypothesis}.\nRestricting the stabiliser factorisation and extensions supplied by\nthat proposition to $A_s$ verifies\n\\cite[Assumption~5.3]{FengLiZhang2022Jordan} at the prime $2$.\nLemma~\\ref{lem:type-b-localized-return} therefore shows that every\n$2$-block of $S$ is BAW-good, and\nTheorem~\\ref{thm:spath-triples} gives the inductive BAW condition.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0310",
+        "current-citation-0311",
+        "current-citation-0312"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "ac73634323298784593ba852cf12a86982ab529976b970ba71787ecc901e648b"
+    },
+    {
+      "id": "current-proof-033",
+      "line": 3131,
+      "start_offset": 149992,
+      "end_offset": 150384,
+      "title_tex": null,
+      "associated_labels": [
+        "thm:type-b"
+      ],
+      "association_basis": "preceding section title",
+      "proof_tex": "\\begin{proof}\nThe defining prime case follows from \\cite[Theorem~C]{Spath2013}.\nProposition~\\ref{prop:type-b-odd-primes} treats odd nondefining primes,\nand Proposition~\\ref{prop:type-b-two-high-rank} treats the prime $2$.\nThus every $\\ell$-block of $X_\\ell(S)$ satisfies the inductive BAW\ncondition. The final assertion follows from\nRemark~\\ref{rem:block-aggregation}\\textup{(a)}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0313"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "50b6b75c3534e2a2e1a49e8a02c92392c56970f453b92b4ba3c5c33d5d0cc8e0"
+    },
+    {
+      "id": "current-proof-034",
+      "line": 3145,
+      "start_offset": 150542,
+      "end_offset": 151084,
+      "title_tex": null,
+      "associated_labels": [
+        "cor:type-b-census"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nTheorem~\\ref{thm:type-b} treats odd characteristic in ranks at least\nthree. In even characteristic, the isomorphisms between the finite simple\ngroups of types $\\mathsf B_n$ and $\\mathsf C_n$ reduce the assertion to\nTheorem~\\ref{thm:symplectic}, which also covers rank two through\n$\\mathsf B_2=\\mathsf C_2$. The case of rank one follows from\n\\cite[Proposition~4.6]{FengLiZhang2023LowRankA}, since\n$\\mathsf B_1=\\mathsf A_1$. The same result covers the derived subgroup\n$\\Sp_4(2)'\\cong A_6\\cong\\operatorname{PSL}_2(9)$.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0314"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "393e77698c3f5f95b661332eea8abbb118b134b68568fd0ead4c863f2d28f411"
+    },
+    {
+      "id": "current-proof-035",
+      "line": 3186,
+      "start_offset": 152268,
+      "end_offset": 152875,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:complete-collapse"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nSince $X$ is the universal $\\ell'$-covering group of $S$, we have\n$\\Out(S)\\cong\\Out(X)=1$. For each $\\ell$-block $b$ of $X$, the\ncardinality assumption gives a bijection\n$\\Omega_b:\\IBr(b)\\longrightarrow\\Alp(b)$.\nEvery automorphism of $X$ is inner and therefore fixes every\nirreducible Brauer character and every $X$-conjugacy class of weights.\nThus $\\Omega_b$ is $\\Aut(X)_b$-equivariant.\n\\cite[Corollary~2.13]{FengLiZhang2019} therefore shows that every\n$\\ell$-block of $X$ satisfies the inductive BAW condition. Remark~\\ref{rem:block-aggregation}\\textup{(a)} gives the conclusion.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0318"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "310e26a3d987fc0afd50d6666d10adab14f5b02071a5012af40715e2f10c2fb8"
+    },
+    {
+      "id": "current-proof-036",
+      "line": 3219,
+      "start_offset": 153621,
+      "end_offset": 154241,
+      "title_tex": null,
+      "associated_labels": [
+        "lem:block-cancellation"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nA finite $C_2$-set is determined up to isomorphism by its numbers\nof singleton orbits and orbits of size two. Cancelling the known\nparts therefore gives $U_0\\cong U'_0$.\nIf $\\mathcal B_0$ is a singleton, this isomorphism has the required\nproperty. Otherwise, write $\\mathcal B_0=\\{b,b^t\\}$, where $t$\ngenerates $C_2$. The action of $t$ exchanges the two parts on\neach side, so $|Y_b|=\\tfrac12|U_0|=\\tfrac12|U'_0|=|Y'_b|$.\nChoose a bijection $f_b:Y_b\\to Y'_b$ and extend it by\n$f(y^t)=f_b(y)^t$ for $y\\in Y_b$.\nTogether with $f|_{Y_b}=f_b$, this defines the required\n$C_2$-equivariant bijection.\n\\end{proof}",
+      "source_use_ids": [],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "796ff56cbb1fedda836020dd1d3384f57dd38b5a04fadf765fb5545b3cfca342"
+    },
+    {
+      "id": "current-proof-037",
+      "line": 3254,
+      "start_offset": 154824,
+      "end_offset": 171615,
+      "title_tex": null,
+      "associated_labels": [
+        "prop:four-boundary"
+      ],
+      "association_basis": "preceding statement",
+      "proof_tex": "\\begin{proof}\nFor $J_4$ the Schur multiplier and outer automorphism group are trivial.\nThe blockwise Alperin weight conjecture for every block with noncyclic\ndefect group is \\cite[Theorem~5.2]{AnOBrienWilsonJ4}.  Blocks with cyclic\ndefect group, including blocks of defect zero, are covered by\n\\cite[Proposition~6.2]{Spath2013}.  Lemma~\\ref{lem:complete-collapse}\nshows that $J_4$ satisfies iBAW at every prime dividing its order.\n\nWe next consider $Fi'_{24}$. The blockwise weight counts for the blocks of\n$Fi'_{24}$ with noncyclic defect groups are established in\n\\cite[Theorem~4.3]{AnCannonOBrienUngerFi24}. We also determine the actions\nof the outer involution needed for the equivariant bijections.\nSet $X=X_\\ell(Fi'_{24})$, so that\n$X=Fi'_{24}$ at $3$ and $X=3.Fi'_{24}$ at every other prime.\nFor $\\ell\\ne3$, let $Z=Z(X)$ and let\n$\\pi:X\\longrightarrow\\overline X:=X/Z=Fi'_{24}$ be the quotient map.\nFor every $\\ell$-subgroup $\\overline Q$ of $\\overline X$,\nSchur--Zassenhaus gives a complement $Q$ to $Z$ in\n$\\pi^{-1}(\\overline Q)$. Since $Z$ is central, this complement is\nunique. Moreover, $Q$ is radical if and only if $\\overline Q$ is radical\n\\cite[Lemma~2.3(c)]{NavarroTiep2011}, and\n\\begin{equation}\\label{eq:fi24-central-quotient}\n \\begin{aligned}\n \\overline{N_X(Q)}&=N_{\\overline X}(\\overline Q),\\\\\n N_X(Q)/(QZ)&\\cong N_{\\overline X}(\\overline Q)/\\overline Q.\n \\end{aligned}\n\\end{equation}\nBy \\cite[Theorem~9.9(c)]{Navarro1998}, the block correspondence for\n$X\\longrightarrow\\overline X$ gives a bijection between the blocks of\n$\\overline X$ and the blocks of $X$ lying over $1_Z$. The latter are\nprecisely the blocks in the trivial sector of\nDefinition~\\ref{def:central-sector}.\nFor corresponding blocks $\\overline b$ and $b$, inflation gives a bijection\n\\[\n \\IBr(\\overline b)\\longrightarrow\\IBr(b).\n\\]\nFor a weight $(\\overline Q,\\overline\\theta)$ of $\\overline b$, let $Q$\nbe the unique lift described above, and let $\\theta$ be the inflation\nof $\\overline\\theta$ along the quotient homomorphism\n$N_X(Q)/Q\\longrightarrow N_{\\overline X}(\\overline Q)/\\overline Q$,\n$nQ\\longmapsto\\overline{nQ}$.\nPassing to conjugacy classes gives a bijection\n\\[\n \\Alp(\\overline b)\\longrightarrow\\Alp(b)\n\\]\nby \\cite[Lemma~2.3(iii)]{FengLiZhang2019}.\nThese bijections commute with the induced automorphism actions.\nThus an equivariant bijection $\\IBr(\\overline b)\\to\\Alp(\\overline b)$\ngives an equivariant bijection $\\IBr(b)\\to\\Alp(b)$\n\\cite[Lemma~2.5]{FengLiZhang2019}.\n\nFor $\\ell\\neq3$, the outer involution exchanges the two faithful sectors\nof $X=3.Fi'_{24}$ \\cite[Lemma~4.7]{AnDietrich2012}. The stabiliser of a\nblock in either sector is therefore $\\Inn(X)$, so any bijection between\nits irreducible Brauer characters and weight classes is equivariant.\nRemark~\\ref{rem:block-aggregation}\\textup{(b)} extends this bijection to the other\nblock in its orbit.\n\nFor a finite $C_2$-set $Y$, we use the pair $(|Y|,|Y^{C_2}|)$, with\n$C_2$ acting through the nontrivial outer automorphism. We compare\nthese pairs for $\\IBr(b)$ and $\\Alp(b)$ whenever the outer involution\nfixes the block $b$.\nThroughout the following argument, we use Table~8 of\n\\cite{AnDietrich2012}. In the column headed $|\\Irr^0|$, an entry $a/b$\ndenotes $a+b$ weights, of which $a$ are fixed by the outer involution.  For\nthe blocks specified below, the program\n\\path{fi24blocks.g} computes the number of Brauer characters, the number\nfixed by the outer involution, and the action of the outer involution on blocks.  It\nlists the block defects separately.  At $2$,\nthe pairs of total and fixed Brauer character counts for the blocks\nin the trivial sector are\n\\begin{equation}\\label{eq:fi24-p2-signatures}\n (33,25),\\quad(3,1),\\quad(3,3),\\quad(1,1),\\quad(1,1).\n\\end{equation}\nThe last two blocks have defect zero. For each of them we use the\nbijection $\\chi^0\\mapsto(1,\\chi)$, where $\\chi$ is its unique ordinary\nirreducible character. The second and third blocks have defect\ngroups of order $4$ and $8$ by\n\\cite[Lemma~4.2(d)]{AnCannonOBrienUngerFi24}.\nThe Alperin weight conjecture holds for both blocks by\n\\cite[Theorem~13.7]{Sambale2014}. Together with\n\\eqref{eq:fi24-p2-signatures}, this gives three weights for each block.\n\nThe radical subgroup of a weight belonging to either block is conjugate\nto a subgroup of its defect group \\cite[Theorem~4.14]{Navarro1998}.\nThe row labelled $1$ in \\cite[Table~8]{AnDietrich2012} accounts for\nthe two blocks of defect zero, and the row labelled $2$ has entry $0/0$\nin the trivial column.\nThe classes $(2^2)_a$ and $(2^2)_b$ in\n\\cite[Table~8]{AnDietrich2012} are denoted by $2^2$ and $(2^2)^*$,\nrespectively, in \\cite[Table~2]{AnCannonOBrienUngerFi24}.\nThe defect groups of the block of defect~$2$ lie in the class $(2^2)_b$\nby \\cite[Lemma~4.2(d)]{AnCannonOBrienUngerFi24}.\nIts three weights therefore lie among the four weights in the\n$(2^2)_b$ row of \\cite[Table~8]{AnDietrich2012}.\nThe entry $2/2$ means that these four weights consist of two fixed\nweights and one orbit of length two. Since the block is fixed by the outer\ninvolution, its three weights consist of the orbit of length two and one\nfixed weight, giving the pair $(3,1)$.\n\nFor the block with dihedral defect group of order $8$, the possible radical\nclasses are $(2^2)_a$, $(2^2)_b$ and $D_8$, with entries $1/0$, $2/2$ and $1/0$\nin the trivial column of \\cite[Table~8]{AnDietrich2012}.\nThree of the four $(2^2)_b$-weights belong to the block of defect~$2$.\nHence the only weights that can belong to the block with defect group\n$D_8$ are the $(2^2)_a$-weight, the remaining fixed $(2^2)_b$-weight and\nthe $D_8$-weight. Since this block has three weights, it contains all three.\nEach is fixed, giving the pair $(3,3)$.\nThese pairs agree with the corresponding Brauer character counts\nin \\eqref{eq:fi24-p2-signatures}, so each of the two blocks $b$ admits an\n$\\Aut(X)_b$-equivariant bijection $\\IBr(b)\\to\\Alp(b)$.\nThe program \\path{fi24blocks.g}, described in Section~\\ref{app:fischer},\nindependently confirms this distribution of the $(2^2)_a$- and\n$(2^2)_b$-weights for every candidate fusion.\n\nSumming the entries in the trivial column of\n\\cite[Table~8]{AnDietrich2012} gives the pair $(41,31)$ for the union\nof the weight sets of all blocks in the trivial sector.\nLemma~\\ref{lem:block-cancellation}, after removal of the two blocks just\ntreated and the two blocks of defect zero, gives an equivariant bijection\nfor the principal block.  Its pair of total and fixed weight counts is\n$(33,25)$, in agreement with \\eqref{eq:fi24-p2-signatures}.\n\nAt $2$, each faithful sector contains exactly two blocks.\nThey have defects $21$ and $3$ and contain $23$ and $2$ Brauer\ncharacters, respectively. Summing the column labelled $\\lambda_3$ in\n\\cite[Table~8]{AnDietrich2012} gives $25$ weights in each faithful sector.  The\nblock of defect $3$ has two weights by\n\\cite[Theorem~13.7]{Sambale2014}.  The other block therefore has $23$\nweights.\n\nAt $3$, set $G=Fi'_{24}$. The classification of radical subgroups and\ntheir normalisers in \\cite[Proposition~4.1 and Table~1]{AnCannonOBrienUngerFi24}\ngives a radical subgroup $Q\\cong C_3^2$ with\n$N_G(Q)\\cong(3^2\\!:\\!2\\times G_2(3)).2$.\nBy \\cite[Lemma~4.2(c) and Theorem~4.3]{AnCannonOBrienUngerFi24}, $G$\nhas a unique nonprincipal block $B_1$ of positive defect, with defect\ngroup $Q$ and four weights. In CTblLib~1.3.11 \\cite{CTblLib2025},\nthe table \\path{F3+} represents $G$. The table\n\\path{(3^2:2xG2(3)).2} is the seventeenth entry in CTblLib's list of\ncharacter tables of maximal subgroups of $G$, and represents $N_G(Q)$.\n\nLet $b$ be the $3$-block of $N_G(Q)$ numbered $2$ in the CTblLib\ncalculation described in Section~\\ref{app:fischer}. By \\cite[Theorem~4.14]{Navarro1998}, the induced block $b^G$ is defined.\nIt can be identified from the reduced central characters of induced\nordinary characters using \\cite[Lemma~6.1]{Navarro1998}.  The programs \\path{fi24p3.g} and \\path{fi24blocks.g} select the four\ncharacters of $N_G(Q)/Q$ that have defect zero and whose inflations\nlie in $b$. The program \\path{fi24blocks.g} applies the central character test to\nevery class fusion returned by \\texttt{PossibleClassFusions} for the\nindicated tables.\nFor each of the six ordinary characters in $b$, every candidate\nidentifies the block of $G$ numbered $2$. The three blocks of $G$ have defects\n$16,2,0$, respectively, and the first is principal. Thus the second is\n$B_1$, and $b^G=B_1$. The four selected characters therefore give all\nfour $B_1$-weights.\n\nThe $3^2$ entry of \\cite[Table~8]{AnDietrich2012} shows that two of these\nweights are fixed by the outer involution, giving the pair $(4,2)$.\nThe program \\path{fi24blocks.g} gives the same pair of total and fixed\nBrauer character counts.  Thus the two $C_2$-sets are isomorphic, giving an equivariant\nbijection for $B_1$. For the block of defect zero, use $\\chi^0\\mapsto(1,\\chi)$.  Lemma~\\ref{lem:block-cancellation}, applied to the equivariant bijection\nconstructed in \\cite[Section~4.3.4]{AnDietrich2012} between the irreducible\nBrauer characters and the conjugacy classes of weights in the entire sector,\ngives an equivariant bijection for the principal block.  Its pair of total and fixed weight counts is $(25,25)$, equal to the\ncorresponding pair for Brauer characters computed by the program.\n\nAt $5$, the nontrivial radical subgroups of $Fi'_{24}$ have orders\n$5$ and $25$ \\cite[Proposition~4.1 and Table~1]{AnCannonOBrienUngerFi24}.\nThe central quotient correspondence in\n\\eqref{eq:fi24-central-quotient} gives their unique radical lifts to\n$3.Fi'_{24}$ and the corresponding normalisers. Weight characters in the\ntrivial sector are obtained by the inflation described there. The program \\path{fi24weights.g}, described in\nSection~\\ref{app:fischer}, determines the block distributions and outer\nactions of these weights. It verifies that the resulting pairs of total and fixed weight counts are\nindependent of the candidate class fusions and that every weight associated\nwith a radical subgroup of order $5$ belongs to a block with cyclic defect. The classification in\n\\cite[Proposition~4.1 and Table~1]{AnCannonOBrienUngerFi24}, together\nwith the corresponding CTblLib character tables, accounts for the weights\nassociated with all nontrivial radical subgroups.  In the\ntrivial sector the program gives the pairs $(16,16)$, $(14,6)$ and\n$(16,16)$ for the three blocks with defect group $C_5^2$, in the block\norder of the character table. The program \\path{fi24blocks.g} gives the\nsame pairs for Brauer characters, so these three blocks admit\nequivariant bijections. It also gives the\npairs of blocks $45,46$ and $47,48$ interchanged by the outer involution.\nCTblLib's identifications of the character tables and the outer action show\nthat these are the two pairs of blocks exchanged between the faithful sectors. The blocks in these pairs have $16$ and\n$14$ weights and Brauer characters, respectively. The blocks in the faithful sectors are\ntreated by applying Remark~\\ref{rem:block-aggregation}\\textup{(b)} to their outer\nautomorphism orbits.  All remaining $5$-blocks have cyclic defect or\ndefect zero and are covered by \\cite[Proposition~6.2]{Spath2013}.\n\nAt $7$, each of the three sectors has one block of noncyclic defect.\nUse the equivariant bijection for each entire sector constructed in\n\\cite[Section~4.3.4]{AnDietrich2012}, with the counts in \\cite[Table~8]{AnDietrich2012}.  The blocks with cyclic defect\nand the blocks of defect zero admit equivariant bijections by\n\\cite[Proposition~6.2]{Spath2013}.  In the trivial sector, apply\nLemma~\\ref{lem:block-cancellation} to the bijection on the entire sector, using these\nblockwise bijections for the cyclic and defect zero blocks.  This gives an\nequivariant bijection for the unique block of noncyclic defect in the\ntrivial sector. Its pair of total and fixed weight counts is $(22,12)$, equal to the\ncorresponding pair for Brauer characters computed by \\path{fi24blocks.g}.\nEach faithful sector has $63$ weights and, by the sector bijection, $63$\nBrauer characters. The program \\path{fi24blocks.g} gives $22$ Brauer\ncharacters in its unique block of noncyclic defect. The remaining blocks\ntherefore contain $41$ Brauer characters and, by\n\\cite[Proposition~6.2]{Spath2013}, $41$ weights. Thus the block of\nnoncyclic defect has $22$ weights. Choose a bijection for one of these\ntwo blocks and define the bijection for the other by conjugating with\nthe outer involution.\n\nAt $11$, $13$, $17$, $23$, and $29$, every block of positive defect has cyclic\ndefect, as verified by \\path{fi24blocks.g}. These blocks and the blocks of\ndefect zero are covered by \\cite[Proposition~6.2]{Spath2013}. We have therefore constructed an\n$\\Aut(X)_b$-equivariant bijection $\\IBr(b)\\to\\Alp(b)$ for every\n$\\ell$-block $b$ of $X=X_\\ell(Fi'_{24})$.\nSince $\\Out(Fi'_{24})\\cong C_2$, \\cite[Corollary~2.13]{FengLiZhang2019}\nshows that every such block satisfies the inductive BAW condition.\nRemark~\\ref{rem:block-aggregation}\\textup{(a)} completes the proof for $Fi'_{24}$.\n\nFor $\\Baby$, the universal $\\ell'$-covering group is $\\Baby$ at $2$ and\n$2.\\Baby$ at odd primes.  At $2$ the ordinary character table has two\nblocks.  They contain $179$ and $5$ ordinary irreducible characters and\nhave defects $41$ and $3$, respectively.  The correctness of\nthe ordinary character table is proved in\n\\cite[Section~7]{BreuerMagaardWilsonBaby2020}.  The exact restriction\nmatrices on the $2$-regular classes have ranks $25$ and $2$.  The\ncalculation is given in Section~\\ref{app:baby-monster}.  By\n\\eqref{eq:restriction-rank}, it gives $|\\IBr(\\Baby)|=27$.  The weight calculation in\n\\cite[proof of Theorem~4.2 and Table~2]{AnDietrich2012}, with the\ncorrections in \\cite{AnDietrichErratum}, gives $27$ conjugacy classes\nof $2$-weights.  The nonprincipal block $b$ of\ndefect $3$ has $|\\IBr(b)|=2$ by \\eqref{eq:restriction-rank}, and\n$|\\IBr(b)|=|\\Alp(b)|$ by \\cite[Theorem~13.7]{Sambale2014}.\nSubtraction gives $25$ weights for the principal block, which has $25$\nBrauer characters by \\eqref{eq:restriction-rank}.  Thus\n$|\\IBr(b)|=|\\Alp(b)|$ for every $2$-block $b$ of $\\Baby$.  Since\n$\\Out(\\Baby)=1$, Lemma~\\ref{lem:complete-collapse} shows that $\\Baby$\nsatisfies iBAW at $2$.\nAt $\\ell=7$, the total $220$ printed for the number of\n$7$-regular conjugacy classes of $2.\\Baby$ in the proof of\n\\cite[Lemma~5.2]{AnWilsonBaby} should be $222$.  The supplementary\ncalculation described in Section~\\ref{app:baby-monster} verifies the\ncorrected total and the restriction ranks $24,24,21,24$ for the four\nblocks with noncyclic defect.  The blockwise values used in\n\\cite[Theorem~5.3]{AnWilsonBaby} are therefore unaffected.\nAt odd primes, every block $b$ of $2.\\Baby$ with noncyclic defect\nsatisfies $|\\IBr(b)|=|\\Alp(b)|$ by \\cite[Theorem~5.3]{AnWilsonBaby}.\nSince $\\Out(\\Baby)=1$, \\cite[Proposition~6.2]{Spath2013}, applied to\nthe simple group $\\Baby$, gives the same equality for every block of\n$2.\\Baby$ with cyclic defect, including defect zero.  Since\n$\\Out(2.\\Baby)\\cong\\Out(\\Baby)=1$,\nLemma~\\ref{lem:complete-collapse} applies.\n\nFor $\\Monster$ the universal $\\ell'$-covering group is $\\Monster$ at\nevery prime.  At $2$ there are five blocks, of defects $46,0,0,4,0$ and\nnumbers of ordinary irreducible characters $183,1,1,8,1$.  The correctness\nof the ordinary character table is proved in\n\\cite[Section~5]{BreuerMagaardWilsonMonster2026}.\nThe program in Section~\\ref{app:baby-monster} verifies that $\\Monster$ has\n$61$ $2$-regular conjugacy classes, so $|\\IBr(\\Monster)|=61$ by\n\\cite[Corollary~2.10]{Navarro1998}.  The weight calculation in\n\\cite[proof of Theorem~4.2 and Table~17]{AnDietrich2012}, with the\ncorrections in \\cite{AnDietrichErratum}, gives $61$ conjugacy classes\nof $2$-weights.  Each of the three blocks $b$ of defect zero satisfies\n$|\\IBr(b)|=|\\Alp(b)|=1$.  The unique nonprincipal block $b$ of defect $4$ satisfies\n$|\\IBr(b)|=|\\Alp(b)|$ by \\cite[Theorem~13.7]{Sambale2014}.  These four blocks are all the nonprincipal $2$-blocks. Subtracting their\nBrauer character and weight counts from the respective totals gives\n$|\\IBr(B_0(\\Monster))|=|\\Alp(B_0(\\Monster))|$ for the principal block.  Thus\n$|\\IBr(b)|=|\\Alp(b)|$ for every $2$-block $b$ of $\\Monster$, and\nLemma~\\ref{lem:complete-collapse} shows that $\\Monster$ satisfies iBAW\nat $2$.\nFor every odd $\\ell\\mid|\\Monster|$, every $\\ell$-block $b$ of\n$\\Monster$ with noncyclic defect satisfies\n$|\\IBr(b)|=|\\Alp(b)|$ by \\cite[Theorem~4.4]{AnWilsonMonster}.  Since\n$\\Out(\\Monster)=1$, \\cite[Proposition~6.2]{Spath2013}, applied to the\nsimple group $\\Monster$, gives the same equality for every block with\ncyclic defect, including defect zero.  Thus\n$|\\IBr(b)|=|\\Alp(b)|$ for every $\\ell$-block $b$ of $\\Monster$, and\nLemma~\\ref{lem:complete-collapse} shows that $\\Monster$ satisfies iBAW\nat every odd prime dividing its order.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0320",
+        "current-citation-0321",
+        "current-citation-0322",
+        "current-citation-0323",
+        "current-citation-0324",
+        "current-citation-0325",
+        "current-citation-0326",
+        "current-citation-0327",
+        "current-citation-0328",
+        "current-citation-0329",
+        "current-citation-0330",
+        "current-citation-0331",
+        "current-citation-0332",
+        "current-citation-0333",
+        "current-citation-0334",
+        "current-citation-0335",
+        "current-citation-0336",
+        "current-citation-0337",
+        "current-citation-0338",
+        "current-citation-0339",
+        "current-citation-0340",
+        "current-citation-0341",
+        "current-citation-0342",
+        "current-citation-0343",
+        "current-citation-0344",
+        "current-citation-0345",
+        "current-citation-0346",
+        "current-citation-0347",
+        "current-citation-0348",
+        "current-citation-0349",
+        "current-citation-0350",
+        "current-citation-0351",
+        "current-citation-0352",
+        "current-citation-0353",
+        "current-citation-0354",
+        "current-citation-0355",
+        "current-citation-0356",
+        "current-citation-0357",
+        "current-citation-0358",
+        "current-citation-0359",
+        "current-citation-0360",
+        "current-citation-0361",
+        "current-citation-0362",
+        "current-citation-0363",
+        "current-citation-0364",
+        "current-citation-0365",
+        "current-citation-0366",
+        "current-citation-0367",
+        "current-citation-0368",
+        "current-citation-0369",
+        "current-citation-0370",
+        "current-citation-0371"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "8782949f36eed1fd2870c1962839541e3872155a5296c4c883c5c9a8dcaba3e1"
+    },
+    {
+      "id": "current-proof-038",
+      "line": 3540,
+      "start_offset": 171688,
+      "end_offset": 171907,
+      "title_tex": "Proof of Theorem~\\ref{thm:sporadic}",
+      "associated_labels": [
+        "thm:sporadic"
+      ],
+      "association_basis": "proof title",
+      "proof_tex": "\\begin{proof}[Proof of Theorem~\\ref{thm:sporadic}]\nThe result follows from Proposition~\\ref{prop:four-boundary} and the\nCTBlocks verification \\cite{BreuerSporadicOverview} for the other\n$22$ sporadic groups.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0372"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "a3703af447168ffdbaf536724ea4e20a47d385156d8936d89b607bab7024a44b"
+    },
+    {
+      "id": "current-proof-039",
+      "line": 3549,
+      "start_offset": 171986,
+      "end_offset": 172642,
+      "title_tex": null,
+      "associated_labels": [
+        "thm:main",
+        "cor:reduction"
+      ],
+      "association_basis": "preceding section title",
+      "proof_tex": "\\begin{proof}\nTheorem~\\ref{thm:main} follows from Theorem~\\ref{thm:symplectic},\nCorollary~\\ref{cor:type-b-census}, and Theorem~\\ref{thm:sporadic}.\nFor Corollary~\\ref{cor:reduction}, let $H$ be the finite group in its\nstatement. Sp\\\"ath's reduction theorem\n\\cite[Theorem~A]{Spath2013} reduces the assertion to the nonabelian\nsimple groups involved in $H$.\nTheorem~\\ref{thm:main} applies when $\\ell$ divides the order of such a group $S$.\nOtherwise, every $\\ell$-block of its universal $\\ell'$-covering group\nhas defect zero and satisfies the inductive BAW condition trivially.\nRemark~\\ref{rem:block-aggregation}\\textup{(a)} gives the conclusion.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0373"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "8111ab9bb3d6217ec5bf773a82c19061799dca803d0ff0c358641f4cd87c2d71"
+    },
+    {
+      "id": "current-proof-040",
+      "line": 3856,
+      "start_offset": 188299,
+      "end_offset": 212590,
+      "title_tex": "Proof of Lemma~\\ref{lem:type-b-isolated-coverage}",
+      "associated_labels": [
+        "lem:type-b-isolated-coverage"
+      ],
+      "association_basis": "proof title",
+      "proof_tex": "\\begin{proof}[Proof of Lemma~\\ref{lem:type-b-isolated-coverage}]\nFor sufficiently large $p$ and $q$, Geck and H\\'ezard prove the\nconclusion in \\cite[Proposition~4.3]{GeckHezard2008}. We adapt their\nproof to the present hypotheses.\nWe first prove that the restrictions of\n$D_H(\\Gamma_{u_1}),\\ldots,D_H(\\Gamma_{u_d})$ to $\\mathcal C^F$\nare linearly independent. We then show that the restrictions of the\ncharacters in $\\Irr_{s,\\mathcal F}(H)$ span the $H$-invariant\nfunctions on $\\mathcal C^F$. We obtain characters satisfying\n\\eqref{eq:type-b-isolated-pairings} by combining these facts with the\nmultiplicity sum formula~\\eqref{eq:gggr-family-multiplicity-sum}.\n\nFix a prime $\\ell_0\\ne p$. For each $F$-stable pair\n$\\iota=(\\mathcal C,\\mathscr E_\\iota)$, where $\\mathscr E_\\iota$ is an\nirreducible $\\mathbf H$-equivariant $\\overline{\\mathbb Q}_{\\ell_0}$-local\nsystem on $\\mathcal C$, choose a Frobenius isomorphism with the\nnormalisation of \\cite[10.1--10.8]{Taylor2016}.\nLet $Y_\\iota$ be the trace function associated with $\\mathscr E_\\iota$,\nand let $X_\\iota$ be the trace function associated with the corresponding\nintersection cohomology complex. Extend them by zero outside\n$\\mathcal C^F$ and $\\overline{\\mathcal C}^{\\,F}$, respectively.\nFollowing \\cite[11.12]{Taylor2016}, we obtain these functions from those\nof \\cite[10.8]{Taylor2016} by composition with the Springer isomorphism\nchosen for the construction of the generalised Gelfand--Graev characters\n\\cite[Proposition~4.6 and Section~5]{Taylor2016}.\nThis is an $\\mathbf H$-equivariant isomorphism from the variety of\nunipotent elements of $\\mathbf H$ to the variety of nilpotent elements\nin its Lie algebra, chosen to commute with $F$.\nLet $\\Gamma_\\iota^{\\mathrm{mod}}$ be the modified class function defined in\n\\cite[(11.15)]{Taylor2016}, which is a linear combination of\n$\\Gamma_{u_1},\\ldots,\\Gamma_{u_d}$. We will prove the required linear\nindependence on $\\mathcal C^F$ by calculating\n$\\langle D_H(\\Gamma_\\iota^{\\mathrm{mod}}),X_\\kappa\\rangle_H$\nfor pairs $\\iota,\\kappa$ supported on $\\mathcal C$, as in\n\\cite[Lemma~3.5]{Geck1994BasicIII}, and using the vanishing assertion in\n\\cite[Corollary~3.6(b)]{Geck1994BasicIII}.\n\nTo carry out Geck--H\\'ezard's calculation for every odd $q$, we use\nTaylor's expansions of the generalised Gelfand--Graev characters and the\nmodified functions in terms of intersection cohomology trace functions\n\\cite[Theorem~11.13 and Lemma~11.16]{Taylor2016}. These formulas assume\nthat $p$ is \\emph{acceptable} for $\\mathbf H$. Since $p$ is odd, it is\n\\emph{very good} for $\\mathbf H$, and hence acceptable in Taylor's sense\n\\cite[Definition~6.1 and Lemma~6.3(i)]{Taylor2016}.\nTaylor's acceptability condition also implies Letellier's condition\n\\cite[Assumption~5.0.14]{Letellier2005}, as explained in\n\\cite[6.2]{Taylor2016}.\nWe will use this implication later to justify the application of\nLetellier's Frobenius equivariant induction isomorphism\n\\cite[(6.2.11)]{Letellier2005} in the comparison of Fourier constants.\nWe also use Lusztig's duality identities\n\\cite[Proposition~8.5 and Corollary~8.6]{Lusztig1992Support}.\nBecause $Z(\\mathbf H)$ is connected, \\cite[Corollary~13.6]{Taylor2016}\nshows that Lusztig's duality identities hold without a restriction on $q$.\n\nThe equivariant local systems on $\\mathcal C$ are parametrised by\n$\\Irr(A_{\\mathbf H}(u_0))$ \\cite[(4.2)]{Geck1999GGGR}.\nSince $F$ acts trivially on $A_{\\mathbf H}(u_0)$, the coefficient matrix\nexpressing the modified functions in terms of\n$\\Gamma_{u_1},\\ldots,\\Gamma_{u_d}$ is the character table of\n$A_{\\mathbf H}(u_0)$, up to nonzero scalar factors\n\\cite[Section~3(A)]{GeckMalle2000}. It is therefore invertible.\nThe orthogonality and triangularity relations and the inverse matrix\nformula needed in the proof of \\cite[Lemma~3.5]{Geck1994BasicIII} are\nsupplied by \\cite[Lemma~10.9, (10.11), Theorem~10.14 and (10.20)]{Taylor2016},\nwithout assuming that $F$ is split \\cite[10.1]{Taylor2016}.\nUsing these identities with Taylor's expansions and Lusztig's duality\nidentities, the calculation of \\cite[Lemma~3.5]{Geck1994BasicIII} gives\n\\begin{equation}\\label{eq:gggr-dual-pairing}\n \\bigl\\langle D_H(\\Gamma_\\iota^{\\mathrm{mod}}),X_\\kappa\\bigr\\rangle_H\n =c_\\iota\\delta_{\\iota\\kappa},\\qquad c_\\iota\\ne0,\n\\end{equation}\nfor pairs $\\iota,\\kappa$ supported on $\\mathcal C$.\n\nThe proof of \\cite[Corollary~3.6(b)]{Geck1994BasicIII}, using these\nexpansions, shows that\n\\begin{equation}\\label{eq:gggr-dual-support}\n D_H(\\Gamma_\\iota^{\\mathrm{mod}})(v)\\ne0\n \\quad\\Longrightarrow\\quad\n \\mathcal C\\subseteq\\overline{\\mathcal C_v}\n\\end{equation}\nfor every unipotent element $v\\in H$, where $\\mathcal C_v$ is its\n$\\mathbf H$-conjugacy class. The functions\n$D_H(\\Gamma_\\iota^{\\mathrm{mod}})$ also vanish on nonunipotent elements.\nBy \\eqref{eq:gggr-dual-support}, they vanish on\n$\\overline{\\mathcal C}^{\\,F}\\setminus\\mathcal C^F$. Since $X_\\kappa$\nvanishes outside $\\overline{\\mathcal C}^{\\,F}$, only values on\n$\\mathcal C^F$ contribute to the scalar product in\n\\eqref{eq:gggr-dual-pairing}. Pairing a linear relation between the\nrestricted modified functions with each $X_\\kappa$ forces every\ncoefficient to vanish. The invertible coefficient matrix consequently\nproves that\n\\[\n D_H(\\Gamma_{u_1})|_{\\mathcal C^F},\\ldots,\n D_H(\\Gamma_{u_d})|_{\\mathcal C^F}\n\\]\nare linearly independent. The same change of basis gives the vanishing property\n\\eqref{eq:gggr-dual-support} and vanishing on nonunipotent elements for\neach $D_H(\\Gamma_{u_j})$.\n\nWe next prove that the restrictions of the characters in\n$\\Irr_{s,\\mathcal F}(H)$ span the $H$-invariant functions on\n$\\mathcal C^F$. For this purpose, we use the restriction theorem\n\\cite[Theorem~4.5]{Geck1999GGGR}, which identifies the relevant\nrestrictions of character sheaves with the irreducible equivariant local\nsystems on $\\mathcal C$. To apply Geck's proof of\n\\cite[Theorem~4.5]{Geck1999GGGR} in odd characteristic, we first verify\nthe scalar product and vanishing formulas in \\cite[(2.4)]{Geck1999GGGR}\nand the compatibility of their constants with cuspidal induction in\n\\cite[(3.3)(b)]{Geck1999GGGR}. The large characteristic assumption in\n\\cite{Geck1999GGGR} enters through these character formulas, as\nexplained in \\cite[Basic assumptions, p.~140]{Geck1999GGGR} and\n\\cite[(4.3)]{Geck1999GGGR}.\n\nLet $\\mathscr L$ be the finite collection of groups required in Geck's\nreduction: $\\mathbf H$, the Levi subgroups supporting the cuspidal pairs\nused in \\cite[(4.9)]{Geck1999GGGR}, and the adjoint quotients and further\nsupporting Levi subgroups occurring in the proofs of\n\\cite[Propositions~5.3 and 5.5]{Geck1999GGGR}.\nRecall that a pair is cuspidal if its generalised Springer block consists\nof that pair alone \\cite[(3.3)]{Geck1999GGGR}. Every group in\n$\\mathscr L$ has connected centre and is either a torus or of type\n$\\mathsf B$ modulo its centre. Indeed, a Levi subgroup in type\n$\\mathsf B$ has components of type $\\mathsf A$ apart from at most one\nof type $\\mathsf B$, and a nontrivial component of type $\\mathsf A$\ncannot support a cuspidal pair\nwhen the centre is connected\n\\cite[Remark~3.4 and the proof of Theorem~3.8]{Geck1999GGGR}.\nPassing to an adjoint quotient does not change the Dynkin type, and the\nsame restriction on components applies to its supporting Levi subgroups.\n\nThe restriction multiplicities are independent of the rational structure\n\\cite[p.~151]{Geck1999GGGR}. We therefore choose a Frobenius endomorphism\n$F'$ defining a split $\\mathbb F_{q'}$-structure, with $q'\\equiv1\\pmod4$.\nThis congruence will give the value $1$ for the cuspidal constants in\n\\cite[Theorem~3.8]{Geck1999GGGR}, once we have justified the use of its\ncalculation in odd characteristic. It can be ensured by taking an even\npower of a split Frobenius endomorphism.\nChoose $F'$ to satisfy \\cite[(4.7)(a)--(c)]{Geck1999GGGR} for the chosen\nsemisimple elements in the dual groups and standard Levi subgroups\nrequired in Geck's argument. As in the opening paragraph of the proof of\n\\cite[Proposition~5.3]{Geck1999GGGR}, we impose these conditions also for\nthe additional semisimple elements used in that proof.\nEach chosen semisimple element is defined over a finite extension of\n$\\mathbb F_p$, so a common power of a split Frobenius endomorphism fixes\nall these elements. This power permutes the finite sets of character\nsheaves in the corresponding series. A further common power therefore\nfixes every required character sheaf, as explained in\n\\cite[(4.7)]{Geck1999GGGR}.\nTaking a sufficiently large further power makes $q'$ large enough for\ngeometric induction to coincide with Deligne--Lusztig induction\n\\cite[p.~115]{Letellier2005}.\nThe standard Levi subgroups and their adjoint quotients inherit split\nstructures from $F'$. Since $p$ is odd, it is very good for every group\nin $\\mathscr L$, and Taylor's formulas apply by\n\\cite[Lemma~6.3(i)]{Taylor2016}. Thus Letellier's characteristic hypothesis\nalso holds for every group in $\\mathscr L$. With $q'$ chosen as above,\nwe may use the Frobenius equivariant isomorphism\n\\cite[(6.2.11)]{Letellier2005}.\n\nTo verify the formulas in \\cite[(2.4)]{Geck1999GGGR} used in the proof\nof Geck's restriction theorem \\cite[Theorem~4.5]{Geck1999GGGR}, we need\nthe precise scalar product coefficients for every $\\mathbf L\\in\\mathscr L$.\nFix $\\mathbf L\\in\\mathscr L$, and set $L'=\\mathbf L^{F'}$.\nFor each $F'$-stable pair $\\iota=(\\mathcal D,\\mathscr E_\\iota)$, choose\nthe Frobenius isomorphisms with the compatible normalisations of\n\\cite[10.1--10.8]{Taylor2016}. Write $Y_\\iota$ for the trace function of\n$\\mathscr E_\\iota$ and $X_\\iota$ for the trace function of its\nintersection cohomology complex, extended by zero outside\n$\\mathcal D^{F'}$ and $\\overline{\\mathcal D}^{\\,F'}$, respectively.\nAs before, $\\Gamma_\\iota^{\\mathrm{mod}}$ is the linear combination of\ngeneralised Gelfand--Graev characters defined in \\cite[(11.15)]{Taylor2016},\nalso given in \\cite[(2.3)(a)]{Geck1999GGGR}.\nLet $\\mathcal I$ be the generalised Springer block containing $\\iota$,\ninduced from a cuspidal pair $\\iota_0$ of a standard Levi subgroup\n$\\mathbf M$. Set\n\\[\n a=|A_{\\mathbf L}(v)|\\quad(v\\in\\mathcal D),\n \\qquad\n b_\\iota=\\frac{\\dim\\mathbf L-\\dim\\mathcal D-\\dim Z(\\mathbf M)}2.\n\\]\nLet $\\zeta_{\\mathcal I}$ be the fourth root of unity in\n\\cite[Proposition~11.5]{Taylor2016}, and set\n\\[\n \\delta_{\\mathcal I}=(-1)^{\\operatorname{rank}(\\mathbf M/Z(\\mathbf M))},\n \\qquad\n \\zeta'_{\\mathcal I}=\\delta_{\\mathcal I}\\zeta_{\\mathcal I}^{-1},\n\\]\nas in \\cite[(8.4)(a)]{Lusztig1992Support} and \\cite[(2.4)]{Geck1999GGGR}.\n\nTaylor's expansions \\cite[Theorem~11.13 and Lemma~11.16]{Taylor2016}\nand Lusztig's duality identities\n\\cite[Proposition~8.5 and Corollary~8.6]{Lusztig1992Support}, valid here\nby \\cite[Corollary~13.6]{Taylor2016}, allow us to repeat the calculations in\n\\cite[Lemma~3.5 and Corollary~3.6(b)]{Geck1994BasicIII} for\n$(\\mathbf L,F')$. In particular, $D_{L'}(\\Gamma_\\iota^{\\mathrm{mod}})$\nvanishes on nonunipotent elements and satisfies\n\\begin{equation}\\label{eq:gggr-auxiliary-support}\n D_{L'}(\\Gamma_\\iota^{\\mathrm{mod}})(x)\\ne0\n \\quad\\Longrightarrow\\quad\n \\mathcal D\\subseteq\\overline{\\mathcal C_x}\n\\end{equation}\nfor unipotent $x\\in L'$, where $\\mathcal C_x$ is its\n$\\mathbf L$-conjugacy class. By \\eqref{eq:gggr-auxiliary-support},\n$D_{L'}(\\Gamma_\\iota^{\\mathrm{mod}})$ vanishes on\n$\\overline{\\mathcal D}^{\\,F'}\\setminus\\mathcal D^{F'}$.\nFor a pair $\\kappa$ supported on $\\mathcal D$, we have\n$X_\\kappa=Y_\\kappa$ on $\\mathcal D^{F'}$, and $X_\\kappa$ vanishes\noutside $\\overline{\\mathcal D}^{\\,F'}$. Replacing $X_\\kappa$ by\n$Y_\\kappa$ therefore does not change its scalar product with\n$D_{L'}(\\Gamma_\\iota^{\\mathrm{mod}})$.\nThe calculation of \\cite[Lemma~3.5]{Geck1994BasicIII} gives\n\\begin{equation}\\label{eq:gggr-auxiliary-pairing}\n \\bigl\\langle D_{L'}(\\Gamma_\\iota^{\\mathrm{mod}}),Y_\\kappa\\bigr\\rangle_{L'}\n =a\\,\\zeta'_{\\mathcal I}\\,q'^{-b_\\iota}\\delta_{\\iota\\kappa}\n\\end{equation}\nfor $F'$-stable pairs $\\iota,\\kappa$ supported on $\\mathcal D$.\nFormula~\\eqref{eq:gggr-auxiliary-pairing} verifies\n\\cite[(2.4)(a)]{Geck1999GGGR}, while\n\\eqref{eq:gggr-auxiliary-support}, together with vanishing on\nnonunipotent elements, provides the required vanishing assertion in\n\\cite[(2.4)(c)]{Geck1999GGGR}. If $\\mathbf M$ is a torus, then\n$\\zeta'_{\\mathcal I}=1$, giving \\cite[(2.4)(b)]{Geck1999GGGR}.\n\nIt remains to compare $\\zeta'_{\\mathcal I}$ with the constant attached\nto the cuspidal pair $\\iota_0$, computed in $\\mathbf M$.\nWe prove the compatibility required in \\cite[(3.3)(b)]{Geck1999GGGR}\nusing the Frobenius equivariant induction isomorphism\n\\cite[(6.2.11)]{Letellier2005}.\nLet $\\gamma_{\\mathbf L}$ be the normalised Fourier constant in\n\\cite[Lemma~11.3]{Taylor2016} for the complex induced from $\\iota_0$,\nand let $\\gamma_{\\mathbf M}$ be the corresponding constant for the\ncomplex on the Lie algebra of $\\mathbf M$ constructed from $\\iota_0$.\nThus $\\gamma_{\\mathbf L}$ is the scalar remaining after extracting\nthe factor $q'^{(\\dim\\mathbf L+\\dim Z(\\mathbf M))/2}$, with the\nanalogous convention for $\\gamma_{\\mathbf M}$.\nChoose compatible Frobenius structures and an invariant form on the Lie\nalgebra of $\\mathbf L$, restricted to that of $\\mathbf M$.\nChoose an $F'$-stable parabolic subgroup $\\mathbf P$ of $\\mathbf L$\nwith Levi subgroup $\\mathbf M$ and unipotent radical $U_{\\mathbf P}$.\n\nFor $w=1$, the induction isomorphism \\cite[(6.2.11)]{Letellier2005}\nincludes a Tate twist by $\\dim U_{\\mathbf P}$, which multiplies the\nFrobenius trace by $q'^{-\\dim U_{\\mathbf P}}$\n\\cite[Remark~4.4.6]{Letellier2005}.\nSince $\\dim\\mathbf L-\\dim\\mathbf M=2\\dim U_{\\mathbf P}$, the powers\nof $q'$ in these normalisations satisfy\n\\begin{equation}\\label{eq:gggr-fourier-normalisation}\n q'^{-\\dim U_{\\mathbf P}}\\,\n q'^{(\\dim\\mathbf L+\\dim Z(\\mathbf M))/2}\n =q'^{(\\dim\\mathbf M+\\dim Z(\\mathbf M))/2}.\n\\end{equation}\nTaking Frobenius traces in \\cite[(6.2.11)]{Letellier2005}, with the\nnormalisation of \\cite[Lemma~11.3]{Taylor2016}, compares the Fourier\nconstants for $\\mathbf L$ and $\\mathbf M$.\nCancelling the powers of $q'$ by \\eqref{eq:gggr-fourier-normalisation}\ngives\n\\begin{equation}\\label{eq:gggr-fourier-constants}\n \\gamma_{\\mathbf L}=\\gamma_{\\mathbf M}.\n\\end{equation}\nThis comparison also occurs in the proof of\n\\cite[Proposition~7.2]{Lusztig1992Support}, with the invariant form\nrestricted to the Lie algebra of the cuspidal Levi subgroup.\nBy \\cite[Lemma~11.3]{Taylor2016},\n$\\gamma_{\\mathbf L}^{\\,2}=\\nu_{\\mathbf L}$, where\n$\\nu_{\\mathbf L}$ is the sign in that lemma.\nThe proof of \\cite[Proposition~11.5]{Taylor2016} identifies\n$\\zeta_{\\mathcal I}=\\nu_{\\mathbf L}\\gamma_{\\mathbf L}^{-1}$.\nHence $\\zeta_{\\mathcal I}=\\gamma_{\\mathbf L}$.\nThe same argument in $\\mathbf M$ gives\n$\\zeta_{\\iota_0}=\\gamma_{\\mathbf M}$.\nThe signs attached to $\\mathcal I$ in $\\mathbf L$ and to $\\iota_0$\nin $\\mathbf M$ satisfy\n\\[\n \\delta_{\\mathcal I}=\\delta_{\\iota_0}\n =(-1)^{\\operatorname{rank}(\\mathbf M/Z(\\mathbf M))}\n\\]\nby \\cite[(8.4)(a)]{Lusztig1992Support}.\nCombining these equalities with \\eqref{eq:gggr-fourier-constants} and\nthe definition $\\zeta'=\\delta\\zeta^{-1}$ gives\n\\begin{equation}\\label{eq:gggr-cuspidal-compatibility}\n \\zeta'_{\\mathcal I}=\\zeta'_{\\iota_0}.\n\\end{equation}\nThis is the compatibility required in \\cite[(3.3)(b)]{Geck1999GGGR}.\n\nTo determine the constants $\\zeta'_{\\iota_0}$ by Geck's induction, we first\nestablish the integrality conclusion of \\cite[Corollary~3.2]{Geck1999GGGR}\nfor the groups in $\\mathscr L$.\nLet $\\mathbf L\\in\\mathscr L$ be a group other than a torus.\nFor every $F'$-stable unipotent class $\\mathcal D$ of $\\mathbf L$,\nthe theorem of H\\'ezard and Lusztig stated in\n\\cite[Theorem~1.1]{Taylor2013} gives a character $\\chi\\in\\Irr(L')$\nwith unipotent support $\\mathcal D$ and generic denominator\n$n_\\chi=|A_{\\mathbf L}(v)|$ for $v\\in\\mathcal D$.\nThe degree polynomial relation for Alvis--Curtis duality gives\n$n_{\\chi^*}=n_\\chi$ \\cite[Proposition~3.4.21]{GeckMalle2020}. If $v_1,\\ldots,v_r$\nrepresent the $L'$-classes in $\\mathcal D^{F'}$, then \\cite[(11.15), Lemma~14.15 and\nProposition~15.4]{Taylor2016} give\n\\begin{equation}\\label{eq:gggr-weighted-integrality-sum}\n \\sum_{j=1}^{r}\n [A_{\\mathbf L}(v_j):A_{\\mathbf L}(v_j)^{F'}]\n \\langle\\chi^*,\\Gamma_{v_j}\\rangle_{L'}\n =\\frac{|A_{\\mathbf L}(v)|}{n_{\\chi^*}}=1.\n\\end{equation}\nThe multiplicities are nonnegative integers and the indices are positive\nintegers, so exactly one multiplicity is nonzero, and it and its corresponding\nindex equal $1$. Expanding a modified\ngeneralised Gelfand--Graev class function indexed by a local system on\n$\\mathcal D$ then expresses its scalar product with $\\chi^*$ as the value\nof that local system's trace function at the unique representative with\nnonzero multiplicity. This is the\nremaining assertion of \\cite[Proposition~3.1]{Geck1999GGGR}.\nFor a torus, the only unipotent element is $1$ and every irreducible\ncharacter has generic denominator $1$, so the same multiplicity conclusions hold.\nTogether with the identities proved above, this establishes\n\\cite[Corollary~3.2]{Geck1999GGGR} for every group in $\\mathscr L$.\n\nThe induction in the proof of \\cite[Theorem~3.8]{Geck1999GGGR} therefore applies\nto every group in $\\mathscr L$. For a cuspidal pair $\\iota_0$ on $\\mathbf M$,\nit gives\n\\begin{equation}\\label{eq:gggr-cuspidal-constant}\n \\zeta'_{\\iota_0}\n =\\varepsilon^{(\\operatorname{rank}\\mathbf M-\\dim Z(\\mathbf M))/2},\n \\qquad q'\\equiv\\varepsilon\\pmod4,\\quad \\varepsilon\\in\\{1,-1\\}.\n\\end{equation}\nOur choice $q'\\equiv1\\pmod4$ gives $\\varepsilon=1$, so $\\zeta'_{\\iota_0}=1$.\nBy \\eqref{eq:gggr-cuspidal-compatibility}, $\\zeta'_{\\mathcal I}=1$ for every\nrelevant generalised Springer block. The support properties in \\cite[(4.3)]{Geck1999GGGR}\nfollow from \\cite[Theorem~10.7]{Lusztig1992Support} by\n\\cite[Corollary~13.6]{Taylor2016}. For this $F'$,\n\\cite[Theorem~3.2]{Shoji1995II} gives the equality of spans stated in\n\\cite[Theorem~7.1]{Geck1999GGGR} for these classical groups with connected centre.\nFor a torus, each rational Lusztig series consists of one linear character,\nand the trace function of the corresponding character sheaf is a nonzero\nscalar multiple of it. Thus the same equality of spans holds. This verifies the formulas and comparisons used in Geck's\nproof of the restriction theorem \\cite[Theorem~4.5]{Geck1999GGGR}.\n\nWe now verify the conditions in \\cite[(4.4)(a)--(b)]{Geck1999GGGR} for $(s,\\mathcal F)$.\nThe elementary abelian groups $\\mathcal G_{\\mathcal F}$ and\n$A_{\\mathbf H}(u_0)$ have the same order and are therefore isomorphic,\ngiving \\cite[(4.4)(a)]{Geck1999GGGR}. Isolation together with\nthis order equality gives \\cite[(4.4)(b)]{Geck1999GGGR}, by H\\'ezard's\nresult \\cite[Proposition~2.3]{GeckHezard2008}. By the restriction theorem \\cite[Theorem~4.5]{Geck1999GGGR}, restriction to\n$\\mathcal C$, up to shift, gives a bijection between the character sheaves in\nthe family indexed by $(s,\\mathcal F)$ whose restriction to $\\mathcal C$ is\nnonzero and the irreducible $\\mathbf H$-equivariant local systems on $\\mathcal\nC$. The multiplicities\nin these geometric restrictions are independent of the rational structure,\nas explained after \\cite[Theorem~4.5]{Geck1999GGGR}.\n\nWe now return to the given Frobenius endomorphism $F$ and use this restriction\nbijection to show that the restrictions of the characters in\n$\\Irr_{s,\\mathcal F}(H)$ span the $H$-invariant functions on $\\mathcal C^F$.\nThe choice $\\mathbf T^*\\subseteq\\mathbf B^*$ and the absence of nontrivial\ngraph automorphisms in type $\\mathsf C_n$ imply that $F$ acts trivially\non the Weyl group of $\\mathbf H^*$ and on $W_s$. Since $s$ is fixed by $F$,\n$F$ preserves the family of character sheaves indexed by $(s,\\mathcal F)$.\nEvery irreducible $\\mathbf H$-equivariant local system on $\\mathcal C$ is\n$F$-stable because $F$ acts trivially on $A_{\\mathbf H}(u_0)$.\nRestriction to $\\mathcal C$ commutes with pullback by $F$.\nThe uniqueness in the restriction bijection therefore makes the corresponding\ncharacter sheaves $F$-stable, as in the proof of\n\\cite[Corollary~3.5]{GeckHezard2008}.\n\nSince $F$ acts trivially on $A_{\\mathbf H}(u_0)$, the values at\n$u_1,\\ldots,u_d$ of the trace functions of these local systems form the\ncharacter table of $A_{\\mathbf H}(u_0)$, up to nonzero scalar multiples\nof the rows. The same holds for the restrictions to $\\mathcal C^F$ of\nthe trace functions of the corresponding character sheaves.\nBy Shoji's theorem \\cite[Theorem~3.2]{Shoji1995II}, the trace functions\nof these character sheaves are nonzero scalar multiples of almost\ncharacters lying in the span of $\\Irr_{s,\\mathcal F}(H)$. It follows that there are characters\n$\\chi_1,\\ldots,\\chi_d\\in\\Irr_{s,\\mathcal F}(H)$ such that\n\\[\n M=(\\chi_i(u_j))_{1\\leq i,j\\leq d}\n\\]\nis nonsingular.\n\nTo apply the multiplicity formula to every character in $\\Irr_{s,\\mathcal F}(H)$,\nwe identify its unipotent support and generic denominator.\nLet $W$ be the Weyl group of $\\mathbf H^*$ and let $E_0$ be the unique special\ncharacter in $\\mathcal F$. Its truncated induction $j_{W_s}^W(E_0)$\nis the unique constituent of\n$\\operatorname{Ind}_{W_s}^W(E_0)$ with $b$-invariant $b(E_0)$\n\\cite[p.~476]{Taylor2014Maximal}.\nUnder the Springer correspondence, $j_{W_s}^W(E_0)$ corresponds to\n$\\mathcal C$ \\cite[Section~3(C)]{GeckMalle2000}. Consequently, every\n$\\rho\\in\\Irr_{s,\\mathcal F}(H)$ has unipotent support $\\mathcal C$\n\\cite[Theorem~3.7]{GeckMalle2000}.\nSince $\\mathcal G_{\\mathcal F}$ is abelian, the denominator formula\n\\cite[(6.1)(c)]{Geck1999GGGR} and the degree polynomial relation for\nAlvis--Curtis duality \\cite[Proposition~3.4.21]{GeckMalle2020} give\n\\[\n n_{\\rho^*}=n_\\rho=|\\mathcal G_{\\mathcal F}|.\n\\]\nBy \\cite[Lemma~14.15]{Taylor2016}, $\\mathcal C$ is the wave front set of $\\rho^*$.\n\nConjugation in $\\mathbf H$ identifies the component groups of $u_j$ and $u_0$.\nUnder this identification, the actions of $F$ differ by an inner automorphism\nof $A_{\\mathbf H}(u_0)$. Since this group is abelian and $F$ acts trivially on it,\n$F$ also acts trivially on $A_{\\mathbf H}(u_j)$. Consequently,\n\\[\n [A_{\\mathbf H}(u_j):A_{\\mathbf H}(u_j)^F]=1\n \\qquad(1\\leq j\\leq d).\n\\]\nApply the formula of Lusztig and Geck--Malle in \\cite[Proposition~15.4]{Taylor2016}\nto $\\rho^*$, using the constant local system on $\\mathcal C$ with trace function\nidentically $1$. In the expansion \\cite[(11.15)]{Taylor2016}, the coefficient\nof $\\Gamma_{u_j}$ is the index just calculated. Hence\n\\begin{equation}\\label{eq:gggr-family-multiplicity-sum}\n \\sum_{j=1}^{d}\\langle\\rho^*,\\Gamma_{u_j}\\rangle_H\n =\\frac{|A_{\\mathbf H}(u_0)|}{n_{\\rho^*}}=1.\n\\end{equation}\nEach multiplicity is a nonnegative integer, so there is a unique index $j$\nfor which $\\langle\\rho^*,\\Gamma_{u_j}\\rangle_H=1$, and all the other\nmultiplicities vanish. For $1\\leq j\\leq d$, define\n\\[\n I_j=\\{\\rho\\in\\Irr_{s,\\mathcal F}(H):\n       \\langle\\rho^*,\\Gamma_{u_j}\\rangle_H=1\\}.\n\\]\nIt remains to prove that every $I_j$ is nonempty.\n\nSuppose that $I_r$ is empty. Then $\\langle\\rho^*,\\Gamma_{u_r}\\rangle_H=0$\nfor every $\\rho\\in\\Irr_{s,\\mathcal F}(H)$.\nSince $D_H(\\rho)=\\pm\\rho^*$, self-adjointness of Alvis--Curtis duality gives\n\\[\n \\langle\\rho,D_H(\\Gamma_{u_r})\\rangle_H\n =\\langle D_H(\\rho),\\Gamma_{u_r}\\rangle_H=0.\n\\]\nAs proved after \\eqref{eq:gggr-dual-support}, $D_H(\\Gamma_{u_r})$ vanishes on\nnonunipotent elements. By \\eqref{eq:gggr-dual-support}, its value at a\nunipotent element $v$ can be nonzero only if\n$\\mathcal C\\subseteq\\overline{\\mathcal C_v}$.\nIf $\\mathcal C_v\\ne\\mathcal C$, this inclusion implies\n$\\dim\\mathcal C_v>\\dim\\mathcal C$.\nOn such a class, $\\rho$ vanishes by \\cite[Theorem~11.2(iv)]{Lusztig1992Support},\napplied to $\\rho^*$. This theorem applies here by\n\\cite[Corollary~13.6]{Taylor2016}.\nThus only elements of $\\mathcal C^F$ contribute to\n$\\langle\\rho,D_H(\\Gamma_{u_r})\\rangle_H$, and\n\\[\n \\sum_{j=1}^{d}\n \\frac{\\rho(u_j)\\,\n       \\overline{D_H(\\Gamma_{u_r})(u_j)}}{|C_H(u_j)|}=0\n \\qquad(\\rho\\in\\Irr_{s,\\mathcal F}(H)).\n\\]\nApply these equalities to $\\chi_1,\\ldots,\\chi_d$.\nThe nonsingularity of $M=(\\chi_i(u_j))_{1\\leq i,j\\leq d}$ implies that\n$D_H(\\Gamma_{u_r})(u_j)=0$ for every $j$.\nIts restriction to $\\mathcal C^F$ is therefore zero, contradicting the linear\nindependence established after \\eqref{eq:gggr-dual-pairing}.\nHence every $I_j$ is nonempty. Choosing $\\rho_j\\in I_j$ gives\n\\eqref{eq:type-b-isolated-pairings}.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0389",
+        "current-citation-0390",
+        "current-citation-0391",
+        "current-citation-0392",
+        "current-citation-0393",
+        "current-citation-0394",
+        "current-citation-0395",
+        "current-citation-0396",
+        "current-citation-0397",
+        "current-citation-0398",
+        "current-citation-0399",
+        "current-citation-0400",
+        "current-citation-0401",
+        "current-citation-0402",
+        "current-citation-0403",
+        "current-citation-0404",
+        "current-citation-0405",
+        "current-citation-0406",
+        "current-citation-0407",
+        "current-citation-0408",
+        "current-citation-0409",
+        "current-citation-0410",
+        "current-citation-0411",
+        "current-citation-0412",
+        "current-citation-0413",
+        "current-citation-0414",
+        "current-citation-0415",
+        "current-citation-0416",
+        "current-citation-0417",
+        "current-citation-0418",
+        "current-citation-0419",
+        "current-citation-0420",
+        "current-citation-0421",
+        "current-citation-0422",
+        "current-citation-0423",
+        "current-citation-0424",
+        "current-citation-0425",
+        "current-citation-0426",
+        "current-citation-0427",
+        "current-citation-0428",
+        "current-citation-0429",
+        "current-citation-0430",
+        "current-citation-0431",
+        "current-citation-0432",
+        "current-citation-0433",
+        "current-citation-0434",
+        "current-citation-0435",
+        "current-citation-0436",
+        "current-citation-0437",
+        "current-citation-0438",
+        "current-citation-0439",
+        "current-citation-0440",
+        "current-citation-0441",
+        "current-citation-0442",
+        "current-citation-0443",
+        "current-citation-0444",
+        "current-citation-0445",
+        "current-citation-0446",
+        "current-citation-0447",
+        "current-citation-0448",
+        "current-citation-0449",
+        "current-citation-0450",
+        "current-citation-0451",
+        "current-citation-0452",
+        "current-citation-0453",
+        "current-citation-0454",
+        "current-citation-0455",
+        "current-citation-0456",
+        "current-citation-0457",
+        "current-citation-0458",
+        "current-citation-0459",
+        "current-citation-0460",
+        "current-citation-0461",
+        "current-citation-0462",
+        "current-citation-0463",
+        "current-citation-0464",
+        "current-citation-0465",
+        "current-citation-0466",
+        "current-citation-0467",
+        "current-citation-0468",
+        "current-citation-0469",
+        "current-citation-0470",
+        "current-citation-0471",
+        "current-citation-0472",
+        "current-citation-0473",
+        "current-citation-0474",
+        "current-citation-0475",
+        "current-citation-0476",
+        "current-citation-0477",
+        "current-citation-0478",
+        "current-citation-0479",
+        "current-citation-0480",
+        "current-citation-0481",
+        "current-citation-0482",
+        "current-citation-0483",
+        "current-citation-0484",
+        "current-citation-0485",
+        "current-citation-0486",
+        "current-citation-0487",
+        "current-citation-0488"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "cf7a606c276a92b48b78246eaae317487481ecb37227c7e1f1fec1b96d27baaf"
+    },
+    {
+      "id": "current-proof-041",
+      "line": 4311,
+      "start_offset": 212592,
+      "end_offset": 224448,
+      "title_tex": "Proof of Lemma~\\ref{lem:symplectic-gggr-selection}",
+      "associated_labels": [
+        "lem:symplectic-gggr-selection"
+      ],
+      "association_basis": "proof title",
+      "proof_tex": "\\begin{proof}[Proof of Lemma~\\ref{lem:symplectic-gggr-selection}]\nWe adapt the proof of Lemma~\\ref{lem:type-b-isolated-coverage} to the selected\ntype~$\\mathsf C$ families. We first verify that the central multiple\n$\\widetilde s$ in the statement exists and is fixed by $F_0$.\nCondition~\\textup{(P4)} of \\cite[Theorem~2.11]{Taylor2014Maximal} will replace\nthe isolation hypothesis used in Lemma~\\ref{lem:type-b-isolated-coverage}.\nBy \\cite[6.19]{Taylor2014Maximal}, the image of $s_0$ in\n$\\mathbf H^*/Z(\\mathbf H^*)\\cong\\operatorname{SO}_{2m+1}$ is\nquasi-isolated, so its square is one\n\\cite[Proposition~4.11(a)]{Bonnafe2005}. Thus $s_0^2\\in Z(\\mathbf H^*)$.\nSince $\\mathbf H$ has simply connected derived subgroup,\n$Z(\\mathbf H^*)$ is a torus \\cite[Lemma~1.5.22]{GeckMalle2020}\nand contains a square root of $s_0^{-2}$. This proves that $z$ can\nbe chosen as in the statement.\nMultiplication by $z$ leaves the centraliser unchanged, so\n$W_{\\widetilde s}=W_{s_0}$ and the selected family is still $\\mathcal F$.\nThe Frobenius endomorphism $F_0$ acts on $\\mathbf T^*$ by the\n$q_0$-power map. Since $q_0$ is odd and $\\widetilde s^2=1$,\n$F_0(\\widetilde s)=\\widetilde s$.\nThe torus $\\mathbf T^*$ is split, so $F_0$ acts trivially on the\nWeyl group of $\\mathbf H^*$ and hence on $W_{\\widetilde s}$.\n\nWe next verify the conditions in \\cite[(4.4)(a)--(b)]{Geck1999GGGR}\nfor $(\\widetilde s,\\mathcal F)$.\nBy \\cite[10.3]{Taylor2014Maximal}, we identify\n$W_{\\widetilde s}$ with $W(\\mathsf D_a\\mathsf B_b)$, where $a+b=m$.\nWhen $a=1$, the corresponding factor is a torus with trivial Weyl group,\nso $W_{\\widetilde s}=W(\\mathsf B_{m-1})$.\nLet $E_0$ be the unique special character in $\\mathcal F$,\nusing the terminology of \\cite[p.~476]{Taylor2014Maximal}, and let\n$W$ be the Weyl group of $\\mathbf H^*$.\nH\\'ezard's construction \\cite[Proposition~10.2]{Taylor2014Maximal} gives\n$j_{W_{\\widetilde s}}^W(E_0)=E_{\\mathcal C}$, where\n$E_{\\mathcal C}$ is the Springer character corresponding to\n$\\mathcal C$ and its trivial local system.\nThe construction gives\n$|\\mathcal G_{\\mathcal F}|=|A_{\\mathbf H}(u)|$ for $u\\in\\mathcal C$\nby \\cite[7.1 and Proposition~10.2]{Taylor2014Maximal}.\nThe component group $A_{\\mathbf H}(u)$ is an elementary abelian\n$2$-group by \\cite[proof of Proposition~2.4]{Taylor2013}, and the\nsame holds for $\\mathcal G_{\\mathcal F}$ by\n\\cite[Remark~4.2.17]{GeckMalle2020}.\nThese two groups are therefore isomorphic, giving\n\\cite[(4.4)(a)]{Geck1999GGGR}.\nThe selected pair satisfies condition~\\textup{(P4)} of\n\\cite[Theorem~2.11]{Taylor2014Maximal}. For these type~$\\mathsf C$\npairs, the verification in \\cite[7.4]{Taylor2014Maximal} uses the equality\n$\\widetilde s^{\\,2}=1$ and does not require $\\widetilde s$ to be isolated.\nBy \\cite[Definition~2.7]{Taylor2014Maximal}, condition~\\textup{(P4)} gives\n\\[\n \\operatorname{Ind}_{W(\\mathsf D_a\\mathsf B_b)}^W(E_0)\n =E_{\\mathcal C}\n  +\\sum_{\\substack{E\\in\\Irr(W)\\\\d(E)>b(E_0)}}m_EE,\n \\qquad m_E\\in\\mathbb Z_{\\geq0},\n\\]\nwhere $d(E)$ is the dimension of the Springer fibre, the variety of\nBorel subgroups containing a representative of the unipotent class\ncorresponding to $E$. This is the induction condition\n\\cite[(4.4)(b)]{Geck1999GGGR}.\n\nTo apply Geck's restriction theorem \\cite[Theorem~4.5]{Geck1999GGGR}\nin odd characteristic, we verify analogues of \\eqref{eq:gggr-auxiliary-support}\nand \\eqref{eq:gggr-auxiliary-pairing} for $\\mathbf H$, its standard Levi subgroups\nsupporting cuspidal pairs, their adjoint quotients, and the further supporting\nLevi subgroups used in \\cite[(4.9)]{Geck1999GGGR}.\nLet $\\mathbf L$ be any one of these algebraic groups.\nThese groups have connected centre and are either tori or simple modulo\ntheir centre of type~$\\mathsf C$. Indeed, a nontrivial component of type\n$\\mathsf A$ cannot support a cuspidal pair when the centre is connected\n\\cite[Remark~3.4 and the proof of Theorem~3.8]{Geck1999GGGR}.\nOdd characteristic is very good for these groups and hence acceptable in\nTaylor's sense by \\cite[Lemma~6.3(i)]{Taylor2016}.\nChoose a sufficiently large and divisible positive integer $N$ such that\n$F'=F_0^{2N}$ satisfies \\cite[(4.7)(a)--(c)]{Geck1999GGGR} and the\nconditions on the additional objects in the proofs of\n\\cite[Propositions~5.3 and 5.5]{Geck1999GGGR}.\nAs in the proof of Lemma~\\ref{lem:type-b-isolated-coverage}, take $N$ large\nenough for geometric induction to coincide with Deligne--Lusztig induction\n\\cite[p.~115]{Letellier2005} for every group used in the proofs of\n\\cite[Propositions~5.3 and~5.5]{Geck1999GGGR}.\nThe field size satisfies $q'=q_0^{2N}\\equiv1\\pmod4$.\nThe calculations in the proof of Lemma~\\ref{lem:type-b-isolated-coverage},\nusing \\cite[Theorem~11.13 and Lemma~11.16]{Taylor2016}, now give\nthe analogues of \\eqref{eq:gggr-auxiliary-support} and\n\\eqref{eq:gggr-auxiliary-pairing} for these groups.\nThe comparison of Fourier constants giving\n\\eqref{eq:gggr-fourier-constants} and\n\\eqref{eq:gggr-cuspidal-compatibility} also applies.\nThese calculations establish the formulas in \\cite[(2.4)]{Geck1999GGGR} and\nthe compatibility of the constants $\\zeta'_{\\mathcal I}$ with cuspidal\ninduction in \\cite[(3.3)(b)]{Geck1999GGGR}.\n\nIf $\\mathbf L$ is not a torus,\n\\cite[Theorem~1.1]{Taylor2013} again supplies a character with unipotent\nsupport $\\mathcal D$ and generic denominator $|A_{\\mathbf L}(v)|$ for\nevery $F'$-stable unipotent class $\\mathcal D$ and $v\\in\\mathcal D$.\nThe calculation of \\eqref{eq:gggr-weighted-integrality-sum} therefore applies\nto these groups. In this sum, the unique nonzero multiplicity and its\ncorresponding index both equal $1$, as in the proof of\nLemma~\\ref{lem:type-b-isolated-coverage}. Expanding the modified class\nfunctions then gives the scalar products in\n\\cite[Proposition~3.1]{Geck1999GGGR}.\nThe torus case was included in that proof. Together with the analogues of\n\\eqref{eq:gggr-auxiliary-support} and \\eqref{eq:gggr-auxiliary-pairing}\nobtained above, this gives the integrality conclusion of\n\\cite[Corollary~3.2]{Geck1999GGGR} for all these groups.\nFormula~\\eqref{eq:gggr-cuspidal-constant} consequently applies and gives\n$\\zeta'_{\\iota_0}=1$, since $q'\\equiv1\\pmod4$.\nBy \\eqref{eq:gggr-cuspidal-compatibility}, $\\zeta'_{\\mathcal I}=1$\nfor every relevant generalised Springer block.\n\nIt remains to verify the support properties and compare character sheaf trace\nfunctions with ordinary characters.\nThe support properties in \\cite[(4.3)]{Geck1999GGGR} follow from\n\\cite[Theorem~10.7]{Lusztig1992Support} by\n\\cite[Corollary~13.6]{Taylor2016}.\nFor the groups above other than tori, Shoji's theorem\n\\cite[Theorem~3.2]{Shoji1995II} gives the equality of spans in\n\\cite[Theorem~7.1]{Geck1999GGGR}, since their centres are connected and\ntheir quotients by their centres are simple of classical type.\nThe equality of spans for tori was established in the proof of\nLemma~\\ref{lem:type-b-isolated-coverage}.\nHaving verified the conditions in \\cite[(4.4)(a)--(b)]{Geck1999GGGR}, we may\ntherefore apply the proof of \\cite[Theorem~4.5]{Geck1999GGGR}.\nRestriction to $\\mathcal C$, up to shift, gives a bijection between the\ncharacter sheaves in the family indexed by $(\\widetilde s,\\mathcal F)$\nwith nonzero restriction to $\\mathcal C$ and the irreducible\n$\\mathbf H$-equivariant local systems on $\\mathcal C$.\n\nWe now return to $F_0$ and use this restriction bijection to show that the\nrestrictions of the characters in $\\Irr_{\\widetilde s,\\mathcal F}(H)$ span\nthe $H$-invariant functions on $\\mathcal C^{F_0}$.\nThe multiplicities in the restrictions of character sheaves are independent\nof the rational structure, as explained after\n\\cite[Theorem~4.5]{Geck1999GGGR}.\nChoose $u_0\\in\\mathcal C^{F_0}$ as in \\cite[Proposition~2.4]{Taylor2013},\nwith $F_0$ acting trivially on $A_{\\mathbf H}(u_0)$.\nSince $F_0$ fixes $\\widetilde s$ and acts trivially on\n$W_{\\widetilde s}$, it preserves the chosen family of character sheaves.\nThe trivial action on $A_{\\mathbf H}(u_0)$ makes the local systems on\n$\\mathcal C$ stable under $F_0$. Since restriction commutes with pullback\nby $F_0$, the restriction bijection makes the corresponding character\nsheaves stable under $F_0$ as well. The values at $u_1,\\ldots,u_d$ of\nthe local system trace functions form the character table of\n$A_{\\mathbf H}(u_0)$, up to multiplication of each row by a nonzero scalar\n\\cite[Section~3(A)]{GeckMalle2000}. The restriction bijection therefore\nshows that the corresponding character sheaf trace functions restrict to\na basis of the $H$-invariant functions on $\\mathcal C^{F_0}$.\nBy Shoji's theorem \\cite[Theorem~3.2]{Shoji1995II}, these trace functions\nare nonzero scalar multiples of almost characters in the span of\n$\\Irr_{\\widetilde s,\\mathcal F}(H)$. Thus there are\n$\\chi_1,\\ldots,\\chi_d\\in\\Irr_{\\widetilde s,\\mathcal F}(H)$ for which\n$M=(\\chi_i(u_j))_{1\\leq i,j\\leq d}$ is nonsingular, as in the proof of\n\\cite[Corollary~3.5]{GeckHezard2008}.\n\nIt remains to select the characters with the required multiplicities.\nThe calculations giving \\eqref{eq:gggr-dual-pairing} and\n\\eqref{eq:gggr-dual-support} in the proof of\nLemma~\\ref{lem:type-b-isolated-coverage} apply to $\\mathbf H$ with $F_0$.\nThey give linear independence of\n$D_H(\\Gamma_{u_1})|_{\\mathcal C^{F_0}},\\ldots,\nD_H(\\Gamma_{u_d})|_{\\mathcal C^{F_0}}$ by the same change from the modified\nclass functions to the individual generalised Gelfand--Graev characters.\nSince $j_{W_{\\widetilde s}}^W(E_0)=E_{\\mathcal C}$, the description in\n\\cite[Section~3(C) and Theorem~3.7]{GeckMalle2000} shows that every\n$\\rho\\in\\Irr_{\\widetilde s,\\mathcal F}(H)$ has unipotent support $\\mathcal C$.\nThe action of $F_0$ on $W_{\\widetilde s}$ is trivial and\n$\\mathcal G_{\\mathcal F}$ is abelian, so the generic denominator formula\n\\cite[(6.1)(c)]{Geck1999GGGR} and the degree polynomial relation\nfor Alvis--Curtis duality \\cite[Proposition~3.4.21]{GeckMalle2020} give\n\\[\n n_{\\rho^*}=n_\\rho\n =|\\mathcal G_{\\mathcal F}|=|A_{\\mathbf H}(u_0)|.\n\\]\nChanging the rational representative from $u_0$ to $u_j$ changes the\naction of $F_0$ on the component group by an inner automorphism of\n$A_{\\mathbf H}(u_0)$. This group is abelian, so $F_0$ acts trivially\non every $A_{\\mathbf H}(u_j)$ and\n$[A_{\\mathbf H}(u_j):A_{\\mathbf H}(u_j)^{F_0}]=1$.\nBy \\cite[Lemma~14.15]{Taylor2016}, $\\mathcal C$ is the wave front set of\n$\\rho^*$. Apply \\cite[Proposition~15.4]{Taylor2016} to $\\rho^*$ and the\nconstant local system on $\\mathcal C$ with trace function identically $1$.\nThe expansion \\cite[(11.15)]{Taylor2016} now gives\n\\[\n \\sum_{j=1}^{d}\\langle\\rho^*,\\Gamma_{u_j}\\rangle_H\n =\\frac{|A_{\\mathbf H}(u_0)|}{n_{\\rho^*}}=1.\n\\]\nThe multiplicities are nonnegative integers. Thus there is a unique index\n$j$ for which $\\langle\\rho^*,\\Gamma_{u_j}\\rangle_H=1$, and all the other\nmultiplicities vanish. We must show that every index occurs for some\n$\\rho\\in\\Irr_{\\widetilde s,\\mathcal F}(H)$.\n\nSuppose that $\\langle\\rho^*,\\Gamma_{u_r}\\rangle_H=0$ for every\n$\\rho\\in\\Irr_{\\widetilde s,\\mathcal F}(H)$.\nSelf-adjointness of $D_H$ and $D_H(\\rho)=\\pm\\rho^*$ give\n$\\langle\\rho,D_H(\\Gamma_{u_r})\\rangle_H=0$.\nAs in the final argument in the proof of\nLemma~\\ref{lem:type-b-isolated-coverage}, the support calculation\ncorresponding to \\eqref{eq:gggr-dual-support} and the pointwise vanishing of\n$\\rho$ on larger unipotent classes show that only elements of $\\mathcal\nC^{F_0}$ contribute to $\\langle\\rho,D_H(\\Gamma_{u_r})\\rangle_H$.\nTaking $\\rho=\\chi_i$ for $1\\leq i\\leq d$ in these equalities and using the\nnonsingularity of $M=(\\chi_i(u_j))_{1\\leq i,j\\leq d}$ gives\n$D_H(\\Gamma_{u_r})|_{\\mathcal C^{F_0}}=0$, as in the final matrix calculation\nin the proof of Lemma~\\ref{lem:type-b-isolated-coverage}.\nThis contradicts the linear independence of the restricted functions.\nFor each $j$, we may therefore choose $\\rho_j$ with\n$\\langle\\rho_j^*,\\Gamma_{u_j}\\rangle_H=1$.\nAll its other multiplicities vanish, proving the stated identities.\n\\end{proof}",
+      "source_use_ids": [
+        "current-citation-0489",
+        "current-citation-0490",
+        "current-citation-0491",
+        "current-citation-0492",
+        "current-citation-0493",
+        "current-citation-0494",
+        "current-citation-0495",
+        "current-citation-0496",
+        "current-citation-0497",
+        "current-citation-0498",
+        "current-citation-0499",
+        "current-citation-0500",
+        "current-citation-0501",
+        "current-citation-0502",
+        "current-citation-0503",
+        "current-citation-0504",
+        "current-citation-0505",
+        "current-citation-0506",
+        "current-citation-0507",
+        "current-citation-0508",
+        "current-citation-0509",
+        "current-citation-0510",
+        "current-citation-0511",
+        "current-citation-0512",
+        "current-citation-0513",
+        "current-citation-0514",
+        "current-citation-0515",
+        "current-citation-0516",
+        "current-citation-0517",
+        "current-citation-0518",
+        "current-citation-0519",
+        "current-citation-0520",
+        "current-citation-0521",
+        "current-citation-0522",
+        "current-citation-0523",
+        "current-citation-0524",
+        "current-citation-0525",
+        "current-citation-0526",
+        "current-citation-0527",
+        "current-citation-0528",
+        "current-citation-0529",
+        "current-citation-0530",
+        "current-citation-0531",
+        "current-citation-0532",
+        "current-citation-0533",
+        "current-citation-0534",
+        "current-citation-0535",
+        "current-citation-0536"
+      ],
+      "review_status": "not_inferred_from_index",
+      "proof_sha256": "2ab72d465edaeef0cb61b00e625e114fb3bb7b84b7fe557bf6022c678ed3ea5a"
+    }
+  ]
+}

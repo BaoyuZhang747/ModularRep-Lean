@@ -1,0 +1,1403 @@
+{
+  "comparison": {
+    "checks": [
+      {
+        "check": "Prime-three ordinary literal rows",
+        "entries": 180,
+        "gap_rows": [
+          59,
+          76,
+          88,
+          89,
+          91,
+          92
+        ],
+        "status": "pass"
+      },
+      {
+        "check": "Prime-three symmetrised literal rows",
+        "entries": 180,
+        "status": "pass"
+      },
+      {
+        "check": "Prime-three ordinary and regular class permutations",
+        "fusion_candidates": 8,
+        "status": "pass"
+      },
+      {
+        "check": "Prime-two trivial full literal rows",
+        "entries": 9828,
+        "gap_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108
+        ],
+        "status": "pass"
+      },
+      {
+        "check": "Prime-two trivial representative literal rows",
+        "entries": 4428,
+        "status": "pass"
+      },
+      {
+        "check": "Prime-two faithful full literal rows",
+        "entries": 6734,
+        "gap_rows": [
+          109,
+          111,
+          113,
+          115,
+          117,
+          119,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131,
+          133,
+          135,
+          137,
+          139,
+          141,
+          143,
+          145,
+          147,
+          149,
+          151,
+          153,
+          155,
+          157,
+          159,
+          161,
+          163,
+          165,
+          167,
+          169,
+          171,
+          173,
+          175,
+          177,
+          179,
+          181,
+          183,
+          185,
+          187,
+          189,
+          191,
+          193,
+          195,
+          197,
+          199,
+          201,
+          203,
+          205,
+          207,
+          209,
+          211,
+          213,
+          215,
+          217,
+          219,
+          221,
+          223,
+          225,
+          227,
+          229,
+          231,
+          233,
+          235,
+          237,
+          239,
+          241,
+          243,
+          245,
+          247,
+          249,
+          251,
+          253,
+          255
+        ],
+        "status": "pass"
+      },
+      {
+        "check": "Prime-two faithful representative literal rows",
+        "entries": 1850,
+        "status": "pass"
+      },
+      {
+        "check": "Prime-two root exponents, cyclotomic moduli, row order and outer permutation",
+        "fusion_candidates": 128,
+        "status": "pass"
+      },
+      {
+        "check": "Prime-two ordinary block labels and selected Klein-four/dihedral rows",
+        "labels": 108,
+        "status": "pass"
+      },
+      {
+        "check": "Local quotient inflation entries",
+        "entries": 408,
+        "status": "pass"
+      },
+      {
+        "check": "Local probe and inverse-class values",
+        "entries": 8,
+        "image_columns": [
+          53
+        ],
+        "interpretation": "Table inversion and complex conjugation only, not an identified group automorphism",
+        "probe_columns": [
+          42
+        ],
+        "status": "pass"
+      },
+      {
+        "check": "Local induction values recomputed from class sizes and every fusion",
+        "entries": 20736,
+        "fusion_candidates": 32,
+        "status": "pass"
+      },
+      {
+        "check": "Induced central character values recomputed from their defining ratios",
+        "entries": 20736,
+        "note": "GAP SameBlock reductions are exported; the abstract interval central character identity remains an interpretation assumption",
+        "status": "pass"
+      }
+    ],
+    "limitations": [
+      "This external comparison does not instantiate any Lean SourceInputs.",
+      "Actual groups, representatives, regular embeddings, block labels and local inclusions remain interpretation assumptions.",
+      "E(n) comparisons select the displayed compatible roots; their interpretation under each abstract coefficient embedding remains assumed.",
+      "All stored outer fusion candidates yield the displayed table permutations. Their completeness as group embeddings and realization by the chosen group automorphism are not proved here.",
+      "The local inverse-class and conjugate-character operations are table evidence only. The actual localFusion conjugacy premise remains explicit.",
+      "This does not rerun Lean ranks, inverse certificates or all prime-five/prime-seven computations."
+    ],
+    "status": "pass"
+  },
+  "data": {
+    "bytes": 7796809,
+    "path": "data/fi24-literal/data.json",
+    "sha256": "d2cdcec9e3e9c6f57bc59779c1770c348e8092d09a5a74e23c5bc2577873d1a9"
+  },
+  "entry_checks": 65088,
+  "entry_count_scope": "65,088 is the sum of entry checks, including repeated derived entries from full and representative rows and from 32 fusion candidates. It is not a count of distinct source-table cells, group embeddings or weights.",
+  "gap_executed_during_refresh": false,
+  "historical_runtime": {
+    "ctbllib_files": [
+      {
+        "bytes": 11017,
+        "path": "ctbllib/ctbltoc/gap/decmap.g",
+        "sha256": "d007965e965ea83bf76ee270ef63660919240ca1c84451372cbf30b22016b189"
+      },
+      {
+        "bytes": 25166,
+        "path": "ctbllib/ctbltoc/gap/htmltbl.g",
+        "sha256": "04fd3e119257650dafaa8ba91337c59e0580882bae36590d0231e896c6ea8cce"
+      },
+      {
+        "bytes": 844,
+        "path": "ctbllib/ctbltoc/init.g",
+        "sha256": "9ba32ec1e854799f90d6f2a9fd072b8c623c974aa3d9759f29f9c2906cdfe5c5"
+      },
+      {
+        "bytes": 348396,
+        "path": "ctbllib/data/clmelab.tbl",
+        "sha256": "7688156fbfb6b8c2f594098295ddc26221346afab86db3c18dd0d0dadf91739d"
+      },
+      {
+        "bytes": 5203,
+        "path": "ctbllib/data/clmexsp.tbl",
+        "sha256": "ce9b667a611805cd0a8dc69647a4a1bc869e0a1ad4adab656e83916ee7ec49ad"
+      },
+      {
+        "bytes": 251504,
+        "path": "ctbllib/data/ctbalter.tbl",
+        "sha256": "b59b10aa51ebcc13eeb3cb054388781e2fb539bab3ac1a73d8c93ea2c97d800f"
+      },
+      {
+        "bytes": 50139,
+        "path": "ctbllib/data/ctbatres.tbl",
+        "sha256": "b20be33a75a7715a88dab43dec7d59bdc07ce2f2b5cf7ec769e5ce70313e963f"
+      },
+      {
+        "bytes": 31611,
+        "path": "ctbllib/data/ctbconja.tbl",
+        "sha256": "ad3e46ff26a5f7cd0154be1cb37da154dca627b83ba9b4a730e23da3d67fe17d"
+      },
+      {
+        "bytes": 43204,
+        "path": "ctbllib/data/ctbfisc1.tbl",
+        "sha256": "daeeb1b884f9c3b4d010d23600ca457f65216e5d987974f667956325c50986f0"
+      },
+      {
+        "bytes": 27417,
+        "path": "ctbllib/data/ctbfisc2.tbl",
+        "sha256": "c63dd103c6e17bd07d2f3b57f926d0d1c497b23cba69170abb3b05cbde406c98"
+      },
+      {
+        "bytes": 52573,
+        "path": "ctbllib/data/ctbline1.tbl",
+        "sha256": "1fa08fa503184536cd1e671c275aaf8c9a4ab1278a372cc85d2eb71292c00e78"
+      },
+      {
+        "bytes": 73299,
+        "path": "ctbllib/data/ctbline2.tbl",
+        "sha256": "83f2228981c7f5a08c9503b0409c4fbc6e40b3aead409b4eb62246963b38680d"
+      },
+      {
+        "bytes": 63768,
+        "path": "ctbllib/data/ctbline3.tbl",
+        "sha256": "ca58acac4f03d053fad5e2beed23cfcf6a01c1e334f4152f20b54c13527e0416"
+      },
+      {
+        "bytes": 72499,
+        "path": "ctbllib/data/ctbline4.tbl",
+        "sha256": "276060cdc57cf87475b7750a4852a5893aad6a3a74aee5947c2873955a23afff"
+      },
+      {
+        "bytes": 79346,
+        "path": "ctbllib/data/ctbline5.tbl",
+        "sha256": "e66c493b493a6a3824cc55bd3ffd71f6dd36e5edcfb2460ee31984e11b2e7bc1"
+      },
+      {
+        "bytes": 28611,
+        "path": "ctbllib/data/ctbline6.tbl",
+        "sha256": "a259624e042a621d6e31694b6a64348fbaa08682c9644846126eeca210c2770b"
+      },
+      {
+        "bytes": 21515,
+        "path": "ctbllib/data/ctbmathi.tbl",
+        "sha256": "9d8c7eb0c201bb6866f71c9d3ed27e0dd9d78237812a692a0b55c071f0e621e4"
+      },
+      {
+        "bytes": 9563,
+        "path": "ctbllib/data/ctbmax23.tbl",
+        "sha256": "2f01ebc24fae9d8e0605378bb3ec4f1bd3e4e593a1f98fbec378c9a4ee88fab2"
+      },
+      {
+        "bytes": 1694,
+        "path": "ctbllib/data/ctbmaxi2.tbl",
+        "sha256": "141c15f948d16c0814a99c909e31c8365deaf70d75f5103e8ab4c79d0042a806"
+      },
+      {
+        "bytes": 1223,
+        "path": "ctbllib/data/ctbmaxi3.tbl",
+        "sha256": "ed63999b4e5bb64b5c517b38c86e80a94693c8374c9d5695d225e2417c0969d7"
+      },
+      {
+        "bytes": 6056,
+        "path": "ctbllib/data/ctbmaxi5.tbl",
+        "sha256": "effb7a20eba0bdc8f71099d41b7e9139ca891f859581a38d3f8f0a6478148abc"
+      },
+      {
+        "bytes": 2127,
+        "path": "ctbllib/data/ctbmaxi6.tbl",
+        "sha256": "14861b8ff30c561d8f0ad09de8fe96df82e28357064389f261b653931c08082d"
+      },
+      {
+        "bytes": 16922,
+        "path": "ctbllib/data/ctbmonst.tbl",
+        "sha256": "466224572445b4db4ee02cf16f28ec49c530236e7ffa5eb93d2b86820f6e371f"
+      },
+      {
+        "bytes": 6469,
+        "path": "ctbllib/data/ctbnews.tbl",
+        "sha256": "eb477672e896815b05f761d46d1a8ba3a8ded11cbb42870d343ee2605f2e0176"
+      },
+      {
+        "bytes": 22947,
+        "path": "ctbllib/data/ctborth1.tbl",
+        "sha256": "dc0ae7d81a5e2f0f83eeaf15aeb08983f0ff40691c478bc797b3b3942193c568"
+      },
+      {
+        "bytes": 97726,
+        "path": "ctbllib/data/ctborth2.tbl",
+        "sha256": "6a24309bc7a54467898aa232e202f4360cebef69818dedca9deb2eb0897349d0"
+      },
+      {
+        "bytes": 57091,
+        "path": "ctbllib/data/ctborth3.tbl",
+        "sha256": "d05c33a3d0bd1f9a9f4a4109f21bffa23d0644e08ecb4956de9f6cce7987cb04"
+      },
+      {
+        "bytes": 95654,
+        "path": "ctbllib/data/ctbspora.tbl",
+        "sha256": "0547139dd6a082c9d60dc695c34e5eb0ea5f56b48fbc775f9eedeb67b289bc47"
+      },
+      {
+        "bytes": 45433,
+        "path": "ctbllib/data/ctbsymp1.tbl",
+        "sha256": "d6d03f198d42944d6ae00f16df2884dba1784c92ad7c599c98e8e7fd318e761e"
+      },
+      {
+        "bytes": 9192,
+        "path": "ctbllib/data/ctbtwis1.tbl",
+        "sha256": "187a63990944e256203727dbc8ed255be358ec8349a24789cfe8fea9902502cd"
+      },
+      {
+        "bytes": 33450,
+        "path": "ctbllib/data/ctbtwis2.tbl",
+        "sha256": "d66f983497648594a55f2af2d076bce6798aae26a3009eedcdf4f006ea9c46ad"
+      },
+      {
+        "bytes": 82707,
+        "path": "ctbllib/data/ctbunit1.tbl",
+        "sha256": "624c711d6c3f272cd801f019ca56bcb75d63387c97b4a7a091bfe5a7585b0e52"
+      },
+      {
+        "bytes": 142316,
+        "path": "ctbllib/data/ctbunit2.tbl",
+        "sha256": "33408489541b5a0790814536b980308ea2dbcd2f0c1f22805f9296195b3c6b86"
+      },
+      {
+        "bytes": 215371,
+        "path": "ctbllib/data/ctbunit3.tbl",
+        "sha256": "045aaefc9c03a3f2b4048ff389e0ed2ed47182b65dfbb59de26b4ec25257ec96"
+      },
+      {
+        "bytes": 101806,
+        "path": "ctbllib/data/ctbunit4.tbl",
+        "sha256": "6ea8378c739509782c3cc804d11abf32cf7a5806805b62da9b3d9d5caf623529"
+      },
+      {
+        "bytes": 62970,
+        "path": "ctbllib/data/ctgeneri.tbl",
+        "sha256": "e2f660f87283670903d7d959b8bfd1168008f6eb2eb2392701f789d1b95e9db8"
+      },
+      {
+        "bytes": 403891,
+        "path": "ctbllib/data/ctoalter.tbl",
+        "sha256": "2677c5508d9aca0f030a1ebe9d95fcf75e93871bf484220e85bd7b4e59bc69c9"
+      },
+      {
+        "bytes": 168991,
+        "path": "ctbllib/data/ctoatres.tbl",
+        "sha256": "568034f9d6b81c3a05586dfdcefd16294a61f6af2c6a059ceee618c3369075ef"
+      },
+      {
+        "bytes": 60296,
+        "path": "ctbllib/data/ctocliff.tbl",
+        "sha256": "ec8b8a55b0446de5edec1bad77997839adfc11785879c8ef08a722e074147d98"
+      },
+      {
+        "bytes": 120131,
+        "path": "ctbllib/data/ctoconja.tbl",
+        "sha256": "949d710a6146064f0c4336cbc61edf70f10ab2ac4cc14df84ce9f2e0e1ea9a7d"
+      },
+      {
+        "bytes": 3232783,
+        "path": "ctbllib/data/ctodefno.tbl",
+        "sha256": "d0088ac7d49848818840c60b20c363b8c0bc1bb3e94ec060f81590422b20f292"
+      },
+      {
+        "bytes": 296634,
+        "path": "ctbllib/data/ctoexce1.tbl",
+        "sha256": "ff70fb53ae5af8d51f5467c1028c9a6d0b2aed5f7bdc72c8be405361e1b3541f"
+      },
+      {
+        "bytes": 124234,
+        "path": "ctbllib/data/ctofisc1.tbl",
+        "sha256": "60cbbc37c9042af8f9c19b402556ec85ce604d1042f3dab5ece61bf75259086b"
+      },
+      {
+        "bytes": 179881,
+        "path": "ctbllib/data/ctofisc2.tbl",
+        "sha256": "db8a850f2870b7ee3a8e40800fc2719aee2761ba8efa63d5a03a7a3887e7b577"
+      },
+      {
+        "bytes": 190358,
+        "path": "ctbllib/data/ctoholpl.tbl",
+        "sha256": "e0c842f666ff1f93f0be77d190b6cd37d6a81aaffe6c852bcd35ed4156dd0bf0"
+      },
+      {
+        "bytes": 25659,
+        "path": "ctbllib/data/ctoinert.tbl",
+        "sha256": "9d120e8ea48dffeb3e668a96844d205c534df772ef3bbd21508799ce78e7adfc"
+      },
+      {
+        "bytes": 131950,
+        "path": "ctbllib/data/ctoline1.tbl",
+        "sha256": "8937d8828f7c7719e357585fd1529dcff2152f5111d15fed79e62782c7d0a9b4"
+      },
+      {
+        "bytes": 123222,
+        "path": "ctbllib/data/ctoline2.tbl",
+        "sha256": "2b8d65460deaf76ac7182338c763c223b5cfa1035ab6fe3b4dee9ffb10b36d5d"
+      },
+      {
+        "bytes": 235623,
+        "path": "ctbllib/data/ctoline3.tbl",
+        "sha256": "ffcd708776c305751194e0bc7da6d15339f1278664acdfdbf3c9bd1c5ecf9d95"
+      },
+      {
+        "bytes": 87407,
+        "path": "ctbllib/data/ctoline4.tbl",
+        "sha256": "64ad3adf70c7ea772c8bea63bab2a9351c63fba482c2a0829188f009620317f8"
+      },
+      {
+        "bytes": 126709,
+        "path": "ctbllib/data/ctoline5.tbl",
+        "sha256": "f8b9c5ca373967a4da847dd25fdedae54818b5852bd86b2a39032a0d07013418"
+      },
+      {
+        "bytes": 186013,
+        "path": "ctbllib/data/ctoline6.tbl",
+        "sha256": "5a2e4062716a0f14e1ecaf284c8797a5f39d4a78a98b0f9e327fd93f75970392"
+      },
+      {
+        "bytes": 21392,
+        "path": "ctbllib/data/ctoline7.tbl",
+        "sha256": "d78aada0221b61d0fe72f635ac321f4b34052acf6fe4373ff3a1d2fbaa931309"
+      },
+      {
+        "bytes": 144299,
+        "path": "ctbllib/data/ctoline8.tbl",
+        "sha256": "536990abbc6afb99753756c99a37db6f6fcd64d82bd61c971bb964fd8e9c041e"
+      },
+      {
+        "bytes": 166586,
+        "path": "ctbllib/data/ctoline9.tbl",
+        "sha256": "d374226d043e3fbc321a0d86508b61799ea8b605184a06eec40f561fc9d8e2aa"
+      },
+      {
+        "bytes": 64982,
+        "path": "ctbllib/data/ctomathi.tbl",
+        "sha256": "8a4c1d706cfca4d58975b056c935d83be305fbabfb05b4f147df26b8df8c9a96"
+      },
+      {
+        "bytes": 1093986,
+        "path": "ctbllib/data/ctomax10.tbl",
+        "sha256": "8bdfdf38ff468a54d8528443ed9b6042a8657530e131b42392d033974506ec8d"
+      },
+      {
+        "bytes": 56027,
+        "path": "ctbllib/data/ctomax11.tbl",
+        "sha256": "5a12ed7c1c28a7790d3b22dbe57f4b139994dbac75c6ec022f94d826e3dbebee"
+      },
+      {
+        "bytes": 26780,
+        "path": "ctbllib/data/ctomax12.tbl",
+        "sha256": "3899d910a4b22c346bd0d583c561fddfb095eb7b7a2559cabcc4109e6efdbfe4"
+      },
+      {
+        "bytes": 83055,
+        "path": "ctbllib/data/ctomax13.tbl",
+        "sha256": "0e40cb7f5d91cdbe0ff74e07d61af54d83ec0285e79bb9f2371a007ee9a98233"
+      },
+      {
+        "bytes": 2780042,
+        "path": "ctbllib/data/ctomax14.tbl",
+        "sha256": "39209c7083aac2d1a346b5fb49085fb43304c7395c25dba59a68f2919fe57060"
+      },
+      {
+        "bytes": 1317477,
+        "path": "ctbllib/data/ctomax15.tbl",
+        "sha256": "583344c58bd8493e0dc06cb68ec1dea36c052d82ad1776e1737b638af820d5fe"
+      },
+      {
+        "bytes": 6523682,
+        "path": "ctbllib/data/ctomax16.tbl",
+        "sha256": "79569fefa39d6ec3fe208b4ccfad090c571046a7fac51dff5e7d172b8c53e249"
+      },
+      {
+        "bytes": 1183884,
+        "path": "ctbllib/data/ctomax17.tbl",
+        "sha256": "6ecb7fe3e1ed155e7480dc4b16ba01c1d3eba7152cc2d24396a977e67f24f48e"
+      },
+      {
+        "bytes": 1197935,
+        "path": "ctbllib/data/ctomax18.tbl",
+        "sha256": "615f8b230a103a9dac1eb1ef0759b1c24adfe58f429e4a3d88b17bc0497808a9"
+      },
+      {
+        "bytes": 333778,
+        "path": "ctbllib/data/ctomax19.tbl",
+        "sha256": "56cd54d87eefd9fb51d8ee5ae7a1b1f8ba2652ec475d7e87c6171b6e1c77170a"
+      },
+      {
+        "bytes": 1057308,
+        "path": "ctbllib/data/ctomax20.tbl",
+        "sha256": "46298935dd3a2e108de0d345d868f4ac9a1b6d0c88e85bb95a284f4ec33629cb"
+      },
+      {
+        "bytes": 964740,
+        "path": "ctbllib/data/ctomax21.tbl",
+        "sha256": "f6d32e4ec6e634396aa46404e59d95d8f23d350f5048b645b1f436e45b11caa3"
+      },
+      {
+        "bytes": 61244,
+        "path": "ctbllib/data/ctomax22.tbl",
+        "sha256": "0594a3e09a6d56d3d46c8c9155b270a7a7914c1568164a39b42043aa264bcb1b"
+      },
+      {
+        "bytes": 356229,
+        "path": "ctbllib/data/ctomax23.tbl",
+        "sha256": "ce44c701ec45997c14c41a0bc0343b02884ec61b91a5455aeba9640dfcd2c047"
+      },
+      {
+        "bytes": 679848,
+        "path": "ctbllib/data/ctomax24.tbl",
+        "sha256": "4df6cf21cbc497c35b0b6096b9240000b66be16fe3b18ca7581761874c343683"
+      },
+      {
+        "bytes": 2587639,
+        "path": "ctbllib/data/ctomax25.tbl",
+        "sha256": "cf7573fdf47185f7fc41b90719b9a9836af8d251af40cbbc266598e0a2c0a3b1"
+      },
+      {
+        "bytes": 385452,
+        "path": "ctbllib/data/ctomax26.tbl",
+        "sha256": "1bfc9af8b4d22db69508091c389780267fee14a29cb90e773d638bf6b6ffa8b9"
+      },
+      {
+        "bytes": 759784,
+        "path": "ctbllib/data/ctomax27.tbl",
+        "sha256": "ddb21c5b1125a07cb10f027c1e85d520ed57de536efeaa501d0b53c37cf1470f"
+      },
+      {
+        "bytes": 89250,
+        "path": "ctbllib/data/ctomaxi1.tbl",
+        "sha256": "6f00f2f80e9b75596214e845dae5047b1907c0bd38233576be3b47c98cd800aa"
+      },
+      {
+        "bytes": 604682,
+        "path": "ctbllib/data/ctomaxi2.tbl",
+        "sha256": "139169adf12688bf0b0a85b20ff7657035b39a125837b8fd47376d365ec1a8e6"
+      },
+      {
+        "bytes": 387948,
+        "path": "ctbllib/data/ctomaxi3.tbl",
+        "sha256": "9bcefce96c523f69a6f55b8aec0f5b06bd86c16626056847ba53f1c59239e840"
+      },
+      {
+        "bytes": 832517,
+        "path": "ctbllib/data/ctomaxi4.tbl",
+        "sha256": "048f05eeca402131d0988d27d8a185c8f7c626a62404bfad018b5245a8fd0794"
+      },
+      {
+        "bytes": 258220,
+        "path": "ctbllib/data/ctomaxi5.tbl",
+        "sha256": "97e030dfeb6df029034a0845f9a686e31b66e5761303bd36f58bdbf4e0628aeb"
+      },
+      {
+        "bytes": 167443,
+        "path": "ctbllib/data/ctomaxi6.tbl",
+        "sha256": "2b52b8d0136ed8a79addea1ee63a688b0b35a83ff2a939d8f7b063c5c90726da"
+      },
+      {
+        "bytes": 2344168,
+        "path": "ctbllib/data/ctomaxi7.tbl",
+        "sha256": "b8268b4c1e261170cd57adbdbb06b11d4beaad58bafb6009d6ee13b5f0280525"
+      },
+      {
+        "bytes": 23795,
+        "path": "ctbllib/data/ctomaxi8.tbl",
+        "sha256": "bce67c183fd6b91fddbf5e380af5ee416f88c2df844aa4bde64fbb79d4854327"
+      },
+      {
+        "bytes": 198838,
+        "path": "ctbllib/data/ctomaxi9.tbl",
+        "sha256": "b20682792aeca2be2090d38fa598860cff7957d933032cc9f88fa0049118384f"
+      },
+      {
+        "bytes": 100698,
+        "path": "ctbllib/data/ctomisc1.tbl",
+        "sha256": "b1802c5541d0edf44a88c97f0e4a008d447200cbf47fb80001c867158a8d934e"
+      },
+      {
+        "bytes": 146660,
+        "path": "ctbllib/data/ctomisc2.tbl",
+        "sha256": "69ae51637f32f803a67434f06b60d1074e5a46ad60d532260f70761247d7e554"
+      },
+      {
+        "bytes": 315073,
+        "path": "ctbllib/data/ctomisc3.tbl",
+        "sha256": "efcf572d8f486144096f7ba4a80e3a25101ef00bf34b3b309b6f96d2164b96ee"
+      },
+      {
+        "bytes": 196065,
+        "path": "ctbllib/data/ctomisc4.tbl",
+        "sha256": "efcecbbdf6f19c6b7900751dbbf94971cfc9db0a7e63e9f0d00d8cad8a0e4241"
+      },
+      {
+        "bytes": 221488,
+        "path": "ctbllib/data/ctomisc6.tbl",
+        "sha256": "f23721c708c2e35b969013bbabdd6f365686c3f47a5af45e79b6d6544c8d1a4f"
+      },
+      {
+        "bytes": 593252,
+        "path": "ctbllib/data/ctomisc7.tbl",
+        "sha256": "431aa8655512afd42980b387ffbb8e7293f5e20cb032d55271a9ae1abce975e5"
+      },
+      {
+        "bytes": 21445,
+        "path": "ctbllib/data/ctomisc8.tbl",
+        "sha256": "f27a0d7cb6cb3600701d687abcd52cda128d7626f0abe393965097fbe6f0e9e9"
+      },
+      {
+        "bytes": 278103,
+        "path": "ctbllib/data/ctomonst.tbl",
+        "sha256": "e625b7b299b3de01f526b86758d400b1942066e0691a4534663fc84fd919231f"
+      },
+      {
+        "bytes": 677576,
+        "path": "ctbllib/data/ctonews.tbl",
+        "sha256": "71f7e84bc6774a2f989d808a58dd1e2c25f66375d685e75b7c3884a123d40fcb"
+      },
+      {
+        "bytes": 374240,
+        "path": "ctbllib/data/ctoort10.tbl",
+        "sha256": "bf8d7f1418ebc71deb0fa075f04816126b2c8a427fa45e186295eeb4c834cbfa"
+      },
+      {
+        "bytes": 84463,
+        "path": "ctbllib/data/ctoorth1.tbl",
+        "sha256": "5a938de27bc3e8accbbbe7562c842cc6bc7c739f0aa14abde198e655830d4e65"
+      },
+      {
+        "bytes": 508972,
+        "path": "ctbllib/data/ctoorth2.tbl",
+        "sha256": "cf250c9b4ada37a8c8e5fc93570ba3c24c9cd9197baf8a646e568194de2afdce"
+      },
+      {
+        "bytes": 398118,
+        "path": "ctbllib/data/ctoorth3.tbl",
+        "sha256": "736b8f34211dd8a20c51312015fa72c1bb0a4931db19b317ea436ac0e9644626"
+      },
+      {
+        "bytes": 370068,
+        "path": "ctbllib/data/ctoorth4.tbl",
+        "sha256": "460618f02f11824b899fdae814af6ecc2faa147de005edcdfa182907aeb74b9b"
+      },
+      {
+        "bytes": 448111,
+        "path": "ctbllib/data/ctoorth5.tbl",
+        "sha256": "925a49528a98a06104eeff577f850bab7702399702ef8795b6e0cfdf2f1a16df"
+      },
+      {
+        "bytes": 333022,
+        "path": "ctbllib/data/ctoorth6.tbl",
+        "sha256": "54d3e8cb7794bb1c4f9b2d6a5a19edc9e8efd6804358172193b68cf0e32847b1"
+      },
+      {
+        "bytes": 263922,
+        "path": "ctbllib/data/ctoorth7.tbl",
+        "sha256": "332cf781c20eed5fbd3b4da995120181bc4f5f370ff827380859729eb682ec3c"
+      },
+      {
+        "bytes": 2728475,
+        "path": "ctbllib/data/ctoorth8.tbl",
+        "sha256": "16dc21008badec95e2d6fc1680970db651d68e0f164c2d3a3e070199c6275863"
+      },
+      {
+        "bytes": 7436077,
+        "path": "ctbllib/data/ctoorth9.tbl",
+        "sha256": "beb8b9c83409894bd27a27bf311bc4c184376f4d12ce3405af454104e956e2e1"
+      },
+      {
+        "bytes": 193334,
+        "path": "ctbllib/data/ctospora.tbl",
+        "sha256": "39854ca05e13eecbb1d2c60872d8de4d77b0a1d26c3da5b64767fdd442289a09"
+      },
+      {
+        "bytes": 410725,
+        "path": "ctbllib/data/ctosylno.tbl",
+        "sha256": "8471685bd230b2c25ffbeb7095b1b3a414b5f75f18c76a286bb976ef59c077e4"
+      },
+      {
+        "bytes": 243177,
+        "path": "ctbllib/data/ctosymp1.tbl",
+        "sha256": "461519e33cb31b2bc46f554b09f283f0afb7125fd805840d79bfc614fce75b6f"
+      },
+      {
+        "bytes": 546932,
+        "path": "ctbllib/data/ctosymp2.tbl",
+        "sha256": "497b5d471a9a65cf0d795e86ee6ba4653ece047ca6f331325a101be4dceb6b15"
+      },
+      {
+        "bytes": 654547,
+        "path": "ctbllib/data/ctosymp3.tbl",
+        "sha256": "5309ff7e8038ab255972528a11a6ab86127255a7e1546e37357790bc270248a9"
+      },
+      {
+        "bytes": 185066,
+        "path": "ctbllib/data/ctotwis1.tbl",
+        "sha256": "c98913edec288dfcc671ea20a1beb48099ed63595fd1cc5e871b447db96fc8c2"
+      },
+      {
+        "bytes": 617756,
+        "path": "ctbllib/data/ctotwis2.tbl",
+        "sha256": "49c0e3404afeb49d17fa2be58ebcb6d8b8aca054313b7d8fa3d82d969e8d5b85"
+      },
+      {
+        "bytes": 989478,
+        "path": "ctbllib/data/ctounit1.tbl",
+        "sha256": "231520234a02003db512a9022e059716115f76852e36a623c59cf8ce739a0227"
+      },
+      {
+        "bytes": 165259,
+        "path": "ctbllib/data/ctounit2.tbl",
+        "sha256": "577a0c1dcfe6d617d8725da0f24e8feac2cc03b1e88530179237fe0760b7a694"
+      },
+      {
+        "bytes": 133182,
+        "path": "ctbllib/data/ctounit3.tbl",
+        "sha256": "7f269dcf70f83359a657b67e0c00279c8791f51b8a4a665156b540e9ee64a1cf"
+      },
+      {
+        "bytes": 335205,
+        "path": "ctbllib/data/ctounit4.tbl",
+        "sha256": "9c6ec1dd961331c50bde92e4faca85b8646f23f6cf5fa263f9f36c1463a1adf4"
+      },
+      {
+        "bytes": 253168,
+        "path": "ctbllib/data/ctounit5.tbl",
+        "sha256": "10993cac030d835624440787bef4d40d03e3ebdecba3b620c1f5b39e0b7158e2"
+      },
+      {
+        "bytes": 191879,
+        "path": "ctbllib/data/ctounit6.tbl",
+        "sha256": "f7123d9a4f3fbd2fe322b31a2aa29bdf2e11b1d3d11125bb3c6858ae091e15aa"
+      },
+      {
+        "bytes": 3250708,
+        "path": "ctbllib/data/ctounit7.tbl",
+        "sha256": "3eb292e0198a2402fb085c9e5afb805796c61a74402be7116fcf5640b3995af5"
+      },
+      {
+        "bytes": 406336,
+        "path": "ctbllib/data/ctprimar.tbl",
+        "sha256": "478553fc48808b6e4037f0dc1dcc373ac12bcb5200c966af405bf49af6d70a28"
+      },
+      {
+        "bytes": 10371,
+        "path": "ctbllib/dlnames/dlconstr.g",
+        "sha256": "7b77d8a890f3c05ecd4d0553aaef04130697f77caed21f8971649b751dea956a"
+      },
+      {
+        "bytes": 1547,
+        "path": "ctbllib/dlnames/dllib.g",
+        "sha256": "6a50fa3d2adb823cb47ca180593689dbc9bed7a41226a9809230110fe0a015ae"
+      },
+      {
+        "bytes": 5699,
+        "path": "ctbllib/dlnames/dlnames.gd",
+        "sha256": "249276b8178529d9a54382200315b085315b3d95c541dd49b5e99ada09f814ea"
+      },
+      {
+        "bytes": 4037,
+        "path": "ctbllib/dlnames/dlnames.gi",
+        "sha256": "3bb59703055ab66232e945ff3fe39597a38b6ba8b6a6590f15d35233f195b4e6"
+      },
+      {
+        "bytes": 4729,
+        "path": "ctbllib/dlnames/dltest.g",
+        "sha256": "f8addcc3fbf7cad00d07299d83cfc48769016f23410391e9c9ea3e8c6122adf7"
+      },
+      {
+        "bytes": 11394,
+        "path": "ctbllib/dlnames/ltgroups.g",
+        "sha256": "70c5351fcf6c9bb616b1a979c2c581c195a8f7f4eede4194fde9786917211510"
+      },
+      {
+        "bytes": 6140,
+        "path": "ctbllib/dlnames/uctype2A.g",
+        "sha256": "bc41714b81b45f2eed8cafec60bc8898b85923686fbec51618f7bb48965c915c"
+      },
+      {
+        "bytes": 2655,
+        "path": "ctbllib/dlnames/uctype2D.g",
+        "sha256": "5c81c1255f3750ae5824b90f13766a9a1b5a697856df677ab669faeaa06817da"
+      },
+      {
+        "bytes": 19478,
+        "path": "ctbllib/dlnames/uctypeA.g",
+        "sha256": "6272e3c8a047656ab559a37eae650f7fffb2056cbf7f9c7a95487a80a17ff824"
+      },
+      {
+        "bytes": 2477,
+        "path": "ctbllib/dlnames/uctypeB.g",
+        "sha256": "ee96b48d8cea952bc3b2b825e72383949614980f4bb318215da9269ef16a557d"
+      },
+      {
+        "bytes": 20451,
+        "path": "ctbllib/dlnames/uctypeC.g",
+        "sha256": "984ffb79bb280dfcb03dbf1c88e095670807e7eaa4fc20d2442d0fe01ad10ee7"
+      },
+      {
+        "bytes": 4875,
+        "path": "ctbllib/dlnames/uctypeD.g",
+        "sha256": "42b81105e7ac12507b1ae6055ef5059eba8c9269c083ee78629f0ceacada36be"
+      },
+      {
+        "bytes": 13235,
+        "path": "ctbllib/dlnames/uctypeX.g",
+        "sha256": "ab91d2da13dcfed131b5ebf5099fb73126631d46b554114f3a42d6d49c5a8497"
+      },
+      {
+        "bytes": 124500,
+        "path": "ctbllib/gap3/ctadmin.g",
+        "sha256": "ed0e0935b9806c535bb80b796b92574226feaffed2f8fe3d583c1e7d22375edf"
+      },
+      {
+        "bytes": 38412,
+        "path": "ctbllib/gap4/atlasbro.g",
+        "sha256": "4c689cf24faff2867e945159dee66b7d02cf0237c71925c3d60b9b70bcd5f409"
+      },
+      {
+        "bytes": 18011,
+        "path": "ctbllib/gap4/atlasimp.g",
+        "sha256": "363bbc036edb164a5cf877fdcab961b59e6b477fa356dfa18b7e779d47842af3"
+      },
+      {
+        "bytes": 49239,
+        "path": "ctbllib/gap4/atlasirr.g",
+        "sha256": "1cd826954275da0c75fa7fe49a8686febef3d9ed6f4b36801e2b55aabbe986ee"
+      },
+      {
+        "bytes": 8445,
+        "path": "ctbllib/gap4/atlasrep_only.g",
+        "sha256": "9ecae6febb8a4a3de034aa3816f7246ef08fcf9c2b336f80cab6c1edafc425b7"
+      },
+      {
+        "bytes": 79494,
+        "path": "ctbllib/gap4/atlasstr.g",
+        "sha256": "7a1cc61013325b2bf2810eda598fdfff69323fa597b8345cf7bd3347e5950260"
+      },
+      {
+        "bytes": 7335,
+        "path": "ctbllib/gap4/brctdiff.g",
+        "sha256": "70a15a60ee17c49d8ebe9db1dc8ec93daf2e1566ee38516f9769aa0a7d25e0b7"
+      },
+      {
+        "bytes": 1266,
+        "path": "ctbllib/gap4/brdbattrX.gd",
+        "sha256": "cdb33dd0f9a18822e9c5aa1e0dd90fa6ce94f34dd696c228e3c334ea65616fb8"
+      },
+      {
+        "bytes": 27620,
+        "path": "ctbllib/gap4/brdbattrX.gi",
+        "sha256": "44569d1ae91a6938a1c1428f4a42a1f935b3b0cc8f76603d30630645912f0b09"
+      },
+      {
+        "bytes": 18700,
+        "path": "ctbllib/gap4/brirrat.g",
+        "sha256": "218bb0d1c7d998cd59ba9e1ee7a1b99b9230fb8da8dad66a1c19e5c2fb8a5514"
+      },
+      {
+        "bytes": 1155,
+        "path": "ctbllib/gap4/browse_only.g",
+        "sha256": "7f14bc1a36bc20faf4b59ddf295fb3316bf201f171391c7e7e3773e46ef6f4e5"
+      },
+      {
+        "bytes": 319,
+        "path": "ctbllib/gap4/chevie_only.g",
+        "sha256": "5f78eb4af97e2e7d4e3c96a288213848a9db333e1c2326cdc01b91395fe85d71"
+      },
+      {
+        "bytes": 55082,
+        "path": "ctbllib/gap4/construc.gd",
+        "sha256": "7748ae76c17349b979063ac0485196e9b9ed5652f609a7e0c26fa2fad11f52ec"
+      },
+      {
+        "bytes": 157011,
+        "path": "ctbllib/gap4/construc.gi",
+        "sha256": "1882a1279bcb55b7e4ae681e64909cded4b2d4b34a9f029a77dd940496d3749a"
+      },
+      {
+        "bytes": 96628,
+        "path": "ctbllib/gap4/ctadmin.gd",
+        "sha256": "bbd5ac8df5a091cd29ba8dccabbcdfc7973398c9209baac75cd009cd7eb922b2"
+      },
+      {
+        "bytes": 194666,
+        "path": "ctbllib/gap4/ctadmin.gi",
+        "sha256": "d6f1b0100147f8ff5c3c5b911e46b8cbbf396ce4b7cdf43d5566fdd17360089d"
+      },
+      {
+        "bytes": 40857,
+        "path": "ctbllib/gap4/ctblothe.gd",
+        "sha256": "38b9fed7a1523b6f3efbf5d60d3f18d8dc3f5ccf80986beb50076561484e9e81"
+      },
+      {
+        "bytes": 143555,
+        "path": "ctbllib/gap4/ctblothe.gi",
+        "sha256": "6b8f0c646ff9e077b8b237c2bf4e44ae36a0848e50f576130327e7a8651e60c1"
+      },
+      {
+        "bytes": 47210,
+        "path": "ctbllib/gap4/ctbltocb.g",
+        "sha256": "fa0bfd2beb5d9d92e46b4aa882d23d3593eed0419f802bc588bf8d0890515aef"
+      },
+      {
+        "bytes": 29847,
+        "path": "ctbllib/gap4/ctbltoct.g",
+        "sha256": "42bbc730bb30a14e26932b0bc654e1ff706d82fa6c9a3551accfb86de4a16154"
+      },
+      {
+        "bytes": 110536,
+        "path": "ctbllib/gap4/ctdbattr.g",
+        "sha256": "5ca44a4fc39e374cc98d96a730c4a35f1a2c7889acd692d38d0cf0803f2a96a3"
+      },
+      {
+        "bytes": 3913,
+        "path": "ctbllib/gap4/ctprimar.g",
+        "sha256": "8cd30339e5a1a668ab5a44ecc922febc7fc38ee966e48814dc4f86a3e144c6fd"
+      },
+      {
+        "bytes": 26482,
+        "path": "ctbllib/gap4/maketbl.g",
+        "sha256": "e0539c3acef25368790d5c6a320eaaa407a39ef685751fd3e30062610114c058"
+      },
+      {
+        "bytes": 3047,
+        "path": "ctbllib/gap4/obsolete.gd",
+        "sha256": "34b188dd864c424b53af8a0fc597536998f6c47718c2792a40545062cd951e44"
+      },
+      {
+        "bytes": 6362,
+        "path": "ctbllib/gap4/od.g",
+        "sha256": "dbc65dc57860c0c644e9462eefd300d1071076adc54aa90be1c821e2c90742c3"
+      },
+      {
+        "bytes": 262,
+        "path": "ctbllib/gap4/spinsym_only.g",
+        "sha256": "d8fe5f35433bcfa2ad765caada07d06ae106b504d6e03eaf93423fe3c6114e30"
+      },
+      {
+        "bytes": 155356,
+        "path": "ctbllib/gap4/test.g",
+        "sha256": "c5366fbeb6217d6304e68287756c4c43a6d2453235f43747c40e7a0ecd680c2e"
+      },
+      {
+        "bytes": 13135,
+        "path": "ctbllib/gap4/tomlib_only.g",
+        "sha256": "859662945b2b727904caefc4c3dee3ffe8cc1ca44dd1be9e800e52da7018ad01"
+      },
+      {
+        "bytes": 1013,
+        "path": "ctbllib/init.g",
+        "sha256": "8a5af36c4de7f758d9e16bfa80d436ceacd9ab2c4423a93e661e57f817aa5ea4"
+      },
+      {
+        "bytes": 20670,
+        "path": "ctbllib/makedocrel.g",
+        "sha256": "043cb88c7417a7c69a8b94a10b4fb6f0d82b9a3142c83d24d9e64db5190c1a2e"
+      },
+      {
+        "bytes": 5145,
+        "path": "ctbllib/PackageInfo.g",
+        "sha256": "373cfe2546b1612c93ddb4d3374368b1afe2a5e2ea1606ef8f6a27728da5d2fe"
+      },
+      {
+        "bytes": 1416,
+        "path": "ctbllib/read.g",
+        "sha256": "bb2969c3218b84726a77596bc4b0074fa0ff9891a9d14e85ec6f7b3aaab304fb"
+      },
+      {
+        "bytes": 18081,
+        "path": "ctbllib/tst/ctblcons.g",
+        "sha256": "253ebf40431b21bc3f97cb0b4f91af2de1382fb238f9dd97aeaf075d32215032"
+      },
+      {
+        "bytes": 15082,
+        "path": "ctbllib/tst/hamilcyc.g",
+        "sha256": "e9a8629cba980c7bff43ef058ef33423be9de1133422976b4ab16667b017140d"
+      },
+      {
+        "bytes": 12449,
+        "path": "ctbllib/tst/multfree.g",
+        "sha256": "f25c5067f27a8bb20a9d4cf71867ffd7a9a502387b62e4312a4f448265eae6b0"
+      },
+      {
+        "bytes": 8555,
+        "path": "ctbllib/tst/o8p2s3_o8p5s3.g",
+        "sha256": "dd792ede932b8f63ff412875d8dbd8b800ddefd47ab0e37fa1006bbf57fe0148"
+      },
+      {
+        "bytes": 43283,
+        "path": "ctbllib/tst/probgen.g",
+        "sha256": "74f09325a14b3f6e3497463b2d00391d32bcd1ebc6abda8230cb61ffc76b2255"
+      },
+      {
+        "bytes": 2607,
+        "path": "ctbllib/tst/sporsolv.g",
+        "sha256": "fb54acea2ec802c7e592268a3b6a41715724822f34fa19936b12f3e81aecfb12"
+      },
+      {
+        "bytes": 2083,
+        "path": "ctbllib/tst/testall.g",
+        "sha256": "0a9d9ed0d9ad393bedc903da50d55c9bcb0a937804206414a1653a68699b6310"
+      },
+      {
+        "bytes": 902,
+        "path": "ctbllib/tst/testauto.g",
+        "sha256": "132698767b449eca5b11bd3bbd755d56555a3bcbc3f2da1d04d6fb4acff7bff6"
+      },
+      {
+        "bytes": 2163,
+        "path": "ctbllib/tst/testinst.g",
+        "sha256": "b535067ba15e47a87f526c78876489203439a889f97edfb89868ac84a9140d78"
+      }
+    ],
+    "scope": "Recorded identities of the computational libraries. Installed library files are not distributed or rechecked by the package checker."
+  },
+  "historical_tests": {
+    "count": 15,
+    "scope": "Original tests on the same export and comparator; not a new test execution.",
+    "status": "pass"
+  },
+  "kind": "fi24_current_computation_map",
+  "lean_inputs": [
+    {
+      "bytes": 13824,
+      "path": "ManuscriptIBAW/Sporadic/Fi24Three.lean",
+      "sha256": "cc227c65f1cb48d03716409ba6d5c75a6a777586321c93c51a7a430b784b2cdc"
+    },
+    {
+      "bytes": 6273,
+      "path": "ManuscriptIBAW/Sporadic/Fi24ThreeLocal.lean",
+      "sha256": "b0803d7203618c2bd0226226969a0fb4903a9e3a2fd360ab5d8d696e9f64dd5d"
+    },
+    {
+      "bytes": 112551,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierFaithfulFullColumnData.lean",
+      "sha256": "0a5e516f04574fdff9e26ac45619ad9e874465f835ff209a1276f0e5497207d8"
+    },
+    {
+      "bytes": 64539,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierFaithfulIntegerData.lean",
+      "sha256": "7600da5edf0287b38e3a277cc27346299b15212f99cf5cb4cb58109ed2b35cf3"
+    },
+    {
+      "bytes": 6374,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierFaithfulRootEvaluation.lean",
+      "sha256": "5e27a6f86435e7d33ef8d5441f8c11e887deb2757f8391aa8e2c3a11334c9a71"
+    },
+    {
+      "bytes": 3109,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierKleinFourIntegerData.lean",
+      "sha256": "7558bb70ccbb8988a343e45531b68d4a47cb75289efbf8dd55df2b7ff97939b5"
+    },
+    {
+      "bytes": 25184,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierLiteralV3Rows.lean",
+      "sha256": "2324e94777a3d6e4f1798f5a84a0aab6293f2c452737173319b92909258d844a"
+    },
+    {
+      "bytes": 2766,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierRemainingTrivialBlockData.lean",
+      "sha256": "e78c6ea46c15e46e2bf5686bcd3c4b2015bc1b2662f97b294f37ae4061eb7f2f"
+    },
+    {
+      "bytes": 63924,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierTrivialColumnData.lean",
+      "sha256": "d2214e4101b130c76d6ef813f1940cacb2667dcc60c7ec9b8f499f4f8fa6c3be"
+    },
+    {
+      "bytes": 150253,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierTrivialIntegerData.lean",
+      "sha256": "921f19213c07a6d0a6fa2d6b0ff63b8b31adfdbcde0a66ae08afaeed9e803929"
+    },
+    {
+      "bytes": 3678,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierTrivialRootEvaluation.lean",
+      "sha256": "edb07080c86a695bc599318be24b55c5585344de3a7e68d1966d73f3087a0056"
+    },
+    {
+      "bytes": 14140,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3PlusRankReplayContract.lean",
+      "sha256": "dcb832762b90c8b014b3c43afbeb67cdc63a06b40f1e3bb9da0bf7e4ca45eb6f"
+    },
+    {
+      "bytes": 16905,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3V3RawRankCertificate.lean",
+      "sha256": "884f54d899397f41cbfd9066415c647f718aab0ee63b873b46f9736647403643"
+    }
+  ],
+  "manuscript": {
+    "path": "manuscript/current/main.tex",
+    "sha256": "bf84e40ba14ac1ba46aad1279df15b6d9f61b2da97b35cca3cdbd481dd28871d",
+    "bytes": 243293,
+    "locations": [
+      {
+        "role": "statement",
+        "anchor": "\\label{prop:four-boundary}",
+        "line": 3239
+      },
+      {
+        "role": "appendix",
+        "anchor": "\\subsection{The Fischer group}",
+        "line": 3727
+      }
+    ],
+    "scope": "Current locations only. Historical numerical checks retain their recorded scope."
+  },
+  "original_records": [
+    {
+      "bytes": 12761,
+      "name": "approved-review-fi24-literal-data-final.json",
+      "sha256": "79935bd3d7b70329e24d701ce55c7c95aa6ae492f181f36e9255865ce4942038"
+    },
+    {
+      "bytes": 7796809,
+      "name": "data.json",
+      "role": "export",
+      "sha256": "d2cdcec9e3e9c6f57bc59779c1770c348e8092d09a5a74e23c5bc2577873d1a9"
+    },
+    {
+      "bytes": 10488,
+      "name": "comparison.json",
+      "role": "comparison",
+      "sha256": "0739a5532ef94f35813ce62eb13d8b62c62fd8e6b52251e08e811f08b1558002"
+    },
+    {
+      "bytes": 3607,
+      "name": "negative-tests.json",
+      "role": "tests",
+      "sha256": "7e6ad28ddc793b02483180fb1dfaac18f40a319d308a78556053c239d1571ab7"
+    },
+    {
+      "bytes": 8324,
+      "name": "approved-review-fi24-literal-data-review.md",
+      "role": "review",
+      "sha256": "6c792f9ad77b03688efddd087b26a81b65678e2d59c94413029fc21cc196a373"
+    },
+    {
+      "bytes": 43433,
+      "name": "run.json",
+      "role": "first_run",
+      "sha256": "7f77af3b83b27d8493c2afb4f109ecd298ddc8bb9f75b7f9b48fe796aa03a886"
+    },
+    {
+      "bytes": 43433,
+      "name": "run.json",
+      "role": "second_run",
+      "sha256": "b6a1ed637b1338d48f0d991ac8bb7832a9d25358a3b31e1265001c240e0b0bfa"
+    }
+  ],
+  "programs": [
+    {
+      "bytes": 6858,
+      "path": "scripts/fi24_literal_data_export.g",
+      "sha256": "9181511f8706fb65a9167e28fdb9b58922ccee7aa67b8db59b813e7259ed82ee"
+    },
+    {
+      "bytes": 21819,
+      "path": "scripts/fi24_literal_data_compare.py",
+      "sha256": "4b40c1b37c4ee377acf31b4fe0af33c2658b1445f108dff42d6651bfe26ad8d5"
+    },
+    {
+      "bytes": 4127,
+      "path": "scripts/fi24_literal_data_tests.py",
+      "sha256": "b85ef1cf495080c3b00b95ca284c37384bfda1fa19b230a4c9626d2cf3710135"
+    },
+    {
+      "bytes": 16222,
+      "path": "scripts/fi24_literal_data_offline.py",
+      "sha256": "23c6fed292d30f96e14b482be3bdcf80cc5c859654c0b3f86cb39a79eb0cabb6"
+    }
+  ],
+  "recorded_runtime_versions": {
+    "CTblLib": "1.3.11",
+    "GAP": "4.16.0"
+  },
+  "root_encoding": "[n, coefficients] means sum coefficients[j+1]*E(n)^j; exact integers",
+  "runtime_provenance_replayed": false,
+  "schema_version": 1,
+  "scope": "Historical exact table and literal comparisons retain their recorded scope and values. The current prime-three application uses the stated published weight count and character identification rather than an arbitrary local fusion premise. Current input hashes identify source files, not a new GAP or Lean replay. Actual groups, characters, block labels, embeddings, root conventions and automorphisms remain explicit external interpretations.",
+  "status": "current_computation_associations_unchanged",
+  "revision_scope": "Associations between the current manuscript, Lean inputs, exact table comparisons and saved computation outputs. Resource measurements are recorded separately with the completed Lean compilation.",
+  "historical_manuscript_binding": {
+    "path": "manuscript/current/main.tex",
+    "sha256": "089a7c1a71164309b3019d11d14fd891928bfa97992e2a40733eab8c7baf52b3",
+    "bytes": 233034,
+    "locations": [
+      {
+        "role": "statement",
+        "anchor": "\\label{prop:four-boundary}",
+        "line": 3818
+      },
+      {
+        "role": "appendix",
+        "anchor": "\\subsection{The Fischer group}",
+        "line": 4322
+      }
+    ],
+    "scope": "Source locations supported in part by the selected Fi24 data; not a replay of the whole proposition or appendix."
+  },
+  "historical_lean_input_bindings": [
+    {
+      "bytes": 12065,
+      "path": "ManuscriptIBAW/Sporadic/Fi24Three.lean",
+      "sha256": "29c400098ed3892af1c7c8321e5fd61ad063965e45dca1b05eaf49d5a1ff9861"
+    },
+    {
+      "bytes": 6273,
+      "path": "ManuscriptIBAW/Sporadic/Fi24ThreeLocal.lean",
+      "sha256": "b0803d7203618c2bd0226226969a0fb4903a9e3a2fd360ab5d8d696e9f64dd5d"
+    },
+    {
+      "bytes": 112551,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierFaithfulFullColumnData.lean",
+      "sha256": "0a5e516f04574fdff9e26ac45619ad9e874465f835ff209a1276f0e5497207d8"
+    },
+    {
+      "bytes": 64539,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierFaithfulIntegerData.lean",
+      "sha256": "7600da5edf0287b38e3a277cc27346299b15212f99cf5cb4cb58109ed2b35cf3"
+    },
+    {
+      "bytes": 6374,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierFaithfulRootEvaluation.lean",
+      "sha256": "5e27a6f86435e7d33ef8d5441f8c11e887deb2757f8391aa8e2c3a11334c9a71"
+    },
+    {
+      "bytes": 3109,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierKleinFourIntegerData.lean",
+      "sha256": "7558bb70ccbb8988a343e45531b68d4a47cb75289efbf8dd55df2b7ff97939b5"
+    },
+    {
+      "bytes": 25184,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierLiteralV3Rows.lean",
+      "sha256": "2324e94777a3d6e4f1798f5a84a0aab6293f2c452737173319b92909258d844a"
+    },
+    {
+      "bytes": 2766,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierRemainingTrivialBlockData.lean",
+      "sha256": "e78c6ea46c15e46e2bf5686bcd3c4b2015bc1b2662f97b294f37ae4061eb7f2f"
+    },
+    {
+      "bytes": 63924,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierTrivialColumnData.lean",
+      "sha256": "d2214e4101b130c76d6ef813f1940cacb2667dcc60c7ec9b8f499f4f8fa6c3be"
+    },
+    {
+      "bytes": 150253,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierTrivialIntegerData.lean",
+      "sha256": "921f19213c07a6d0a6fa2d6b0ff63b8b31adfdbcde0a66ae08afaeed9e803929"
+    },
+    {
+      "bytes": 3678,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3Definition44NamedCarrierTrivialRootEvaluation.lean",
+      "sha256": "edb07080c86a695bc599318be24b55c5585344de3a7e68d1966d73f3087a0056"
+    },
+    {
+      "bytes": 14140,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3PlusRankReplayContract.lean",
+      "sha256": "dcb832762b90c8b014b3c43afbeb67cdc63a06b40f1e3bb9da0bf7e4ca45eb6f"
+    },
+    {
+      "bytes": 16905,
+      "path": "packages/ModularRep/ModularRep/PaperProofs/SporadicFi24P3V3RawRankCertificate.lean",
+      "sha256": "884f54d899397f41cbfd9066415c647f718aab0ee63b873b46f9736647403643"
+    }
+  ],
+  "producer_record_scope": "The data, programs and original_records fields identify historical producer evidence by its original names and hashes. They do not promise those producer files in this source archive."
+}

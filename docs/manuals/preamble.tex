@@ -1,0 +1,83 @@
+\usepackage[a4paper,margin=27mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{Latin Modern Mono}[Scale=MatchLowercase]
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{booktabs,longtable,array,enumitem}
+\usepackage{xcolor,xurl,hyperref,bookmark}
+\usepackage{fancyhdr}
+\definecolor{GuideBlue}{HTML}{214B64}
+\hypersetup{colorlinks=true,linkcolor=GuideBlue,citecolor=GuideBlue,urlcolor=GuideBlue,
+  pdfauthor={},pdfcreator={},pdfsubject={Mathematical documentation for ModularRep}}
+\urlstyle{tt}
+\newcommand{\lean}[1]{{\small\nolinkurl{#1}}}
+\newcommand{\module}[1]{\lean{#1}}
+\newenvironment{implementation}{\par\begingroup\small\raggedright
+  \noindent\textsf{Implementation.}\par\nobreak}{\par\endgroup}
+\newcommand{\source}[1]{\textup{#1}}
+\newcommand{\GAP}{GAP}
+\newcommand{\Irr}{\operatorname{Irr}}
+\newcommand{\IBr}{\operatorname{IBr}}
+\newcommand{\Alp}{\operatorname{Alp}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Out}{\operatorname{Out}}
+\newcommand{\Irrdz}{\operatorname{dz}}
+\newcommand{\bl}{\operatorname{bl}}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\Sp}{\operatorname{Sp}}
+\newcommand{\PSp}{\operatorname{PSp}}
+\newcommand{\Spin}{\operatorname{Spin}}
+\newcommand{\CSp}{\operatorname{CSp}}
+\newcommand{\PCSp}{\operatorname{PCSp}}
+\newcommand{\Cl}{\operatorname{Cl}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\defect}{\operatorname{def}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\F}{\mathbb F}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathbb C}
+\newcommand{\sourcegrade}[1]{\textsf{#1}}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\setlist{topsep=5pt,itemsep=3pt,parsep=0pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\nouppercase{\leftmark}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+
+% One maintained definition for each bibliographic reference.
+\newcommand{\DeclareManualReference}[2]{%
+  \expandafter\def\csname ManualReferenceBody@#1\endcsname{#2}}
+\newcommand{\ManualReference}[1]{%
+  \ifcsname ManualReferenceBody@#1\endcsname
+    \bibitem{#1}\csname ManualReferenceBody@#1\endcsname
+  \else
+    \PackageError{ModularRep}{Unknown bibliography key #1}{Add its definition to bibliography-entries.tex.}%
+  \fi}
+\input{bibliography-entries}

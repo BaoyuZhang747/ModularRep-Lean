@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "lean_version": "4.33.1",
+  "compiler_options": {
+    "trust": 0,
+    "package_options": {
+      ".": [
+        "--trust=0",
+        "--threads=1",
+        "-M8192",
+        "-DrelaxedAutoImplicit=false"
+      ],
+      "packages/ModularRep": [
+        "--trust=0",
+        "--threads=1",
+        "-M8192",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-Dweak.linter.style.header=false"
+      ],
+      "packages/ModularRep/packages/formalisation": [
+        "--trust=0",
+        "--threads=1",
+        "-M8192",
+        "-Dpp.unicode.fun=true",
+        "-DrelaxedAutoImplicit=false",
+        "-Dweak.linter.mathlibStandardSet=true",
+        "-Dweak.linter.style.header=false",
+        "-DmaxSynthPendingDepth=3"
+      ]
+    }
+  },
+  "project_modules": 1999,
+  "configured_library_audits": 4,
+  "supplementary_audit_helpers": 1,
+  "generated_application_audits": 1,
+  "successful_compiler_invocations": 2005,
+  "project_objects_reused": 0,
+  "external_dependencies": "Pinned precompiled external dependencies were reused. Imported external proofs were not replayed. Recorded external objects and direct imports were authenticated, not the entire external transitive closure.",
+  "recorded_external_objects_checked": 234,
+  "distinct_external_direct_dependencies_checked": 258,
+  "assertion_counts": {
+    "assert_only_standard_axioms": 148,
+    "assert_no_direct_conclusion_hypothesis": 130
+  },
+  "application_declaration_audit": {
+    "declarations": 5084,
+    "dependency_graph_constants": 81793,
+    "different_owner_occurrences": 2,
+    "external_hypotheses_verified": false,
+    "modules": 142,
+    "nonstandard_kernel_axiom_occurrences": 0,
+    "record": "complete",
+    "repeated_name_occurrences": 1,
+    "unique_declarations": 5083
+  },
+  "source_identity_sha256": "f5d654c595b0823786be2ae1171ca334112afa6fa4d1a5df12743dc4812a9491",
+  "current_source_inventory_sha256": "60624e5858f27ec8d8d01ed6af6ebcb9e7206b5c252553da4de555ed35327d68",
+  "compiled_source_inventory_sha256": "6047df04ca9622be445290e1d468a8c118fe4e03ae9d37d29669581f1e4da944",
+  "inventory_digest_encoding": "UTF-8 lines sorted by relative path: path, NUL, source SHA-256, LF.",
+  "limits": [
+    "Results concern elaboration and the configured checks. They do not prove the truth, independence or joint satisfiability of external assumptions.",
+    "Neither complete Main.ClassicalInputs nor Sporadic.Theorem.Inputs has been constructed.",
+    "The exhaustive application declaration audit covers 142 application modules, not every declaration in the retained library.",
+    "The direct conclusion check does not detect logically equivalent hypotheses, conclusions in structure fields or circular dependence among hypotheses.",
+    "Original execution logs and compiled objects are not distributed. The package checker does not rerun these procedures.",
+    "The supplementary helper, generator and generated source for the exhaustive application declaration audit are not distributed. The supplied tooling does not reproduce that audit."
+  ]
+}

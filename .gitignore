@@ -1,0 +1,16 @@
+.lake/
+**/.lake/
+tmp/
+dist/
+__pycache__/
+*.py[cod]
+*.olean
+*.ilean
+*.trace
+*.aux
+*.log
+*.synctex.gz
+MANIFEST.json
+
+# The checked manuscript numbering map is a release input.
+!manuscript/current/main.aux

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "authenticated",
+  "cpu_seconds": 137098.703125,
+  "cpu_hours": 38.082973090277775,
+  "cpu_definition": "Sum of user and kernel CPU time over the measured compilation and verification process tree.",
+  "peak_sampled_sum_resident_bytes": 11171459072,
+  "peak_sampled_sum_resident_gib": 10.404232025146484,
+  "gib_bytes": 1073741824,
+  "memory_definition": "Maximum sampled sum of process resident working sets. Shared pages can be counted more than once and peaks between samples may be missed.",
+  "scope": "Measured compilation process tree. External pinned dependencies were reused. No document builds or unrelated programs are included.",
+  "project_modules": 1999,
+  "configured_library_audits": 4,
+  "additional_audit_compiler_invocations": 2,
+  "successful_compiler_invocations": 2005,
+  "compiled_source_inventory_sha256": "6047df04ca9622be445290e1d468a8c118fe4e03ae9d37d29669581f1e4da944",
+  "current_source_inventory_sha256": "60624e5858f27ec8d8d01ed6af6ebcb9e7206b5c252553da4de555ed35327d68",
+  "source_identity_sha256": "f5d654c595b0823786be2ae1171ca334112afa6fa4d1a5df12743dc4812a9491",
+  "compilation_record_sha256": "55b264ec8f90f873a6d569fa1442d716e87d0f7fb00bb0e26276454f886cb459",
+  "source_applicability": "All noncomment source bytes agree with the compiled inputs. Compiled and distributed source identities are recorded separately."
+}

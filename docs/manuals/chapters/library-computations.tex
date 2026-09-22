@@ -1,0 +1,284 @@
+\chapter{Character counts from finite matrices}
+\label{chap:library-computations}
+
+Restriction of ordinary characters to regular elements gives a
+matrix whose rank is the number of irreducible Brauer characters.
+If an involution fixes the block, a second rank calculation gives
+the number of Brauer characters it fixes. Both calculations follow
+from linear algebra once the matrix entries and the action on
+conjugacy classes are identified.
+
+\section{The rank of ordinary restrictions}
+
+\begin{lemma}
+Let $M,N,V$ be vector spaces over a field $K$, with $N$ finite
+dimensional. Let $D:M\to N$ and $E:N\to V$ be linear maps.
+If $D$ is surjective and $E$ is injective, then
+\[
+ \dim_K\im(ED)=\dim_K N.
+\]
+\end{lemma}
+\begin{proof}
+Surjectivity gives $\im(ED)=\im E$. Injectivity identifies $\im E$
+with $N$.
+\end{proof}
+
+We recall the character theoretic application over the complex
+numbers, with a fixed choice of roots for Brauer characters.
+For an $\ell$-block $b$, write $\Irr(b)$ and $\IBr(b)$ for its ordinary
+irreducible characters and irreducible Brauer characters.
+
+\begin{theorem}[Rank of ordinary restrictions]
+Let $b$ be an $\ell$-block of a finite group $G$. If $\chi^0$ denotes
+restriction to the $\ell$-regular elements, then
+\begin{equation}
+ \dim_{\mathbb C}\langle\chi^0:\chi\in\Irr(b)\rangle_{\mathbb C}
+   =|\IBr(b)|.
+ \label{lib:computations:restriction-rank}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The irreducible Brauer characters are linearly independent.
+The decomposition formula is
+\[
+ \chi^0=\sum_{\varphi\in\IBr(b)}d_{\chi\varphi}\varphi
+ \qquad(\chi\in\Irr(b)).
+\]
+The decomposition matrix of $b$ has rank $|\IBr(b)|$.
+Thus its rows span the coordinate space on $\IBr(b)$.
+Apply the lemma with $D$ sending the ordinary character basis to
+these rows and $E$ sending the coordinate basis to the Brauer
+characters.
+\end{proof}
+
+For linear independence, the decomposition formula and full rank
+of the decomposition matrix, see, for example,
+\cite[Theorem~2.6 and Corollaries~2.9--2.11]{Navarro1998}.
+The passage to one block follows from the block diagonal form of
+the decomposition matrix
+\cite[Theorem~3.3 and the following discussion]{Navarro1998}.
+The related equality between $|\IBr(G)|$ and the number of regular
+conjugacy classes is Corollary~2.10 in that account.
+
+The same rank argument works over a field $K$ of characteristic
+zero if the characters take values in $K$, the decomposition formula
+holds there, the Brauer characters are linearly independent over
+$K$, and the decomposition rows span the coordinate space over $K$.
+Theorem~\ref{lib:brauer:independence} gives independence under its
+stated field and root hypotheses. The decomposition and spanning
+conditions are additional hypotheses.
+
+\begin{implementation}
+\module{Formalisation.RestrictionRank} proves
+\lean{finrank_range_comp_eq_card} and
+\lean{finrank_span_matrix_combinations_eq_card}.
+The range calculation applies Mathlib's
+\lean{LinearMap.range_comp_of_range_eq_top} and
+\lean{LinearMap.finrank_range_of_inj}, followed by its dimension
+formula for a finite coordinate space.
+The second theorem assumes independent Brauer vectors and
+decomposition rows spanning their coordinate space.
+It proves the linear algebra implication over $K$.
+The identification of these vectors and coefficients with characters
+and decomposition numbers is separate.
+\end{implementation}
+
+Let $c_1,\ldots,c_t$ represent all $\ell$-regular conjugacy classes.
+Evaluation at these representatives is injective on class functions
+defined on the $\ell$-regular elements.
+Consequently the matrix
+\[
+ M=(\chi(c_j))_{\chi\in\Irr(b),\,1\leq j\leq t}
+\]
+has row rank $|\IBr(b)|$. More generally, one may use any list
+meeting every regular conjugacy class. To apply the formula to a
+specified matrix, its rows must be the indicated ordinary characters
+and its columns must evaluate those characters at such a list.
+
+\section{Fixed points from symmetrised rows}
+
+\begin{proposition}[An involution permuting a basis]
+\label{lib:computations:fixed-rank}
+Let $K$ have characteristic zero. Let $(v_i)_{i\in I}$ be a finite
+basis of a $K$-vector space $V$, and let $T:V\to V$ be a linear map
+such that $T(v_i)=v_{\sigma(i)}$ for an involution $\sigma$ of $I$.
+Set
+\[
+ r=\dim_K V,\qquad s=\dim_K\im(1+T).
+\]
+Then $|I^\sigma|=2s-r$.
+\end{proposition}
+\begin{proof}
+The permutation matrix of $T$ has diagonal entry one at a fixed
+index and zero otherwise. Hence $\tr(T)=|I^\sigma|$ in $K$.
+Since $T^2=1$, the map $P=(1+T)/2$ is a projection onto $\im(1+T)$.
+The trace of a projection is its rank, so
+\[
+ s=\tr(P)=\tfrac12(r+\tr(T)).
+\]
+Characteristic zero gives the asserted equality of integers.
+\end{proof}
+
+The basis need not be known explicitly. Suppose $(g_a)_{a\in A}$
+spans $V$ and $E:V\to K^C$ is an injective linear map.
+Let $M$ be a matrix and let $\pi$ permute $C$, with
+\[
+ E(g_a)(c)=M_{a,c},\qquad
+ E(Tg_a)(c)=M_{a,\pi(c)}.
+\]
+The vectors $(1+T)g_a$ span $\im(1+T)$. Their images under $E$ are
+the rows of the \emph{symmetrised matrix}
+\[
+ M^+_{a,c}=M_{a,c}+M_{a,\pi(c)}.
+\]
+Thus $M$ has row rank $r$ and $M^+$ has row rank $s$.
+
+For a block fixed by an involution in $\Aut(G)$, take the basis
+to be its irreducible Brauer characters and the spanning vectors
+to be its ordinary restrictions. Once $\pi$ describes the action
+on the chosen regular class representatives, the two ranks give
+\[
+ \bigl(|\IBr(b)|,\ |\IBr(b)^\sigma|\bigr)=(r,2s-r).
+\]
+The action formula must use the same characters, roots and class
+representatives as the evaluation formula.
+
+\begin{implementation}
+The trace and projection argument is
+\lean{fixed_card_add_card_eq_two_mul_plus_rank} in
+\module{ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierInvolutionBasisRank}.
+It applies to any finite basis over a field of characteristic zero.
+Its proof uses Mathlib's \lean{Matrix.trace_permutation} and
+\lean{LinearMap.IsProj.trace}. The local argument identifies the
+basis action with a permutation matrix and relates the projection
+to the image of $1+T$.
+The comparison with the symmetrised row rank is
+\lean{finrank_range_id_add_eq_symmetrizedRows} in
+\module{ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierSymmetrizedRowRankEquality}.
+Its hypotheses are the spanning, injectivity and evaluation
+identities above. The matrix identity in this latter theorem
+allows any map on the column index set.
+\end{implementation}
+
+\section{Certifying a matrix rank}
+
+\begin{proposition}[A minor and spanning rows]
+Let $M$ be a finite matrix over a field $K$. Suppose a square minor
+on $r$ selected rows and $r$ selected columns has nonzero determinant.
+If every row of $M$ is a linear combination of the selected rows,
+then $M$ has row rank $r$.
+\end{proposition}
+\begin{proof}
+Restricting the selected rows to the selected columns gives the
+rows of an invertible matrix, so they are linearly independent.
+By hypothesis they span the row space of $M$. They therefore form
+a basis of that space.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.PaperProofs.FiniteRowRankCertificate}
+records the selected rows and columns, the determinant of the
+minor, its nonvanishing and the coefficients expressing every row
+as a combination of the selected rows.
+\lean{FiniteRowRankCertificate.rows_finrank} proves the rank from
+the determinant identity and the equations expressing every row
+in terms of the selected rows.
+It uses Mathlib's \lean{Matrix.linearIndependent_rows_of_det_ne_zero}
+for the selected minor and \lean{finrank_span_eq_card} for the
+dimension of the span. The local proof shows that the selected rows
+span the full row space.
+\end{implementation}
+
+Together with the evaluation and action identities, these finite
+equations give character counts and counts of fixed characters.
+To use the rank calculation for character counts, one must identify the full
+matrix with the restrictions of all the intended characters to all the relevant
+regular classes. The selected minor proves that the selected rows are linearly
+independent, and the given row expressions prove that they span the full row space.
+
+\section{Finite scalar products and character selection}
+
+Let $K$ be a field of characteristic zero, let $H$ be a finite group,
+and let $(\mathcal C_j)_{j\in J}$ be distinct
+conjugacy classes with representatives $u_j$, where $J$ is finite.
+If a function $f:H\to K$ is constant on each $\mathcal C_j$ and vanishes
+outside their union, partitioning the finite sum gives
+\[
+ \frac{1}{|H|}\sum_{g\in H}f(g)
+   =\sum_{j\in J}\frac{|\mathcal C_j|}{|H|}f(u_j).
+\]
+Every coefficient $w_j=|\mathcal C_j|/|H|$ is nonzero. In a character calculation,
+the required constancy and vanishing concern the product of the two
+functions in the scalar product.
+
+\begin{implementation}
+\module{ManuscriptIBAW.Library.FiniteClassPairing} proves
+\lean{FiniteClassPairing.sum_localize} for a finite set with an explicit
+class map and distinct selected class labels. It uses constancy on
+the selected fibres and vanishing elsewhere. The theorem
+\lean{FiniteClassPairing.weight_ne_zero} proves nonvanishing of the
+normalised fibre sizes in characteristic zero, using a representative
+in each fibre. These results do not require a character theory.
+\end{implementation}
+
+Let $K$ be a field, let $J$ be finite, and let the vectors
+$v_i\in K^J$, indexed by a set $I$, span $K^J$. Suppose that
+$w_j\ne0$ for every $j$ and that $z_r\in K^J$ is nonzero for each
+$r\in J$. Let $a_{i,r}\in K$ and $\varepsilon_i\in K$ satisfy
+\[
+ \sum_{j\in J}w_jv_i(j)z_r(j)=\varepsilon_i a_{i,r}
+ \qquad(i\in I,\ r\in J).
+\]
+Then no column of $(a_{i,r})$ is zero. Indeed, if the column at $r$
+were zero, the linear functional
+$v\mapsto\sum_jw_jv(j)z_r(j)$ would vanish on a spanning family.
+It would therefore vanish on every coordinate vector, giving
+$w_jz_r(j)=0$ for all $j$. This contradicts $z_r\ne0$.
+
+Suppose now that $K$ has characteristic zero, every $a_{i,r}$ is a
+natural number viewed in $K$, and each row has sum one. Every row
+then has exactly one entry equal to one and all others zero. Since
+every column is nonzero, choose $s(r)\in I$ with $a_{s(r),r}=1$.
+The map $s:J\to I$ is injective and satisfies
+\[
+ a_{s(r),j}=\begin{cases}1&j=r,\\0&j\ne r.\end{cases}
+\]
+Injectivity follows by comparing the unique nonzero entries in two
+selected rows.
+
+\begin{implementation}
+In \module{ManuscriptIBAW.Library.FiniteCharacterSelection},
+\lean{FiniteCharacterSelection.coverage_of_span} proves that every
+column is nonzero. The theorem
+\lean{FiniteCharacterSelection.exists_delta_injection_of_span}
+constructs the injective selection assuming that the entries are
+nonnegative integers and each row sums to one. These are finite linear algebra and arithmetic
+results over the stated fields.
+\lean{span_eq_top_of_diagonal_pairings} and
+\lean{span_eq_top_of_trace_expansions} derive the spanning condition
+from diagonal pairing identities with nonzero diagonal entries and from
+explicit finite trace expansions, respectively.
+\lean{linearIndependent_of_spanning_independent_family} proves that a finite family is linearly independent if its span contains
+a linearly independent family of the same size.
+In the character application, the identification of these families,
+expansions and scalar products with the geometric and representation
+theoretic results remains a separate set of assumptions.
+\end{implementation}
+
+The row sum condition can also be proved by counting. Let $I$ and $J$
+be finite sets with $I\ne\varnothing$, and let $U$ be a set.
+Let $f:J\to U$, $u\in U$, and $a:I\times J\to\mathbb N$. Suppose that the sum in column $j$ is
+one when $f(j)=u$ and zero otherwise, and that $|I|=|f^{-1}(u)|$.
+If every two rows are related by a permutation of $J$, then every row
+has sum one. Indeed, all row sums have a common value $r$. Summing
+the entries by rows and by columns gives
+\[
+ |I|r=|f^{-1}(u)|=|I|,
+\]
+and $I\ne\varnothing$ implies $r=1$.
+
+\begin{implementation}
+\lean{ManuscriptIBAW.TypeC.PrincipalGGGR.row_sum_one} proves this
+finite arithmetic statement. It takes the column sums, the equality
+of cardinalities and the row permutations as assumptions.
+\end{implementation}

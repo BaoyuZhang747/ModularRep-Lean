@@ -1,0 +1,98 @@
+\chapter{Conventions and constructions}
+\label{chap:library}
+
+The manual treats ordinary characters, Brauer characters, reduction and
+blocks, and the weights defined from ordinary characters of normaliser
+quotients.
+
+Three kinds of construction recur in these subjects: passage to a normal
+subgroup or quotient, passage from representations to their characters or
+Grothendieck classes, and transport under a group action. The chapters
+develop these constructions together with the compatibility statements
+needed to combine them.
+
+Throughout the manual, groups are finite unless a statement says otherwise.
+The modular prime is $\ell$, $k$ has characteristic $\ell$, and $K$ has
+characteristic zero. A discrete valuation ring is a local principal ideal
+domain that is not a field. Coefficient rings, splitting conditions,
+algebraic closure and choices of roots are specified where needed. The
+source files often use the letter $p$ for the modular prime. In the Conlon
+argument, $p$ denotes a potentially different prime used for permutation
+lattices.
+
+\section{From a result to its source}
+\label{chap:library:use}
+
+Mathlib supplies the representation types \lean{Representation} and
+\lean{FDRep}, the ordinary trace character \lean{Representation.character},
+and the underlying group theory, linear algebra and category theory.
+ModularRep defines the finite root correspondences, Brauer characters and
+exact Grothendieck group used here. The implementation paragraphs explain
+which steps use Mathlib results and identify the definitions and proofs
+in the modules of this package.
+
+The accompanying module index, linked from the package reading guide,
+lists the library and formalisation modules, their declarations and stated
+assumptions. Its entries are classified by role and status.
+Examples in this manual illustrate the stated mathematical
+results.
+
+For local quotient arguments, one can begin with
+\begin{samepage}
+\begin{verbatim}
+import ModularRep.PCore
+import ModularRep.NormalCoreTransport
+\end{verbatim}
+\end{samepage}
+The normaliser quotient results apply to a surjective homomorphism whose
+kernel lies in the relevant subgroup. The induced isomorphism of
+normaliser quotients determines the pullback of representations.
+For reduction, the imports
+\begin{samepage}
+\begin{verbatim}
+import ModularRep.BrauerDecompositionMap
+import ModularRep.KZeroTwist
+\end{verbatim}
+\end{samepage}
+provide the decomposition homomorphism for the chosen modular system and
+root correspondence. Its hypotheses relate reduction of a stable lattice
+to Brauer characters. The naturality theorems use the same choices. The modules
+\begin{samepage}
+\begin{verbatim}
+import Formalisation.FibreTransport
+import Formalisation.IndexedAssembly
+\end{verbatim}
+\end{samepage}
+construct equivariant bijections of finite sets from equivariant
+bijections of their fibres. The chapters state the hypotheses of each
+construction.
+
+\section{Hypotheses and proofs}
+
+The mathematical exposition includes standard results used by the library.
+An implementation paragraph says whether the corresponding result is
+proved in Lean or supplied as an input. In particular,
+Hypotheses~\ref{lib:blocks:catalogue} and
+\ref{lib:blocks:defect-hypotheses} collect standard published facts
+used as inputs to the Lean arguments. Other hypotheses express
+compatibility of chosen data, as in
+Hypothesis~\ref{lib:reduction:character-hypothesis}.
+For example, multiplicativity of
+the central Brauer map follows from cancellation of nontrivial
+$\ell$-group orbits. The construction of the decomposition homomorphism
+uses an explicit hypothesis relating stable reduction to Brauer
+characters. The existence of a stable lattice and the deductions from
+that compatibility hypothesis are proved separately.
+
+An equivariant bijection of finite sets does not by itself preserve a
+specified relation. To construct a bijection preserving a relation from
+bijections of the fibres, the latter must preserve the relation and the
+relation must be invariant under the acting group. Character and block
+relations require their corresponding compatibility hypotheses.
+
+Finite computations also require a mathematical interpretation. A matrix
+rank calculation, for example, counts irreducible Brauer characters only
+after its rows have been identified with character restrictions and the
+required spanning and independence statements have been established.
+Chapter~\ref{chap:library-computations} states these hypotheses and proves
+the resulting rank formulas.

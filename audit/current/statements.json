@@ -1,0 +1,963 @@
+{
+  "schema_version": 2,
+  "manuscript_path": "manuscript/current/main.tex",
+  "manuscript_sha256": "bf84e40ba14ac1ba46aad1279df15b6d9f61b2da97b35cca3cdbd481dd28871d",
+  "offset_basis": "Unicode characters after newline normalization and comment removal",
+  "scope": "Current manuscript index and editorial correspondence. The mapped deductions retain their stated external assumptions. This index does not establish their truth, independence or joint satisfiability.",
+  "statements": [
+    {
+      "id": "thm:main",
+      "label": "thm:main",
+      "kind": "theorem",
+      "number": "1.1",
+      "all_labels": [
+        "thm:main"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 126,
+      "start_offset": 4862,
+      "end_offset": 5109,
+      "statement_tex": "\\begin{theorem}\\label{thm:main}\nLet $S$ be a nonabelian finite simple group of type $\\mathsf B$, of type\n$\\mathsf C$, or sporadic. Then $S$ satisfies the inductive blockwise\nAlperin weight condition at every prime dividing its order.\n\\end{theorem}",
+      "statement_sha256": "8a74be2a53da93fe33c9764643be675a0663d4839eaa70c3e5d3ed74583c9efd",
+      "proof_ids": [
+        "current-proof-039"
+      ],
+      "proof_sha256": "eff5d30763d6940dee2c73902dcd7b1f2f03828cfa1bd4bbc9648e8eaf3cb22d",
+      "source_use_ids": []
+    },
+    {
+      "id": "cor:reduction",
+      "label": "cor:reduction",
+      "kind": "corollary",
+      "number": "1.2",
+      "all_labels": [
+        "cor:reduction"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 212,
+      "start_offset": 9946,
+      "end_offset": 10277,
+      "statement_tex": "\\begin{corollary}\\label{cor:reduction}\nLet $H$ be a finite group and let $\\ell$ be a prime.  Suppose that every\nnonabelian simple group involved in $H$ whose order is divisible by $\\ell$\nis of type $\\mathsf B$, of type $\\mathsf C$, or sporadic.  Then the blockwise\nAlperin weight conjecture holds for $H$ at $\\ell$.\n\\end{corollary}",
+      "statement_sha256": "752c4783131e4753bc77c1ead970826940f686b4fbd57a66aa0e724c2f6c7d94",
+      "proof_ids": [
+        "current-proof-039"
+      ],
+      "proof_sha256": "eff5d30763d6940dee2c73902dcd7b1f2f03828cfa1bd4bbc9648e8eaf3cb22d",
+      "source_use_ids": []
+    },
+    {
+      "id": "def:central-sector",
+      "label": "def:central-sector",
+      "kind": "definition",
+      "number": "2.1",
+      "all_labels": [
+        "def:central-sector"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 279,
+      "start_offset": 13649,
+      "end_offset": 14173,
+      "statement_tex": "\\begin{definition}\\label{def:central-sector}\nFor $\\nu\\in\\Irr(Z)$, an ordinary irreducible or irreducible Brauer character\n$\\psi$ of $X$ \\emph{lies over} $\\nu$ if its restriction to $Z$ is a positive\nintegral multiple of $\\nu$. A weight $(Q,\\theta)$ lies over $\\nu$ if the\ninflation of $\\theta$ to $N_X(Q)$ does. We say that such characters and\n$X$-conjugacy classes of weights belong to the \\emph{$\\nu$-sector}. The sector\nis called \\emph{trivial} when $\\nu=1_Z$, and \\emph{faithful} when $\\nu$ is\nfaithful.\n\\end{definition}",
+      "statement_sha256": "f02408fcae905b8e262e5f308ac8a2a263b31cd5d510c1e5922e8404a47e9b64",
+      "proof_ids": [],
+      "proof_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:linear-block-stabilizer",
+      "label": "lem:linear-block-stabilizer",
+      "kind": "lemma",
+      "number": "2.2",
+      "all_labels": [
+        "lem:linear-block-stabilizer"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 298,
+      "start_offset": 14684,
+      "end_offset": 15145,
+      "statement_tex": "\\begin{lemma}\\label{lem:linear-block-stabilizer}\nLet $N\\lhd G$ be finite groups, let $b$ be an $\\ell$-block of $G$,\nand let $C$ be the group of ordinary linear characters of $G/N$\nof $\\ell'$-order, acting on blocks by tensoring with their inflations.\nThen every character in $C_b$ factors through $G/NZ(G)$, and\n$|C_b|\\leq |G:NZ(G)|$. The same conclusions hold when $C$ is\nidentified by reduction with the group of linear Brauer characters of $G/N$.\n\\end{lemma}",
+      "statement_sha256": "c00e46d5d8bf3e562662a0c159147092c117e8f6d190ee271b652ad0901c2ccd",
+      "proof_ids": [
+        "current-proof-001"
+      ],
+      "proof_sha256": "1aafc0c5938386387e62f8f265b3d8d75c978dfccceac05a8f5925d985c340ba",
+      "source_use_ids": []
+    },
+    {
+      "id": "thm:spath-triples",
+      "label": "thm:spath-triples",
+      "kind": "theorem",
+      "number": "2.3",
+      "all_labels": [
+        "thm:spath-triples",
+        "eq:spath-block-triples"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 355,
+      "start_offset": 17639,
+      "end_offset": 18806,
+      "statement_tex": "\\begin{theorem}[Sp\\\"ath {\\cite[Theorem~4.4]{Spath2017Triples}}]\\label{thm:spath-triples}\nLet $\\widehat G$ be the universal covering group of a nonabelian simple\ngroup $S$, and let $\\ell$ be a prime.  Let\n$\\widehat\\theta\\in\\IBr(\\widehat G)$,\n$\\widehat Q\\in\\Rad_\\ell(\\widehat G)$ and\n$\\widehat M=N_{\\widehat G}(\\widehat Q)$.  Suppose that\n$\\widehat\\theta'$ is the inflation to $\\widehat M$ of a character in\n$\\dz(\\widehat M/\\widehat Q)$ and that\n$\\bl(\\widehat\\theta')^{\\widehat G}=\\bl(\\widehat\\theta)$.\nThen the following are equivalent.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n\\item The characters $\\widehat\\theta$ and $\\widehat\\theta'$ satisfy\npart~\\textup{(iii)} of the inductive blockwise Alperin weight condition\nin \\cite[Definition~4.1]{Spath2013}.\n\\item The modular character triples satisfy\n\\begin{equation}\\label{eq:spath-block-triples}\n (G\\rtimes\\Aut(G)_{\\widehat\\theta},G,\\widehat\\theta)\n \\succ_{F,b}\n \\bigl(M(G\\rtimes\\Aut(G))_{\\widehat M,\\widehat\\theta'},\n       M,(\\widehat\\theta')^0\\bigr),\n\\end{equation}\nwhere $G=\\widehat G/\\widehat Z$ and $M=\\widehat M/\\widehat Z$ for\n$\\widehat Z=\\ker(\\widehat\\theta_{Z(\\widehat G)})$.\n\\end{enumerate}\n\\end{theorem}",
+      "statement_sha256": "c5f657a3e4790b00b58cbff8e116cec17e6e63ad954c4755a38e3b924d01585a",
+      "proof_ids": [],
+      "proof_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_use_ids": [
+        "current-citation-0030",
+        "current-citation-0031"
+      ]
+    },
+    {
+      "id": "rem:block-aggregation",
+      "label": "rem:block-aggregation",
+      "kind": "remark",
+      "number": "2.4",
+      "all_labels": [
+        "rem:block-aggregation"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 402,
+      "start_offset": 19978,
+      "end_offset": 21077,
+      "statement_tex": "\\begin{remark}\\label{rem:block-aggregation}\n\\textup{(a)} By \\cite[Lemma~3.3]{KoshitaniSpath2016} and\n\\cite[Remark~5.18]{Spath2013}, it is enough to verify the inductive BAW\ncondition for one representative of each $\\Aut(X_\\ell(S))$-orbit of\n$\\ell$-blocks of $X_\\ell(S)$ in order to prove that $S$ satisfies iBAW at\n$\\ell$.\n\n\\textup{(b)} We will also combine bijections on individual blocks by the following\nelementary observation. Suppose that a group $A$ acts on $\\mathcal B$ and on\ndisjoint unions $\\mathcal U=\\coprod_{b\\in\\mathcal B}\\mathcal U_b$ and\n$\\mathcal V=\\coprod_{b\\in\\mathcal B}\\mathcal V_b$, with\n$\\mathcal U_b^a=\\mathcal U_{b^a}$ and\n$\\mathcal V_b^a=\\mathcal V_{b^a}$ for $a\\in A$.\nFor one representative $b$ of each $A$-orbit, choose an\n$A_b$-equivariant bijection $\\Phi_b:\\mathcal U_b\\to\\mathcal V_b$.\nThen $\\Phi(x^a)=\\Phi_b(x)^a$, for $x\\in\\mathcal U_b$, defines an\n$A$-equivariant bijection $\\Phi:\\mathcal U\\to\\mathcal V$, with\n$\\Phi(\\mathcal U_b)=\\mathcal V_b$ for every $b\\in\\mathcal B$.\nThe $A_b$-equivariance makes this definition independent of the choice of $a$.\n\\end{remark}",
+      "statement_sha256": "10d4f3a168f4f13d681aca0480779faacd8efa4fc5f2d89faa23375330107817",
+      "proof_ids": [],
+      "proof_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_use_ids": [
+        "current-citation-0033",
+        "current-citation-0034"
+      ]
+    },
+    {
+      "id": "cor:fixed-point-descent",
+      "label": "cor:fixed-point-descent",
+      "kind": "corollary",
+      "number": "2.5",
+      "all_labels": [
+        "cor:fixed-point-descent"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 423,
+      "start_offset": 21079,
+      "end_offset": 21281,
+      "statement_tex": "\\begin{corollary}[Sp\\\"ath]\\label{cor:fixed-point-descent}\nLet $S$ be a nonabelian simple group.  If $S$ satisfies iBAW at $\\ell$, then\nevery $\\ell$-block of $S$ admits an iBAW\nbijection.\n\\end{corollary}",
+      "statement_sha256": "8eaaafce07bf3eb7e05e6846156a6bf04d01e0de7f16d3265fe280425af88283",
+      "proof_ids": [
+        "current-proof-002"
+      ],
+      "proof_sha256": "c22559b2122b52c07270752f26f6bfdf78b29af3651abe8e51d58985e6db70c4",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-normal-core",
+      "label": "lem:type-b-normal-core",
+      "kind": "lemma",
+      "number": "2.6",
+      "all_labels": [
+        "lem:type-b-normal-core"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 439,
+      "start_offset": 21660,
+      "end_offset": 22077,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-normal-core}\nLet $G\\lhd A$ be finite groups, and suppose that\n$P=O_\\ell(G)\\leq Z(G)$. Set $\\overline G=G/P$ and\n$\\overline A=A/P$. Let $b$ be an $A$-stable $\\ell$-block of $G$,\nand let $\\overline b$ be the block of $\\overline G$ dominated by $b$.\nIf $\\overline b$ admits an iBAW bijection compatible with\n$\\overline A$, then $b$ admits an iBAW bijection compatible with $A$.\n\\end{lemma}",
+      "statement_sha256": "22ff63a2eb69694778d7acf99c875637c275db2d0bf195bb676c5ada7ffb488e",
+      "proof_ids": [
+        "current-proof-003"
+      ],
+      "proof_sha256": "886f3f98774f3d31cfcbbb6a992eb94055e89e7ea56121d71a3307e9d6f378eb",
+      "source_use_ids": []
+    },
+    {
+      "id": "cor:conlon-mark",
+      "label": "cor:conlon-mark",
+      "kind": "corollary",
+      "number": "2.7",
+      "all_labels": [
+        "cor:conlon-mark"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 522,
+      "start_offset": 25578,
+      "end_offset": 25842,
+      "statement_tex": "\\begin{corollary}[Conlon]\\label{cor:conlon-mark}\nLet $A$ be a finite $r$-hypoelementary group and let $Y,Y'$ be finite\n$A$-sets.  If the permutation lattices\n$\\Z_r[Y]$ and $\\Z_r[Y']$ are isomorphic as $\\Z_rA$-lattices, then\n$Y\\cong Y'$ as $A$-sets.\n\\end{corollary}",
+      "statement_sha256": "fdcedbdc00b3911549fef5f61540fe0f6aaaf2f458be1bea603867e1b6b6fe5c",
+      "proof_ids": [
+        "current-proof-004"
+      ],
+      "proof_sha256": "ef0b83fde6964d0f6c034a242ba81738cd5889ab24b078254377371aefd02b49",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:basicset-bridge",
+      "label": "lem:basicset-bridge",
+      "kind": "lemma",
+      "number": "2.8",
+      "all_labels": [
+        "lem:basicset-bridge"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 544,
+      "start_offset": 26411,
+      "end_offset": 26890,
+      "statement_tex": "\\begin{lemma}\\label{lem:basicset-bridge}\nLet $G$ be a finite group, let $b$ be an $\\ell$-block of $G$, and let $A$ be\na finite group acting on $\\Irr(b)$ and $\\IBr(b)$ such that $d_b$ is\n$A$-equivariant.  Let $\\mathcal X\\subseteq\\Irr(b)$ be an $A$-stable integral\nbasic set.  Then $d_b$ restricts to an isomorphism\n$\\Z[\\mathcal X]\\cong\\Z[\\IBr(b)]$ of $\\Z A$-permutation lattices.\nConsequently the underlying finite sets are $A$-isomorphic if $A$ is\n$2$-hypoelementary.\n\\end{lemma}",
+      "statement_sha256": "448ce89a521cda03b66e596389ed940ed7b3734f604dedfe84d79f7a0cdacc92",
+      "proof_ids": [
+        "current-proof-005"
+      ],
+      "proof_sha256": "26890beac3d5ba66176e586b168816634ad9392d873b1d2f3f098deb5a9fc5be",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:cyclic-extension",
+      "label": "lem:cyclic-extension",
+      "kind": "lemma",
+      "number": "2.9",
+      "all_labels": [
+        "lem:cyclic-extension"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 564,
+      "start_offset": 27247,
+      "end_offset": 27466,
+      "statement_tex": "\\begin{lemma}\\label{lem:cyclic-extension}\nLet $H$ be a finite group, let $N\\triangleleft H$, and suppose that $H/N$ is\ncyclic. Then every $H$-invariant character $\\theta\\in\\Irr(N)\\cup\\IBr(N)$ extends to $H$.\n\\end{lemma}",
+      "statement_sha256": "c19d9443214d3a1346fa6c71528170a9cc1d43ad399b20321cbb0548bb049e25",
+      "proof_ids": [
+        "current-proof-006"
+      ],
+      "proof_sha256": "f1845d423c4323a8c2ea6e17055bb05600c3e97953ebd1aad8a27e3190944a0b",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:cyclic-outer-baw",
+      "label": "lem:cyclic-outer-baw",
+      "kind": "lemma",
+      "number": "2.10",
+      "all_labels": [
+        "lem:cyclic-outer-baw"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 578,
+      "start_offset": 27809,
+      "end_offset": 28198,
+      "statement_tex": "\\begin{lemma}\\label{lem:cyclic-outer-baw}\nLet $G$ be a nonabelian simple group that is its own universal covering\ngroup, let $\\ell$ be a prime dividing $|G|$, and suppose that\n$\\Aut(G)=G\\rtimes E$ for a cyclic group $E$.  If $b$ is an $E$-stable\n$\\ell$-block of $G$ and there is an $E$-equivariant bijection\n\\[\n  \\Omega_b:\\IBr(b)\\longrightarrow\\Alp(b),\n\\]\nthen $b$ is BAW-good.\n\\end{lemma}",
+      "statement_sha256": "064e65ff20379648770515eacc450808d091ddd2f666c4eff33837ff2a73923d",
+      "proof_ids": [
+        "current-proof-007"
+      ],
+      "proof_sha256": "f5e76119e39f3afb8177e5382d95885f07cf75f9b0e18d72724c7d141968737b",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-isolated-coverage",
+      "label": "lem:type-b-isolated-coverage",
+      "kind": "lemma",
+      "number": "2.11",
+      "all_labels": [
+        "lem:type-b-isolated-coverage",
+        "eq:type-b-isolated-pairings"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 637,
+      "start_offset": 30567,
+      "end_offset": 32268,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-isolated-coverage}\nLet $\\mathbf H$ be a connected reductive algebraic group with connected\ncentre and simply connected derived subgroup of type $\\mathsf B_n$,\nwhere $n\\geq3$. Suppose that $\\mathbf H$ is defined over\n$\\mathbb F_q$, where $q$ is a power of an odd prime $p$, and let $F$\nbe the corresponding Frobenius endomorphism. Set $H=\\mathbf H^F$.\nChoose an $F$-stable Borel subgroup $\\mathbf B^*$ of $\\mathbf H^*$\nand an $F$-stable maximal torus $\\mathbf T^*\\subseteq\\mathbf B^*$.\nLet $s\\in(\\mathbf T^*)^F$ be an isolated semisimple element.\nLet $W_s$ be the Weyl group of $C_{\\mathbf H^*}(s)$ relative to\n$\\mathbf T^*$, and let $\\mathcal F\\subseteq\\Irr(W_s)$ be a Lusztig\nfamily \\cite[Definition~4.1.17]{GeckMalle2020}.\nDenote by $\\mathcal G_{\\mathcal F}$ the finite group attached to\n$\\mathcal F$ in Lusztig's parametrisation, and by\n$\\Irr_{s,\\mathcal F}(H)$ the corresponding family of irreducible\ncharacters in $\\mathcal E(H,s)$.\nLet $\\mathcal C$ be the $F$-stable unipotent class associated with\n$(s,\\mathcal F)$. Suppose that, for some $u_0\\in\\mathcal C^F$, the component\ngroup $A_{\\mathbf H}(u_0)=C_{\\mathbf H}(u_0)/C_{\\mathbf H}(u_0)^\\circ$\nand the group $\\mathcal G_{\\mathcal F}$ are elementary abelian of the same order,\nand $F$ acts trivially on $A_{\\mathbf H}(u_0)$.\nLet $u_1,\\ldots,u_d$ represent the $H$-conjugacy classes in\n$\\mathcal C^F$, and let $\\Gamma_{u_j}$ be the corresponding generalised\nGelfand--Graev characters. Then there are\n$\\rho_1,\\ldots,\\rho_d\\in\\Irr_{s,\\mathcal F}(H)$ such that\n\\begin{equation}\\label{eq:type-b-isolated-pairings}\n \\langle\\rho_i^*,\\Gamma_{u_j}\\rangle_H=\\delta_{ij}\n \\qquad(1\\leq i,j\\leq d).\n\\end{equation}\n\\end{lemma}",
+      "statement_sha256": "9da2f3d0014c6958b590ef93431d3578e15ba055177afeac71357d7266a5a292",
+      "proof_ids": [
+        "current-proof-040"
+      ],
+      "proof_sha256": "24575356116d24328a802aa4840131bdb669aad77cc806176d24da1b92bed147",
+      "source_use_ids": [
+        "current-citation-0053"
+      ]
+    },
+    {
+      "id": "lem:symplectic-gggr-selection",
+      "label": "lem:symplectic-gggr-selection",
+      "kind": "lemma",
+      "number": "2.12",
+      "all_labels": [
+        "lem:symplectic-gggr-selection"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 669,
+      "start_offset": 32271,
+      "end_offset": 33675,
+      "statement_tex": "\\begin{lemma}\\label{lem:symplectic-gggr-selection}\nLet $m\\geq3$, let $q_0$ be an odd prime power, and let\n$\\mathbf G_0=\\Sp_{2m}\\subseteq\\mathbf H=\\CSp_{2m}$ be defined over\n$\\mathbb F_{q_0}$ with the standard Frobenius endomorphism $F_0$.\nSet $H=\\mathbf H^{F_0}$.\nLet $\\mathcal C$ be a unipotent class of $\\mathbf H$ stable under $F_0$.\nFix a maximal torus $\\mathbf T^*$ of $\\mathbf H^*$ split over\n$\\mathbb F_{q_0}$. For $s\\in\\mathbf T^*$, let $W_s$ denote the Weyl\ngroup of $C_{\\mathbf H^*}(s)$ relative to $\\mathbf T^*$.\nFor the corresponding geometric unipotent class of $\\mathbf G_0$,\nlet $s_0\\in\\mathbf T^*$ and $\\mathcal F\\subseteq\\Irr(W_{s_0})$ be\nthe semisimple element and family selected in\n\\cite[10.1--10.3]{Taylor2014Maximal}.\nChoose $z\\in Z(\\mathbf H^*)$ with $(zs_0)^2=1$ and set\n$\\widetilde s=zs_0$.\nDenote by $\\mathcal G_{\\mathcal F}$ the finite group attached to\n$\\mathcal F$ in Lusztig's parametrisation, and by\n$\\Irr_{\\widetilde s,\\mathcal F}(H)\\subseteq\\mathcal E(H,\\widetilde s)$\nthe corresponding family of ordinary irreducible characters.\nLet $u_1,\\ldots,u_d$ represent the $H$-conjugacy classes in $\\mathcal C^{F_0}$,\nand let $\\Gamma_{u_j}$ be the corresponding generalised\nGelfand--Graev characters. Then there are\n$\\rho_1,\\ldots,\\rho_d\\in\\Irr_{\\widetilde s,\\mathcal F}(H)$ such that\n\\[\n \\langle\\rho_i^*,\\Gamma_{u_j}\\rangle_H=\\delta_{ij}\n \\qquad(1\\leq i,j\\leq d).\n\\]\n\\end{lemma}",
+      "statement_sha256": "ad39f3a58d79ee95dfbafb14392c977e00e8768fb5f94dd1ec64dcbe6fdf8e3b",
+      "proof_ids": [
+        "current-proof-041"
+      ],
+      "proof_sha256": "f190bb253df460a8627ef276e9ce090e4ff09aeb80a978b8f3ea5c9d81b1bbb3",
+      "source_use_ids": [
+        "current-citation-0054"
+      ]
+    },
+    {
+      "id": "thm:symplectic",
+      "label": "thm:symplectic",
+      "kind": "theorem",
+      "number": "3.1",
+      "all_labels": [
+        "thm:symplectic"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 708,
+      "start_offset": 34073,
+      "end_offset": 34266,
+      "statement_tex": "\\begin{theorem}\\label{thm:symplectic}\nLet $S=\\PSp_{2n}(q)$. Then, for every prime $\\ell\\mid |S|$, $S$ satisfies iBAW at $\\ell$ on\nthe universal $\\ell'$-covering group $X_\\ell(S)$.\n\\end{theorem}",
+      "statement_sha256": "5de9c0ccb6e03762dd334ef54eef456ca738361509b764103191cb3f44c1ce85",
+      "proof_ids": [
+        "current-proof-019"
+      ],
+      "proof_sha256": "3df6d053d924638f2725f420d15de9ed0f3e8a66579cc460f1fffe1c283ddd70",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:jordan-reduction",
+      "label": "lem:jordan-reduction",
+      "kind": "lemma",
+      "number": "3.2",
+      "all_labels": [
+        "lem:jordan-reduction"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 792,
+      "start_offset": 38121,
+      "end_offset": 39535,
+      "statement_tex": "\\begin{lemma}\\label{lem:jordan-reduction}\nLet $\\mathbf G$ be a simple, simply connected algebraic group in\ncharacteristic $p$, let $F$ be a Steinberg endomorphism of $\\mathbf G$,\nand set $G=\\mathbf G^F$.  Assume that $G/Z(G)$ is simple and that $G$\nis its universal covering group.  Let $\\ell\\neq p$ be a prime.\nFix a regular embedding $\\mathbf G\\hookrightarrow\\widetilde{\\mathbf G}$\nas in \\cite[Section~5]{FengLiZhang2022Jordan}, and set\n$\\widetilde G=\\widetilde{\\mathbf G}^F$.\nSuppose that the following conditions hold.\n\\begin{enumerate}[label=\\textup{(\\roman*)}]\n\\item For every semisimple $\\ell'$-element $s\\in(\\mathbf G^*)^F$, there\nis a choice of the automorphism group $A_s$ used for $s$ in\n\\cite[Section~5]{FengLiZhang2022Jordan} such that every\n$\\widetilde G$-orbit in $\\IBr(G)$ contains a character $\\psi$ satisfying\n\\[\n (\\widetilde G A_s)_\\psi=\\widetilde G_\\psi(A_s)_\\psi\n\\]\nand extending to $G(A_s)_\\psi$.\n\\item Let $\\mathbf K$ be a simple, simply connected algebraic group\nin characteristic $p$ whose Dynkin diagram is isomorphic to a\nsubdiagram of that of $\\mathbf G$.  For every Steinberg endomorphism\n$F'$ of $\\mathbf K$ such that $\\mathbf K^{F'}/Z(\\mathbf K^{F'})$ is\nsimple, every strictly quasi-isolated $\\ell$-block of $\\mathbf K^{F'}$,\nin the sense of \\cite[Section~4.3]{FengLiZhang2022Jordan}, admits\nan iBAW bijection.\n\\end{enumerate}\nThen every $\\ell$-block of $G$ is BAW-good.\n\\end{lemma}",
+      "statement_sha256": "ab0ef2c77b1564f61a225e37b0b2155d7f48f238590b444670ccac48ad6d0e64",
+      "proof_ids": [
+        "current-proof-008"
+      ],
+      "proof_sha256": "e0a2c8d94f053864a504506bcfa752500e5fcfccd1bb5463645e5412b3d93f36",
+      "source_use_ids": [
+        "current-citation-0071",
+        "current-citation-0072",
+        "current-citation-0073"
+      ]
+    },
+    {
+      "id": "prop:odd-two",
+      "label": "prop:odd-two",
+      "kind": "proposition",
+      "number": "3.3",
+      "all_labels": [
+        "prop:odd-two"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 877,
+      "start_offset": 42377,
+      "end_offset": 42523,
+      "statement_tex": "\\begin{proposition}\\label{prop:odd-two}\nLet $q$ be odd and $n\\geq2$.  Then\n$S=\\PSp_{2n}(q)$ satisfies iBAW at $2$ on $X_2(S)=S$.\n\\end{proposition}",
+      "statement_sha256": "3cc70cf7e571a6ce0768b226f6ebf4df072af1b3c547a3c9df65abad2c58e5a6",
+      "proof_ids": [
+        "current-proof-009"
+      ],
+      "proof_sha256": "6d0c312083889533bd9051c28c04c6a4508d38d7e27d471b26b4d9d9c149ed1b",
+      "source_use_ids": []
+    },
+    {
+      "id": "rem:triangular-multiplicity",
+      "label": "rem:triangular-multiplicity",
+      "kind": "remark",
+      "number": "3.4",
+      "all_labels": [
+        "rem:triangular-multiplicity"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1129,
+      "start_offset": 56533,
+      "end_offset": 58435,
+      "statement_tex": "\\begin{remark}\\label{rem:triangular-multiplicity}\nThe final sentence of \\cite[Remark~3.50]{FengYuZhang2024} extends the\ntriangularity assertion of \\cite[Remark~3.47(2)]{FengYuZhang2024} to\nsymplectic groups. The following principal $2$-weight of $\\Sp_4(3)$ shows that\nthis extension fails for the total multiplicity of a basic subgroup, although\nthe individual partitions in its parametrisation have triangular sizes.\nLet $V=V_1\\perp V_2$ be an orthogonal direct sum of two symplectic\nplanes over $\\F_3$, and let $R=Q_8\\times Q_8$ act with one factor\non each plane. Each factor is a basic subgroup in the construction\nof \\cite[Section~3]{FengYuZhang2024}.\nSet $G=\\Sp(V)\\cong\\Sp_4(3)$.\nThe summands are nonisomorphic absolutely irreducible $R$-modules,\nso $C_G(R)=\\{\\pm I_{V_1}\\}\\times\\{\\pm I_{V_2}\\}=Z(R)$,\nand every element of $N_G(R)$ permutes the two summands.\nSince $Q_8\\trianglelefteq\\operatorname{SL}_2(3)=\\Sp(V_i)$, we have\n$N_G(R)=(\\operatorname{SL}_2(3)\\times\\operatorname{SL}_2(3))\\rtimes C_2$,\nwhere the involution interchanges the factors.\nHence $N_G(R)/R\\cong C_3\\times S_3$, which has no nontrivial\nnormal $2$-subgroup, so $R$ is radical.\nThis quotient has irreducible characters of degree $2$ and\n$2$-defect zero.  By \\cite[Lemma~2.3]{FengYuZhang2024}, these give\nprincipal $2$-weights.\nHere the same basic subgroup occurs twice, so its total multiplicity\nis $2$, which is not triangular. In the labelling by assignments of\n$2$-cores recalled from \\cite[(6D)]{An1993} after\n\\cite[Proposition~5.4]{FengMalle2022}, the three linear characters of\n$N_{\\Sp(V_i)}(Q_8)/Q_8\\cong C_3$ are assigned the partitions\n$(1),(1),\\varnothing$, up to permutation.  Their sizes are $1,1,0$, which are individually\ntriangular, while their sum is $2$. The proof of\nProposition~\\ref{prop:odd-two} uses the individual partition sizes and their\nsum, and does not require that sum to be triangular.\n\\end{remark}",
+      "statement_sha256": "008f1631b3481784c62b5834cb2a74e9b83793ba406f845c4373964f011c5cff",
+      "proof_ids": [],
+      "proof_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_use_ids": [
+        "current-citation-0140",
+        "current-citation-0141",
+        "current-citation-0142",
+        "current-citation-0143",
+        "current-citation-0144",
+        "current-citation-0145"
+      ]
+    },
+    {
+      "id": "prop:rank-two",
+      "label": "prop:rank-two",
+      "kind": "proposition",
+      "number": "3.5",
+      "all_labels": [
+        "prop:rank-two"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1162,
+      "start_offset": 58437,
+      "end_offset": 58593,
+      "statement_tex": "\\begin{proposition}\\label{prop:rank-two}\nLet $q>2$ be a prime power.  Then $S=\\PSp_4(q)$ satisfies iBAW at every\nprime dividing its order.\n\\end{proposition}",
+      "statement_sha256": "e4c452be37481ee5fd3054673a63d6f17b79c769fbe5c101adfb008e07fc4ea4",
+      "proof_ids": [
+        "current-proof-010"
+      ],
+      "proof_sha256": "bdc0f72f3ca914320501079e08f05ffe931f969aa84487f0869f2b369216600e",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:even-field-fixed",
+      "label": "lem:even-field-fixed",
+      "kind": "lemma",
+      "number": "3.6",
+      "all_labels": [
+        "lem:even-field-fixed"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1216,
+      "start_offset": 61005,
+      "end_offset": 61185,
+      "statement_tex": "\\begin{lemma}\\label{lem:even-field-fixed}\nIf $C$ is a unipotent $\\ell$-block of $H=\\Sp_{2r}(2^a)$, then $E_H$\nfixes every element of $\\mathcal X_C$ and $\\mathcal W(C)$.\n\\end{lemma}",
+      "statement_sha256": "faa2d6902cfeb3a8b80fa108b31b73475d97f6cab545f7bbf14b1c66d0a71bb9",
+      "proof_ids": [
+        "current-proof-011"
+      ],
+      "proof_sha256": "a635f0f60052c4de0fb3c444616530c87c85d5cbd4117d12146384d5012ad3f1",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:even-unipotent-correspondence",
+      "label": "lem:even-unipotent-correspondence",
+      "kind": "lemma",
+      "number": "3.7",
+      "all_labels": [
+        "lem:even-unipotent-correspondence"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1383,
+      "start_offset": 69557,
+      "end_offset": 69769,
+      "statement_tex": "\\begin{lemma}\\label{lem:even-unipotent-correspondence}\nIf $C$ is a unipotent $\\ell$-block of $H=\\Sp_{2r}(2^a)$, then there is an\n$E_H$-equivariant bijection $\\mathcal X_C\\longrightarrow\\mathcal W(C)$.\n\\end{lemma}",
+      "statement_sha256": "93318a6b5378510e6c63b89875f303ea4d16f3428c8480143d0c2b2020a7c136",
+      "proof_ids": [
+        "current-proof-012"
+      ],
+      "proof_sha256": "2e6c5cd1c461a736662b62743ac44d23cd11988f034a9a90548a3ce79ed0b5ef",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:even-unipotent",
+      "label": "prop:even-unipotent",
+      "kind": "proposition",
+      "number": "3.8",
+      "all_labels": [
+        "prop:even-unipotent"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1425,
+      "start_offset": 71530,
+      "end_offset": 71686,
+      "statement_tex": "\\begin{proposition}\\label{prop:even-unipotent}\nEvery unipotent $\\ell$-block of $H=\\Sp_{2r}(2^a)$ is BAW-good and\nadmits an iBAW bijection.\n\\end{proposition}",
+      "statement_sha256": "cea9ebb79c7f3fbb495bc4a2cd3fd9af3e6b81f940606618d0d4fe2481652446",
+      "proof_ids": [
+        "current-proof-013"
+      ],
+      "proof_sha256": "f0c9957d927ac1dbd677712eeadf471d7386ad9b5d56333a01579b863ce2ba81",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:even-bridge",
+      "label": "prop:even-bridge",
+      "kind": "proposition",
+      "number": "3.9",
+      "all_labels": [
+        "prop:even-bridge"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1474,
+      "start_offset": 73832,
+      "end_offset": 74108,
+      "statement_tex": "\\begin{proposition}\\label{prop:even-bridge}\nLet $G=\\Sp_{2n}(q)$ and $S=\\PSp_{2n}(q)$, where $q=2^f$, $n\\geq4$,\nand $\\ell$ is an odd prime dividing $|G|$.\nThen every $\\ell$-block of $G$ is BAW-good.\nConsequently, $S$ satisfies iBAW at $\\ell$ on $G=X_\\ell(S)$.\n\\end{proposition}",
+      "statement_sha256": "f8e9460e04ad0c5646ddbb8065178dffc77264937a1429b1aadd5420777a7fe8",
+      "proof_ids": [
+        "current-proof-014"
+      ],
+      "proof_sha256": "2a196fafdcfbadd8e72ace98461d617b5227f5852ed585046cb888b0d386e560",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:exact-stabilizer",
+      "label": "lem:exact-stabilizer",
+      "kind": "lemma",
+      "number": "3.10",
+      "all_labels": [
+        "lem:exact-stabilizer"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1595,
+      "start_offset": 79829,
+      "end_offset": 80086,
+      "statement_tex": "\\begin{lemma}\\label{lem:exact-stabilizer}\nFor every $\\ell$-block $\\widetilde B$ of $\\widetilde G=\\CSp_{2n}(q)$,\n$D$ is a normal subgroup of $J$ of order at most $2$, and $J/D$ is cyclic.\nConsequently, every subgroup of $J$ is $2$-hypoelementary.\n\\end{lemma}",
+      "statement_sha256": "89a6ce2a432a33567eb4e2a52244bbf142cba0532ee7c9c8bb9f6ab8a1eb1d08",
+      "proof_ids": [
+        "current-proof-015"
+      ],
+      "proof_sha256": "30062a51fc8d7d4e2e9f9e790cf32b1d7e6e856a208089595a1f8ededc65d68a",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:odd-conformal-bridge",
+      "label": "prop:odd-conformal-bridge",
+      "kind": "proposition",
+      "number": "3.11",
+      "all_labels": [
+        "prop:odd-conformal-bridge"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1623,
+      "start_offset": 81121,
+      "end_offset": 81353,
+      "statement_tex": "\\begin{proposition}\n\\label{prop:odd-conformal-bridge}\nFor every $\\ell$-block $\\widetilde B$ of $\\widetilde G=\\CSp_{2n}(q)$,\nthere is a $J$-equivariant bijection\n$\\IBr(\\widetilde B)\\longrightarrow Z_{\\widetilde B}$.\n\\end{proposition}",
+      "statement_sha256": "77daebd5a7fd997806124db0a082e7b81018533e7ec6b92b2232d2660d0edb59",
+      "proof_ids": [
+        "current-proof-016"
+      ],
+      "proof_sha256": "9ed86720ebaa1fb8290207952105cfb60c59b53a31f8d1aed402f2703b71cb05",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:odd-g-factorization",
+      "label": "lem:odd-g-factorization",
+      "kind": "lemma",
+      "number": "3.12",
+      "all_labels": [
+        "lem:odd-g-factorization"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1647,
+      "start_offset": 82172,
+      "end_offset": 82658,
+      "statement_tex": "\\begin{lemma}\n\\label{lem:odd-g-factorization}\nLet $G=\\Sp_{2n}(q)$ and $\\widetilde G=\\CSp_{2n}(q)$.\nThen there is an $\\Aut(G)$-equivariant bijection\n\\[\n  \\beta:\\IBr(G)\\longrightarrow\\mathcal E(G,\\ell')\n\\]\nsuch that\n\\[\n  \\beta(\\IBr(B))=\\Irr(B)\\cap\\mathcal E(G,\\ell')\n\\]\nfor every $\\ell$-block $B$ of $G$.\nMoreover, for every $\\varphi\\in\\IBr(G)$,\n\\[\n  (\\widetilde G\\rtimes E)_\\varphi\n    =\\widetilde G_\\varphi\\rtimes E_\\varphi,\n\\]\nand $\\varphi$ extends to $G\\rtimes E_\\varphi$.\n\\end{lemma}",
+      "statement_sha256": "5807acb946e8f5c383e26249e0c92caffad9b701e126730ddf985a6fbc6510d9",
+      "proof_ids": [
+        "current-proof-017"
+      ],
+      "proof_sha256": "6afe815f68365bfecb67b3f5854d81dabc67b93a055e681fb37c725f8aaca198",
+      "source_use_ids": []
+    },
+    {
+      "id": "unlabelled:3.13",
+      "label": null,
+      "kind": "remark",
+      "number": "3.13",
+      "all_labels": [],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1708,
+      "start_offset": 84498,
+      "end_offset": 84836,
+      "statement_tex": "\\begin{remark}\nThe proofs of Proposition~\\ref{prop:odd-conformal-bridge} and\nLemma~\\ref{lem:odd-g-factorization} apply Conlon's theorem over the\n$2$-adic integers through Lemma~\\ref{lem:basicset-bridge}.  Here $\\ell$ is odd.  These arguments give neither a canonical Brauer\nlabelling nor a unitriangular decomposition matrix.\n\\end{remark}",
+      "statement_sha256": "d03410c9b63deb80935761b346fd9d80d62685c043d3b49de80b9f90d943291c",
+      "proof_ids": [],
+      "proof_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:odd-conlon",
+      "label": "prop:odd-conlon",
+      "kind": "proposition",
+      "number": "3.14",
+      "all_labels": [
+        "prop:odd-conlon"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1723,
+      "start_offset": 85331,
+      "end_offset": 85565,
+      "statement_tex": "\\begin{proposition}\n\\label{prop:odd-conlon}\nLet $G=\\Sp_{2n}(q)$ and $S=\\PSp_{2n}(q)$.\nThen every $\\ell$-block of $G$ satisfies the inductive BAW condition.\nConsequently, $S$ satisfies iBAW at $\\ell$ on $G=X_\\ell(S)$.\n\\end{proposition}",
+      "statement_sha256": "b75042203b2ab9ce97f844084c59bb3c3a20c3c1f429306098e66be172aa4a61",
+      "proof_ids": [
+        "current-proof-018"
+      ],
+      "proof_sha256": "09fa1407418a16d3b480f19fe233b8d82d74fe2317fd28334696719569e2dbe4",
+      "source_use_ids": []
+    },
+    {
+      "id": "thm:type-b",
+      "label": "thm:type-b",
+      "kind": "theorem",
+      "number": "4.1",
+      "all_labels": [
+        "thm:type-b"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1853,
+      "start_offset": 90378,
+      "end_offset": 90668,
+      "statement_tex": "\\begin{theorem}\\label{thm:type-b}\nLet $S=\\Omega_{2n+1}(q)$, and let $\\ell$ be a prime dividing $|S|$.\nThen every $\\ell$-block of $X_\\ell(S)$ satisfies the inductive BAW\ncondition.  Consequently, $S$ satisfies iBAW at $\\ell$ on the universal\n$\\ell'$-covering group $X_\\ell(S)$.\n\\end{theorem}",
+      "statement_sha256": "fe33f0f7c63208a0edfd44daaa2a8392b9b547297845a825654fecb4eac5414e",
+      "proof_ids": [
+        "current-proof-033"
+      ],
+      "proof_sha256": "307f2f073434218e1f112e88e2fa8f8fd3f9bf94acfb6b4e17d80a8128b5fce7",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-conlon-block",
+      "label": "lem:type-b-conlon-block",
+      "kind": "lemma",
+      "number": "4.2",
+      "all_labels": [
+        "lem:type-b-conlon-block"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1924,
+      "start_offset": 93362,
+      "end_offset": 94029,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-conlon-block}\nLet $G=\\operatorname{Spin}_{2n+1}(q)$, and let $\\widetilde G$ be the\ncorresponding finite special Clifford group.\nLet $M\\in\\{G,\\widetilde G\\}$, let $B$ be an $\\ell$-block of $M$, and set\n\\[\n J_B=\n \\begin{cases}\n  \\Aut(G)_B/\\Inn(G),&M=G,\\\\\n  A_B,&M=\\widetilde G.\n \\end{cases}\n\\]\nThen $J_B$ is $2$-hypoelementary, $\\mathcal X_B$ is $J_B$-stable, and the\ndecomposition map restricts to an isomorphism\n\\[\n d_B:\\mathbb Z[\\mathcal X_B]\\xrightarrow{\\sim}\\mathbb Z[\\IBr(B)]\n\\]\nof $\\mathbb Z J_B$-permutation lattices.  Consequently, there exists a\n$J_B$-equivariant bijection\n\\[\n \\IBr(B)\\longrightarrow\\mathcal X_B.\n\\]\n\\end{lemma}",
+      "statement_sha256": "ea453e0ff2c8c63f3298ecaa5e278c81a437ce11b31eee260c50bba240bc795a",
+      "proof_ids": [
+        "current-proof-020"
+      ],
+      "proof_sha256": "e7b03980f335bcf1aebf18cd8ba93bf785e3b696ef305f198fe9c2dfd801e0c2",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:type-b-odd-primes",
+      "label": "prop:type-b-odd-primes",
+      "kind": "proposition",
+      "number": "4.3",
+      "all_labels": [
+        "prop:type-b-odd-primes"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 1990,
+      "start_offset": 96344,
+      "end_offset": 96579,
+      "statement_tex": "\\begin{proposition}\\label{prop:type-b-odd-primes}\nLet $S=\\Omega_{2n+1}(q)$, and let $\\ell$ be an odd prime dividing\n$|S|$ with $\\ell\\ne p$.\nThen every $\\ell$-block of $X_\\ell(S)$ satisfies the inductive BAW\ncondition.\n\\end{proposition}",
+      "statement_sha256": "8fd457e66e6082791f65895ff47acf9f46c18487c6a21c5b58160bd5a0315e2c",
+      "proof_ids": [
+        "current-proof-021"
+      ],
+      "proof_sha256": "261f431335faa2395428bae26c52141710dd6631e183b035dba4194b344cedd3",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-component-return",
+      "label": "lem:type-b-component-return",
+      "kind": "lemma",
+      "number": "4.4",
+      "all_labels": [
+        "lem:type-b-component-return"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2063,
+      "start_offset": 99762,
+      "end_offset": 100900,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-component-return}\nLet $I=\\{1,\\ldots,r\\}$, and for each $i\\in I$ let $H_i$ be a finite group with\n$\\Delta_i\\leq\\Aut(H_i)$.  Set\n\\[\n N=H_1\\times\\cdots\\times H_r,\\qquad\n \\Delta=\\prod_{i\\in I}\\Delta_i,\n\\]\nwith $\\Delta$ acting componentwise on $N$.  Let a cyclic group $E$ act\non $N$ by automorphisms, normalise $\\Delta$, and permute the pairs\n$(H_i,\\Delta_i)$.\nChoose $\\chi_i\\in\\IBr(H_i)$ for each $i\\in I$. Write $\\mathcal O$ for the\n$\\Delta$-orbit of $\\chi_1\\times\\cdots\\times\\chi_r$ and $\\mathcal O_i$ for the\n$\\Delta_i$-orbit of $\\chi_i$.\nLet $E_{\\mathcal O}$ be the setwise stabiliser of $\\mathcal O$ in $E$,\nand choose a generator $\\tau$ of $E_{\\mathcal O}$.\nSuppose that for each cycle $C$ of the permutation of $I$ induced by\n$\\tau$, there are $i\\in C$ and $\\theta_i\\in\\mathcal O_i$ such that\n\\[\n (\\Delta_i\\rtimes\\langle\\tau^{|C|}\\rangle)_{\\theta_i}\n   =(\\Delta_i)_{\\theta_i}\\langle\\tau^{|C|}\\rangle_{\\theta_i}.\n\\]\nThen $\\mathcal O$ contains a character $\\theta$ fixed by\n$E_{\\mathcal O}$.  In particular,\n\\[\n (\\Delta\\rtimes E_{\\mathcal O})_\\theta\n   =\\Delta_\\theta\\rtimes E_{\\mathcal O}.\n\\]\n\\end{lemma}",
+      "statement_sha256": "e92cc73f95ad3be4aa54ece546f4ad8ea904a60085bcc86325f268cd7dc10a06",
+      "proof_ids": [
+        "current-proof-022"
+      ],
+      "proof_sha256": "32a83e703cacb577fd8d6ea9ea8e35c553663763bbb19bbe30393dffaa1ccc81",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-regular-levi-orbits",
+      "label": "lem:type-b-regular-levi-orbits",
+      "kind": "lemma",
+      "number": "4.5",
+      "all_labels": [
+        "lem:type-b-regular-levi-orbits",
+        "eq:type-b-regular-levi-product"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2105,
+      "start_offset": 101551,
+      "end_offset": 103627,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-regular-levi-orbits}\nLet $\\mathbf G\\hookrightarrow\\widetilde{\\mathbf G}$ be a regular\nembedding, where $\\mathbf G$ is simply connected of type $\\mathsf B_n$.\nLet $F$ be a Steinberg endomorphism of $\\widetilde{\\mathbf G}$\nstabilising $\\mathbf G$, and let $\\mathbf L$ be an $F$-stable Levi\nsubgroup of $\\mathbf G$. Set\n\\[\n \\mathbf H=[\\mathbf L,\\mathbf L],\\qquad\n L_0=\\mathbf H^F,\\qquad L=\\mathbf L^F,\\qquad\n \\widetilde L=(\\mathbf LZ(\\widetilde{\\mathbf G}))^F.\n\\]\nWrite $\\mathbf H=\\prod_{j\\in I}\\mathbf H_j$, where $I$ is a finite index set\nfor its simple components. Denote the $F$-orbits on $I$ by $C_1,\\ldots,C_r$.\nChoose $x_i\\in C_i$, and set $n_i=|C_i|$ and $H_i=\\mathbf H_{x_i}^{F^{n_i}}$.\nThen the following hold.\n\\begin{enumerate}[label=\\textup{(\\arabic*)}]\n\\item There is an isomorphism\n\\[\n L_0\\cong\\prod_{i=1}^rH_i,\\tag{\\ref{lem:type-b-regular-levi-orbits}.1}\n \\label{eq:type-b-regular-levi-product}\n\\]\nwhere conjugation by $\\widetilde L$ preserves each factor $H_i$.\nLet $\\rho_i:\\widetilde L\\longrightarrow\\Aut(H_i)$ be the conjugation homomorphism on the $i$th factor of\n\\eqref{eq:type-b-regular-levi-product}, and set\n$\\Delta_i=\\rho_i(\\widetilde L)$.  Then $\\Delta_i$ is the full group\nof inner and diagonal automorphisms of $H_i$, and the homomorphism\n\\[\n \\widetilde L\\longrightarrow\\prod_{i=1}^r\\Delta_i,\\qquad\n g\\longmapsto\\bigl(\\rho_1(g),\\ldots,\\rho_r(g)\\bigr)\n\\]\nis surjective.\n\\item For $\\chi_i\\in\\IBr(H_i)$, let $\\mathcal O_i$ be the\n$\\Delta_i$-orbit of $\\chi_i$.  Using\n\\eqref{eq:type-b-regular-levi-product}, the $\\widetilde L$-orbit of\n$\\chi_1\\times\\cdots\\times\\chi_r$ is\n\\[\n \\left\\{\\psi_1\\times\\cdots\\times\\psi_r\\;\\middle|\\;\n \\psi_i\\in\\mathcal O_i\\text{ for }1\\leq i\\leq r\\right\\}.\n\\]\n\\item We have $L_0\\lhd L\\lhd\\widetilde L$, and the quotient\n$\\widetilde L/L_0$ is abelian.\nIf $\\sigma$ is a field endomorphism of $\\widetilde{\\mathbf G}$ commuting\nwith $F$ and stabilising $\\mathbf G$ and $\\mathbf L$, then the\nautomorphism induced by $\\sigma$ on $\\widetilde{\\mathbf G}^F$\nnormalises this chain.\n\\end{enumerate}\n\\end{lemma}",
+      "statement_sha256": "883c4cf05b8a9da0912cd6703327db07e1fc8935991c1a26cb8181d21da36f32",
+      "proof_ids": [
+        "current-proof-023"
+      ],
+      "proof_sha256": "440cfffc8fd2ed5cfb399d7e5748f21d577424d0d5e165185823b039315d6c01",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-char2-clifford",
+      "label": "lem:type-b-char2-clifford",
+      "kind": "lemma",
+      "number": "4.6",
+      "all_labels": [
+        "lem:type-b-char2-clifford"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2208,
+      "start_offset": 105799,
+      "end_offset": 106314,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-char2-clifford}\nLet $\\ell$ be a prime and $N\\leq H\\leq G$ be finite groups. Assume that $N$ is\nnormal in $G$ and that the quotient group $G/N$ is abelian.\nLet a finite group $E$ act on $G$ by automorphisms\nstabilising $N$ and $H$.  For $\\psi\\in\\IBr(H)$, let $\\theta$ be an irreducible constituent of $\\psi_N$.  Suppose that $\\theta$ extends\nto $G_\\theta$ and that\n\\[\n (G\\rtimes E)_\\theta\n =G_\\theta\\rtimes E_\\theta.\n\\]\nThen\n\\[\n (G\\rtimes E)_\\psi\n =G_\\psi\\rtimes E_\\psi.\n\\]\n\\end{lemma}",
+      "statement_sha256": "50f4319b4dbedbe0da301aee6606c7da63fb99e087b40425796e338dd7c38b65",
+      "proof_ids": [
+        "current-proof-024"
+      ],
+      "proof_sha256": "da2ac2029479fc4d6b157b1abcc3f520328c7dd33f96fe6d1876fb5a8883cf9e",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-rational-field",
+      "label": "lem:type-b-rational-field",
+      "kind": "lemma",
+      "number": "4.7",
+      "all_labels": [
+        "lem:type-b-rational-field"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2274,
+      "start_offset": 108637,
+      "end_offset": 108876,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-rational-field}\nLet $G=\\operatorname{Spin}_{2n+1}(q)$.\nThen every field automorphism of $G$ induced by a power of $F_0$ fixes every\nunipotent conjugacy class of $G$ and every character $\\Gamma_u$.\n\\end{lemma}",
+      "statement_sha256": "74b1b1883eee0d3464ff8a6261bd57a7210757c6b0efa870257936215192f727",
+      "proof_ids": [
+        "current-proof-025"
+      ],
+      "proof_sha256": "c78fd4aaca56a78bbd701616c6b3c514c5494af136b10ddba62fe602baff2c11",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-principal-series",
+      "label": "lem:type-b-principal-series",
+      "kind": "lemma",
+      "number": "4.8",
+      "all_labels": [
+        "lem:type-b-principal-series"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2298,
+      "start_offset": 109818,
+      "end_offset": 110185,
+      "statement_tex": "\\begin{lemma}\\label{lem:type-b-principal-series}\nLet $H=\\operatorname{Spin}_{2m+1}(q_0)$, where $m\\geq2$ and $q_0$ is\nan odd prime power. Then\n\\[\n \\Irr(B_0(H))=\\mathcal E_2(H,1).\n\\]\nMoreover, every irreducible character of $H$ whose semisimple label is\nquasi-isolated belongs to $B_0(H)$, and $B_0(H)$ is the only strictly\nquasi-isolated $2$-block of $H$.\n\\end{lemma}",
+      "statement_sha256": "18aa8c9fbfa519fa23582d8edb134cc1c157fb3f15bb1fcbec118aea9fd82e7e",
+      "proof_ids": [
+        "current-proof-026"
+      ],
+      "proof_sha256": "eaccba4672cf4970f590288033b0a7dae2f2a1dd0f1ebe964144bf8c3362bdc4",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:type-b-gggr-rank",
+      "label": "prop:type-b-gggr-rank",
+      "kind": "proposition",
+      "number": "4.9",
+      "all_labels": [
+        "prop:type-b-gggr-rank"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2331,
+      "start_offset": 111223,
+      "end_offset": 111969,
+      "statement_tex": "\\begin{proposition}\\label{prop:type-b-gggr-rank}\nLet $G=\\operatorname{Spin}_{2n+1}(q)$, and let $\\mathcal U$ be an ordered set\nof representatives of the unipotent conjugacy classes of $G$. Assume that\nrepresentatives in the same geometric class are consecutive and that the\ngeometric classes are ordered by nondecreasing dimension. Then there are\ncharacters $\\eta_u\\in\\Irr(B_0(G))$, indexed by $u\\in\\mathcal U$, such that the\nmatrix\n\\[\n (\\langle\\eta_u,P_v\\rangle_G)_{u,v\\in\\mathcal U}\n\\]\nis block lower triangular, with one diagonal block for each geometric class,\nand every diagonal block is a permutation matrix. Moreover, the $P_u$ form a\nbasis of the $\\mathbb Q$-span of the projective indecomposable characters of\n$B_0(G)$.\n\\end{proposition}",
+      "statement_sha256": "a97609907213c24b20bc6dd03ccfab68aa5a5bfc43f7b7f0f4a9f4d1dfd01494",
+      "proof_ids": [
+        "current-proof-027"
+      ],
+      "proof_sha256": "6accaa1026103aa8d41abc0e1acdd66d635e2bd62e9b8a0301848b8b61f374d1",
+      "source_use_ids": []
+    },
+    {
+      "id": "cor:type-b-principal-selector",
+      "label": "cor:type-b-principal-selector",
+      "kind": "corollary",
+      "number": "4.10",
+      "all_labels": [
+        "cor:type-b-principal-selector"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2603,
+      "start_offset": 124790,
+      "end_offset": 125193,
+      "statement_tex": "\\begin{corollary}\\label{cor:type-b-principal-selector}\nLet $G=\\operatorname{Spin}_{2n+1}(q)$, and let $E$ be the group of field\nautomorphisms of $G$. Then every $\\psi\\in\\IBr(B_0(G))$ is fixed by $E$, satisfies\n\\[\n (\\widetilde G\\rtimes E)_\\psi=\\widetilde G_\\psi\\rtimes E,\n\\]\nand extends to $G\\rtimes E$. If $(n,q)\\neq(3,3)$, then the principal\n$2$-block of $\\Omega_{2n+1}(q)$ is BAW-good.\n\\end{corollary}",
+      "statement_sha256": "025a7c19fe322d02832d3c5c8742241855fdd8a729b2fa16430caf55aab9cf01",
+      "proof_ids": [
+        "current-proof-028"
+      ],
+      "proof_sha256": "d4d33bccb7ab66616ac811cf7fc5870caa0613d58c4a20d77c2fcd9fd8d8fac3",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:type-b-q3",
+      "label": "prop:type-b-q3",
+      "kind": "proposition",
+      "number": "4.11",
+      "all_labels": [
+        "prop:type-b-q3"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2671,
+      "start_offset": 128040,
+      "end_offset": 128189,
+      "statement_tex": "\\begin{proposition}\\label{prop:type-b-q3}\nLet $X=3.\\Omega_7(3)$. Then every $2$-block of $X$ satisfies the inductive BAW\ncondition.\n\\end{proposition}",
+      "statement_sha256": "12f733e0732a2de6e3327748c4291cda598e05c3fbc0370967590589880bdd58",
+      "proof_ids": [
+        "current-proof-029"
+      ],
+      "proof_sha256": "d84f99f451f828789ef8412be2cbe4370a3add393029fcbe77bbd0d76417e422",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:type-b-localized-return",
+      "label": "lem:type-b-localized-return",
+      "kind": "lemma",
+      "number": "4.12",
+      "all_labels": [
+        "lem:type-b-localized-return"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2798,
+      "start_offset": 133965,
+      "end_offset": 134404,
+      "statement_tex": "\\begin{lemma}\n\\label{lem:type-b-localized-return}\nLet $\\mathbf G$ be a simple, simply connected algebraic group of type\n$\\mathsf B_n$, where $n\\geq3$, and let $F$ be a split Frobenius\nendomorphism such that $\\mathbf G^F=\\operatorname{Spin}_{2n+1}(q)$,\nwith $(n,q)\\neq(3,3)$.\nSuppose that \\cite[Assumption~5.3]{FengLiZhang2022Jordan} holds for\n$(\\mathbf G,F)$ at $\\ell=2$. Then every $2$-block of\n$\\Omega_{2n+1}(q)$ is BAW-good.\n\\end{lemma}",
+      "statement_sha256": "7666937ffbb9ccc0375ece1d27e9599a1e467b5c32955ee5d3f454730a1c281d",
+      "proof_ids": [
+        "current-proof-030"
+      ],
+      "proof_sha256": "c51a08a7ec464fea75b5f32fd08fdaa4b5a832254f48833a74ec25874cb71151",
+      "source_use_ids": [
+        "current-citation-0295"
+      ]
+    },
+    {
+      "id": "prop:type-b-brauer-hypothesis",
+      "label": "prop:type-b-brauer-hypothesis",
+      "kind": "proposition",
+      "number": "4.13",
+      "all_labels": [
+        "prop:type-b-brauer-hypothesis"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 2856,
+      "start_offset": 136862,
+      "end_offset": 137697,
+      "statement_tex": "\\begin{proposition}\\label{prop:type-b-brauer-hypothesis}\nLet $\\mathbf G$ be a simple, simply connected algebraic group of type\n$\\mathsf B_n$, where $n\\geq3$, in odd characteristic $p$.\nLet $\\phi$ be a standard Frobenius endomorphism of $\\mathbf G$\nsuch that $\\mathbf G^\\phi=\\operatorname{Spin}_{2n+1}(p)$.\nLet $f\\geq1$, and set $q=p^f$, $F=\\phi^f$ and $G=\\mathbf G^F$.\nChoose a regular embedding\n$\\mathbf G\\hookrightarrow\\widetilde{\\mathbf G}$ to which $\\phi$\nextends, set $\\widetilde G=\\widetilde{\\mathbf G}^F$, and let $E$ be\nthe cyclic group generated by the restriction of $\\phi$ to\n$\\widetilde G$.\nThen, at the prime $2$, every $\\widetilde G$-orbit in $\\IBr(G)$ contains\na character $\\psi$ such that\n\\[\n (\\widetilde G\\rtimes E)_\\psi\n   =\\widetilde G_\\psi\\rtimes E_\\psi\n\\]\nand $\\psi$ extends to $G\\rtimes E_\\psi$.\n\\end{proposition}",
+      "statement_sha256": "55bff0e33ad2c7b3110da2702c3cc4842ce30d3dff5914b706ed06c1e7d8a8e6",
+      "proof_ids": [
+        "current-proof-031"
+      ],
+      "proof_sha256": "8e62c7a38bb18992376505c50d8f275b7d5472e9b49e45d8d0eb863fbd80bea8",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:type-b-two-high-rank",
+      "label": "prop:type-b-two-high-rank",
+      "kind": "proposition",
+      "number": "4.14",
+      "all_labels": [
+        "prop:type-b-two-high-rank"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 3100,
+      "start_offset": 148514,
+      "end_offset": 148682,
+      "statement_tex": "\\begin{proposition}\\label{prop:type-b-two-high-rank}\nLet $S=\\Omega_{2n+1}(q)$.\nThen every $2$-block of $X_2(S)$ satisfies the inductive BAW condition.\n\\end{proposition}",
+      "statement_sha256": "48678d67dd320f30bb144d854977bf9ba01735e9e2e03e6f6066a15172cd43a0",
+      "proof_ids": [
+        "current-proof-032"
+      ],
+      "proof_sha256": "e9432e5ca9167534068334adb8d1035e2374750cd20616ec38d1110f6f5d5553",
+      "source_use_ids": []
+    },
+    {
+      "id": "cor:type-b-census",
+      "label": "cor:type-b-census",
+      "kind": "corollary",
+      "number": "4.15",
+      "all_labels": [
+        "cor:type-b-census"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 3140,
+      "start_offset": 150386,
+      "end_offset": 150540,
+      "statement_tex": "\\begin{corollary}\\label{cor:type-b-census}\nEvery finite simple group of type $\\mathsf B$ satisfies iBAW at every prime\ndividing its order.\n\\end{corollary}",
+      "statement_sha256": "77c5ad417f8dc46cce2dd21e4d59a384bfc29450ed1ff5cea8e6dd7eec08f838",
+      "proof_ids": [
+        "current-proof-034"
+      ],
+      "proof_sha256": "16a264f78dbefeb48f486111eac17935e1cf4f1f3c445ec101e617903ff83dd1",
+      "source_use_ids": []
+    },
+    {
+      "id": "thm:sporadic",
+      "label": "thm:sporadic",
+      "kind": "theorem",
+      "number": "5.1",
+      "all_labels": [
+        "thm:sporadic"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 3162,
+      "start_offset": 151280,
+      "end_offset": 151422,
+      "statement_tex": "\\begin{theorem}\\label{thm:sporadic}\nEvery sporadic simple group $S$ satisfies iBAW at every prime\n$\\ell\\mid |S|$ on $X_\\ell(S)$.\n\\end{theorem}",
+      "statement_sha256": "b4d9afbe2843a9db15bb62206331e78411ec9d32bc1eea7d5b1bc3a964a7e95e",
+      "proof_ids": [
+        "current-proof-038"
+      ],
+      "proof_sha256": "ad771f22fa9f0b7fe291c8569736653976fbb480f77f3dbf138f744c22e6cdd2",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:complete-collapse",
+      "label": "lem:complete-collapse",
+      "kind": "lemma",
+      "number": "5.2",
+      "all_labels": [
+        "lem:complete-collapse"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 3179,
+      "start_offset": 151975,
+      "end_offset": 152266,
+      "statement_tex": "\\begin{lemma}\\label{lem:complete-collapse}\nLet $S$ be a nonabelian finite simple group and let\n$X=X_\\ell(S)$ be its universal $\\ell'$-covering group.  Suppose that\n$\\Out(X)=1$ and $|\\IBr(b)|=|\\Alp(b)|$ for every $\\ell$-block $b$ of\n$X$.  Then $S$ satisfies iBAW at $\\ell$ on $X$.\n\\end{lemma}",
+      "statement_sha256": "5a4dfc133756216562f69cffa4d83b31d8548d67bd9715370a90e7ec1e2edf96",
+      "proof_ids": [
+        "current-proof-035"
+      ],
+      "proof_sha256": "3d12e3369abf2d8ac51b7fcb939f9046834cf4539a873399df47df47474b92d2",
+      "source_use_ids": []
+    },
+    {
+      "id": "lem:block-cancellation",
+      "label": "lem:block-cancellation",
+      "kind": "lemma",
+      "number": "5.3",
+      "all_labels": [
+        "lem:block-cancellation"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 3201,
+      "start_offset": 152976,
+      "end_offset": 153619,
+      "statement_tex": "\\begin{lemma}\\label{lem:block-cancellation}\nLet $\\mathcal B$ be a finite $C_2$-set with orbits\n$\\mathcal B_0,\\ldots,\\mathcal B_r$. Let $Y$ and $Y'$ be finite\n$C_2$-sets with decompositions\n\\[\n Y=\\bigsqcup_{b\\in\\mathcal B}Y_b,\\qquad\n Y'=\\bigsqcup_{b\\in\\mathcal B}Y'_b\n\\]\nsuch that $Y_b^a=Y_{b^a}$ and $(Y'_b)^a=Y'_{b^a}$ for\n$a\\in C_2$ and $b\\in\\mathcal B$.\nSet $U_i=\\bigsqcup_{b\\in\\mathcal B_i}Y_b$ and\n$U'_i=\\bigsqcup_{b\\in\\mathcal B_i}Y'_b$.\nIf $Y\\cong Y'$ and $U_i\\cong U'_i$ as $C_2$-sets for\n$1\\leq i\\leq r$, then $U_0\\cong U'_0$.\nMoreover, this isomorphism can be chosen to map $Y_b$ onto $Y'_b$\nfor every $b\\in\\mathcal B_0$.\n\\end{lemma}",
+      "statement_sha256": "d7aeab6cd6c8af6864f631d098c4ed9749c07956acd608846ee483b3ce3a0ba6",
+      "proof_ids": [
+        "current-proof-036"
+      ],
+      "proof_sha256": "7aea54e907d269fbd2528b83ca62bbee94cfd5d1ef5d9fd303e057fa6ad1e5c7",
+      "source_use_ids": []
+    },
+    {
+      "id": "prop:four-boundary",
+      "label": "prop:four-boundary",
+      "kind": "proposition",
+      "number": "5.4",
+      "all_labels": [
+        "prop:four-boundary"
+      ],
+      "number_basis": "source section counter and shared theorem counter",
+      "line": 3239,
+      "start_offset": 154417,
+      "end_offset": 154822,
+      "statement_tex": "\\begin{proposition}\\label{prop:four-boundary}\nFor each of the $45$ pairs $(S,\\ell)$ listed below, $S$ satisfies iBAW at\n$\\ell$ on its universal $\\ell'$-covering group.\n\\[\n\\begin{array}{c|c}\nS&\\text{primes }\\ell\\\\\n\\hline\nJ_4&2,3,5,7,11,23,29,31,37,43\\\\\nFi'_{24}&2,3,5,7,11,13,17,23,29\\\\\n\\Baby&2,3,5,7,11,13,17,19,23,31,47\\\\\n\\Monster&2,3,5,7,11,13,17,19,23,29,31,41,47,59,71\n\\end{array}\n\\]\n\\end{proposition}",
+      "statement_sha256": "941810bd85d369aab0a222d2fd6fbcdc380717101ab72f77631f3e2b7d3c490e",
+      "proof_ids": [
+        "current-proof-037"
+      ],
+      "proof_sha256": "ff2f3e25101323eb3b175a75c0b9034c7749898c18976240fb5ea32be125b1af",
+      "source_use_ids": []
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+\chapter{Grothendieck groups and composition factors}
+\label{chap:library:kzero}
+
+The Grothendieck group assigns a class $[V]$ to each representation, with
+$[V]=[U]+[W]$ for every short exact sequence $0\to U\to V\to W\to0$.
+For finite dimensional representations, the Jordan--H\"older theorem shows
+that the classes of simple modules form a basis. Thus composition
+multiplicities determine the class of a representation.
+
+In the parts of this chapter concerning representations, $G$ is a finite
+group and $k$ is a field. No splitting or characteristic assumption is needed
+until the final section on Brauer characters. Write $kG$ for the group algebra,
+$\operatorname{FDRep}_k(G)$ for the category of finite dimensional
+$k$-representations, and $K_0(kG)$ for its Grothendieck group defined by short exact sequences.
+
+\section{The Grothendieck group and its universal property}
+\label{lib:kzero:presentation}
+
+\begin{definition}
+Let $\mathcal C$ be an abelian category whose isomorphism classes of
+objects form a set.
+Let $F(\mathcal C)$ be the free abelian group on the isomorphism classes
+of its objects.
+The Grothendieck group defined by short exact sequences is
+\[
+ K_0(\mathcal C)=F(\mathcal C)/R(\mathcal C),
+\]
+where
+\[
+ R(\mathcal C)=
+ \left\langle e_V-e_U-e_W:
+ 0\longrightarrow U\longrightarrow V\longrightarrow W\longrightarrow0
+ \text{ is exact}\right\rangle.
+\]
+The symbol $e_X$ denotes the generator corresponding to the isomorphism
+class of $X$. Its image in the quotient is denoted by $[X]$.
+\end{definition}
+
+For categories of modules, this definition is recalled in
+\cite[Appendix, p.~163]{Serre1977}.
+Isomorphic objects have the same class. Each defining relation gives
+$[V]=[U]+[W]$. The short exact
+sequence with all three terms zero implies
+$[0]=[0]+[0]$, hence
+$[0]=0$. The split sequence for $U\oplus W$ gives
+$[U\oplus W]=[U]+[W]$. Exact relations also apply to extensions that do not
+split, which is the feature needed for modular representations.
+
+\begin{proposition}[Universal property]
+\label{lib:kzero:universal}
+Let $A$ be an abelian group. An isomorphism invariant assignment $X\mapsto a_X$
+defines a homomorphism $K_0(\mathcal C)\to A$ with $[X]\mapsto a_X$ if and
+only if
+\[
+ a_V=a_U+a_W
+\]
+for every short exact sequence $0\to U\to V\to W\to0$. Such a homomorphism is
+unique. Consequently two homomorphisms from $K_0(\mathcal C)$ agree if they
+agree on the classes $[X]$.
+\end{proposition}
+\begin{proof}
+The assignment defines a unique homomorphism $F(\mathcal C)\to A$ by the
+universal property of the free abelian group. It vanishes on
+$e_V-e_U-e_W$ precisely when the stated identity holds. Vanishing on the
+generators of $R(\mathcal C)$ is equivalent to vanishing on that subgroup,
+so the homomorphism descends to the quotient. Conversely every homomorphism
+on the quotient respects its defining relations. Object classes generate
+the quotient, which proves uniqueness.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.ExactGrothendieckGroup} constructs this presentation
+from Mathlib's skeleton, free abelian group and short exact complexes. Here
+\lean{FreeClassGroup} denotes the free abelian group,
+\lean{shortExactRelationSubgroup} its subgroup of relations, and
+\lean{KZero} the quotient. The identities for isomorphic objects and
+short exact sequences are \lean{classOf_iso} and
+\lean{classOf_middle_eq}. The universal property is \lean{lift}, with
+\lean{lift_classOf} giving its value on an object class and
+\lean{hom_ext} expressing uniqueness. The elements of {\small\texttt{Skeleton C}}
+are isomorphism classes of objects.
+These definitions also apply to categories with zero morphisms, using
+short exact complexes $U\to V\to W$. The statements above concern
+abelian categories.
+\end{implementation}
+
+\begin{proposition}[Maps induced by exact functors]
+\label{lib:kzero:functor}
+Let $F:\mathcal C\to\mathcal D$ be an exact functor between abelian
+categories, that is, an additive functor that preserves short exact
+sequences. Then $F$ induces a homomorphism
+\[
+ K_0(F):K_0(\mathcal C)\longrightarrow K_0(\mathcal D),
+ \qquad [X]\longmapsto[F(X)].
+\]
+\end{proposition}
+\begin{proof}
+The hypotheses ensure that the image of a short exact sequence is short
+exact. Thus the free homomorphism induced by $F$ sends every defining
+relation to a defining relation for $K_0(\mathcal D)$. It therefore induces a
+homomorphism on the quotients.
+\end{proof}
+
+\begin{implementation}
+The induced homomorphism is \lean{ExactGrothendieckGroup.map}.
+Its hypotheses require preservation of zero morphisms, finite limits and
+finite colimits. For abelian categories, these are equivalent to exactness.
+The construction uses
+\lean{freeMap_shortExactRelation} and
+\lean{map_shortExactRelationSubgroup}. The formula on object classes is
+\lean{map_classOf}. No choice of bases is involved.
+\end{implementation}
+
+\section{Composition factors and the Jordan--H\"older theorem}
+\label{lib:kzero:finite-length}
+
+Let $R$ be a ring and $M$ a left $R$-module of finite length. A composition series of $M$ is a chain
+\[
+ 0=M_0<M_1<\cdots<M_r=M
+\]
+whose successive quotients $M_{i+1}/M_i$ are simple. We also consider
+composition series between two fixed submodules $A\leq B$ of $M$, with
+first term $A$ and last term $B$. For an account of composition series and
+the Jordan--H\"older theorem, see, for example,
+\cite[\S1.1, especially Theorem~1.1.4]{Benson1998}.
+
+\begin{definition}
+Write $\operatorname{Mod}R$ for the category of all left $R$-modules in
+the chosen universe. Recall that $F(\operatorname{Mod}R)$ is the free
+abelian group on their isomorphism classes.
+For a composition series $s$ of $M$, its formal factor sum is
+\[
+ J(s)=\sum_{i=0}^{r-1} e_{M_{i+1}/M_i}
+ \in F(\operatorname{Mod}R),
+\]
+and the coefficient $m_X(s)$ at an isomorphism class $X$ counts the factors
+isomorphic to $X$.
+\end{definition}
+
+\begin{proposition}[Independence of composition multiplicities]
+\label{lib:kzero:series-independent}
+Any two composition series $s$ and $t$ between the same two submodules
+of $M$ have the same simple factors up to isomorphism, counted with
+multiplicity.
+Thus $J(s)=J(t)$ and $m_X(s)=m_X(t)$ for every module
+isomorphism class $X$. In particular, a composition series from $0$ to a
+module of finite length defines $J(M)$ and $m_X(M)$ independently of
+the choice of series.
+\end{proposition}
+\begin{proof}
+The Jordan--H\"older theorem gives a bijection between the factor indices of
+the two series and an isomorphism between corresponding factors. After
+passing to isomorphism classes, reindexing the finite sum gives the result.
+This proves equality in the free abelian group, before imposing exact relations.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.JordanHolderCoordinates} defines
+\lean{compositionFactor}, \lean{compositionFactorIsoSum}, and
+\lean{compositionCoefficient}. Each quotient is formed inside its
+numerator: the denominator in
+\lean{compositionFactor} is the inverse image of the preceding submodule
+under the numerator's inclusion into $M$. Simplicity follows from the
+covering relation between adjacent submodules in
+\lean{compositionFactor_isSimple}.
+The proof of \lean{compositionFactorIsoSum_eq} applies Mathlib's
+\lean{CompositionSeries.jordan_holder} and the corresponding module
+isomorphisms. The formula
+\lean{compositionCoefficient_eq_sum_ite} counts the factors in each
+isomorphism class.
+\end{implementation}
+
+Every finite dimensional representation has finite length as a module over
+its monoid algebra, even when the monoid is infinite. Indeed it is both
+Noetherian and Artinian as a vector space. A chain of submodules over the
+monoid algebra is also a chain of vector subspaces, so both chain conditions
+pass to that module structure. In
+\module{ModularRep.FDRepFiniteLength},
+\lean{asModule_isFiniteLength} applies Mathlib's criteria for finite length
+and its results on restriction of scalars. The theorem
+\lean{exists_compositionSeries} then applies Mathlib's equivalence between
+finite length and the existence of a composition series from $0$ to the whole module.
+For finite $G$, all simple $kG$-modules are finite dimensional, as shown
+in Section~\ref{lib:kzero:simple-basis}.
+
+\section{Splicing series in a short exact sequence}
+\label{lib:kzero:splicing}
+
+\begin{proposition}[Additivity of composition factors]
+\label{lib:kzero:factor-additivity}
+For a short exact sequence of finite length left $R$-modules
+\[
+ 0\longrightarrow U\xrightarrow{f}V\xrightarrow{\pi}W\longrightarrow0,
+\]
+the formal factor sums satisfy $J(V)=J(U)+J(W)$. Consequently
+$m_X(V)=m_X(U)+m_X(W)$ for every module isomorphism class $X$.
+\end{proposition}
+\begin{proof}
+Choose composition series
+$0=U_0<\cdots<U_a=U$ and $0=W_0<\cdots<W_b=W$.
+The images $f(U_i)$ form a composition series from $0$ to $\im f$, since
+$f$ is injective. The inverse images $\pi^{-1}(W_j)$ form one from
+$\ker \pi$ to $V$, since $\pi$ is surjective. Exactness identifies the meeting
+terms $\im f=\ker \pi$, so the two chains concatenate to
+\[
+ 0=f(U_0)<\cdots<f(U_a)=\pi^{-1}(W_0)
+ <\cdots<\pi^{-1}(W_b)=V.
+\]
+The factor isomorphisms are
+\[
+ U_{i+1}/U_i\simeq f(U_{i+1})/f(U_i),
+ \qquad
+ \pi^{-1}(W_{j+1})/\pi^{-1}(W_j)\simeq W_{j+1}/W_j.
+\]
+The first is induced by the injective map $f$. For the second,
+restrict $\pi$ to $\pi^{-1}(W_{j+1})$. The induced map on quotients is
+surjective and has zero kernel, since the inverse image of $W_j$ is
+$\pi^{-1}(W_j)$. Thus the concatenated series has
+factor sum $J(U)+J(W)$. Jordan--H\"older compares it with any chosen full
+series of $V$.
+\end{proof}
+
+\begin{implementation}
+The proof in \module{ModularRep.FDRepJordanHolderKZero} constructs these
+chains as \lean{mapCompositionSeries} and \lean{comapCompositionSeries}.
+The factor isomorphisms are
+\lean{quotientMapEquivOfInjective} and
+\lean{quotientComapEquivOfSurjective}. Concatenation uses Mathlib's
+composition series operation \lean{smash}, and the local theorem
+\lean{compositionFactorIsoSum_smash} expresses its factor sum as the sum
+of the two factor sums. This gives
+\lean{compositionFactorIsoSum_eq_add_of_exact}.
+
+For representations, \lean{fdRepJordanHolderSum_shortExact} applies the
+exact underlying $kG$-module functor and uses the injection, surjection,
+and exactness of the resulting linear maps. The universal property gives
+\lean{fdRepJordanHolderKZeroHom}, with values in the free abelian group
+on module isomorphism classes.
+\end{implementation}
+
+\section{The basis of simple modules}
+\label{lib:kzero:simple-basis}
+
+Let $\mathcal S_k(G)$ denote the set of isomorphism classes of simple left
+$kG$-modules. Every such module is cyclic: any nonzero vector generates a
+nonzero submodule and hence the whole module. Since $G$ is finite, $kG$ is
+finite dimensional over $k$, so every simple module belongs to
+$\operatorname{FDRep}_k(G)$.
+
+For an account of the following standard description of the Grothendieck
+group, see \cite[\S14.1, Proposition~40]{Serre1977}.
+
+\begin{theorem}[Basis of simple module classes]
+\label{lib:kzero:basis-theorem}
+The map
+\[
+ K_0(kG)\longrightarrow\bigoplus_{S\in\mathcal S_k(G)}\Z e_S,
+ \qquad [V]\longmapsto\sum_S m_S(V)e_S
+\]
+is an isomorphism of abelian groups. Its inverse sends $e_S$ to $[S]$.
+\end{theorem}
+\begin{proof}
+All factors in $J(V)$ are simple, so its sum lies in the subgroup freely
+generated by $\mathcal S_k(G)$. The additivity just proved gives the
+homomorphism in the statement. In the other direction, the free abelian
+group admits a homomorphism $e_S\mapsto[S]$.
+
+For a composition series from $0$ to $V$, each step has a short exact sequence
+\[
+ 0\longrightarrow V_i\longrightarrow V_{i+1}
+ \longrightarrow V_{i+1}/V_i\longrightarrow0.
+\]
+Starting from $[0]=0$ and successively applying the defining relations gives
+\[
+ [V]=\sum_{i=0}^{r-1}[V_{i+1}/V_i].
+\]
+Thus the composite back to $K_0(kG)$ fixes every object class and hence the
+whole group. For a simple module $S$, the series $0<S$ has the single
+factor $S$. The other composite therefore
+fixes every generator $e_S$. The maps are inverse.
+\end{proof}
+
+\begin{implementation}
+In \module{ModularRep.FDRepSimpleClassKZero},
+\lean{SimpleModuleClass} is the subtype of the module skeleton represented
+by simple modules. The homomorphism \lean{simpleClassProjection} fixes the
+generators represented by simple modules and sends the others to zero.
+Composing it with the homomorphism defined by composition multiplicities gives
+\lean{fdRepSimpleJordanHolderHom}.
+
+The reverse map is \lean{simpleClassToFDRepKZero}.
+The proof first sums the step relations in the category
+{\small\texttt{FGModuleCat k[G]}} of finitely generated $kG$-modules using
+\lean{compositionSeriesFGKZero_decomposition}, and then applies
+\lean{FDRepGroupAlgebraEquivalence.equivalenceFGModule}.
+This is a restriction of Mathlib's equivalence between representations
+and modules over the monoid algebra. Finiteness of $G$ ensures that finite
+generation over $kG$ implies finite dimension over $k$. The resulting
+isomorphism is
+\lean{fdRepKZeroEquivSimpleModuleClassGroup}.
+\end{implementation}
+
+\begin{example}[Classes of extensions of simple modules]
+\label{lib:kzero:extension-example}
+Suppose $0\to S\to V\to T\to0$ is short exact, where $S$ and $T$ are
+simple. Then $[V]=[S]+[T]$. If $S\not\simeq T$, the coefficients of
+$[S]$ and $[T]$ are one and all other coefficients are zero. If $S\simeq T$,
+the coefficient of $[S]$ is two and all other coefficients are zero.
+Thus any two such extensions have the same class in $K_0(kG)$, even when
+their middle terms are not isomorphic.
+\end{example}
+
+For virtual classes, coefficients may be negative. Equality in $K_0(kG)$
+means equality of all these integer coefficients. For a representation
+$V$, the coefficient of $[S]$ is $m_S(V)$, its composition multiplicity.
+This is the identity
+\lean{FDRepJordanHolderKZero.fdRepJordanHolderCoordinate_classOf}.
+
+\section{Finiteness of the set of simple classes}
+\label{lib:kzero:simple-finite}
+
+\begin{proposition}[Finiteness of the simple module classes]
+\label{lib:kzero:finite-simples-theorem}
+If the left regular module of a ring $R$ has a full finite composition
+series, every simple left $R$-module occurs among its factors. In particular
+$\mathcal S_k(G)$ is finite for a finite group $G$ and any field $k$.
+\end{proposition}
+\begin{proof}
+A simple module $S$ is isomorphic to $R/I$ for a maximal left ideal $I$:
+the map $R\to S$ sending $r$ to $rs$ is onto for any nonzero $s\in S$.
+Since $R$ has finite length, so does $I$. Append $R$ to a
+composition series of $I$. The resulting series of $R$ has final
+factor $R/I\simeq S$. The Jordan--H\"older theorem identifies this
+factor with a factor of any prescribed composition series from $0$ to $R$.
+
+The finite index set of the factors therefore maps onto all simple module
+classes. For $R=kG$, finite dimension over $k$ makes the regular module
+both Noetherian and Artinian, so it has a full finite composition series.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.SimpleModuleClassFinite} proves
+\lean{simpleClass_appears_in_compositionSeries} using a series whose
+last factor is the quotient by a maximal left ideal.
+\lean{finite_simpleModuleClass_of_compositionSeries} applies finiteness
+to the resulting surjection. The result
+\lean{finiteSimpleModuleClassGroupAlgebra} uses the chain conditions
+that follow from finite dimension of $kG$.
+\end{implementation}
+
+Proposition~\ref{lib:kzero:finite-simples-theorem}, together with
+Theorem~\ref{lib:kzero:basis-theorem}, proves that $K_0(kG)$ is free
+of finite rank over $\Z$, for every field $k$.
+
+\section{The Grothendieck group of all modules}
+\label{lib:kzero:swindle}
+
+\begin{proposition}[Eilenberg swindle]
+\label{lib:kzero:swindle-theorem}
+For a ring $R$, the exact Grothendieck group of the category of all left
+$R$-modules in the chosen universe is zero.
+\end{proposition}
+\begin{proof}
+For any $R$-module $M$, let $T=\prod_{n\geq0}M$. The shift isomorphism
+\[
+ M\oplus T\longrightarrow T,
+ \qquad (x,f)\longmapsto(x,f(0),f(1),\ldots)
+\]
+is $R$-linear. The split short exact sequence
+$0\to M\to M\oplus T\to T\to0$ gives $[M\oplus T]=[M]+[T]$.
+The isomorphism gives $[M\oplus T]=[T]$, so cancellation yields $[M]=0$.
+Since object classes generate the group, every element is zero.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.ModuleCategoryKZeroTrivial} uses the countable product
+{\small\texttt{Nat -> M}}. Its results are \lean{classOf_eq_zero} and
+\lean{kZero_subsingleton}. The homomorphism of composition factors
+\lean{fdRepJordanHolderKZeroHom} takes values in
+{\small\texttt{FreeClassGroup (ModuleCat k[G])}}, the free abelian group on
+isomorphism classes of all $kG$-modules. Imposing all short exact relations would give
+{\small\texttt{KZero (ModuleCat k[G])}}, which is zero by this argument.
+\end{implementation}
+
+For a nonzero $kG$-module $M$, the product $\prod_{n\geq0}M$ is not finite
+dimensional over $k$, so the argument does not apply in
+$\operatorname{FDRep}_k(G)$.
+This is why the restriction to finite dimensional representations is
+necessary in Theorem~\ref{lib:kzero:basis-theorem}.
+
+\section{The Brauer character homomorphism}
+\label{lib:kzero:characters}
+
+Now let $\ell$ be prime, let $k$ be algebraically closed of characteristic
+$\ell$, and let $K$ be a field of characteristic zero. Fix a finite root
+correspondence $\iota$ for $G$ as in Chapter~\ref{chap:library:brauer}.
+Let $\operatorname{CF}_{\ell'}(G,K)$ be the additive group of $K$-valued
+class functions on the $\ell$-regular elements of $G$.
+
+\begin{proposition}[Injectivity of the Brauer character homomorphism]
+\label{lib:kzero:brauer-injective}
+Taking Brauer characters induces an injective homomorphism
+\[
+ \operatorname{br}_{\iota}:K_0(kG)\longrightarrow
+ \operatorname{CF}_{\ell'}(G,K),
+ \qquad [V]\longmapsto\varphi_V.
+\]
+\end{proposition}
+\begin{proof}
+Isomorphism invariance and short exact additivity of Brauer characters
+allow the universal property to define the homomorphism. Under the basis
+of Theorem~\ref{lib:kzero:basis-theorem}, it sends $e_S$ to the irreducible
+Brauer character $\varphi_S$. The functions $\varphi_S$ are pairwise distinct by
+Proposition~\ref{lib:brauer:separation}, and linearly independent over
+$K$ by Theorem~\ref{lib:brauer:independence}. Linear independence forces
+each coefficient in an integer relation to vanish in $K$. Since
+$\operatorname{char}K=0$, the map $\Z\to K$ is injective, so the
+coefficients vanish in $\Z$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.BrauerCharacterKZero} constructs
+\lean{FDRepSimpleClassKZero.brauerCharacterKZeroHom} using exact
+additivity. The theorem \lean{brauerCharacterKZeroHom_injective}
+uses the basis of simple module classes and
+\lean{irreducibleBrauerCharacterLinearIndependence_of_rootEmbedding}.
+The proof restricts scalars from $K$ to $\Z$ and uses the injectivity of
+the corresponding map taking a finite integer linear combination of characters.
+\end{implementation}
+
+Thus representations with equal Brauer characters have the same
+composition multiplicities. In Chapter~\ref{chap:library:reduction},
+character compatibility then identifies the Grothendieck classes of
+different lattice reductions and proves independence of the chosen lattice.

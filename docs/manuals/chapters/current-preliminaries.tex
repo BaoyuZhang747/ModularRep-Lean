@@ -1,0 +1,427 @@
+\chapter{The preliminary arguments}
+\label{chap:current-preliminaries}
+
+This chapter follows the preliminary arguments in Section 2 of the
+manuscript. In the finite group arguments, $\ell$ is prime. Brauer
+characters take values in a specified field of characteristic zero,
+using the chosen correspondence between roots of unity in that field
+and in the field of characteristic $\ell$. Whenever a published
+statement is expressed with complex characters, its application over
+another value field includes the stated character and root
+identifications.
+
+\section{Central characters and tensor stabilisers}
+
+Let $Z$ be a central subgroup of $G$ of order prime to $\ell$.
+A character lies over $\nu\in\Irr(Z)$ when its restriction to $Z$
+is a positive integral multiple of $\nu$. A weight $(Q,\theta)$
+lies over $\nu$ when the inflation of $\theta$ to $N_G(Q)$ does.
+These are the central sectors of manuscript Definition 2.1.
+
+Over an algebraically closed field $k$ of characteristic $\ell$,
+the primitive idempotents $e_\nu$ of $kZ$ are orthogonal central
+idempotents of $kG$ with sum one. If $b$ is a primitive central
+idempotent of $kG$, exactly one $be_\nu$ is nonzero, and then
+$be_\nu=b$. This defines the sector of $b$. Every simple module
+in $b$ has central character $\nu$. The ordinary characters in
+the block have the same central character by their decomposition
+on $\ell$-regular elements. Brauer's definition of block induction
+preserves it: compare the central functions on the singleton
+classes of elements of $Z$ \cite[Definition~2.1]{Spath2013}.
+Thus the weight classes in $b$ also lie in this sector.
+
+Automorphisms transport the sector of $b$ by their action on $Z$.
+Inner automorphisms fix every block. Both statements are proved
+on the primitive idempotents, with the same right action convention
+as that used for the characters.
+
+\begin{implementation}
+The \lean{CentralSectors} namespace in
+\module{ManuscriptIBAW.Preliminaries} provides the following results from ModularRep:
+\lean{existsUnique_centralCharacterSector},
+\lean{primitiveCentralIdempotentSector_eq_centralCharacter} and
+\lean{rightMulAction_smul_centralCharacterSector}.
+ModularRep constructs the multiplicative central character from the scalar
+endomorphism statement of Schur's lemma in Mathlib. The central sector
+deductions use these characters and the block definitions in
+ModularRep together with Mathlib's group algebra and idempotent definitions.
+The application to ordinary characters and weights additionally uses the specified reduction and local laws of
+block induction.
+\end{implementation}
+
+For manuscript Lemma 2.2, let $N\lhd G$ and let $C$ be the group of
+linear characters of $G/N$ of order prime to $\ell$, acting on
+blocks by tensoring. If $\lambda\in C_b$, the common central
+character of the Brauer characters of $b$ gives
+$\lambda|_{Z(G)_{\ell'}}=1$. Its order makes it trivial on
+$O_\ell(Z(G))$ as well. Hence it factors through $G/NZ(G)$ and
+\[
+ |C_b|\leq |G:NZ(G)|.
+\]
+The same conclusion holds for linear Brauer characters when
+reduction identifies them with these ordinary characters and
+commutes with tensoring. The library manual proves the result
+under these coefficient and tensor compatibility hypotheses.
+Its additional semidirect product argument is used later to show
+that the relevant block stabilisers are $2$-hypoelementary.
+
+\section{The full condition and modular character triples}
+
+The full inductive condition of Sp\"ath requires a partition by
+radical subgroups, equivariant local bijections, preservation of
+central characters and induced blocks, and compatible extensions
+over every required intermediate subgroup
+\cite[Definition~4.1]{Spath2013}. For the trivial radical subgroup
+it also prescribes $\chi^0\mapsto\chi$ for each ordinary character
+of defect zero, with identical global and local extensions.
+
+Manuscript Theorem 2.3 restates Sp\"ath's character triple
+formulation \cite[Theorem~4.4]{Spath2017Triples} of the extension
+and block compatibility requirements in
+\cite[Definition~4.1(iii)]{Spath2013}. It begins on the full
+universal cover $\widehat G$ of a nonabelian simple group.
+Fix a radical subgroup $\widehat Q$, a Brauer character
+$\widehat\theta$ of $\widehat G$, and an ordinary character of
+$N_{\widehat G}(\widehat Q)/\widehat Q$ with defect zero whose
+inflation $\widehat\theta'$ belongs to a block inducing to
+$\bl(\widehat\theta)$. Let $\widehat Z$ be the kernel of the
+central character of $\widehat\theta$ and set
+\[
+ G=\widehat G/\widehat Z,\qquad
+ Q=\widehat Q\widehat Z/\widehat Z,\qquad M=N_G(Q).
+\]
+Both characters descend to these quotients. The $\ell$-part of
+$\widehat Z$ lies in $\widehat Q$. Descent through its part of order
+prime to $\ell$ uses the equality of the induced blocks.
+
+These extension and block compatibility requirements are
+equivalent to the required block isomorphism of the modular
+character triples on $G$ and $M$. In the extension formulation,
+there is a group $A$ with $G\lhd A$,
+$C_A(G)=Z(A)$ and $\ell\nmid|Z(A)|$, whose conjugation image is
+the required character stabiliser. The global and local Brauer
+characters extend to $A$ and $N_A(Q)$, and the extensions satisfy
+\[
+ \bl(\widetilde\theta|_J)
+ =\bl(\widetilde\theta'|_{N_J(Q)})^{\,J}
+ \qquad(G\leq J\leq A).
+\]
+The induction superscript $J$ is essential. It is omitted in the printed equation \cite[(12)]{Spath2017Triples}.
+The local triple uses the full stabiliser of the weight representative,
+which must lie in the stabiliser of the global character.
+
+\begin{implementation}
+The \lean{SpathCriterion} namespace in
+\module{ManuscriptIBAW.Preliminaries} provides
+\lean{current_theorem_2_3} and its two implications from ModularRep.
+\lean{FullCover}, \lean{PairData} and \lean{HattedPairJoins}
+specify the full cover, central quotient, normaliser and
+the same ordinary local character. \lean{Theorem44Source}
+supplies the published equivalence uniformly for those data.
+The modular block triple relation is the parameter
+\lean{BlockTripleSourceSemantics.blockIsomorphic}. \lean{Theorem44Source}
+assumes that, under its cover, coefficient and root hypotheses,
+\lean{ClauseIII} is equivalent to \lean{TripleCondition}. The latter includes
+containment of the full local stabiliser in the global stabiliser. The source
+hypothesis therefore constrains the chosen relation. Its identification with
+the usual definition by projective representations is not formalised, and
+the transport laws used below remain assumptions. The equivalence concerns
+the extension and intermediate block conditions. It does not establish the
+other parts of the inductive condition. Its ordinary field is algebraically
+closed, with no discrete valuation ring required.
+This named theorem is a standalone formulation. The main applications
+use their stated extension and block conditions and the separate
+criterion sources attached to those applications. They do not invoke
+\lean{current_theorem_2_3}.
+In particular, \lean{SpathProposition46Theorem44Source} in
+\module{ModularRep.PaperProofs.EvenFieldFLZBAWGoodFamily} assumes the passage
+from a specified full family on the covering group to equivariant block
+bijections satisfying the relation specified by
+\lean{SpathProposition46Theorem44FamilySemantics}, under its cover and
+automorphism hypotheses. This assumption constrains the relation on the
+corresponding pairs. Its interpretation as block isomorphism of modular
+character triples remains external. The separate
+\lean{SpathProposition46Theorem44ToDefinition35FamilySource} assumes the
+implication to the specified Definition~3.5 relation. These application
+sources are supplied separately from the standalone theorem.
+\end{implementation}
+
+The paragraph following manuscript Theorem 2.3 applies the theorem
+to a block bijection supplied by the full inductive condition.
+After inflation to the full universal cover, the theorem gives the
+character triple condition on the quotient by the kernel of the
+central character. Inflation of this relation gives the condition
+for an iBAW bijection \cite[Remark~4.4]{BroughSpath2022}.
+This uses transport of a character triple relation through a central
+kernel. The general transport law is an external assumption in the
+formalisation. It is distinct from the central $\ell$-group argument
+for manuscript Lemma 2.6 below.
+
+\section{Combining blocks and descending to the simple group}
+
+Manuscript Remark 2.4(a) combines Koshitani--Sp\"ath's Lemma 3.3
+\cite{KoshitaniSpath2016} and Sp\"ath's Definition 5.17 and Remark 5.18
+\cite{Spath2013}. The full
+inductive BAW condition for one block in each automorphism orbit
+gives the relative condition, and the relative conditions combine
+over the required defect groups.
+Taking all blocks and all radical subgroups gives the full
+condition for the simple group.
+
+Part (b) of the remark gives an elementary observation about finite
+group actions. Suppose that $A$ permutes disjoint families of sets
+$\mathcal U_b$ and $\mathcal V_b$ through its action on their index set.
+Bijections $\Phi_b:\mathcal U_b\to\mathcal V_b$ that commute with $A_b$,
+chosen for representatives of the $A$-orbits, extend to one
+$A$-equivariant bijection by $\Phi(x^a)=\Phi_b(x)^a$.
+This observation applies to tensor actions as well as automorphism
+actions. It combines bijections and does not supply the additional
+character and block conditions in the full inductive condition.
+
+\begin{implementation}
+The \lean{BlockFamilies} namespace in
+\module{ManuscriptIBAW.Preliminaries} provides the ModularRep application
+in which all blocks are included. Its \lean{Source} assumes the
+published passage from the blockwise conditions to the full
+condition, including its normalisation, over one specified
+modular system. The blocks, local block
+operations and root correspondence refer to that system.
+When the full inductive condition holds for every block,
+\lean{fullFamily} applies that hypothesis to obtain a compatible
+family for all blocks. The source includes the
+published passage to common choices, which can change the
+individual correspondences. The reduction for the full condition in
+Remark 2.4(a) is used through this special case. This provider does not
+formalise the general construction in part (b). The ordinary coefficient
+field is the fraction field of the specified
+discrete valuation ring, with the required roots. It need not be
+algebraically closed.
+\end{implementation}
+
+For manuscript Corollary 2.5, suppose that the simple group $S$
+satisfies the full inductive condition at $\ell$. Sp\"ath's
+Proposition 4.6, with the perfect subgroup equal to $S$, group $\Aut(S)$ and multiplicity one, supplies the partition,
+block bijections and extension information
+\cite[Proposition~4.6(a)--(c)]{Spath2013}.
+The conversion to modular character triples uses
+\cite[Proposition~3.6(b) and Theorem~3.5(b)]{Spath2017Triples}.
+It gives an iBAW bijection on every block of $S$.
+
+\begin{implementation}
+The \lean{Descent} namespace in \module{ManuscriptIBAW.Preliminaries}
+provides the descent construction from ModularRep. Its
+\lean{FullCoverPrimeToDiagram} fixes the full cover, its quotient by the
+central $\ell$-core, and the simple group. The Brauer inflation,
+ordinary local characters, blocks and coefficient
+comparisons refer to these maps. Lean constructs the required
+epimorphism from the $\ell'$-cover to the target.
+\lean{Proposition46Theorem44Source} applies the published
+descent uniformly to that epimorphism and the assumed full
+inductive condition. \lean{current_corollary_2_5_coherent} gives the
+coherent family, and \lean{current_corollary_2_5} identifies its
+triples with those in the definition of an iBAW bijection. These
+interfaces use algebraically closed ordinary fields and no
+modular system. Their covering maps, root comparisons and
+published implications are distinct assumptions.
+These named algebraically closed formulations are standalone results.
+The exceptional Type B application uses the finite splitting formulation
+in \module{ModularRep.CurrentSpathFiniteSplittingDescent}.
+Its theorem \lean{current_corollary_2_5_block} transports the bijection
+of an established covering family through the stated character and
+weight correspondences. The external source supplies the character
+conditions for those same pairs, under explicit splitting, root and
+automorphism stabiliser hypotheses.
+\end{implementation}
+
+\section{Lifting a bijection through the central core}
+
+For manuscript Lemma 2.6, let $G\lhd A$ and suppose that
+$P=O_\ell(G)\leq Z(G)$. Write $\overline G=G/P$ and
+$\overline A=A/P$. Every radical $\ell$-subgroup $Q$ of $G$
+contains $P$, and we write $\overline Q=Q/P$.
+Let $b$ be an $A$-stable block and let $\overline b$ be its dominated
+block on $\overline G$. Suppose that $\overline b$ has an iBAW
+bijection compatible with $\overline A$.
+
+Inflation identifies the Brauer characters of these two blocks
+(see, for example, \cite[Theorem~9.10]{Navarro1998}). Centrality of $P$ supplies the
+hypothesis of this block correspondence. The quotient map induces
+\[
+ N_G(Q)/Q\cong N_{\overline G}(\overline Q)/\overline Q.
+\]
+Transport the weight character along this isomorphism. With the block correspondence, this gives the
+weight bijection \cite[Lemma~2.1]{FengLiZhang2019}.
+Both identifications commute with the action of $A$. Composing
+them with the given bijection therefore gives an $A$-equivariant
+bijection on $b$.
+
+Let $(Q,\theta)$ represent the weight class corresponding to
+$\chi$. The same subgroup $P$
+lies in $N_G(Q)$ and in the kernels of $\chi$ and the inflated
+Brauer reduction $\theta^0$. The quotient identifies the
+character and weight stabilisers with their counterparts in
+$\overline A$. The implication for a normal kernel in
+Mart\'inez--Rizo--Rossi therefore lifts the block isomorphism of
+the associated triples \cite[Lemma~3.14]{MartinezRizoRossi2026}.
+This proves compatibility with $A$ for every representative of
+the corresponding weight class.
+
+\begin{implementation}
+The \lean{CentralCore} namespace in
+\module{ManuscriptIBAW.Preliminaries} provides the following quotient results from ModularRep:
+\lean{rawLocalQuotientEquiv}, \lean{quotientRawWeight} and
+\lean{ownReduction_inflation}. The last identity compares
+reductions of the same ordinary local character.
+\lean{lemma_2_6_compatibleBijection} constructs the bijection
+on the specified block from the bijection on the quotient block,
+proves equivariance, and applies \lean{sameWeight_relation_upward}.
+Equivariance and injectivity also show that the stabiliser of the
+weight representative is contained in the stabiliser of its Brauer
+character.
+
+\lean{CentralBlockSource} specifies the centrality hypothesis and
+the block correspondence. \lean{TripleQuotientSource}
+identifies the quotient stabilisers, their character values and
+roots, and the block isomorphism relation in those coordinates.
+The relation for the lifted characters then follows from the published
+implication for a normal kernel.
+\lean{returnCompatibleThroughCentralQuotient} then identifies
+the constructed family with the intended blocks and
+definition of an iBAW bijection. It does not require the quotient to
+be a universal cover. The application over a modular system uses the stated splitting
+conditions on its fraction field, without requiring algebraic closure.
+\end{implementation}
+
+\section{Permutation lattices and cyclic extensions}
+
+For manuscript Corollary 2.7, let $A$ be $r$-hypoelementary and
+let $Y,Y'$ be finite $A$-sets.
+Every subgroup of $A$ is again $r$-hypoelementary. Conlon's
+permutation lattice theorem \cite{Conlon1968}, in the formulation
+of Bouc \cite[Theorem~3.5.5]{Bouc2000}, therefore gives $|Y^U|=|Y'^U|$ for every subgroup $U\leq A$ whenever $\Z_r[Y]\cong\Z_r[Y']$. Burnside's injectivity theorem for the mark homomorphism
+\cite[Theorem~2.3.2]{Bouc2000} then gives $Y\cong Y'$ as $A$-sets.
+
+Manuscript Lemma 2.8 applies this to an $A$-stable integral basic
+set $\mathcal X$ for an $\ell$-block $b$. The decomposition map restricts to an isomorphism
+\[
+ d_b:\Z[\mathcal X]\longrightarrow\Z[\IBr(b)]
+\]
+\cite[(1.1)--(1.2)]{GeckHiss1991}.
+If $d_b$ is equivariant, it is an isomorphism of permutation
+lattices. Extend scalars to $\Z_2$ and apply the preceding
+argument when $A$ is $2$-hypoelementary. The prime used for the
+permutation lattice is $2$, independently of $\ell$. This proves
+existence of an equivariant bijection. It specifies neither an
+image for each character nor a unitriangular decomposition
+matrix. The library manual gives the lattice and mark arguments
+and the hypotheses of their formal statements.
+
+\begin{implementation}
+In \module{ModularRep.PaperProofs.ConlonBasicSet},
+\lean{corollary_2_4_conlonMark} implements manuscript Corollary 2.7.
+It deduces an equivariant bijection from the permutation lattice
+isomorphism, assuming \lean{PadicConlonMarkDetection} and
+\lean{PublishedBurnsideMarkInjectivity}. These hypotheses state the two published results for arbitrary finite $A$-sets.
+The same module's \lean{lemma_2_5_basicSetBridge} implements the
+lattice argument in manuscript Lemma 2.8. Starting from an integral
+linear equivalence for the restricted decomposition map and its
+equivariance, it constructs the permutation lattice isomorphism,
+extends scalars to $\Z_2$, and applies the preceding deduction.
+The existence and equivariance of the restricted decomposition map
+remain hypotheses of this declaration.
+\end{implementation}
+
+Manuscript Lemma 2.9 is the cyclic extension theorem. If $N\lhd H$
+and $H/N$ is cyclic, an invariant irreducible ordinary or Brauer
+character of $N$ extends to $H$. For examples of these results, see \cite[Corollary~11.22]{Isaacs1976} for ordinary characters and \cite[Theorem~8.12]{Navarro1998} for Brauer characters.
+The ordinary statement uses complex characters
+or a compatible splitting interpretation. The modular statement
+uses algebraic closure of the field of characteristic $\ell$
+and requires no coprimality condition on $H/N$.
+
+\begin{implementation}
+\module{ModularRep.OrdinaryCharacterCyclicExtensionBridge} proves
+\lean{exists_extension_of_fixed_cyclic_quotient}, using
+\lean{Representation.CyclicExtensionPrinciple}.
+\module{ModularRep.BrauerCharacterExtensionBridge} proves
+\lean{exists_extension_realisation_of_ibr_fixed_cyclic_quotient},
+using \lean{Representation.BrauerCyclicExtensionPrinciple}.
+The Brauer character is then constructed in
+\module{ModularRep.BrauerCharacterHomPullback} by
+\lean{Representation.Extension.brauerCharacterExtensionWitnessOfCompatible},
+with compatible root correspondences.
+These constructions prove invariance of the chosen realisations and the
+character restriction identities. The representation extension principles
+remain explicit hypotheses. The ordinary principle over the chosen field
+quantifies over all finite ambient groups. Splitting for the base group alone
+does not establish it. Isaacs's theorem gives the complex case, and its
+interpretation over the chosen ordinary field is an additional assumption.
+The modular principle uses an algebraically closed field. Neither extension
+principle is proved in these declarations.
+\end{implementation}
+
+Finally, manuscript Lemma 2.10 assumes that the simple group $G$
+is its own universal cover and that $\Aut(G)=G\rtimes E$
+with $E$ cyclic. For an $E$-stable block $b$, an $E$-equivariant
+bijection $\IBr(b)\to\Alp(b)$ extends to equivariance under
+$G\rtimes E$, since inner automorphisms fix both sets. Each
+Brauer character extends to its stabiliser by the cyclic
+extension theorem. For a weight $(Q,\theta)$, set
+$D=(G\rtimes E)_{Q,\theta}$. The quotient
+$D/N_G(Q)$ embeds in $E$. Apply the same extension theorem to
+the reduction of the original local character on $N_G(Q)/Q$
+inside $D/Q$, then inflate to $D$.
+
+These extensions and the block equality attached to the weight
+verify the specialised Brough--Sp\"ath criterion with
+$\widetilde G=G$ \cite[Theorem~3.18]{FengLiZhang2022Jordan}.
+The conclusion is that $b$ is BAW-good. Applications use the
+specified cover, local character, block induction and extension
+interpretations. A full family conclusion also uses the separate
+passage from the block conditions to compatible correspondences.
+
+\begin{implementation}
+In \module{ModularRep.PaperProofs.CurrentCyclicOuterBAW},
+\lean{lemma_2_10_bawGood} applies the published criterion, supplied
+as \lean{FLZ318BAWGoodSource}, to the hypotheses constructed by
+\lean{completedExplicitPackage_of_cyclicEndgame}.
+Its conclusion is BAW-goodness of the specified block.
+The extension principles, compatible roots, structural and block
+assumptions, and identifications of the covering group and character
+triple relation remain explicit. This declaration does not prove the
+published criterion or the separate passage to a compatible family
+for all blocks.
+\end{implementation}
+
+\section{Character selection for finite reductive groups}
+
+The manuscript proves two character selection lemmas for connected
+reductive groups. Lemma 2.11 concerns isolated families in Type B.
+Lemma 2.12 concerns selected Type C families in rank at least three.
+Their proofs are in Appendix B of the manuscript.
+For the latter, the semisimple parameter is chosen in a split torus
+and multiplied by a central element to obtain a parameter whose square is one.
+The family in the conformal symplectic group is attached to this
+rational pair. Both lemmas select ordinary characters whose positive
+Alvis--Curtis duals have Kronecker delta scalar products with the
+generalised Gelfand--Graev characters of the rational classes in the
+chosen geometric unipotent class. The arguments and their source
+assumptions are discussed in Chapters~\ref{chap:current-type-b}
+and~\ref{chap:current-type-c}.
+
+\enlargethispage{2\baselineskip}
+\begin{implementation}
+The geometric constructions, including the central choice in Lemma 2.12,
+are not formalised. The character theoretic identities used in the finite
+proofs are explicit assumptions. The Type B application proves the finite spanning,
+independence, coverage and selection deductions from those identities.
+In \module{ManuscriptIBAW.TypeC.GGGRSelection},
+\lean{delta_selection} proves a conditional form of Lemma 2.12 on the
+specified conformal symplectic group. From the stated component action,
+weighted formula, denominator equality and trace identities, the proof
+shows that the component indices are one and the scalar product row sums
+equal one. It then constructs an injective choice of characters. The
+selected family and its geometric interpretation are supplied separately.
+The general finite arguments are described in the library manual's
+chapter on character counts from finite matrices.
+\end{implementation}

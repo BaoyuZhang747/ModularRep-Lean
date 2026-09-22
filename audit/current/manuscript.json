@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "path": "manuscript/current/main.tex",
+  "sha256": "bf84e40ba14ac1ba46aad1279df15b6d9f61b2da97b35cca3cdbd481dd28871d",
+  "bytes": 243293,
+  "aux_sha256": "dd68b07aaa887b3c1f035f9f5121a50f79a09d4da8383c639ab5eab4a1aa4364",
+  "version": "r27",
+  "scope": "Current manuscript source identity and editorial correspondence. The conditional Lean providers and their mathematical hypotheses are unchanged."
+}

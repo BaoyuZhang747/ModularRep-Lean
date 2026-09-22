@@ -1,0 +1,257 @@
+\chapter{Weights and changes of representatives}
+\label{chap:library:weights}
+
+Let $G$ be a finite group and let $\ell$ be a prime. A weight is a
+local representation associated with an $\ell$-subgroup of $G$.
+The modular formulation uses simple modular
+representations that are projective over the normaliser quotient
+\cite[p.~369]{Alperin1987}. We use the ordinary character formulation.
+See, for example, \cite[p.~90]{Navarro1998}.
+
+Throughout this chapter, $K$ is a field of characteristic zero.
+Write $\Irr_K(H)$ for the trace characters of irreducible finite
+dimensional $K$-representations of a finite group $H$.
+The weight definitions below use these trace characters. They agree
+with the usual ordinary character definition of weights when $K$
+is a splitting field for the local quotients $N_G(Q)/Q$.
+
+\section{Weights and their local representations}
+
+\begin{definition}
+A character $\theta\in\Irr_K(H)$ has \emph{defect zero} if it is
+afforded by a simple $K H$-module $V$ such that
+\[
+ (\dim_K V)_\ell=|H|_\ell.
+\]
+Denote the set of these characters by
+$\operatorname{dz}_\ell(H)$. Since $\theta(1)=\dim_K V$, the numerical
+condition is equivalent to $\theta(1)_\ell=|H|_\ell$.
+
+In \emph{character form}, a weight of $G$ is a pair $(Q,\theta)$, where $Q$ is
+an $\ell$-radical subgroup of $G$ and
+\[
+ \theta\in\operatorname{dz}_\ell(N_G(Q)/Q).
+\]
+In \emph{representation form}, a weight is a pair $(Q,V)$ with the same
+condition on $Q$, where $V$ is a simple finite dimensional
+$K[N_G(Q)/Q]$-module of defect zero.
+\end{definition}
+
+At a fixed subgroup $Q$, two weights in representation form are identified
+when their local representations are isomorphic. Two weights in character form
+are identified when their local character functions are equal.
+The condition that $Q$ is radical is included in these definitions.
+
+\begin{proposition}[Comparison by characters]
+Taking characters gives a bijection from weights in representation form up to
+local isomorphism to weights in character form. It induces an
+$\Aut(G)$-equivariant bijection on $G$-conjugacy classes of weights.
+\end{proposition}
+\begin{proof}
+Trace is invariant under isomorphism, so the map is well defined.
+Character separation for finite groups over fields of characteristic
+zero gives injectivity, as in Section~\ref{lib:ordinary:realisations}.
+A simple representation affording a character of defect zero gives
+surjectivity. Transport along a group isomorphism preserves dimension
+and simplicity, and taking traces commutes with this transport.
+The bijection therefore commutes with automorphisms and descends to
+conjugacy classes.
+\end{proof}
+
+\begin{implementation}
+The local representations use Mathlib's \lean{FDRep}, with
+\lean{FDRep.char_iso} giving invariance of the trace under isomorphism.
+The Lean comparison maps take
+\lean{ModularRep.LocalSplittingCharacterInput} in
+\module{ModularRep.WeightCharacterBridge} as an explicit argument.
+Its fields require that the trace of every simple local representation
+has an irreducible realisation and that equal traces determine simple
+local representations up to isomorphism. These properties follow
+mathematically from the definition of $\Irr_K$ and the character
+separation argument in Section~\ref{lib:ordinary:realisations}.
+The record does not require $K$ to be a splitting field.
+The character map is
+\lean{ModularRep.LocalSplittingCharacterInput.characterOfSimple}.
+The two bijections are
+\lean{ModularRep.CharacterWeight.isoClassEquiv} and
+\lean{ModularRep.CharacterWeight.conjugacyClassEquiv}, for
+\lean{ModularRep.CharacterWeight}.
+\end{implementation}
+
+\section{Automorphisms and conjugacy classes}
+
+An isomorphism $\phi:H\to H'$ transports a representation by composition
+with $\phi^{-1}$. Its character is therefore $\theta\circ \phi^{-1}$.
+This is also the convention for transport of class functions in
+\cite[Problem~2.1]{Navarro1998}.
+In particular, $\alpha\in\Aut(G)$ sends a weight at $Q$ to a weight at
+$\alpha(Q)$ through the induced isomorphism
+\[
+ \bar\alpha:N_G(Q)/Q\longrightarrow
+ N_G(\alpha(Q))/\alpha(Q).
+\]
+The transported local character is $\theta\circ\bar\alpha^{-1}$.
+Composition of these transports gives the usual left action of
+$\Aut(G)$. The corresponding right action uses $\alpha^{-1}$, so its
+subgroup coordinate is $\alpha^{-1}(Q)$.
+\begin{implementation}
+\lean{ModularRep.OrdinaryIrreducibleCharacter.mapEquiv_apply}
+gives the formula $\theta(\phi^{-1}h')$.
+Representation transport uses Mathlib's restriction functor
+\lean{Action.res} and the equivalence \lean{Action.resEquiv}.
+ModularRep constructs the induced normaliser quotient maps and proves
+that the resulting weight transports preserve radicality and defect zero.
+The actions on weights in representation and character form are defined before
+passing to their classes.
+\end{implementation}
+
+Conjugation in $G$ gives an equivalence relation on weights.
+Write $\Alp(G)$ for the set of weights in character form modulo this relation.
+Automorphisms act on $\Alp(G)$ because they preserve conjugacy.
+Local isomorphism and conjugacy in $G$ have different roles:
+local isomorphism keeps $Q$ fixed, whereas conjugation may replace it
+by another subgroup.
+
+\begin{proposition}[Weights with a fixed radical subgroup]
+\label{lib:weights:representative}
+Fix an $\ell$-radical subgroup $Q\leq G$. Let $\Alp(G)_{[Q]}$ be the
+set of $G$-conjugacy classes of weights in character form whose radical
+subgroup is conjugate to $Q$. Then
+\[
+ \operatorname{dz}_\ell(N_G(Q)/Q)\longrightarrow\Alp(G)_{[Q]},
+ \qquad \theta\longmapsto[(Q,\theta)]
+\]
+is a bijection.
+\end{proposition}
+\begin{proof}
+Every class in $\Alp(G)_{[Q]}$ has a representative at $Q$, obtained
+by conjugating its radical subgroup to $Q$. This proves surjectivity.
+
+If $(Q,\theta)$ and $(Q,\eta)$ are conjugate by $g\in G$, then
+$g\in N_G(Q)$. The induced automorphism of $N_G(Q)/Q$ is conjugation
+by $gQ$. Characters are constant on conjugacy classes, so it fixes
+$\theta$. Hence $\eta=\theta$, proving injectivity. The same argument
+shows that the character obtained by transporting to $Q$ is
+independent of the chosen conjugating element.
+\end{proof}
+\begin{implementation}
+The bijection is
+\lean{ModularRep.CharacterWeight.localDefectZeroEquivWeightRadicalFibre}.
+Its restriction to a block is
+\lean{representativeDZEquivWeightBlockRadicalFibre} in the same
+namespace, with the local block induction hypotheses described below.
+\end{implementation}
+
+\section{The block of a weight}
+
+Fix compatible ordinary and modular character conventions for the
+local groups, including the splitting and root identifications needed
+for their block assignments.
+Let $(Q,\theta)$ be a weight. Inflate $\theta$ to $N_G(Q)$ and let
+$b$ be its block. The weight belongs to an ambient block $B$ when
+Brauer block induction is defined and $b^G=B$
+\cite[p.~90]{Navarro1998}.
+
+Recall the definition of this induction. If $H\leq G$ and
+$\lambda_b:Z(kH)\to k$ is the central character of a block $b$,
+extend it linearly to $Z(kG)$ by
+\[
+ \lambda_b^G(C^+)=\lambda_b((C\cap H)^+)
+\]
+for each conjugacy class $C$ of $G$. Here $C^+$ denotes the sum of
+the elements of $C$ in the group algebra, and $k$ is algebraically
+closed of characteristic $\ell$.
+If $\lambda_b^G$ is an algebra homomorphism, it is the central
+character of a unique block, denoted by $b^G$.
+This is Brauer's definition of induced block
+\cite[p.~87]{Navarro1998}.
+For an $\ell$-subgroup $P$, the inclusions
+\[
+ P C_G(P)\leq H\leq N_G(P)
+\]
+ensure that induction is defined for every block of $H$
+\cite[Theorem~4.14]{Navarro1998}.
+
+Write $\operatorname{Bl}_\ell(G)$ for the set of $\ell$-blocks of $G$.
+Suppose the local block assignment, inflation and block induction
+commute with automorphisms. Suppose also that inner automorphisms fix
+ambient blocks. Then the ambient block assigned to a weight depends
+only on its $G$-conjugacy class, and the resulting map
+$\Alp(G)\to\operatorname{Bl}_\ell(G)$ is equivariant.
+The corresponding compatibility of Brauer block induction with group
+isomorphisms is stated in \cite[Problem~4.4]{Navarro1998}.
+
+\begin{implementation}
+\lean{ModularRep.CharacterWeight.LocalBlockInductionOperations} in
+\module{ModularRep.CharacterWeightBlockAssignment} supplies the local
+character block and inflation. It also supplies finite complete block
+decompositions of $G$ and the relevant normalisers, together with their
+block central characters, and multiplicativity of the induced central
+function. These data determine the ambient block.
+\lean{ModularRep.CharacterWeight.LocalBlockInductionSource} adds
+compatibility with automorphisms and invariance under inner
+automorphisms. Its maps
+\lean{LocalBlockInductionSource.weightBlock} and
+\lean{LocalBlockInductionSource.weightBlock_transport}
+give the assignment on conjugacy classes and its equivariance.
+The identification of the supplied operations with ordinary and
+modular block theory is a hypothesis.
+\end{implementation}
+
+\begin{example}[Local maps from a global correspondence]
+Let $\Omega:X\to\Alp(G)$ be a bijection. For each representative $Q$
+of a radical conjugacy class, set
+\[
+ X_Q=\{x\in X:\Omega(x)\in\Alp(G)_{[Q]}\}.
+\]
+These subsets partition $X$. Restricting $\Omega$ and applying
+Proposition~\ref{lib:weights:representative} gives a bijection
+\[
+ X_Q\longrightarrow\operatorname{dz}_\ell(N_G(Q)/Q).
+\]
+If $\Omega$ is equivariant, these local maps commute with transport
+of subgroups and characters.
+The construction for Brauer characters with a fixed compatible root
+embedding is in
+\module{ModularRep.PaperProofs.IntrinsicGlobalToRepresentativeMaps}.
+\end{example}
+
+\newpage
+\section{Quotient by the \texorpdfstring{$\ell$}{ell}-core}
+
+\begin{proposition}[Transport through the normal $\ell$-core]
+Let $P=O_\ell(G)$. A weight $(Q,V)$ of $G$ in representation form determines
+a weight in representation form of $G/P$ with radical subgroup $Q/P$ and
+local representation transported along
+\[
+ N_G(Q)/Q\simeq N_{G/P}(Q/P)/(Q/P).
+\]
+Conversely, a weight in representation form of $G/P$ determines one of $G$
+by taking the full inverse image of its radical subgroup and
+transporting the local representation along the inverse isomorphism.
+Both constructions preserve the dimension of the local representation.
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{lib:groups:core-contained}, every radical subgroup
+$Q$ contains $P$. Proposition~\ref{lib:groups:radical-quotient}
+identifies radicality before and after quotienting by $P$.
+The normaliser quotient isomorphism then transports the local
+representation. An isomorphism of groups preserves simplicity,
+dimension and group order, and hence preserves defect zero.
+The same reasoning applies to the full inverse image of a radical
+subgroup of $G/P$.
+\end{proof}
+\begin{implementation}
+The two constructions are
+\lean{ModularRep.RepresentationWeight.quotientPCore} and
+\lean{ModularRep.RepresentationWeight.liftFromQuotientPCore}
+in \module{ModularRep.NormalCoreTransport}.
+They construct individual weights. An inverse equivalence on
+conjugacy classes is a separate assertion.
+\end{implementation}
+
+A comparison for weights in a specified block also requires
+compatibility of the character conventions and block assignments on
+the two local quotients. For applications involving modular character
+triples, the required triple relation must hold for the transported
+local character, with the specified roots and block operations.

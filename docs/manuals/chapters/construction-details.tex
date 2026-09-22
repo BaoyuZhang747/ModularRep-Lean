@@ -1,0 +1,181 @@
+\chapter{Further constructions in the source library}
+\label{app:construction-details}
+
+The preceding chapters follow the manuscript arguments. This appendix
+records related auxiliary constructions in the source library. Their
+hypotheses concern the same characters, groups, coefficient fields and
+actions as their conclusions. They do not provide instances of the full
+application hypotheses.
+
+\section{Central kernels and local ordinary characters}
+
+Let $X$ be a finite perfect group, let $\ell$ be prime, and suppose that
+$\ell\nmid |Z(X)|$. Fix an algebraically closed modular field $k$ of characteristic $\ell$,
+an ordinary field $K$ of characteristic zero and a root correspondence
+$\iota$. For a representation $\rho_\varphi$ affording an irreducible
+Brauer character $\varphi$, put
+\[
+ Z_\varphi=Z(X)\cap\ker\rho_\varphi,
+ \qquad \overline X_\varphi=X/Z_\varphi.
+\]
+Factoring $\rho_\varphi$ through this quotient preserves irreducibility.
+With the induced root convention, inflation recovers $\varphi$.
+Perfectness shows that the centre of the quotient is the image of
+$Z(X)$: commutators with an element central modulo $Z_\varphi$ define
+a homomorphism from $X$ to the central subgroup $Z_\varphi$, and that
+homomorphism is trivial. The quotient character is therefore faithful
+on the quotient centre.
+
+For a weight $(Q,\theta)$ in the block of $\varphi$, the local reduction
+and block compatibility hypotheses identify the scalar character of
+its local Brauer character with that of $\varphi$ on $Z(X)$.
+Consequently $Z_\varphi$ is also in the local modular kernel. Root
+agreement on these central elements transfers this equality to the
+ordinary character $\theta$. Under the specified normaliser quotient
+and radicality hypotheses, ordinary descent constructs
+$\overline\theta$ with
+\[
+ \theta=\overline\theta\circ q_Q,
+ \qquad
+ q_Q:N_X(Q)/Q\longrightarrow
+ N_{\overline X_\varphi}(\overline Q)/\overline Q.
+\]
+The map $q_Q$ is the map induced by this central quotient.
+Its surjectivity gives uniqueness of $\overline\theta$.
+Block descent additionally uses the complete quotient block
+decompositions and preservation of the relevant primitive idempotents;
+the character factorisation alone does not supply those facts.
+
+\begin{samepage}
+\begin{implementation}
+The modules
+\module{ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierFullCenterScalar}
+and
+\module{ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierOwnCentralQuotient}
+contain the scalar and quotient constructions. The former proves
+\lean{full_center_scalar_eq}; the latter constructs
+\lean{ownCentralQuotientBrauerSource}. The hypotheses on local block
+operations, quotient normalisers and coefficient conventions are retained.
+\end{implementation}
+\end{samepage}
+
+An equivariant block-preserving bijection
+$\Omega:\IBr_\iota(X)\simeq\mathcal W(X)$ also determines ordinary
+local maps. For each radical subgroup $Q$, take the Brauer fibre
+\[
+ \{\varphi:\rad(\Omega\varphi)=[Q]\}.
+\]
+The map $\theta\mapsto[(Q,\theta)]$ identifies the defect zero
+characters of $N_X(Q)/Q$ with weight classes whose radical subgroup
+has conjugacy class $[Q]$. Its inverse defines $\Omega_Q$ by
+\[
+ [(Q,\Omega_Q(\varphi))]=\Omega(\varphi).
+\]
+Injectivity gives the covariance of these local maps under
+automorphisms stabilising $Q$. The partition retains empty fibres.
+Its nonempty parts are distinguished by their radical classes;
+equality of two empty parts does not identify their labels.
+
+\section{Extensions and compatible roots}
+
+The local extension construction for $\varphi$ uses a finite ambient
+group $A$ with a normal subgroup $B\cong\overline X_\varphi$ and a map
+$f:X\to A$ with kernel $Z_\varphi$. For $D=N_A(f(Q))$, the specified
+local map $f_N:N_X(Q)\to D$ satisfies
+\[
+ \iota_D f_N=f\iota_{N_X(Q)},
+ \qquad \im(f_N)=B\cap D.
+\]
+The ambient hypotheses include $C_A(B)=Z(A)$ and
+$\ell\nmid |Z(A)|$. The quotient $A/Z(A)$ identifies with the stabiliser of the original
+character, using the opposite automorphism group to implement the
+manuscript's right action. The witnesses include global and local
+Brauer extensions, their irreducible restrictions for every
+$B\leq J\leq A$, and the required block induction relations.
+
+The raw witness permits separate root correspondences. The module
+\module{ModularRep.PaperProofs.SpathRootCoherence} adds the agreement
+conditions needed by the full inductive certificate.
+For \lean{OriginalPacketRoots}, the original and quotient conventions
+agree on the quotient roots; the global extension convention agrees
+with the quotient and local extension conventions, and with the
+conventions on $J$ and $D\cap J$ for every intermediate $J$.
+When the original group embeds in the extension group,
+\lean{ActualPacketRoots} additionally requires agreement with its
+original roots. Factoring through the central kernel is what permits
+the first construction to use the weaker condition.
+
+Let $H$ be a finite group and $N\lhd H$ with $[H:N]\leq 2$.
+A finite dimensional irreducible representation $\rho$ of $N$ over an
+algebraically closed field, invariant under conjugation by $H$, extends
+to $H$ on the same vector space. In the index two case, choose
+$t\in H\setminus N$ and an invertible
+intertwiner $T$. Schur's lemma makes
+$\rho(t^2)^{-1}T^2$ a nonzero scalar $c$. Rescaling $T$ by a square
+root of $c^{-1}$ gives an operator $U$ satisfying
+$U^2=\rho(t^2)$; together with $\rho$, this defines the representation
+on both cosets. The construction also applies to a nonsplit extension.
+It is implemented in
+\module{ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierIndexTwoExtension}.
+
+These extension constructions do not turn a numerical bijection into
+the full inductive condition without the remaining block and root
+hypotheses. In the triple-cover applications, compatible replacement
+witnesses are supplied for the same numerical correspondence, as
+described in the sporadic chapter. Their existence remains an assumption.
+
+\section{Selected Type B constructions}
+
+The rank-three Morita construction keeps one Levi character, its
+representation, its actual field stabiliser and its chosen Jordan
+image throughout. The base functor is the balanced tensor product
+with the specified block bimodule. The upper functor acts on the
+extensions by the same field stabiliser. Their restriction square
+gives
+\[
+ \operatorname{Res}_G\widehat{\mathcal F}
+ \cong\mathcal F\operatorname{Res}_L.
+\]
+Applying the upper functor transfers a Levi extension to the ambient
+group. Conversely, essential surjectivity of the upper equivalence
+and full faithfulness of the base equivalence recover an extension
+of the original Levi representation. The stated equality of tensor
+characters with the Jordan map identifies the resulting character.
+These are hypotheses and deductions for the selected bimodule and
+actions, rather than an interpretation of an arbitrary abstract
+Morita equivalence.
+
+\begin{implementation}
+The selected result is
+\lean{ModularRep.PaperProofs.TypeBRankThreeMoritaSelectedApplication.actual_selected_morita_extension}.
+The separate module
+\module{ModularRep.PaperProofs.TypeBRankThreeSameFieldAutomorphism}
+retains the identification between the relevant outer action and the
+normalised field action on this same union of blocks. The field
+stabiliser is not identified with a full automorphism stabiliser by
+the Morita equivalence alone.
+\end{implementation}
+
+For a finite direct product $G=\prod_iG_i$ of finite groups, a radical $2$-subgroup $R$ is
+the product of its coordinate images $R_i$. The argument uses
+radicality, the normaliser condition for finite $2$-groups and the
+product formula for the $2$-core. The actual coordinate maps then give
+\[
+ N_G(R)/R\cong\prod_iN_{G_i}(R_i)/R_i.
+\]
+The supplied ordinary tensor realisations, their unique factorisation
+and the defect zero criterion identify the defect zero characters on
+these quotients. Passing to conjugacy
+classes gives the product correspondence on weights. To retain blocks,
+the proof separately uses the ordinary block product identities and
+checks the central character equation along the product normaliser
+inclusion. The resulting
+\lean{ModularRep.PaperProofs.TypeBRankThreeProductRawWeightBlock.rawWeightBlock_primitive}
+therefore identifies the ambient primitive block induced from the
+actual ordinary local blocks.
+\begin{implementation}
+The three Type B modules named in this section are not imported by any
+other module in the current formalisation. They record auxiliary
+constructions; this section does not assert their integration into the
+manuscript deductions.
+\end{implementation}

@@ -1,0 +1,464 @@
+\chapter{Stable lattices and reduction}
+\label{chap:library:reduction}
+
+A stable lattice in an ordinary representation gives a modular
+representation by reduction modulo the maximal ideal. Different lattices
+may have nonisomorphic reductions, but the multiplicities of their simple
+composition factors agree. The decomposition homomorphism assigns this
+common Grothendieck class to the ordinary representation.
+
+The construction below identifies tensor reduction with reduction modulo
+the maximal ideal. Lattice independence and the decomposition homomorphism
+then follow from the ordinary and Brauer character identity in
+Hypothesis~\ref{lib:reduction:character-hypothesis}.
+
+Throughout the chapter, $G$ is a finite group and $\ell$ is prime.
+The coefficient fields for ordinary and modular representations are
+$K$ and $k$, respectively. The integral coefficient ring is denoted by
+$\mathcal O$. Each section states the coefficient hypotheses it uses.
+
+\section{Integral coefficients and the residue map}
+\label{lib:reduction:modular-system}
+
+\begin{definition}
+A complete $\ell$-modular system $(K,\mathcal O,k)$ consists of a complete
+discrete valuation ring $\mathcal O$, its fraction field $K$ of
+characteristic zero, a field $k$ of characteristic $\ell$, and a specified
+isomorphism
+\[
+ \mathcal O/\mathfrak m\simeq k,
+\]
+where $\mathfrak m$ is the maximal ideal of $\mathcal O$. Completeness is
+with respect to the $\mathfrak m$-adic topology. The residue map
+$\pi:\mathcal O\to k$ is the composite of the quotient map with this
+isomorphism.
+\end{definition}
+
+The map $\pi$ is onto and has kernel $\mathfrak m$. Its choice specifies
+the $\mathcal O$-algebra structure on $k$ used in tensor reduction.
+Splitting hypotheses for $G$ and a correspondence between roots of unity
+in $k$ and $K$ are additional conditions. Algebraic closure of the
+fraction field $K$ is not required.
+
+\begin{implementation}
+The definition in \module{ModularRep.ModularSystem} includes the prime,
+the complete discrete valuation ring, its fraction field, the two
+characteristics, and the residue field isomorphism \lean{residueEquiv}.
+The definitions \lean{ModularSystem.residue} and
+\lean{ModularSystem.residueAlgebra} give $\pi$ and the induced
+$\mathcal O$-algebra structure on $k$.
+The theorems \lean{residue_surjective} and \lean{ker_residue} prove the
+two properties of $\pi$ used below. All reductions associated with this
+modular system use \lean{residueAlgebra}.
+\end{implementation}
+
+\section{Constructing a stable lattice}
+\label{lib:reduction:stable-lattice}
+
+\begin{samepage}
+For this section it is enough that $\mathcal O$ is a commutative ring,
+$K$ is a field with an $\mathcal O$-algebra structure, and $V$ is a finite
+dimensional $K$-space, with its compatible $\mathcal O$-module structure.
+Let $\rho:G\to\GL_K(V)$ be a representation.
+
+\end{samepage}
+
+\begin{definition}
+An $\mathcal O$-lattice in $V$ is a finitely generated
+$\mathcal O$-submodule $L\leq V$ whose $K$-linear span is $V$.
+It is stable if $\rho(g)L\subseteq L$ for every $g\in G$.
+\end{definition}
+
+When $\mathcal O$ is a discrete valuation ring with fraction field $K$,
+this agrees with the usual notion of a full lattice. Only finite
+generation and full span are needed for the construction below. For the
+usual construction over a discrete valuation ring, see, for example,
+\cite[\S15.2]{Serre1977}.
+
+\begin{proposition}[Stable closure of a lattice]
+\label{lib:reduction:existence}
+If $L_0$ is an $\mathcal O$-lattice in $V$, then
+\[
+ L=\sum_{g\in G}\rho(g)L_0
+\]
+is a stable $\mathcal O$-lattice containing $L_0$. In particular every
+finite dimensional $K$-representation of a finite group has a stable
+$\mathcal O$-lattice.
+\end{proposition}
+\begin{proof}
+Each image $\rho(g)L_0$ is finitely generated over $\mathcal O$.
+There are only finitely many such submodules, so their sum is finitely
+generated. The term $g=1$ shows $L_0\subseteq L$, which implies that the
+$K$-span of $L$ is all of $V$. For $h\in G$,
+$\rho(h)\rho(g)L_0=\rho(hg)L_0$ is another summand. Thus $\rho(h)$
+preserves $L$.
+
+For existence, choose a finite $K$-basis $b_1,\ldots,b_n$ of $V$ and
+take $L_0=\sum_i\mathcal O b_i$. This submodule is finitely generated
+and spans $V$ over $K$, so the construction applies.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.StableLattice} defines \lean{StableLattice} as a stable
+subrepresentation satisfying Mathlib's \lean{IsLattice} predicate. The orbit sum is
+\lean{StableLattice.orbitSpan}, represented by the supremum of the image
+submodules. Its containment, stability, finite generation, and full span
+are proved in \lean{le_orbitSpan}, \lean{orbitSpan_stable},
+\lean{orbitSpan_fg}, and \lean{orbitSpan_isLattice}. The resulting lattice
+is \lean{stableClosure}, and the basis construction is \lean{ofBasis}.
+The construction \lean{ofBasis} also applies when $K$ is a commutative
+ring and a finite basis is given. It requires neither a discrete valuation
+nor completeness.
+\end{implementation}
+
+The integral representation on $L$ is obtained by restricting $\rho(g)$
+to $L$ for each $g$. Once an $\mathcal O$-algebra structure on $k$ is
+specified, define its reduction by
+\[
+ \overline L=k\otimes_{\mathcal O}L,
+ \qquad
+ g(a\otimes x)=a\otimes\rho(g)x.
+\]
+If $x_1,\ldots,x_t$ generate $L$ over $\mathcal O$, the tensors
+$1\otimes x_1,\ldots,1\otimes x_t$ generate $\overline L$ over $k$.
+Indeed expansion in the generators and the balancing relation move all
+$\mathcal O$-coefficients to the first tensor factor. Hence the reduction
+is finite dimensional whenever $k$ is a field.
+
+\begin{implementation}
+The declarations \lean{StableLattice.integralRepresentation} and
+\lean{StableLattice.reduction} construct these actions.
+\lean{reduction_apply_tmul} gives the action on pure tensors, and
+\lean{reduction_moduleFinite} proves finite generation by the tensors of
+an arbitrary finite generating set. In
+\module{ModularRep.StableLatticeKZero}, \lean{chosenStableLattice}
+uses a finite basis of an \lean{FDRep} object, and
+\lean{stableLatticeReduction} is its finite dimensional reduction.
+\end{implementation}
+
+\section{Tensor reduction as an equivariant quotient}
+\label{lib:reduction:quotient}
+
+The quotient description of reduction is valid under weaker hypotheses
+than those of a modular system. Let $\pi:\mathcal O\to k$ be a
+surjective homomorphism of commutative rings, and write $I=\ker\pi$.
+For an $\mathcal O$-module $M$, the notation $IM$ means the submodule
+generated by the products $rx$ with $r\in I$ and $x\in M$.
+The quotient $M/IM$ is a $k$-module through
+$\mathcal O/I\simeq k$. Write $\overline x=x+IM$ for the class of $x\in M$.
+
+\begin{proposition}[Reduction modulo an ideal]
+\label{lib:reduction:tensor-quotient-theorem}
+There is a $k$-linear isomorphism
+\[
+ \Phi:k\otimes_{\mathcal O}M\xrightarrow{\sim}M/IM,
+ \qquad a\otimes x\longmapsto a\overline x,
+ \qquad \Phi^{-1}(\overline x)=1\otimes x.
+\]
+If $M$ carries an $\mathcal O$-linear action of $G$, then $IM$ is stable,
+the action descends by $g\overline x=\overline{gx}$, and $\Phi$ intertwines
+the tensor and quotient actions.
+\end{proposition}
+\begin{proof}
+Surjectivity gives the isomorphism $\mathcal O/I\simeq k$.
+The standard tensor quotient isomorphism identifies
+$(\mathcal O/I)\otimes_{\mathcal O}M$ with $M/IM$. Using
+$\mathcal O/I\simeq k$ in the first tensor factor gives $\Phi$ with the stated
+formula. The quotient relation makes $\overline x\mapsto1\otimes x$
+well defined: if $r\in I$, then
+$1\otimes rx=\pi(r)\otimes x=0$.
+
+Every group operator is $\mathcal O$-linear, so it sends $rx$ to $r(gx)$
+and preserves $IM$. This defines the quotient action directly. For a pure
+tensor,
+\[
+ \Phi\bigl(g(a\otimes x)\bigr)=a\overline{gx}
+   =g(a\overline x)=g\Phi(a\otimes x).
+\]
+Additivity extends the identity to the whole tensor product.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.ReductionModulo} defines $IM$ as
+\lean{ReductionModulo.kernelSMul}. Its \lean{tensorQuotientEquiv}
+combines Mathlib's \lean{TensorProduct.quotTensorEquivQuotSMul} with
+its first isomorphism theorem for algebras. The local construction
+transports the quotient scalar action and uses surjectivity to obtain
+the $k$-linear equivalence. The versions for an explicit ring map and a
+specified ideal are \lean{tensorQuotientEquivOfSurjectiveRingHom} and
+\lean{tensorQuotientEquivOfKernelEq}.
+
+\module{ModularRep.ReductionModuloEquivariance} first constructs
+\lean{ReductionModulo.quotientRepresentation} by descending the integral
+action. The intertwining identity is
+\lean{tensorQuotientEquiv_isIntertwining}, and the resulting equivalence
+of representations is \lean{tensorQuotientRepresentationEquiv}.
+\end{implementation}
+
+For a modular system, $I=\mathfrak m$ and the proposition gives
+$\overline L\simeq L/\mathfrak mL$ as $kG$-modules. This is
+\lean{stableLatticeReductionQuotientEquiv}. Its underlying linear
+equivalence agrees with
+\lean{stableLatticeReductionCarrierQuotientEquiv}.
+For a fixed stable lattice, this isomorphism does not require $G$ to be finite.
+
+\section{Character compatibility and lattice independence}
+\label{lib:reduction:compatibility}
+
+Fix a complete $\ell$-modular system. For the character construction in
+this section, additionally assume that $k$ is algebraically closed and
+choose a finite root correspondence $\iota$ for $G$. The field $K$ has
+characteristic zero and is the fraction field of $\mathcal O$. Write
+\[
+ \operatorname{br}_{\iota}:K_0(kG)\longrightarrow
+     \operatorname{CF}_{\ell'}(G,K),
+ \qquad
+ c:K_0(KG)\longrightarrow\operatorname{CF}_{\ell'}(G,K)
+\]
+for the Brauer character homomorphism and the homomorphism taking an
+ordinary representation class to its trace character restricted to
+$\ell$-regular elements. The first is injective by
+Proposition~\ref{lib:kzero:brauer-injective}. The second is defined by
+ordinary trace additivity and the universal property of the Grothendieck group.
+
+\begin{hypothesis}[Reduction compatibility]
+\label{lib:reduction:character-hypothesis}
+Write $G_{\ell'}$ for the set of $\ell$-regular elements. For every finite
+dimensional $K$-representation $V$, with ordinary trace character $\chi_V$,
+and every stable $\mathcal O$-lattice $L$ in $V$, the fixed root
+correspondence satisfies
+\[
+ \varphi_{k\otimes_{\mathcal O}L}
+      =\chi_V\big|_{G_{\ell'}}.
+\]
+\end{hypothesis}
+
+The reduction identity with compatible roots is standard
+\cite[Corollary~2.9]{Navarro1998}.
+Here the residue map and the root correspondence are specified
+separately. Their compatibility is required: the identity is assumed
+for every stable lattice with these same choices.
+
+\begin{implementation}
+This hypothesis is \lean{StableReductionBrauerCharacterCompatibility}.
+It is an additional condition on \lean{ModularSystem} and
+\lean{PrimeRegularRootEmbedding}.
+\end{implementation}
+
+Lattice independence and the decomposition homomorphism are treated in
+\cite[\S15.2, Theorem~32 and the following discussion]{Serre1977}. That account proves lattice independence by
+comparing lattices directly. It also notes that completeness is unnecessary
+for that argument. Under the coefficient hypotheses and character identity
+stated above, lattice independence also follows from injectivity of the
+Brauer character homomorphism, as in the proof below.
+
+\begin{theorem}[Decomposition homomorphism]
+\label{lib:reduction:decomposition-theorem}
+Under Hypothesis~\ref{lib:reduction:character-hypothesis}, there is a unique
+homomorphism of abelian groups
+\[
+ d:K_0(KG)\longrightarrow K_0(kG)
+ \quad\text{such that}\quad
+ \operatorname{br}_{\iota}\circ d=c.
+\]
+For every stable lattice $L$ in $V$, it satisfies
+$d([V])=[k\otimes_{\mathcal O}L]$. Consequently two stable lattices in
+the same ordinary representation have equal modular Grothendieck classes.
+\end{theorem}
+\begin{proof}
+Choose one stable lattice for every ordinary representation, using
+Proposition~\ref{lib:reduction:existence}, and assign its reduction class
+to the representation. If $L_1,L_2$ lie in the same $V$, compatibility gives
+\[
+ \operatorname{br}_{\iota}([\overline L_1])
+  =c([V])
+  =\operatorname{br}_{\iota}([\overline L_2]).
+\]
+Injectivity implies $[\overline L_1]=[\overline L_2]$. The same argument
+using invariance of $c$ under isomorphism compares choices for isomorphic
+ordinary representations.
+
+For a short exact sequence with terms $U,V,W$, let $a_U,a_V,a_W$ be the
+chosen reduction classes. Ordinary trace additivity gives
+\[
+ \operatorname{br}_{\iota}(a_V)
+   =c([V])=c([U])+c([W])
+   =\operatorname{br}_{\iota}(a_U+a_W).
+\]
+Injectivity gives $a_V=a_U+a_W$.
+The universal property therefore defines $d$. On every object class,
+compatibility gives $\operatorname{br}_{\iota}d=c$, so the two
+homomorphisms agree everywhere. Comparing $d([V])$ with any other stable
+lattice reduction proves the asserted formula for every $L$.
+Finally, if $d'$ has the same character identity, then
+$\operatorname{br}_{\iota}(d'(x))=\operatorname{br}_{\iota}(d(x))$
+for every $x$. Injectivity gives $d'=d$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.ExactCharacterBridge} proves the same assertion for
+homomorphisms from the two Grothendieck groups to an abelian group $A$,
+provided the modular homomorphism is injective and the character identity
+holds for every stable lattice. The resulting definitions are
+\lean{ExactCharacterBridge.toExactDecompositionMapData} and
+\lean{ExactCharacterBridge.decompositionMap}.
+
+\module{ModularRep.BrauerDecompositionMap} specialises this argument to
+ordinary and Brauer characters. Its
+\lean{exactCharacterBridgeOfStableReduction} uses
+\lean{brauerCharacterKZeroHom_injective} for injectivity on $K_0(kG)$.
+The resulting homomorphism is \lean{decompositionMapOfStableReduction},
+its character identity is
+\lean{decompositionMapOfStableReduction_characterSquare}, and its
+uniqueness is \lean{existsUnique_decompositionMapOfStableReduction}.
+The declarations
+\lean{decompositionMap_classOf_eq_stableLatticeReduction} and
+\lean{stableLatticeReductionClass_eq} give the two lattice statements.
+\end{implementation}
+
+By Theorem~\ref{lib:kzero:basis-theorem}, equality of these
+classes is equivalent to equality of their composition multiplicities.
+
+\begin{example}[Decomposition numbers]
+\label{lib:reduction:coefficient-example}
+For a simple $kG$-module $S$, consider the coefficient of $[S]$ in
+$d([V])$ with respect to the basis of simple module classes. If $L$ is any
+stable lattice in $V$, this coefficient is $m_S(\overline L)$ and is a nonnegative integer.
+For a short exact sequence $0\to U\to V\to W\to0$, it is the sum of
+the coefficients for $U$ and $W$. For irreducible $V$, these coefficients
+are the decomposition numbers.
+This definition makes sense over the coefficient fields fixed here. To
+identify them with the usual character decomposition numbers for $G$, one
+also chooses $K$ to be a splitting field for $G$.
+\end{example}
+
+\section{Twists and tensor products}
+\label{lib:reduction:naturality}
+
+For $\alpha\in\Aut(G)$, define the twist of $V$ by precomposition:
+$\rho^{\alpha}(g)=\rho(\alpha(g))$. The induced operation on exact
+$K_0$ is denoted by $T_{\alpha}$. It comes from an exact autoequivalence,
+and the same notation is used over $K$ and $k$.
+
+\begin{proposition}[Compatibility with automorphisms]
+\label{lib:reduction:twist-theorem}
+Under the hypotheses of Theorem~\ref{lib:reduction:decomposition-theorem},
+\[
+ d(T_{\alpha}x)=T_{\alpha}d(x)
+ \qquad (\alpha\in\Aut(G),\ x\in K_0(KG)).
+\]
+\end{proposition}
+\begin{proof}
+Both character homomorphisms commute with precomposition by $\alpha$.
+Applying $\operatorname{br}_{\iota}$ to the two sides therefore gives
+the same function, namely $c(x)\circ\alpha$ on $G_{\ell'}$.
+Injectivity proves the equality in $K_0(kG)$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.KZeroTwist} defines \lean{FDRep.twistEquivalence}
+by applying Mathlib's \lean{Action.resEquiv} to finite dimensional
+representations. It constructs the induced map \lean{twistKZero} and proves
+\lean{ordinaryCharacterKZero_twist} and
+\lean{brauerCharacterKZeroHom_twist}. The consequence above is
+\lean{decompositionMapOfStableReduction_twist}.
+The convention is a right action: with automorphism multiplication given
+by composition, \lean{twistKZero_comp} states
+$T_{\alpha}\circ T_{\beta}=T_{\beta\alpha}$.
+\end{implementation}
+
+For a linear character $\lambda:G\to k^{\times}$, write $L_{\lambda}V$
+for the representation on the same vector space with action
+$g\cdot v=\lambda(g)\rho(g)v$. This is tensoring by the corresponding
+one dimensional representation. Tensoring by $\lambda^{-1}$ is its
+inverse, so it is an exact autoequivalence. Use $L_{\lambda}$ also for
+the induced operation on $K_0$.
+
+Twisting and tensoring satisfy
+\[
+ T_\alpha L_\lambda=L_{\lambda\circ\alpha}T_\alpha.
+\]
+The two composite exact functors are naturally isomorphic: the identity
+on the representation space intertwines their equal actions. This
+argument applies over either coefficient field and requires neither a
+modular system nor a formula for Brauer characters of tensor products.
+The natural isomorphism is
+\lean{ModularRep.FDRep.linearCharacterTwistTwistIso}, and its consequence
+on $K_0$ is \lean{ModularRep.twistKZero_linearCharacterTwistKZero}, both
+in \module{ModularRep.KZeroLinearCharacterSemidirect}.
+
+For a modular linear character $\lambda$, write $\widehat\lambda(g)$
+for the lift of $\lambda(g)$ through $\iota$, for $g\in G_{\ell'}$.
+Let $\lambda_K:G\to K^{\times}$ and $\lambda_k:G\to k^{\times}$
+be linear characters, and assume that
+$\lambda_K\big|_{G_{\ell'}}=\widehat{\lambda_k}$.
+By Theorem~\ref{lib:brauer:tensor-source},
+\[
+ \varphi_{L_{\lambda}V}=\widehat\lambda\,\varphi_V
+ \qquad(V\in\operatorname{FDRep}_k(G),\ \lambda:G\to k^{\times})
+\]
+on $G_{\ell'}$, with pointwise multiplication on the right.
+For the general tensor product formula, see
+\cite[proof of Theorem~2.23]{Navarro1998}.
+
+\begin{proposition}[Compatibility with linear characters]
+\label{lib:reduction:tensor-theorem}
+If $d$ is the homomorphism of
+Theorem~\ref{lib:reduction:decomposition-theorem} and $\lambda_K$ and
+$\lambda_k$ satisfy the compatibility condition above, then, for every
+$x\in K_0(KG)$,
+\[
+ d(L_{\lambda_K}x)=L_{\lambda_k}d(x).
+\]
+Consequently the combined operation also satisfies
+$d(L_{\lambda_K}T_{\alpha}x)=L_{\lambda_k}T_{\alpha}d(x)$.
+\end{proposition}
+\begin{proof}
+Ordinary trace on $L_{\lambda_K}V$ is the product of $\lambda_K$ with
+the trace on $V$, since scalar multiplication by $\lambda_K(g)$ scales
+the trace by the same factor. Theorem~\ref{lib:brauer:tensor-source}
+gives the analogous statement over $k$. Compatibility of the two linear characters
+therefore identifies the images under $\operatorname{br}_{\iota}$ of
+$d(L_{\lambda_K}x)$ and $L_{\lambda_k}d(x)$. Injectivity gives the first
+identity. Combining it with Proposition~\ref{lib:reduction:twist-theorem}
+gives the second.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.KZeroLinearCharacterTensor} constructs the exact
+autoequivalence and \lean{linearCharacterTwistKZero}, and proves the
+ordinary trace formula. In
+\module{ModularRep.KZeroLinearCharacterDecomposition},
+\lean{LinearCharacterReductionCompatible} states the equality
+$\lambda_K\big|_{G_{\ell'}}=\widehat{\lambda_k}$. The conclusions are
+\lean{decompositionMapOfStableReduction_linearCharacterTwist} and
+\lean{decompositionMapOfStableReduction_linearCharacterTwist_twist}.
+Both the compatibility of the linear characters and
+\lean{BrauerLinearTensorProductFormula} are hypotheses of these results.
+\end{implementation}
+
+\section{Specifying a decomposition homomorphism}
+\label{lib:reduction:interfaces}
+
+An assignment $[V]\mapsto a_V\in K_0(kG)$ that is additive on short
+exact sequences induces a homomorphism $K_0(KG)\to K_0(kG)$. If
+$a_V=[\overline L]$ for every stable lattice $L$ in $V$, this is the
+decomposition homomorphism.
+Theorem~\ref{lib:reduction:decomposition-theorem} proves these properties
+from character compatibility.
+
+\begin{implementation}
+\lean{ExactDecompositionMapData} describes an assignment on ordinary
+isomorphism classes that is additive on short exact sequences. Its
+\lean{toAddMonoidHom} is the homomorphism given by the universal property.
+The condition \lean{RealisesStableLatticeReduction} says that every
+stable lattice has the assigned reduction class. For
+\lean{decompositionMapOfStableReduction}, this condition is proved by
+\lean{exactDecompositionMapDataOfStableReduction_realises}.
+
+\lean{DecompositionMapInterface} describes a homomorphism between
+specified ordinary and modular class groups that agrees with reduction
+for every stable lattice. Equality of the classes from
+two lattices then follows by expressing both as the image of the same
+ordinary class.
+\end{implementation}

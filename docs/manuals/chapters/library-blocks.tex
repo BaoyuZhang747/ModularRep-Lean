@@ -1,0 +1,820 @@
+\chapter{Central characters and blocks}
+\label{chap:library:blocks}
+
+A central idempotent gives a direct product decomposition of a ring.
+For a group algebra, primitive central idempotents define the blocks.
+Central subgroup idempotents relate the scalar action on a simple module
+to its block. The Brauer homomorphism and block induction relate blocks
+of different groups. They give Brauer's first main theorem under the
+stated facts about defect groups. We also bound the group of linear
+characters stabilising a block.
+
+Throughout, $G$ is a finite group. Unless a stronger assumption is stated,
+$k$ is a field. In arguments of positive characteristic, $\ell$ denotes a
+prime and $\operatorname{char}k=\ell$. For
+$z=\sum_{g\in G}z_g g\in kG$, the symbol $z_g$ denotes its coefficient at
+$g$. A block means a primitive central idempotent of $kG$.
+When blocks are indexed by a finite set $\mathcal B(G)$, their idempotents
+are denoted by $b_B$, for $B\in\mathcal B(G)$. A complete primitive
+decomposition and the central characters of its blocks will be assumed
+where they are needed.
+
+\section{Central idempotents and simple modules}
+\label{lib:blocks:support}
+
+The initial arguments apply to an arbitrary unital ring $R$.
+
+\begin{definition}
+A \emph{complete family of orthogonal central idempotents} is a finite family
+$(e_i)_{i\in I}$ in $R$ such that each $e_i$ is central,
+$e_i^2=e_i$, $e_i e_j=0$ for $i\ne j$, and $\sum_i e_i=1$.
+A nonzero central idempotent $b$ is \emph{primitive} if every central
+idempotent $c$ with $cb=c$ is either $0$ or $b$.
+A module \emph{belongs to the block} $b$ if $b$ acts as the identity.
+\end{definition}
+
+\begin{proposition}[Central idempotents on simple modules]
+\label{lib:blocks:unique-support}
+Let $(e_i)_{i\in I}$ be a complete family of orthogonal central
+idempotents in $R$.
+Every simple $R$-module $V$ has a unique index $i$ such that $e_i$ acts
+as the identity. Every other $e_j$ acts as zero.
+Every primitive central idempotent $b$ likewise has a unique index $i$
+such that
+\[
+ be_i=b,\qquad be_j=0\quad(j\ne i).
+\]
+If $b$ acts as the identity on $V$, the two indices coincide.
+\end{proposition}
+\begin{proof}
+Centrality makes $v\mapsto e_i v$ an $R$-linear endomorphism. On a
+simple module it is either zero or bijective. In the latter case its
+idempotence implies that it is the identity: injectivity applied to
+$e_i(e_i v)=e_i v$ gives $e_i v=v$. If every $e_i$ acted as zero, then
+$1=\sum_i e_i$ would act as zero on the nonzero module $V$. Thus at least
+one acts as the identity. If $e_i$ does, then
+$e_jv=e_je_iv=0$ for $j\ne i$, proving uniqueness.
+
+For the assertion about $b$, each $be_i$ is a central idempotent with
+$(be_i)b=be_i$. Primitivity makes it either zero or $b$. The equation
+$\sum_i be_i=b\ne0$ gives a nonzero term. If $be_i=b$, multiplication
+by $e_j$ and orthogonality give $be_j=0$ for $j\ne i$.
+Finally, if $b$ acts as the identity, then
+$e_jv=b(e_jv)=(be_j)v$, so the two indices coincide.
+\end{proof}
+
+\begin{implementation}
+The structure for a complete family of central idempotents extends Mathlib's
+\lean{CompleteOrthogonalIdempotents}. The primitivity predicate is local,
+and the proof for simple modules uses Mathlib's Schur lemma.
+The two existence and uniqueness theorems are
+\lean{ModularRep.CompleteOrthogonalCentralIdempotents.existsUnique_isSupport}
+and \lean{ModularRep.IsPrimitiveCentralIdempotent.existsUnique_isSupport}.
+The agreement of the two indices is
+\lean{ModularRep.IsPrimitiveCentralIdempotent.IsSupport.toModuleSupport}.
+Their modules are \module{ModularRep.CentralIdempotentSupport} and
+\module{ModularRep.PrimitiveCentralIdempotent}.
+\end{implementation}
+
+A \emph{block decomposition} is a complete family of orthogonal
+primitive central idempotents. For the expansion of central idempotents in
+the group algebra case, see, for example,
+\cite[Theorem~3.11]{Navarro1998}.
+
+\begin{proposition}[Expansion in primitive idempotents]
+\label{lib:blocks:idempotent-expansion}
+Let $(b_B)_{B\in\mathcal B}$ be a block decomposition of $R$, and let
+$e$ be a central idempotent. Set $S(e)=\{B\in\mathcal B:b_Be\ne0\}$. Then
+\[
+ b_Be\in\{0,b_B\},\qquad
+ e=\sum_{B\in S(e)}b_B.
+\]
+The set $S(e)$ is the unique subset of $\mathcal B$ with this sum.
+In particular, $e\ne0$ if and only if $S(e)$ is nonempty.
+\end{proposition}
+\begin{proof}
+The product $b_Be$ is a central idempotent below $b_B$, so primitivity
+gives the two alternatives. Consequently
+\[
+ e=1e=\sum_B b_Be=\sum_{B\in S(e)}b_B.
+\]
+Multiplication of a proposed sum by $b_C$ gives $b_C$ when $C$ is in
+its index set and zero otherwise. Since $b_C\ne0$, this recovers the
+index set from the sum and proves uniqueness. An empty sum is zero,
+whereas a nonempty sum has a nonzero product with any of its members.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.CentralIdempotentBlockExpansion} proves the expansion
+and its uniqueness in
+\lean{ModularRep.CompleteOrthogonalCentralIdempotents.sum_centralIdempotentSupport_eq}
+and \lean{ModularRep.CompleteOrthogonalCentralIdempotents.eq_centralIdempotentSupport_of_sum_eq}.
+For a given block decomposition,
+\module{ModularRep.BlockIdempotentDecomposition} defines
+\lean{moduleBlock} and the equivalence \lean{primitiveBlockEquiv}
+between the indexing set and the primitive central idempotents.
+\end{implementation}
+
+\begin{example}[Using a decomposition]
+Given a simple representation and a block decomposition, the unique
+idempotent acting as the identity determines its block. An isomorphism of modules
+preserves this index because it preserves each equation $b_Bv=v$.
+This is proved in
+\lean{ModularRep.BlockIdempotentDecomposition.moduleBlock_eq_of_linearEquiv}.
+\end{example}
+
+\section{Idempotents of central subgroups}
+\label{lib:blocks:central-sectors}
+
+Let $Z\leq Z(G)$ have order invertible in $k$. For a linear character
+$\nu:Z\to k^\times$, define
+\[
+ s_\nu=\sum_{z\in Z}\nu(z)^{-1}z,
+ \qquad e_\nu=|Z|^{-1}s_\nu\in kG.
+\]
+The inverse in the coefficient ensures that $e_\nu$ acts as the identity
+on a module with scalar action $zv=\nu(z)v$.
+
+\begin{proposition}[Idempotents associated with central characters]
+\label{lib:blocks:character-idempotents}
+Each $e_\nu$ is a central idempotent, and $e_\nu e_\mu=0$ for
+$\nu\ne\mu$. If $k$ is algebraically closed, then
+\[
+ \sum_{\nu\in\operatorname{Hom}(Z,k^\times)}e_\nu=1.
+\]
+Thus the idempotents form a complete family of orthogonal central idempotents.
+\end{proposition}
+\begin{proof}
+For a nontrivial linear character $\chi$ of a finite group, choose $a$
+with $\chi(a)\ne1$. Translation by $a$ permutes the group, so
+\[
+ \chi(a)\sum_z\chi(z)=\sum_z\chi(az)=\sum_z\chi(z).
+\]
+Cancellation in the field gives $\sum_z\chi(z)=0$. For the trivial
+character the sum is the group order. Reindexing the product of the
+weighted sums by $t=xy$ gives
+\[
+ s_\nu s_\mu
+ =\left(\sum_{x\in Z}\nu(x)^{-1}\mu(x)\right)s_\mu.
+\]
+This is $|Z|s_\nu$ when $\nu=\mu$ and zero otherwise. Division by
+$|Z|^2$ proves idempotence and orthogonality. Each group element in
+the sum is central in $G$, which proves centrality in $kG$.
+
+For completeness, finite abelian duality applies because $k$ has enough
+roots of unity for the exponent of $Z$. Its character group has order
+$|Z|$ and separates the elements of $Z$. If $z\ne1$, evaluation at
+$z^{-1}$ is therefore a nontrivial character of this dual group. The
+same translation argument gives
+\[
+ \sum_\nu\nu(z)^{-1}=0\quad(z\ne1),
+ \qquad \sum_\nu\nu(1)^{-1}=|Z|.
+\]
+These are exactly the coefficient equations for $\sum_\nu e_\nu=1$.
+Algebraic closure and invertibility of $|Z|$ provide the required roots.
+\end{proof}
+
+\begin{implementation}
+The weighted product is
+\lean{ModularRep.linearCharacterWeightedSum_mul} in
+\module{ModularRep.LinearCharacterOrthogonality}.
+The completeness proof is
+\lean{ModularRep.sum_centralCharacterIdempotent_eq_one} in
+\module{ModularRep.LinearCharacterCompleteness}. It uses Mathlib's finite
+abelian duality to count the characters and separate group elements,
+with the required roots of unity specified. The algebraically
+closed version is proved in
+\lean{ModularRep.completeCentralCharacterIdempotentsOfIsAlgClosed}.
+\end{implementation}
+
+For a finite dimensional irreducible representation $\rho$ over an
+algebraically closed field, Schur's lemma gives a unique linear character
+$\nu_\rho:Z\to k^\times$ such that
+$\rho(z)=\nu_\rho(z)\id$. The block central character $\omega_B$
+introduced below has domain $Z(kG)$, whereas $\nu_\rho$ has domain $Z$.
+
+\begin{proposition}[The central character of a block]
+\label{lib:blocks:sector}
+Assume $k$ is algebraically closed and $|Z|$ is invertible in $k$.
+Every primitive central idempotent $b$ lies above a unique character $\nu_b$
+such that
+\[
+ be_{\nu_b}=b,\qquad be_\mu=0\quad(\mu\ne\nu_b).
+\]
+If $\rho$ is finite dimensional and irreducible, and $b$ acts as the
+identity on $\rho$, then $\nu_\rho=\nu_b$. Hence any two such
+representations have the same scalar action of $Z$.
+\end{proposition}
+\begin{proof}
+Apply Proposition~\ref{lib:blocks:unique-support} to the complete
+family of Proposition~\ref{lib:blocks:character-idempotents}.
+On $\rho$, the action of $e_\mu$ is multiplication by
+\[
+ |Z|^{-1}\sum_{z\in Z}\mu(z)^{-1}\nu_\rho(z),
+\]
+which is one for $\mu=\nu_\rho$ and zero otherwise. Since $b$ acts as
+the identity on $\rho$, Proposition~\ref{lib:blocks:unique-support}
+gives $\nu_b=\nu_\rho$.
+\end{proof}
+
+\begin{implementation}
+\lean{ModularRep.IsPrimitiveCentralIdempotent.existsUnique_centralCharacterSector}
+and \lean{Representation.primitiveCentralIdempotentSector_eq_centralCharacter}
+are in \module{ModularRep.CentralCharacterBlockSector}.
+The scalar calculation is in \module{ModularRep.CentralCharacterAction}.
+The equality of central characters assumes an irreducible representation
+belonging to the block.
+\end{implementation}
+
+\begin{example}[Automorphisms and central characters]
+Assume $k$ is algebraically closed. A ring isomorphism preserves
+primitivity: pull back a central idempotent
+below the image of $b$, apply primitivity of $b$, then map forward.
+For a group automorphism $\alpha$, transport the basis of the group algebra by
+$\alpha^{-1}$. If the order of $Z(G)$ is invertible in $k$, coefficient
+comparison gives
+\[
+ e_\nu\longmapsto e_{\nu\circ\alpha|_{Z(G)}}.
+\]
+Thus a block lying above $\nu$ is sent to a block lying above
+$\nu\circ\alpha|_{Z(G)}$. The corresponding theorem is
+\lean{ModularRep.IsPrimitiveCentralIdempotent.centralCharacterSector_mapDomainRingEquiv_center}.
+This example concerns the whole centre under the stated invertibility
+hypothesis, as in \module{ModularRep.PrimitiveBlockAutomorphism}.
+\end{example}
+
+\section{Block central characters and induction}
+\label{lib:blocks:induction}
+
+Assume in this section that $k$ is algebraically closed, and fix a block
+decomposition. The following standard description of block central
+characters is used as an explicit input to the Lean argument.
+In positive characteristic it is given by
+\cite[Theorem~3.11]{Navarro1998}.
+
+\begin{hypothesis}[Central characters of blocks]
+\label{lib:blocks:catalogue}
+For each $B\in\mathcal B(G)$ there is a $k$-algebra homomorphism
+$\omega_B:Z(kG)\to k$ satisfying
+\[
+ \omega_B(b_C)=
+ \begin{cases}1& B=C,\\0& B\ne C.\end{cases}
+\]
+Every $k$-algebra homomorphism $Z(kG)\to k$ is one of the $\omega_B$.
+\end{hypothesis}
+
+The evaluation equations imply that distinct blocks have distinct
+central characters: evaluate an equality $\omega_B=\omega_C$ at $b_B$.
+Thus $B\mapsto\omega_B$ is a bijection between the blocks and the
+$k$-algebra homomorphisms $Z(kG)\to k$. The central character $\omega_B$
+does not generally describe multiplication on the block algebra:
+$zb_B=\omega_B(z)b_B$ need not hold for $z\in Z(kG)$.
+\begin{implementation}
+The hypotheses are expressed by
+\lean{ModularRep.BlockCentralCharacterCatalogue}. The bijection is
+\lean{ModularRep.BlockCentralCharacterCatalogue.centralCharacterEquiv}.
+\end{implementation}
+
+For $H\leq G$, coefficient restriction is the linear map
+\[
+ r_H:kG\longrightarrow kH,
+ \qquad r_H\left(\sum_{g\in G}z_gg\right)=\sum_{h\in H}z_hh.
+\]
+It carries $Z(kG)$ into $Z(kH)$: the coefficients of a central
+element are constant on $G$-conjugacy classes, so the restricted
+coefficients are constant on $H$-conjugacy classes. Thus $r_H(z)$
+commutes with every basis element of $kH$. Also $r_H(1)=1$.
+Multiplicativity does not hold for a general subgroup. Even for an
+abelian group and $H=1$, an element $g\ne1$ has
+$r_H(g)=r_H(g^{-1})=0$ but $r_H(gg^{-1})=1$.
+
+\begin{definition}
+We use the definition of block induction by central characters
+(see, for example, \cite[p.~87]{Navarro1998}). Given the block central characters for
+$H$ and $G$, block induction from a block
+$b\in\mathcal B(H)$ is \emph{defined} when the linear function
+$\omega_b\circ r_H:Z(kG)\to k$ is multiplicative.
+A block $B\in\mathcal B(G)$ is \emph{induced from} $b$ if this
+condition holds and $\omega_B=\omega_b\circ r_H$.
+\end{definition}
+
+\begin{proposition}[Existence and uniqueness of an induced block]
+\label{lib:blocks:induced-block}
+If block induction from $b$ is defined, there is exactly one induced
+block $B$.
+\end{proposition}
+\begin{proof}
+The composite is $k$-linear, multiplicative and sends one to one. It is
+therefore a $k$-algebra homomorphism. By
+Hypothesis~\ref{lib:blocks:catalogue}, it equals $\omega_B$ for some $B$.
+Uniqueness follows from injectivity of
+$B\mapsto\omega_B$, proved by evaluation at block idempotents.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.GroupAlgebraCentralFunctions} uses Mathlib's group algebra
+and its centre. It proves centrality of coefficient restriction and
+constructs \lean{centerCoeffRestrict}.
+\module{ModularRep.BlockInduction} defines
+\lean{IsBlockInductionDefined}, proves
+\lean{existsUnique_blockInducesTo}, and defines \lean{inducedBlock}.
+The induced block is defined from multiplicativity and the given block
+central characters.
+The external source interfaces in
+\module{ModularRep.SpathNavarroSourceAdapter} use an algebraically closed
+field $k$ of characteristic $\ell$ that is algebraic over $\F_\ell$.
+This additional hypothesis is recorded by
+\lean{ModularRep.SpathCoefficientField}.
+\end{implementation}
+
+\begin{proposition}[Preservation on a central subgroup]
+\label{lib:blocks:induction-sector}
+Let $Z\leq Z(G)\cap H$, with $|Z|$ invertible in $k$.
+Suppose $b\in\mathcal B(H)$ induces to $B\in\mathcal B(G)$.
+Let $V$ and $W$ be finite dimensional irreducible representations of
+$H$ and $G$, belonging to the blocks $b$ and $B$, respectively.
+After identifying $Z$ with its copy in $H$, their scalar characters
+on $Z$ agree.
+\end{proposition}
+\begin{proof}
+For a central idempotent $e\in kG$, primitivity gives
+$b_Be\in\{0,b_B\}$. Applying $\omega_B$ shows
+\[
+ \omega_B(e)=1\quad\Longleftrightarrow\quad b_Be=b_B.
+\]
+The reverse implication uses $\omega_B(b_B)=1$. In the forward
+implication the alternative $b_Be=0$ would give $1=0$.
+
+Choose $\nu$ so that $b_B$ lies above $\nu$ on $Z$. Since $Z\leq H$,
+$e_\nu$ is supported on $H$, so $r_H(e_\nu)$ is the corresponding
+character idempotent in
+$kH$. In particular it is still idempotent. Induction gives
+\[
+ \omega_b(r_H(e_\nu))=\omega_B(e_\nu)=1.
+\]
+The same criterion in $kH$ gives
+$b_b r_H(e_\nu)=b_b$. Hence $b_b$ also lies above $\nu$.
+Proposition~\ref{lib:blocks:sector} identifies $\nu$ with
+the scalar characters of $V$ and $W$.
+\end{proof}
+
+\begin{implementation}
+The criterion for the value on a central idempotent is
+\lean{ModularRep.BlockCentralCharacterCatalogue.centralIdempotent_value_one_iff}.
+The conclusion is
+\lean{Representation.centralCharacter_eq_comp_of_blockInducesTo}
+in \module{ModularRep.CentralCharacterBlockInductionRestriction}.
+The proof identifies $Z$ with its copy in $H$ and uses the resulting
+equality of orders. It does not require $V$ to occur in the restriction
+of $W$.
+\end{implementation}
+
+\section{The central Brauer map}
+\label{lib:blocks:brauer-map}
+
+Now assume $\operatorname{char}k=\ell$ and let $P\leq G$ be an
+$\ell$-subgroup. Write $C=C_G(P)$. The \emph{central Brauer map}
+is coefficient restriction to $C$ on the centre of $kG$:
+\[
+ \operatorname{Br}_P:Z(kG)\longrightarrow Z(kC),
+ \qquad \operatorname{Br}_P(z)=\sum_{c\in C}z_cc.
+\]
+The target is the centre of $kC$, by the restriction argument above.
+Its multiplicativity follows from an orbit calculation. For this case
+$H=C_G(P)$, see, for example, \cite[Theorem~4.9]{Navarro1998}.
+
+\begin{lemma}[Summing over fixed points]
+\label{lib:blocks:orbit-sum}
+Let an $\ell$-group $Q$ act on a finite set $X$. If $f:X\to k$ is
+constant on each $Q$-orbit, then
+\[
+ \sum_{x\in X}f(x)=\sum_{x\in X^Q}f(x).
+\]
+\end{lemma}
+\begin{proof}
+Partition $X$ into orbits. On an orbit $\mathcal O$, the sum equals
+$|\mathcal O|f(x)$ for any $x\in\mathcal O$. Orbit sizes are powers
+of $\ell$, so an orbit of size greater than one contributes zero in
+characteristic $\ell$. An orbit of size one is exactly a fixed point
+and contributes its own value.
+\end{proof}
+
+\begin{theorem}[The Brauer map on the centre]
+\label{lib:blocks:brauer-multiplicative}
+For a finite group $G$, an $\ell$-subgroup $P$ and a field $k$ of
+characteristic $\ell$, the map $\operatorname{Br}_P$ is a
+$k$-algebra homomorphism. Algebraic closure is not required.
+\end{theorem}
+\begin{proof}
+Fix $c\in C$. The coefficient of $zw$ at $c$ is
+\[
+ (zw)_c=\sum_{a\in G}z_a w_{a^{-1}c}.
+\]
+Let $P$ act on $G$ by conjugation. If $q\in P$, then $qc=cq$, so
+\[
+ (qaq^{-1})^{-1}c=q(a^{-1}c)q^{-1}.
+\]
+Centrality of $z$ and $w$ makes the function
+$a\mapsto z_aw_{a^{-1}c}$ constant on these orbits. Its fixed points
+are precisely $a\in C$. Lemma~\ref{lib:blocks:orbit-sum} gives
+\[
+ (zw)_c=\sum_{a\in C}z_aw_{a^{-1}c}
+       =\bigl(\operatorname{Br}_P(z)\operatorname{Br}_P(w)\bigr)_c.
+\]
+Here $a^{-1}c\in C$ whenever $a,c\in C$, so the final expression is
+the product coefficient in $kC$. Equality at every $c\in C$ proves
+multiplicativity. Linearity and preservation of one were already proved
+for coefficient restriction.
+\end{proof}
+
+\begin{implementation}
+The proof uses Mathlib's theorem that orbit sizes for an $\ell$-group
+are powers of $\ell$. The resulting sum formula is
+\lean{ModularRep.IsPGroup.sum_eq_sum_fixedPoints_of_invariant}
+in \module{ModularRep.PGroupInvariantSum}.
+Multiplicativity and the algebra homomorphism are
+\lean{ModularRep.centralBrauerRestriction_mul} and
+\lean{ModularRep.centralBrauerMap} in
+\module{ModularRep.GroupAlgebraCentralBrauerMap}.
+These declarations allow any commutative coefficient semiring of
+characteristic $\ell$.
+\end{implementation}
+
+\begin{proposition}[The Brauer map to an intermediate subgroup]
+\label{lib:blocks:interval-map}
+Suppose $C_G(P)\leq H\leq N_G(P)$. Extend the coefficients of
+$\operatorname{Br}_P(z)$ by zero from $C_G(P)$ to $H$.
+The resulting map
+\[
+ \operatorname{Br}_P^H:Z(kG)\longrightarrow Z(kH)
+\]
+is a $k$-algebra homomorphism. Moreover,
+$\operatorname{Br}_P(z)\ne0$ if and only if
+$\operatorname{Br}_P^H(z)\ne0$.
+\end{proposition}
+\begin{proof}
+The inclusion $kC_G(P)\hookrightarrow kH$ is an injective algebra
+homomorphism. Every $h\in H$ normalises $P$, and therefore preserves
+$C_G(P)$ by conjugation. The coefficients $z_c$ are constant
+under this conjugation because $z\in Z(kG)$. The extended element
+thus lies in $Z(kH)$. Multiplication and the unit are preserved by the
+composite. Injectivity gives the asserted equivalence of nonvanishing.
+\end{proof}
+
+For this form of the Brauer homomorphism, see, for example,
+\cite[Theorem~4.9]{Navarro1998}. Its image is central in $kH$
+because the restricted coefficients are invariant under $H$.
+An arbitrary element of $Z(kC_G(P))$ need not have this property.
+
+\begin{implementation}
+The homomorphism \lean{ModularRep.centralBrauerMapTo} is in
+\module{ModularRep.GroupAlgebraCentralBrauerMapTo}.
+The equivalence of nonvanishing,
+\lean{ModularRep.centralBrauerMap_ne_zero_iff_mapTo_ne_zero},
+is in \module{ModularRep.CentralBrauerIntervalSupport}.
+For $H=N_G(P)$, the map is named
+\lean{ModularRep.normalizerCentralBrauerMap}.
+\end{implementation}
+
+\begin{example}[A local sum of blocks]
+The image of a primitive central idempotent of $kG$ under
+$\operatorname{Br}_P^H$ is a central idempotent, although it can be
+zero or a sum of several primitive central idempotents of $kH$. A block
+decomposition of $kH$ and
+Proposition~\ref{lib:blocks:idempotent-expansion} determine its unique
+support. This is implemented by
+\lean{ModularRep.sum_centralBrauerMapToLocalSupport_eq} and
+\lean{ModularRep.centralBrauerMapToPrimitiveImage_ne_zero_iff_support_nonempty}.
+In particular, the Brauer homomorphism need not preserve primitivity.
+\end{example}
+
+\section{Brauer's first main theorem}
+\label{lib:blocks:normaliser-correspondence}
+
+Brauer's first main theorem identifies the blocks of $G$ with defect
+group $P$ with the blocks of $N_G(P)$ having defect group $P$.
+See, for example, \cite[Theorem~4.17]{Navarro1998}.
+We prove the correspondence from the central character identity and the
+five facts about defect groups stated below.
+Assume $k$ is algebraically closed of
+characteristic $\ell$. Fix an $\ell$-subgroup $P$, write
+$N=N_G(P)$, and fix block decompositions and block central characters
+for $N$ and $G$ as in Hypothesis~\ref{lib:blocks:catalogue}.
+
+We first use the central character identity
+(see, for example, \cite[Theorem~4.14]{Navarro1998}). For
+$PC_G(P)\leq H\leq N_G(P)$, it is
+\begin{equation}
+ \omega_b\circ r_H=\omega_b\circ\operatorname{Br}_P^H
+ \qquad(b\in\mathcal B(H)).
+ \label{lib:blocks:414-equality}
+\end{equation}
+The hypothesis includes $P\leq H$, whereas the construction of
+$\operatorname{Br}_P^H$ only required $C_G(P)\leq H\leq N_G(P)$.
+Since the right side of \eqref{lib:blocks:414-equality} is an algebra
+homomorphism, block induction is defined. For $H=N$, denote the induced
+block map by
+$I:\mathcal B(N)\to\mathcal B(G)$. Thus
+\begin{equation}
+ \omega_{I(b)}=\omega_b\circ\operatorname{Br}_P^N.
+ \label{lib:blocks:induction-brauer-character}
+\end{equation}
+
+For the following identity, see, for example, the final assertion of
+\cite[Theorem~4.14]{Navarro1998}, with $H=N_G(P)$.
+
+\begin{proposition}[The Brauer image as a sum of blocks]
+\label{lib:blocks:fibre}
+Under \eqref{lib:blocks:414-equality}, for every block $B$ of $G$,
+\[
+ \operatorname{Br}_P^N(b_B)=\sum_{b\in\mathcal B(N):\ I(b)=B}b_b.
+\]
+In particular, if the image is nonzero, some block of $N$ induces to $B$.
+\end{proposition}
+\begin{proof}
+Expand the image as in Proposition~\ref{lib:blocks:idempotent-expansion}.
+A local block $b$ lies in its support exactly when its central
+character takes value one on the image. Indeed, multiplication by $b_b$
+is either zero or $b_b$, and evaluation by $\omega_b$ distinguishes
+these alternatives. Equation~\eqref{lib:blocks:induction-brauer-character}
+identifies this value with $\omega_{I(b)}(b_B)$. The evaluation equations
+for the ambient block central characters say that this is one exactly
+when $I(b)=B$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.Navarro414IntervalCentralCharacterSource} expresses
+\eqref{lib:blocks:414-equality}, from which the induced block is defined.
+The equivalence between occurrence in this sum and induction to $B$ is
+\lean{ModularRep.mem_navarro417PhaseANormalizerSupport_iff_inductionMap_eq}
+in \module{ModularRep.Navarro417PhaseASupport}.
+\end{implementation}
+
+For the Brauer map characterisation of defect groups, see, for example,
+\cite[Theorem~4.11]{Navarro1998}. For a block $B$ of a finite group
+$X$, let $\mathcal D_X(B)$ be the set of $\ell$-subgroups $D\leq X$
+such that
+\begin{equation}
+ \operatorname{Br}_Q(b_B)\ne0
+ \quad\Longleftrightarrow\quad
+ Q\text{ is conjugate to a subgroup of }D
+ \quad\text{for every }\ell\text{-subgroup }Q\leq X.
+ \label{lib:blocks:defect-support}
+\end{equation}
+In the following argument, we use this criterion to define
+$\mathcal D_X(B)$. Its members are the defect groups of $B$.
+Any two members are conjugate: the criterion makes each conjugate to
+a subgroup of the other, and equality of their finite orders then gives
+conjugacy. Existence will be used explicitly below.
+
+\begin{hypothesis}[Standard facts for the defect correspondence]
+\label{lib:blocks:defect-hypotheses}
+We use the following five standard facts about the fixed block
+decompositions and central characters.
+\begin{enumerate}
+\item If $P\in\mathcal D_N(b)$ and an $N$-conjugacy class
+$\mathcal K$ has nonzero coefficient in $b_b$, then
+$\mathcal K=\mathcal L\cap C_G(P)$ for some $G$-conjugacy class
+$\mathcal L$, with the intersection viewed inside $N$.
+\item The set $\mathcal D_N(b)$ is nonempty for every block $b$ of $N$.
+\item If $D\in\mathcal D_N(b)$, then $O_\ell(N)\leq D$.
+\item If $b$ induces to $B$ and $D\in\mathcal D_N(b)$, then there is
+$E\in\mathcal D_G(B)$ containing $D$, viewed as a subgroup of $G$.
+\item If $P\in\mathcal D_N(b)$, then there is
+$E\in\mathcal D_G(I(b))$ with $E\leq P$.
+\end{enumerate}
+\end{hypothesis}
+
+For the first condition, Lemma~4.15 restricts the nonzero class
+coefficients to classes with defect group $P$, and Lemma~4.16 writes
+each such class as the required intersection
+\cite[pp.~88--89]{Navarro1998}. The second condition follows from
+existence of defect groups and their Brauer map characterisation
+\cite[Theorems~4.3 and~4.11]{Navarro1998}.
+The third and fourth conditions follow from
+\cite[Theorem~4.8 and Lemma~4.13]{Navarro1998},
+respectively.
+
+The fifth condition is the containment proved in the first paragraph
+of the proof of \cite[Theorem~4.17]{Navarro1998}. That argument
+chooses a defect class of $b$, uses Corollary~4.5 and Lemma~4.16 to
+lift it to an ambient class with defect group $P$, and applies
+Theorems~4.14 and~4.4 to obtain a defect group of $I(b)$ contained in
+$P$. We use this containment, together with the other four conditions
+and \eqref{lib:blocks:414-equality}, to prove the correspondence.
+
+\begin{proposition}[Lifting a local block idempotent]
+\label{lib:blocks:class-lift}
+Assume the first condition of
+Hypothesis~\ref{lib:blocks:defect-hypotheses} and
+\eqref{lib:blocks:414-equality}. If $P\in\mathcal D_N(b)$, then
+$b_b$ is in the image of $\operatorname{Br}_P^N$.
+If $I(b)=I(c)$ for any local block $c$, then $b=c$. Consequently,
+\[
+ \operatorname{Br}_P^N(b_{I(b)})=b_b.
+\]
+\end{proposition}
+\begin{proof}
+For an $N$-class $\mathcal K$, write
+$\mathcal K^+=\sum_{x\in\mathcal K}x$. Centrality gives a unique
+class expansion
+\[
+ b_b=\sum_{\mathcal K}a_{\mathcal K}\mathcal K^+.
+\]
+For each nonzero coefficient choose an ambient class
+$\mathcal L_{\mathcal K}$ with
+$\mathcal L_{\mathcal K}\cap C_G(P)=\mathcal K$.
+Coefficient restriction gives
+$\operatorname{Br}_P^N(\mathcal L_{\mathcal K}^+)=\mathcal K^+$.
+Thus the finite sum
+\[
+ z=\sum_{a_{\mathcal K}\ne0}
+       a_{\mathcal K}\mathcal L_{\mathcal K}^+\in Z(kG)
+ \quad\text{satisfies}\quad \operatorname{Br}_P^N(z)=b_b.
+\]
+
+If $I(b)=I(c)$, equation~\eqref{lib:blocks:induction-brauer-character}
+gives equal composites
+$\omega_b\operatorname{Br}_P^N=\omega_c\operatorname{Br}_P^N$.
+Evaluation at $z$ gives $\omega_b(b_b)=\omega_c(b_b)$. The left side
+is one, and the right side is zero unless $b=c$. This proves
+injectivity even when only the first block is known to have defect
+$P$. In the sum of Proposition~\ref{lib:blocks:fibre}, the only block
+inducing to $I(b)$ is therefore $b$. This gives the final equation.
+\end{proof}
+
+\begin{implementation}
+The element $z$ is constructed in
+\module{ModularRep.Navarro415416ClassSumAdapter}, in the theorem
+\lean{ModularRep.Navarro415416RawClassSource.localBlockIdempotent_mem_normalizerCentralBrauerMap_range}.
+Injectivity and the equality of block idempotents are
+\lean{ModularRep.navarro417PhaseAInductionMap_eq_imp_eq_of_localP_left}
+and \lean{ModularRep.normalizerCentralBrauerMap_selectedBlockIdempotent_eq}
+in \module{ModularRep.Navarro417RestrictedInjectivity}.
+The class intersection property and the central character equality
+suffice for all three conclusions.
+\end{implementation}
+
+\begin{theorem}[Blocks with a prescribed defect group]
+\label{lib:blocks:exact-defect}
+Assume \eqref{lib:blocks:414-equality} and
+Hypothesis~\ref{lib:blocks:defect-hypotheses}. Write
+$\mathcal B(X\mid P)=\{B\in\mathcal B(X):P\in\mathcal D_X(B)\}$,
+where $X=G$ or $N_G(P)$ and $P$ is viewed as a subgroup of $X$.
+Then block induction is a bijection
+\[
+ I:\mathcal B(N_G(P)\mid P)\longrightarrow\mathcal B(G\mid P).
+\]
+\end{theorem}
+\begin{proof}
+Let $b\in\mathcal B(N\mid P)$. The fourth condition gives
+$E_+\in\mathcal D_G(I(b))$ with $P\leq E_+$.
+The fifth gives $E_-\in\mathcal D_G(I(b))$ with $E_-\leq P$.
+They are conjugate by
+\eqref{lib:blocks:defect-support}, so
+\[
+ |P|\leq|E_+|=|E_-|\leq|P|.
+\]
+The inclusions are therefore equalities. In particular,
+$P\in\mathcal D_G(I(b))$.
+
+Conversely, suppose $I(b)=B$ and $P\in\mathcal D_G(B)$.
+By the second condition, choose $D\in\mathcal D_N(b)$. Since
+$P$ is a normal $\ell$-subgroup of $N$, the third condition gives
+\[
+ P\leq O_\ell(N)\leq D.
+\]
+The fourth condition gives $E\in\mathcal D_G(B)$ with
+$D\leq E$ inside $G$. The defect groups $E$ and $P$ are conjugate. Hence
+$|P|\leq|D|\leq|E|=|P|$, and the local inclusion is an equality.
+Thus $P\in\mathcal D_N(b)$ for every local block inducing to $B$.
+
+Finally, if $P\in\mathcal D_G(B)$, then
+$\operatorname{Br}_P(b_B)\ne0$ by
+\eqref{lib:blocks:defect-support}. Proposition~\ref{lib:blocks:interval-map}
+preserves this nonvanishing in $kN$, and
+Proposition~\ref{lib:blocks:fibre} supplies a local block over $B$.
+The preceding paragraph puts that block in $\mathcal B(N\mid P)$,
+proving surjectivity. Injectivity follows from
+Proposition~\ref{lib:blocks:class-lift}.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.Navarro417ExactDefectAdapter} proves the two
+containment arguments and the bijection as
+\lean{navarro417PhaseAInductionMap_has_ambientP},
+\lean{navarro417LocalP_of_blockInducesTo_ambientP}, and
+\lean{navarro417ExactDefectMap_bijective}, all in namespace
+\lean{ModularRep}. The resulting equivalence is
+\lean{ModularRep.navarro417ExactDefectEquiv}.
+The construction takes the five conditions above and
+\eqref{lib:blocks:414-equality}, for the given block decompositions
+and central characters. The third condition, containment of the normal
+$\ell$-core in every defect group, is proved by
+\lean{navarro408PCoreDefectSource} in
+\module{ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierPCoreDefectContainment}.
+The remaining source
+conditions used by this construction are stated separately.
+\end{implementation}
+
+\section{Linear characters stabilising a block}
+\label{lib:blocks:linear-stabilisers}
+
+Let $N\trianglelefteq G$ and assume again that $k$ is algebraically
+closed of characteristic $\ell$. Write $\pi:G\to G/NZ(G)$ for the
+quotient homomorphism. A linear character
+$\lambda:G\to k^\times$ twists a representation by
+\[
+ (\lambda\otimes\rho)(g)=\lambda(g)\rho(g).
+\]
+If a central subgroup $Z$ acts on $\rho$ by a scalar character
+$\nu_\rho$, it acts on $\lambda\otimes\rho$ by
+$\lambda|_Z\nu_\rho$. This follows from the scalar action and does
+not require division by the degree of $\rho$.
+
+Suppose a group $A$ acts on the primitive central idempotents of $kG$, and there
+is an injective homomorphism
+$a\mapsto\lambda_a$ from $A$ to the linear characters of $G$.
+Assume every $\lambda_a$ is trivial on $N$. Suppose every block contains
+a finite dimensional simple representation, and tensoring any such
+representation in $b$ by $\lambda_a$ gives a representation in
+$a\cdot b$.
+
+\begin{theorem}[Stabilisers under tensoring by linear characters]
+\label{lib:blocks:stabiliser-bound}
+Under these assumptions, the stabiliser
+$A_b=\{a\in A:a\cdot b=b\}$ is finite. For every $a\in A_b$, the
+character $\lambda_a$ factors through $G/NZ(G)$, and
+\[
+ |A_b|\leq [G:NZ(G)].
+\]
+\end{theorem}
+\begin{proof}
+The central $\ell$-regular elements form a subgroup
+$Z_{\ell'}\leq Z(G)$ of order prime to $\ell$.
+Choose a simple representation $\rho$ belonging to $b$. If $a\in A_b$,
+then $\lambda_a\otimes\rho$ belongs to the same block.
+Proposition~\ref{lib:blocks:sector} gives equality of their scalar characters on
+$Z_{\ell'}$. Since twisting multiplies that character by
+$\lambda_a|_{Z_{\ell'}}$, cancellation in $k^\times$ proves that
+$\lambda_a$ is trivial on $Z_{\ell'}$.
+
+It is also trivial on every $\ell$-element. If $g^{\ell^m}=1$, then
+$\lambda_a(g)^{\ell^m}=1$. In characteristic $\ell$,
+$X^{\ell^m}-1=(X-1)^{\ell^m}$, so a field has no nontrivial
+$\ell$-power roots of unity. Every central element is the product
+of its commuting $\ell$-part and $\ell$-regular part, both powers
+of the original element. Hence $\lambda_a$ is trivial on all of
+$Z(G)$, and therefore on $NZ(G)$.
+
+Thus $\lambda_a$ induces a character
+$\overline\lambda_a:G/NZ(G)\to k^\times$ with
+$\lambda_a=\overline\lambda_a\circ\pi$. These quotient characters
+are distinct, since composing with $\pi$ recovers $\lambda_a$ and
+$a\mapsto\lambda_a$ is injective. These quotient characters form a
+linearly independent family in the space of all functions on
+$G/NZ(G)$, which has dimension $[G:NZ(G)]$. Therefore their indexing
+set $A_b$ is finite and $|A_b|\leq [G:NZ(G)]$.
+\end{proof}
+
+\begin{implementation}
+The assumptions on simple representations and tensoring are expressed by
+\lean{ModularRep.LinearBlockStabilizer.SimpleBlockTensorSource}.
+It supplies a simple representation in every block and compatibility
+between the block action and tensoring. The theorem is
+\lean{ModularRep.LinearBlockStabilizer.modular_block_stabilizer_bound}.
+The quotient character is defined by \lean{descendCenterQuotient}.
+Mathlib's linear independence of multiplicative characters gives
+\lean{finite_of_injective_linear_characters} and the bound
+\lean{card_le_of_injective_linear_characters}, in the same namespace.
+The theorem \lean{block_stabilizer_finite} explicitly supplies finiteness
+of the stabiliser for both the ordinary and modular character actions.
+\end{implementation}
+
+\begin{example}[All quotient characters]
+Take $A$ to be the linear characters of $G$ trivial on $N$, identified
+with those of $G/N$. Once their block action and its compatibility with
+tensoring are given, every character stabilising a block factors through
+$G/NZ(G)$, and the stated bound follows. In the special case $NZ(G)=G$,
+the bound is one, so every block has trivial stabiliser for this
+action.
+\end{example}
+
+For the ordinary form, let $K$ be a field of characteristic zero.
+Set $m=|G|_{\ell'}$ and fix an isomorphism
+$\mu_m(k)\simeq\mu_m(K)$ between the groups of $m$th roots of unity.
+Applied pointwise, it identifies ordinary linear characters of $G/N$
+of order prime to $\ell$ with modular linear characters of $G/N$.
+Transport the block action through this identification. The stabilisers
+are isomorphic, and preservation of kernels gives the factorisation
+through $G/NZ(G)$ and the same bound.
+
+\begin{implementation}
+\module{ModularRep.LinearBlockStabilizerReduction} constructs
+\lean{ordinaryToBrauerQuotient}, \lean{reductionStabilizerEquiv}, and
+\lean{ordinary_block_stabilizer_bound} in namespace
+\lean{ModularRep.LinearBlockStabilizer}.
+The theorem \lean{reduction_commutes_with_tensor} requires a modular system,
+\lean{StableReductionBrauerCharacterCompatibility} and
+\lean{BrauerLinearTensorProductFormula}.
+\end{implementation}

@@ -1,0 +1,14 @@
+name = "ManuscriptIBAW"
+version = "0.1.0"
+defaultTargets = ["ManuscriptIBAW"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[require]]
+name = "ModularRep"
+path = "packages/ModularRep"
+
+[[lean_lib]]
+name = "ManuscriptIBAW"
+moreLeanArgs = ["--trust=0", "--threads=1"]

@@ -1,0 +1,42 @@
+\documentclass[11pt,oneside]{book}
+\input{preamble}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\hypersetup{pdftitle={Formalisation Report}}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\centering
+\vspace*{24mm}
+{\Huge Formalisation Report\par}
+\vspace{12mm}
+{\Large On the inductive blockwise Alperin weight condition\par
+for type B and type C\par}
+\vfill
+\begin{minipage}{0.85\textwidth}
+This report explains arguments concerning the inductive blockwise
+Alperin weight condition for simple groups of Type B, simple groups of
+Type C and sporadic simple groups, together with their consequence for
+finite groups. The results checked in Lean depend on the stated assumptions about
+the groups, characters, blocks and computational data. The exposition
+identifies the Mathlib foundations, general ModularRep results and
+deductions for these families.
+\end{minipage}
+\vspace{18mm}
+\end{titlepage}
+\tableofcontents
+\mainmatter
+\input{chapters/current-scope}
+\input{chapters/current-preliminaries}
+\input{chapters/current-type-c}
+\input{chapters/current-type-b}
+\input{chapters/current-sporadic}
+\input{chapters/current-main}
+\appendix
+\input{chapters/current-statement-declarations}
+\input{chapters/current-source-index}
+\input{chapters/construction-details}
+\backmatter
+\input{bibliography-companion}
+\end{document}

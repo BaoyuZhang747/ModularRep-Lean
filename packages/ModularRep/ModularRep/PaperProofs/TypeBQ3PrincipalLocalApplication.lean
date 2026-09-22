@@ -1,0 +1,169 @@
+import ModularRep.PaperProofs.TypeBQ3PrincipalFullAutomorphismApplication
+import ModularRep.PaperProofs.TypeBQ3PrincipalRadicalDecoding
+
+/-!
+# Principal radical parts and local bijections for the exceptional triple cover
+
+The accepted construction supplies the same principal correspondence once.
+Its actual radical projection gives the exhaustive partition, and the checked
+representative-fibre equivalence gives the local ordinary defect-zero maps.
+Their classes and normalizer-quotient transport retain that correspondence.
+This is the Schulte Lemma 2.10 / FLZ Lemma 2.12 deduction inside Proposition
+4.11; the remaining extension conditions are not supplied here.
+-/
+
+noncomputable section
+set_option autoImplicit false
+
+namespace ModularRep.PaperProofs.TypeBQ3PrincipalLocalApplication
+
+open ModularRep CharacterWeight
+open TypeBCentralKernelBlockSource TypeBCentralKernelBrauerBlocks
+open TypeBCentralKernelInertia
+open TypeBRankThreePrincipalCountBinding
+open TypeBQ3TripleCoverCarrier
+open TypeBQ3PrincipalWeightInflation
+open TypeBQ3PrincipalTripleCoverApplication
+open TypeBQ3PrincipalRadicalDecoding
+open SporadicFi24P3Definition44NamedCarrierCentralPrimeToBlockImage
+
+variable (matrixSource : MatrixExceptionalSource)
+  (freeSource : TypeBExceptionalCanonicalCover.FreePresentationCoverSource)
+
+local instance groupFintype (Y : Type) [Group Y] [Finite Y] : Fintype Y :=
+  Fintype.ofFinite Y
+
+variable {k K O : Type}
+  [Field k] [Field K] [CommRing O] [IsDomain O] [Algebra O K]
+  [CharP k 2] [IsAlgClosed k] [CharZero K]
+
+/-- The same principal correspondence, its exact radical partition and
+representative local maps with literal ordinary-character covariance. -/
+theorem exists_principalTripleCover_radicalLocalData
+    (automorphisms : TypeBQ3TripleCoverAutomorphisms.MatrixAutomorphismSource) :
+  letI : Finite X := finite_X matrixSource
+  ∀ (rootX : PrimeRegularRootEmbedding 2 k K X)
+    (SX : CoverWeightSource (k := k) (K := K) X)
+    (literalX : ∀ c, SX.operations.ambientBlockData.blockIdempotent c = c.val)
+    (S : OmegaWeightSource (k := k) (K := K) (ZMod 3))
+    (literal : ∀ c, S.operations.ambientBlockData.blockIdempotent c = c.val),
+  letI : Fintype (LiteralPrimitiveBlock k X) := SX.operations.ambientBlockData.fintypeBlock
+  letI : Fintype (LiteralPrimitiveBlock k (G (ZMod 3))) :=
+    S.operations.ambientBlockData.fintypeBlock
+  ∀ (bX : LiteralPrimitiveBlock k X) (hbX : IsPrincipal bX)
+    (b : LiteralPrimitiveBlock k (G (ZMod 3))) (hb : IsPrincipal b)
+    (primitive : CentralPrimeToPrimitiveImageSource (k := k)
+      (q matrixSource freeSource) (q_surjective matrixSource freeSource) rootX.prime
+      (q_kernel_le_center matrixSource freeSource) (q_kernel_primeToTwo matrixSource freeSource))
+    (weightSource : FLZ23Source
+    (q matrixSource freeSource) (q_surjective matrixSource freeSource)
+    (q_kernel_le_center matrixSource freeSource) (q_kernel_primeToTwo matrixSource freeSource)
+    SX literalX S literal rootX bX hbX b hb
+    (TypeBQ3PrincipalBrauerInflation.principal_image
+      (q matrixSource freeSource) (q_surjective matrixSource freeSource)
+      (q_kernel_le_center matrixSource freeSource) (q_kernel_primeToTwo matrixSource freeSource)
+      rootX (omegaDecomposition (ZMod 3) S literal) bX hbX b hb primitive))
+  [HasEnoughRootsOfUnity K (Nat.card (H (ZMod 3)))]
+  (delta : H (ZMod 3)) (indexTwo : (G (ZMod 3)).index = 2)
+  (outside : delta ∉ G (ZMod 3))
+  (SH : SOWeightSource (k := k) (K := K) (ZMod 3))
+  (literalH : ∀ c, SH.operations.ambientBlockData.blockIdempotent c = c.val)
+  (bH : LiteralPrimitiveBlock k (H (ZMod 3))) (hbH : IsPrincipal bH)
+  [Fintype (OmegaBrauer (ZMod 3) (rootDown matrixSource freeSource rootX) b)]
+  [DecidableEq (OmegaBrauer (ZMod 3) (rootDown matrixSource freeSource rootX) b)]
+  [Fintype (OmegaWeight (ZMod 3) S b)]
+  [DecidableEq (OmegaWeight (ZMod 3) S b)]
+  [Fintype (SOWeight (ZMod 3) SH bH)]
+  [DecidableEq (SOWeight (ZMod 3) SH bH)]
+  (Msys : ModularSystem 2 K O k)
+  (dgn : TypeBWeightCoveringSplittingSource.DGNSource (G (ZMod 3)) Msys)
+  (brauerSource : TypeBQ3PrincipalBrauerBinding.LiteralSource
+    S literal (rootDown matrixSource freeSource rootX) b hb delta indexTwo outside)
+  (covering : TypeBQ3PrincipalWeightBinding.PublishedWeightCovering
+    S literal b hb delta indexTwo outside SH literalH bH hbH Msys dgn),
+    ∃ seed : OmegaBrauer (ZMod 3) (rootDown matrixSource freeSource rootX) b ≃
+        OmegaWeight (ZMod 3) S b,
+    ∃ lifted : BrauerFibre rootX bX ≃ CoverWeight SX bX,
+      (∀ (h : H (ZMod 3))
+          (theta : OmegaBrauer (ZMod 3) (rootDown matrixSource freeSource rootX) b),
+        seed (brauerStep (ZMod 3) S literal (rootDown matrixSource freeSource rootX)
+          b hb h theta) = weightStep (ZMod 3) S literal b hb h (seed theta)) ∧
+      (∀ phi : BrauerFibre rootX bX,
+        principalWeightEquiv weightSource (lifted phi) =
+          seed (brauerDeflation matrixSource freeSource rootX SX literalX S literal
+            bX hbX b hb primitive phi)) ∧
+      (∀ phi : BrauerFibre rootX bX,
+        ClassInflates (q matrixSource freeSource) (lifted phi).val
+          (seed (brauerDeflation matrixSource freeSource rootX SX literalX S literal
+            bX hbX b hb primitive phi)).val) ∧
+      (∀ (alpha : (MulAut X)ᵐᵒᵖ) (phi : BrauerFibre rootX bX),
+        lifted (TypeBQ3PrincipalBrauerInflation.principalStep rootX
+          (coverDecomposition SX literalX) bX hbX alpha phi) =
+        coverWeightStep SX literalX bX hbX alpha (lifted phi)) ∧
+      (∀ (alpha : (MulAut X)ᵐᵒᵖ) (phi : BrauerFibre rootX bX),
+        part lifted (TypeBQ3PrincipalBrauerInflation.principalStep rootX
+          (coverDecomposition SX literalX) bX hbX alpha phi) =
+          alpha • part lifted phi) ∧
+      (∃ partition : BrauerFibre rootX bX ≃
+          Σ c : RadicalConjugacyClass (p := 2) (G := X),
+            {phi : BrauerFibre rootX bX // part lifted phi = c},
+        (∀ phi, (partition phi).1 = part lifted phi) ∧
+        (∀ phi, (partition phi).2.val = phi)) ∧
+      (∃ localEquiv : ∀ Q : RadicalSubgroup (p := 2) (G := X),
+          BrauerAtRadical lifted Q ≃ RepresentativeDZ Nat.prime_two SX Q bX,
+        (∀ (Q : RadicalSubgroup (p := 2) (G := X))
+            (phi : BrauerAtRadical lifted Q),
+          (Quotient.mk'' (Quotient.mk''
+            (characterWeightAt Nat.prime_two Q (localEquiv Q phi).val)) :
+              CharacterWeight.ConjugacyClass (p := 2) (K := K) (G := X)) =
+            (lifted phi.val).val) ∧
+        (∀ (alpha : (MulAut X)ᵐᵒᵖ)
+            (Q : RadicalSubgroup (p := 2) (G := X))
+            (phi : BrauerAtRadical lifted Q)
+            (psi : BrauerAtRadical lifted (Q.rightTwist alpha.unop)),
+          psi.val = TypeBQ3PrincipalBrauerInflation.principalStep rootX
+            (coverDecomposition SX literalX) bX hbX alpha phi.val →
+          (localEquiv (Q.rightTwist alpha.unop) psi).val =
+            localCharacterTwist Q alpha (localEquiv Q phi).val ∧
+          CharacterWeight.Isomorphic
+            ((characterWeightAt Nat.prime_two Q (localEquiv Q phi).val).rightTwist
+              alpha.unop)
+            (characterWeightAt Nat.prime_two (Q.rightTwist alpha.unop)
+              (localEquiv (Q.rightTwist alpha.unop) psi).val))) := by
+  letI : Finite X := finite_X matrixSource
+  intro rootX SX literalX S literal
+  letI : Fintype (LiteralPrimitiveBlock k X) := SX.operations.ambientBlockData.fintypeBlock
+  letI : Fintype (LiteralPrimitiveBlock k (G (ZMod 3))) :=
+    S.operations.ambientBlockData.fintypeBlock
+  intro bX hbX b hb primitive weightSource ordinaryRootsH delta indexTwo outside
+    SH literalH bH hbH fintypeBrauer decidableBrauer fintypeOmegaWeight decidableOmegaWeight
+    fintypeSOWeight decidableSOWeight Msys dgn brauerSource covering
+  obtain ⟨seed, lifted, seedSO, deflation, graph, fullAut⟩ :=
+    TypeBQ3PrincipalFullAutomorphismApplication.exists_principalTripleCover_fullAutomorphismEquivariantEquiv
+      matrixSource freeSource automorphisms rootX SX literalX S literal
+      bX hbX b hb primitive weightSource delta indexTwo outside SH literalH bH hbH
+      Msys dgn brauerSource covering
+  refine ⟨seed, lifted, seedSO, deflation, graph, fullAut, ?_, ?_, ?_⟩
+  · exact part_equivariant lifted literalX hbX fullAut
+  · exact ⟨partitionEquiv lifted, partitionEquiv_part lifted,
+      partitionEquiv_character lifted⟩
+  · refine ⟨fun Q => localMap lifted Q, ?_, ?_⟩
+    · exact localMap_class lifted
+    · intro alpha Q phi psi hpsi
+      have same : psi = brauerTransport lifted literalX hbX fullAut alpha Q phi :=
+        Subtype.ext hpsi
+      subst psi
+      exact ⟨localMap_covariance lifted literalX hbX fullAut alpha Q phi,
+        localMap_raw_transport lifted literalX hbX fullAut alpha Q phi⟩
+
+end ModularRep.PaperProofs.TypeBQ3PrincipalLocalApplication
+
+
+/-
+This file is part of ModularRep, the Lean companion to
+Baoyu Zhang (2026), "On the inductive blockwise Alperin weight condition
+for type B and type C".
+
+The formalisation checks selected arguments under explicit external
+assumptions. See FORMALISATION_GUIDE.md in the package root.
+-/

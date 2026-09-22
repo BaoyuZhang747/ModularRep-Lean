@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "passed_bounded_repository_relocation_validation",
+  "date": "2026-09-21",
+  "lean_version": "4.33.1",
+  "lake_environment_check": "passed at the relocated repository root",
+  "source_identity_sha256": "f5d654c595b0823786be2ae1171ca334112afa6fa4d1a5df12743dc4812a9491",
+  "authenticated_available_source_object_pairs": 2003,
+  "lake_and_toolchain_files_unchanged": 9,
+  "pinned_dependency_checkouts_checked": 9,
+  "recorded_external_objects_checked": 234,
+  "distinct_recorded_external_and_direct_import_objects_checked": 258,
+  "recorded_comment_only_source_successors": 15,
+  "fresh_audit": {
+    "source": "packages/ModularRep/audits/ReusableProviders.lean",
+    "command": [
+      "lake",
+      "--no-cache",
+      "--no-build",
+      "env",
+      "lean",
+      "--trust=0",
+      "--threads=1",
+      "packages/ModularRep/audits/ReusableProviders.lean"
+    ],
+    "exit_code": 0,
+    "source_sha256": "32497a64c43882c3bbf963eda3f0dbaccdcfaa5a7a6304393702175fc4a96aac"
+  },
+  "configured_audits_not_rerun": [
+    "packages/ModularRep/audits/SporadicAxioms.lean",
+    "packages/ModularRep/audits/SporadicDependencies.lean",
+    "packages/ModularRep/audits/Manuscript.lean",
+    "ManuscriptIBAW/MainAudit.lean"
+  ],
+  "full_project_build_rerun": false,
+  "supplementary_exhaustive_application_audit_rerun": false,
+  "source_and_configuration_unchanged": true,
+  "dependency_downloads_or_manifest_updates": false,
+  "temporary_cache_links_removed": true,
+  "reused_project_and_recorded_external_object_hashes_unchanged": true,
+  "scope": "Migration checks used preserved compiled project modules and pinned external dependencies. The one named audit was elaborated again at the new repository root; other audit and full-compilation results remain historical. Authentication covers the recorded objects and direct external imports, not the full external transitive closure. Comment-only successor applicability is inherited from the existing authenticated source record. These checks do not prove the truth, independence or joint satisfiability of external mathematical assumptions."
+}

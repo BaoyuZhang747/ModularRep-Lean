@@ -1,0 +1,212 @@
+import ModularRep.PrimeRegular
+import ModularRep.PrimeRegularPart
+import ModularRep.PCore
+import ModularRep.CyclicPCore
+import ModularRep.OddOrderPower
+import ModularRep.FiniteFieldUnitsOdd
+import ModularRep.ConformalFactorization
+import ModularRep.RadicalSubgroup
+import ModularRep.PrimeOutsideOrder
+import ModularRep.RadicalTransport
+import ModularRep.Weight
+import ModularRep.DefectZeroRepresentation
+import ModularRep.OrdinaryCharacterDefectZero
+import ModularRep.RepresentationSurjectiveDescent
+import ModularRep.OrdinaryCharacterLiesOverKernel
+import ModularRep.OrdinaryIrreducibleCharacterSurjectiveDescent
+import ModularRep.IrreducibleBrauerCharacterSurjectiveDescent
+import ModularRep.OrdinaryBrauerReductionSurjectiveDescent
+import ModularRep.BrauerCharacterCommonRootCompatibility
+import ModularRep.OrdinaryBlockFibre
+import ModularRep.LiteralOrdinaryPBlockSource
+import ModularRep.OrdinaryBlockFibreCommonWitness
+import ModularRep.OrdinaryBlockFibreBrauerWitness
+import ModularRep.WeightTransport
+import ModularRep.WeightRightActionCoherence
+import ModularRep.WeightCharacterBridge
+import ModularRep.OrbitFibreEquiv
+import ModularRep.LocalNormalizerBlockOperations
+import ModularRep.CharacterWeightBlockAssignment
+import ModularRep.CyclicSylow
+import ModularRep.Sp6DoubleCoverOrder
+import ModularRep.RankTwoSymplectic
+import ModularRep.OddQuasiIsolation
+import ModularRep.StrictQuasiIsolation
+import ModularRep.StabilizerFactorizationTransport
+import ModularRep.ComponentReturnFull
+import ModularRep.CharacteristicTwoClifford
+import ModularRep.CharacteristicTwoCliffordApplication
+import ModularRep.NormalCoreTransport
+import ModularRep.NormalCoreIBAWTransport
+import ModularRep.PaperProofs.NormalCoreLemma48SourceInstantiation
+import ModularRep.PaperProofs.NormalCoreLemma48LiteralBlocks
+import ModularRep.CompleteBlockCollapse
+import ModularRep.ProjectiveBrauerDuality
+import ModularRep.EvenCondition61
+import ModularRep.EvenFieldFixed
+import ModularRep.EvenUnipotentCorrespondence
+import ModularRep.EvenUnipotentAssembly
+import ModularRep.EvenUnipotentIBAW
+import ModularRep.EvenUnipotentIBrBlockAssembly
+import ModularRep.Twist
+import ModularRep.CyclicExtension
+import ModularRep.BrauerCharacterExtensionBridge
+import ModularRep.CyclicOuterBAW
+import ModularRep.CyclicOuterBrauerExtension
+import ModularRep.RegularRestriction
+import ModularRep.PrimeRegularClassFunction
+import ModularRep.ConformalCharacterFixed
+import ModularRep.FiniteFieldConformal
+import ModularRep.PrimeRegularEigenvalues
+import ModularRep.ModularSystem
+import ModularRep.RepresentationScalarChange
+import ModularRep.StableLattice
+import ModularRep.ReductionModulo
+import ModularRep.ReductionModuloEquivariance
+import ModularRep.ExactGrothendieckGroup
+import ModularRep.ModuleCategoryKZeroTrivial
+import ModularRep.JordanHolderCoordinates
+import ModularRep.FDRepFiniteLength
+import ModularRep.FDRepGroupAlgebraEquivalence
+import ModularRep.FDRepJordanHolderKZero
+import ModularRep.FDRepSimpleClassKZero
+import ModularRep.SimpleModuleClassFinite
+import ModularRep.ExactDecompositionMap
+import ModularRep.StableLatticeKZero
+import ModularRep.ExactCharacterBridge
+import ModularRep.FDRepEquiv
+import ModularRep.DecompositionMap
+import ModularRep.CentralAction
+import ModularRep.CentralCharacterIdempotent
+import ModularRep.LinearCharacterOrthogonality
+import ModularRep.LinearCharacterCompleteness
+import ModularRep.CentralCharacterTwist
+import ModularRep.CentralIdempotentSupport
+import ModularRep.PrimitiveCentralIdempotent
+import ModularRep.CentralIdempotentBlockExpansion
+import ModularRep.PrimitiveBlockAutomorphism
+import ModularRep.IBrBlockAutomorphism
+import ModularRep.IBrBlockEquivTransport
+import ModularRep.CentralCharacterAction
+import ModularRep.CentralSector
+import ModularRep.RepresentationCentralSupport
+import ModularRep.CentralCharacterDecomposition
+import ModularRep.CentralCharacterBlockSector
+import ModularRep.BlockIdempotentDecomposition
+import ModularRep.BlockIdempotentInCenter
+import ModularRep.BlockIdempotentDecompositionEquivTransport
+import ModularRep.ScalarCharpoly
+import ModularRep.BrauerCharacter
+import ModularRep.CharpolyInvariantSubmodule
+import ModularRep.BrauerCharacterExact
+import ModularRep.OrdinaryCharacterKZero
+import ModularRep.LinearCharacterTensorAction
+import ModularRep.BrauerLinearCharacterTensorAction
+import ModularRep.BrauerQuotientLinearCharacterAction
+import ModularRep.CyclotomicRootSumReflection
+import ModularRep.CyclotomicDeterminantSpecialization
+import ModularRep.BrauerTraceRecovery
+import ModularRep.IrreducibleBrauerCharacter
+import ModularRep.BrauerCharacterEquivTransport
+import ModularRep.IrreducibleBrauerCharacterEquiv
+import ModularRep.BrauerCharacterHomPullback
+import ModularRep.PrimeRegularRootEmbeddingSubgroup
+import ModularRep.BrauerCharacterExtensionWitnessTransport
+import ModularRep.PGroupInvariantSum
+import ModularRep.GroupAlgebraCentralBrauerMap
+import ModularRep.GroupAlgebraCentralBrauerMapTo
+import ModularRep.CentralBrauerInterval
+import ModularRep.CentralBrauerIntervalSupport
+import ModularRep.BlockDefectGroup
+import ModularRep.BlockCentralBrauerImage
+import ModularRep.Navarro411CentralBrauerSource
+import ModularRep.Navarro411CentralBrauerAdapter
+import ModularRep.Navarro414IntervalCentralCharacterSource
+import ModularRep.Navarro414IntervalCentralCharacterAdapter
+import ModularRep.DefectNormalizerCarrier
+import ModularRep.DefectNormalizerSandwich
+import ModularRep.CentralClassSumExpansion
+import ModularRep.NormalizerCentralBrauerClassSums
+import ModularRep.CentralBrauerMapToBlockExpansion
+import ModularRep.Navarro415416RawClassSource
+import ModularRep.Navarro415416ClassSumAdapter
+import ModularRep.Navarro417PhaseASupport
+import ModularRep.Navarro417RestrictedInjectivity
+import ModularRep.Navarro417DefectSource
+import ModularRep.Navarro417LocalDefectSources
+import ModularRep.Navarro413MappedDefectSource
+import ModularRep.Navarro417FirstParagraphUpperDefectSource
+import ModularRep.Navarro417ExactDefectAdapter
+import ModularRep.SubgroupIntervalTwo
+import ModularRep.SubgroupSubconjugacy
+import ModularRep.IBrSimpleModuleClass
+import ModularRep.BrauerCharacterSeparation
+import ModularRep.BrauerCharacterLinearIndependence
+import ModularRep.BrauerCharacterKZero
+import ModularRep.KZeroTwist
+import ModularRep.BrauerDecompositionMap
+import ModularRep.KZeroLinearCharacterTensor
+import ModularRep.KZeroLinearCharacterDecomposition
+import ModularRep.KZeroLinearCharacterSemidirect
+import ModularRep.ModularTraceFunction
+import ModularRep.ModularTraceRegularPart
+import ModularRep.ModularTraceSeparation
+import ModularRep.EvaluationMatrix
+import ModularRep.PrimeRegularEvaluationMatrix
+import ModularRep.SimpleTraceLinearIndependence
+import ModularRep.IBrBlock
+import ModularRep.LocalNormalizerBrauerBlock
+import ModularRep.IntegralBasicSetBridge
+import ModularRep.DecompositionBasicSetBridge
+import ModularRep.BlockFibreRestriction
+import ModularRep.IBrBlockBasicSetBridge
+import ModularRep.ConlonStabilizerBridge
+import ModularRep.CentralCharacterCovering
+import ModularRep.SemidirectEmbeddedConjugation
+import ModularRep.ManuscriptTypeBDependency
+import ModularRep.TypeBCaseCoverage
+import ModularRep.TypeCCaseCoverage
+import ModularRep.CharacterWeightCentralRestriction
+import ModularRep.BlockInductionCentralIdempotentSupport
+import ModularRep.CentralCharacterBlockInductionRestriction
+import ModularRep.LiteralOrdinaryBlockReduction
+import ModularRep.PrimeRegularRootEmbeddingPQuotient
+import ModularRep.BrauerLocalExtensionInnerTransport
+import ModularRep.NavarroCoveringBrauerExtension
+import ModularRep.NavarroBrauerRestrictionCovering
+import ModularRep.CyclicBrauerTopBlockFromBaseInduction
+import ModularRep.BlockwiseOrdinaryBrauerSpan
+import ModularRep.PaperProofs
+
+/-!
+# Modular representation theory
+
+This library develops reusable foundations for the modular representation
+theory of finite groups.  Its first milestone concerns prime regular elements,
+automorphism twists, scalar actions of central subgroups, and decomposition by
+the complete family of central character idempotents, including the sector of
+each primitive central idempotent.
+
+The library constructs Brauer-character values from an explicit
+cross-characteristic root embedding.  Constructing that embedding from a
+splitting modular system remains explicit external input.  Given the embedding,
+cyclotomic specialisation proves trace recovery, injectivity, and linear
+independence of the resulting irreducible Brauer characters.  Their additivity
+on short exact sequences is proved by factoring characteristic polynomials
+over invariant subspaces.  The library also
+constructs stable lattices, tensor reductions, their natural quotient
+representations, exact Grothendieck-group presentations, and the
+Jordan--Hölder coordinate homomorphism induced by short-exact additivity.  The
+classical decomposition map, its lattice-independence theorem, decomposition
+numbers, and the full block theory require additional constructions.
+-/
+
+
+/-
+This file is part of ModularRep, the Lean companion to
+Baoyu Zhang (2026), "On the inductive blockwise Alperin weight condition
+for type B and type C".
+
+The formalisation checks selected arguments under explicit external
+assumptions. See FORMALISATION_GUIDE.md in the package root.
+-/

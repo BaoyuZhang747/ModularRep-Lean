@@ -1,0 +1,115 @@
+\chapter{The main theorem and the finite group consequence}
+\label{chap:current-main}
+
+Manuscript Theorem 1.1 asserts the inductive blockwise Alperin weight
+condition for every nonabelian finite simple group of Type B or Type C
+and every sporadic simple group, at each prime dividing its order. The
+Type B clause includes ranks one and two and groups over fields of even
+characteristic. The arguments of the preceding chapters establish the
+three cases under their stated hypotheses: manuscript Theorem 3.1,
+Corollary 4.15 and Theorem 5.1.
+
+\section{Combining the three families}
+
+Fix an identification of the simple group $S$ with a group in one of
+these families. For Type C, use the
+specified projective symplectic group over its finite field, with the
+exceptional nonsimple case excluded. For Type B, use the specified
+orthogonal group in rank at least one. The cases in small ranks and
+even characteristic combine with the theorem in higher rank over odd
+fields. The latter uses the defining and odd nondefining cases and
+the arguments for $\ell=2$. For a sporadic group, use its specified realisation and the cover
+attached to the chosen prime.
+
+The theorem for each family gives the full inductive condition on the
+specified cover. Compose its covering projection with the chosen
+isomorphism to $S$. The covering group, characters, roots and compatible
+family then give the condition for $S$. The isomorphism preserves group
+order and hence divisibility by $\ell$.
+
+The Type B case thus follows from the hypotheses of the individual
+cases and the division into cases by rank and field. The sporadic case combines the
+arguments for the four groups treated in Chapter~\ref{chap:current-sporadic}
+with the result reported by CTBlocks for the other groups.
+
+\begin{implementation}
+\module{ManuscriptIBAW.MainClassical} defines
+\lean{Main.ClassicalInputs} and proves
+\lean{Main.typeC_complete} and \lean{Main.typeB_complete}.
+The latter uses the Type B classification of cases and the theorem
+in higher rank obtained from \lean{OddHighInputs.complete}.
+\lean{Main.of_allPrimeFamily} uses a \lean{FamilyCertificate}, which
+contains the covering group, its projection, an isomorphism from its simple quotient to $S$, and a \lean{FamilyWitness}. The classical conclusion of
+\lean{Main.theorem_1_1} requires these full family data. Its sporadic
+alternative retains the named group, model and full inductive condition.
+\module{ManuscriptIBAW.Main} uses
+\lean{Main.Presentation} and \lean{SupportedPresentation}
+to prove the three cases in \lean{Main.theorem_1_1}.
+\end{implementation}
+
+\section{Reduction to the simple sections of a finite group}
+
+Let $H$ be finite and let $\ell$ be prime. A nonabelian simple group
+involved in $H$ is isomorphic to a quotient $U/N$, where $U\leq H$,
+$N\lhd U$, and $U/N$ is nonabelian simple. The hypothesis of
+manuscript Corollary 1.2 gives an identification with a Type B, Type C or
+sporadic simple group for each such quotient whose order is divisible by
+$\ell$.
+
+If $\ell$ divides $|U/N|$, apply the main theorem using this identification.
+Otherwise, the universal $\ell'$-covering group of $U/N$ has order
+prime to $\ell$. Every $\ell$-block of that cover has defect zero,
+and the correspondence at $Q=1$ satisfies the inductive condition,
+as in the proof of manuscript Corollary 1.2.
+
+Sp\"ath's reduction theorem then gives the blockwise Alperin weight
+equality for $H$ \cite[Theorem~A]{Spath2013}:
+\[
+ |\IBr(b)|=|\Alp(b)|\qquad\text{for every block }b.
+\]
+Here $\IBr(b)$ consists of the irreducible Brauer characters in $b$,
+and $\Alp(b)$ consists of the conjugacy classes of weights belonging
+to $b$, with their ordinary local characters of defect zero. The
+specified local block operations, character realisations and root
+choices describe these objects.
+
+To apply the reduction, each complete family must satisfy the
+inductive condition in that theorem. In the exceptional Type B case,
+an explicit transport assumption first interprets the blockwise
+criteria on the natural quotients as relative block conditions on
+the common family over $3.\Omega_7(3)$. This includes character and
+block identifications over the fixed coefficient fields, with compatible
+root correspondences for quotient groups, extension groups and
+intermediate subgroups. A separate published passage combines those
+relative block conditions into a full family
+\cite[Lemma~3.3]{KoshitaniSpath2016}, with the normalisation of
+Sp\"ath's Definition 5.17 and Remark 5.18 \cite{Spath2013}.
+This passage chooses compatible global correspondences when necessary.
+The proof of Koshitani--Sp\"ath's lemma also supplies the abstract lifting of
+characters, weights and blocks from faithful central quotients. Interpreting
+these objects in the fixed common family, with the coefficient and root
+identifications described above, remains the separate assumption
+\lean{NaturalQuotientTransport}.
+
+The formal proof applies the published reduction under these
+identifications and the defect zero implication for sections of
+order prime to $\ell$. The general reduction theorem is an explicit
+external hypothesis. The deduction supplies its hypotheses for every
+nonabelian simple section of $H$.
+
+\begin{implementation}
+\lean{Main.corollary_1_2} constructs
+\lean{SectionEvidence.supported} from the main theorem when
+$\ell$ divides the section order and \lean{SectionEvidence.primeTo}
+otherwise. It applies
+\lean{Main.FiniteGroupReductionSource.reduce}.
+The source is indexed by the block family, its character and root
+data, and \lean{SpathCoefficientField}. This requires the algebraically
+closed modular field $k$ to be algebraic over its prime field $\F_\ell$.
+Its antecedent uses the local
+\lean{Main.SectionEvidence}, which requires the full classical or
+sporadic conclusion on each actual simple section, or that its order is
+prime to the chosen prime. The external assumption combines the published reduction with the
+defect zero implication for sections of order prime to $\ell$.
+Its conclusion is \lean{BlockwiseAWC} for that family.
+\end{implementation}

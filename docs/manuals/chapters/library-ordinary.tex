@@ -1,0 +1,427 @@
+\chapter{Ordinary representations and characters}
+\label{chap:library:characters}
+
+Pullback, inflation and tensoring with a linear character relate
+representations of different groups or give new representations of the
+same group. Their character formulas follow from the representing
+operators. We first show how characters determine irreducible
+representations, then study these operations and extension across a
+cyclic quotient.
+
+Throughout, $K$ is a field of characteristic zero and $G$ is a finite group.
+A representation $\rho$ of $G$ on a finite dimensional $K$-vector space $V$
+has character $\chi_\rho(g)=\tr_K(\rho(g))$. We state algebraic closure
+explicitly where it is used. Character separation for finite groups
+also holds over an arbitrary field of characteristic zero, as the
+averaging argument below shows. Modular systems and reduction are
+introduced in Chapter~\ref{chap:library:reduction}.
+
+\section{Representations and their characters}
+\label{lib:ordinary:realisations}
+
+\begin{definition}
+A representation of $G$ on $V$ is a homomorphism
+$\rho:G\to\GL_K(V)$. It is irreducible if $V\ne0$ and its only invariant
+subspaces are $0$ and $V$. An equivalence $\rho\simeq\sigma$ is a linear
+isomorphism $T:V\to W$ satisfying
+\[
+ T\rho(g)=\sigma(g)T\qquad(g\in G).
+\]
+The set $\Irr_K(G)$ consists of the functions $\chi:G\to K$ afforded by
+finite dimensional irreducible $K$-representations.
+\end{definition}
+
+Thus equality in $\Irr_K(G)$ is equality at every group element. Choosing
+different bases or isomorphic realisations does not create new characters:
+conjugate operators have equal traces. The value at the identity is
+$\chi_\rho(1)=\dim_K V$, regarded as an element of $K$. Every character is
+constant on conjugacy classes, since $\rho(xgx^{-1})$ is conjugate to
+$\rho(g)$.
+
+\begin{implementation}
+Mathlib supplies \lean{Representation},
+\lean{Representation.IsIrreducible} and the trace function
+\lean{Representation.character}, together with the identities
+\lean{Representation.char_one}, \lean{Representation.char_conj} and
+\lean{Representation.char_iso}.
+The additional type \lean{ModularRep.OrdinaryIrreducibleCharacter.Irr}
+collects the functions admitting an irreducible realisation on some
+$K^n$, expressed by
+\lean{ModularRep.OrdinaryIrreducibleCharacter.Realisation} using these
+Mathlib definitions. Equality of these character functions is pointwise,
+as expressed by
+\lean{ModularRep.OrdinaryIrreducibleCharacter.ext}.
+\end{implementation}
+
+\begin{proposition}[Characters determine irreducible representations]
+\label{lib:ordinary:separation}
+Assume that $K$ is algebraically closed. If two finite dimensional
+irreducible $K$-representations $\rho$ and $\sigma$ have equal characters,
+then $\rho\simeq\sigma$.
+\end{proposition}
+For the corresponding statement about traces of simple modules over a
+finite dimensional algebra, see, for example,
+\cite[Theorem~1.19]{Navarro1998}.
+\begin{proof}
+Regard the two representation spaces as simple $KG$-modules. Equality of
+their traces on $G$ implies equality on every element of $KG$ by linearity.
+Suppose that the simple modules are nonisomorphic. Schur's lemma says that
+their mutual homomorphism spaces are zero and their endomorphisms are
+scalars. The density theorem applied to their direct sum therefore supplies
+an element of $KG$ acting as an operator of trace one on the first module
+and as zero on the second. This contradicts equality of traces.
+
+An operator of trace one can be obtained by choosing a basis and taking the
+projection onto one basis vector. Using this operator also makes the same
+separation argument valid in positive characteristic, where the trace of
+the identity may be zero.
+\end{proof}
+
+\begin{implementation}
+The theorem is
+\lean{ModularRep.ModularTraceSeparation.representation_equiv_of_character_eq}.
+Mathlib supplies the Schur and density statements used in the proof,
+\lean{IsSimpleModule.algebraMap_end_bijective_of_isAlgClosed} and
+\lean{Module.Finite.toModuleEnd_moduleEnd_surjective}.
+The local lemmas
+\lean{exists_trace_action_ne_of_not_linearEquiv} and
+\lean{linearMap_trace_surjective}, in the same namespace, make the
+separating operator explicit. The theorem itself applies to a group over
+an algebraically closed field of any characteristic and does not require
+the group to be finite. Its use here is in characteristic zero.
+\end{implementation}
+
+For a finite group, equality of irreducible characters also implies
+equivalence over an arbitrary field $K$ of characteristic zero. The
+character averaging formula (see, for example,
+\cite[Section~12.1, proof of Proposition~32]{Serre1977}) gives
+\[
+ \dim_K\operatorname{Hom}_{KG}(V,W)
+   =\frac{1}{|G|}\sum_{g\in G}\chi_V(g^{-1})\chi_W(g),
+\]
+where the integer on the left is viewed in $K$. If $\chi_V=\chi_W$,
+the right hand side is also $\dim_K\operatorname{End}_{KG}(V)$.
+This dimension is positive because $V\ne0$ and its identity map is
+nonzero. Thus there is a nonzero homomorphism $V\to W$, which is an
+isomorphism by irreducibility. The proof does not require that the
+endomorphism ring consist of scalars.
+
+\begin{implementation}
+The theorem
+\lean{ModularRep.PaperProofs.TypeBOrdinaryTraceSeparationSplitting.nonempty_equiv_of_character_eq}
+proves this implication using Mathlib's character averaging formula. It applies
+to every finite group over every field of characteristic zero and also
+identifies simple module classes with equal characters. In particular,
+it applies when $K$ is the fraction field of a discrete valuation ring.
+\end{implementation}
+
+\section{Pullback and quotient descent}
+\label{lib:ordinary:pullback}
+
+For a homomorphism $f:H\to G$, the pullback $f^*\rho$ acts on the same
+vector space by $(f^*\rho)(h)=\rho(f(h))$. Its character is
+$\chi_\rho\circ f$. An intertwiner between two representations of $G$
+also intertwines their pullbacks.
+
+\begin{proposition}[Inflation and descent of representations]
+\label{lib:ordinary:surjective-pullback}
+If $f:H\twoheadrightarrow G$ is surjective, then $f^*\rho$ is irreducible
+if and only if $\rho$ is irreducible. If $\pi:G\twoheadrightarrow H$ and
+$\ker \pi\leq\ker\rho$, there is a unique representation $\bar\rho$ of $H$
+on $V$ such that $\pi^*\bar\rho=\rho$. It is irreducible whenever $\rho$ is.
+\end{proposition}
+\begin{proof}
+A subspace invariant under $\rho$ is invariant under its pullback. Conversely,
+surjectivity lets every $g\in G$ be written as $f(h)$, so an invariant
+subspace for the pullback is invariant under $\rho$. The lattices of
+invariant subspaces are identical.
+
+For descent, define $\bar\rho(\pi(g))=\rho(g)$. If $\pi(g)=\pi(g')$, then
+$g'^{-1}g\in\ker \pi\leq\ker\rho$, which makes the value independent of the
+lift. This defines a representation and proves the pullback identity.
+Surjectivity proves uniqueness, and the first assertion proves
+irreducibility.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.Twist} constructs the order isomorphism
+\lean{Representation.subrepresentationPullbackOrderIso}, from which
+\lean{Representation.isIrreducible_pullback_iff} follows. These results
+hold over any field, and the order isomorphism is available more generally
+over a semiring. In
+\module{ModularRep.RepresentationSurjectiveDescent},
+\lean{descend} factors through $G/\ker \pi$ and uses Mathlib's quotient
+isomorphism $G/\ker \pi\simeq H$. The declarations
+\lean{descend_apply}, \lean{descend_pullback} and
+\lean{descend_irreducible} give its defining identities and irreducibility.
+Uniqueness on the fixed vector space is the direct surjectivity argument
+in the proof above.
+\end{implementation}
+
+To descend a character, it remains to show that the kernel of the quotient
+map acts trivially in an affording representation. Over $\mathbb C$, the
+standard identity
+$\ker\rho=\{g\in G:\chi_\rho(g)=\chi_\rho(1)\}$ gives this directly
+(see, for example, \cite[Lemma~2.19]{Isaacs1976}). The averaging argument below proves
+the needed implication over any field of characteristic zero, without
+assuming irreducibility.
+
+\begin{lemma}[Kernel containment by averaging]
+\label{lib:ordinary:averaging}
+Let $S$ be a finite subgroup of $G$. If
+$\chi_\rho(s)=\chi_\rho(1)$ for every $s\in S$, then $S\leq\ker\rho$.
+\end{lemma}
+\begin{proof}
+The averaging operator
+\[
+ P_S=\frac1{|S|}\sum_{s\in S}\rho(s)
+\]
+is a projection onto the invariant subspace $V^S$. Its trace is both
+$\dim_K V^S$ and, by the hypothesis, $\dim_K V$. These integers are equal
+because their images in a field of characteristic zero are equal. Hence
+$V^S=V$, and every element of $S$ acts trivially.
+\end{proof}
+
+\begin{implementation}
+\lean{Representation.subgroup_le_ker_of_character_eq_one}, in
+\module{ModularRep.OrdinaryCharacterLiesOverKernel}, proves this using Mathlib's
+\lean{Representation.card_inv_mul_sum_char_eq_finrank} for the restricted
+representation. Only $S$ must be finite. No irreducibility, normality or
+centrality hypothesis occurs in this lemma.
+\end{implementation}
+
+\begin{theorem}[Descent of an ordinary irreducible character]
+\label{lib:ordinary:character-descent}
+Let $\pi:G\twoheadrightarrow H$ be a surjective homomorphism and let
+$\chi\in\Irr_K(G)$. Suppose that $\chi(x)=\chi(1)$ for all
+$x\in\ker \pi$. Then there is a unique $\bar\chi\in\Irr_K(H)$ with
+\[
+ \chi(g)=\bar\chi(\pi(g))\qquad(g\in G).
+\]
+\end{theorem}
+\begin{proof}
+Choose an irreducible realisation of $\chi$. Lemma~\ref{lib:ordinary:averaging}
+places $\ker \pi$ in its kernel. Descend this representation by
+Proposition~\ref{lib:ordinary:surjective-pullback} and take its trace.
+The resulting representation remains irreducible. Any two functions with
+the required pullback agree at every element of $H$, since $\pi$ is surjective.
+\end{proof}
+
+\begin{implementation}
+The descended character, its factorisation and its uniqueness are given by
+\lean{ModularRep.OrdinaryIrreducibleCharacterSurjectiveDescent.descendCharacter},
+\lean{descendCharacter_factorisation} and \lean{descendCharacter_unique}.
+The construction applies averaging to an irreducible realisation and
+then descends that representation.
+\end{implementation}
+
+For a positive integer $a$, write $a_\ell$ for the largest power of the
+prime $\ell$ dividing $a$. An ordinary irreducible character $\chi$ has
+\emph{defect zero at $\ell$} if $\chi(1)_\ell=|G|_\ell$, where
+$\chi(1)$ denotes its positive integral degree.
+Over a splitting field this is the usual notion of defect zero. Over an
+arbitrary field of characteristic zero, we use the same numerical
+condition on the dimension of an irreducible representation in the
+following statement.
+
+\begin{corollary}[Preservation of defect zero]
+\label{lib:ordinary:defect-descent}
+Let $\ell$ be a prime. Under the hypotheses of
+Theorem~\ref{lib:ordinary:character-descent}, assume that $\ell\nmid|\ker \pi|$.
+If $\chi$ has defect zero at $\ell$, then $\bar\chi$ has defect zero.
+\end{corollary}
+\begin{proof}
+An affording representation $V$ has dimension $\chi(1)$. Descent retains
+this vector space and hence the degree.
+The equality $|G|=|H|\,|\ker \pi|$ gives $|G|_\ell=|H|_\ell$, so the same
+dimension satisfies the equality defining defect zero for $H$.
+\end{proof}
+
+\begin{implementation}
+\lean{ModularRep.IsDefectZeroOrdinaryCharacter} expresses the dimension
+equality for an irreducible representation in Mathlib's \lean{FDRep}
+affording the character.
+\lean{descendCharacter_defectZero} in the descent namespace applies
+averaging to the affording representation and descends it without changing
+its dimension.
+\end{implementation}
+
+\begin{example}[Projection from a direct product]
+Let $G=H\times C_r$, with $\ell\nmid r$, and let $\pi$ be the first
+projection. To apply the descent theorem to an ordinary irreducible
+character $\chi$, it is enough to verify
+$\chi(1,c)=\chi(1,1)$ for every $c\in C_r$. The theorem then constructs
+$\bar\chi\in\Irr_K(H)$ and proves
+$\chi(h,c)=\bar\chi(h)$ for all $(h,c)$. If the original character has
+defect zero at $\ell$, the corollary preserves that property.
+\end{example}
+
+\section{Linear characters and automorphisms}
+\label{lib:ordinary:actions}
+
+Write $L_K(G)=\operatorname{Hom}(G,K^\times)$ for the group of linear
+characters. For $\lambda\in L_K(G)$ define
+$(\rho\otimes\lambda)(g)=\lambda(g)\rho(g)$ on $V$. The usual tensor
+product with a one dimensional representation is realised on $V$ by
+this formula. For an automorphism $\alpha$ of $G$, set
+$\rho^\alpha=\rho\circ\alpha$, $\lambda^\alpha=\lambda\circ\alpha$
+and $\chi^\alpha=\chi\circ\alpha$.
+
+\begin{proposition}[Tensoring with a linear character]
+\label{lib:ordinary:linear-twist}
+Tensoring with a linear character preserves and reflects irreducibility,
+and
+\[
+ \chi_{\rho\otimes\lambda}(g)=\lambda(g)\chi_\rho(g).
+\]
+For $\alpha\in\Aut(G)$, one also has
+\[
+ (\rho\otimes\lambda)^\alpha
+   =\rho^\alpha\otimes\lambda^\alpha,
+ \qquad
+ (\chi\lambda)^\alpha=\chi^\alpha\lambda^\alpha.
+\]
+\end{proposition}
+\begin{proof}
+Multiplication by the nonzero scalar $\lambda(g)$ does not change which
+subspaces are invariant under the action of $g$. Multiplication by
+$\lambda(g)^{-1}$ gives the converse. The trace formula follows from
+linearity of trace. The compatibility with $\alpha$ follows by evaluating
+both sides at $g$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.LinearCharacterTensorAction} defines
+\lean{Representation.linearCharacterTwist} and proves
+\lean{Representation.isIrreducible_linearCharacterTwist_iff},
+\lean{Representation.character_linearCharacterTwist} and
+\lean{Representation.linearCharacterTwist_twist}.
+The induced operation on ordinary irreducible characters is
+\lean{ModularRep.OrdinaryIrreducibleCharacter.linearTwist}.
+\end{implementation}
+
+The convention for automorphisms is a right action:
+$(\chi^\alpha)^\beta=\chi^{\alpha\beta}$, with
+$(\alpha\beta)(g)=\alpha(\beta(g))$. The combined tensor and automorphism
+action below is instead written as a left action, with the indicated inverses.
+
+More precisely, let $A$ act on $G$ through $a\mapsto\alpha_a$. Its left
+action on $L_K(G)$ is $a\cdot\lambda=\lambda\circ\alpha_{a^{-1}}$.
+The resulting semidirect product acts on $\Irr_K(G)$ by
+\[
+ (\lambda,a)\cdot\chi
+   =\lambda^{-1}\,\chi^{\alpha_{a^{-1}}}.
+\]
+The compatibility in Proposition~\ref{lib:ordinary:linear-twist} proves
+the action law. The inverses affect formulas for the action, although they
+do not change the orbits or stabilisers of either factor acting alone.
+
+\begin{implementation}
+The declarations
+\lean{ModularRep.OrdinaryIrreducibleCharacter.linearCharacterFieldAction},
+\lean{tensorField_semidirectCompatible},
+\lean{tensorFieldSemidirectAction} and
+\lean{tensorFieldSemidirectAction_apply} specify this convention.
+They use the semidirect product action in
+\module{Formalisation.SemidirectStabilizer}. The right action by
+automorphisms is represented as a left action of the opposite group.
+These declarations apply to any group $A$ acting on $G$.
+\end{implementation}
+
+\begin{example}[A stabiliser calculation]
+Suppose $A$ and a subgroup $L\leq L_K(G)$ are given, and $A$ preserves $L$.
+Under the combined action, $(\lambda,a)$ fixes $\chi$ if and only if
+$\chi(\alpha_{a^{-1}}(g))=\lambda(g)\chi(g)$ for every $g\in G$.
+Pullback followed by tensoring with a linear character gives an irreducible
+representation affording the transformed character. To restrict this
+action to the characters in a block, one must also prove that the block
+is preserved.
+\end{example}
+
+\section{Extension across a cyclic quotient}
+\label{lib:ordinary:cyclic-extension}
+
+Let $N\trianglelefteq H$ with $H$ finite. An extension of a representation
+$\rho$ of $N$ is a representation $\widehat\rho$ of $H$ on the same vector
+space such that
+$\widehat\rho|_N\simeq\rho$. An extension makes $\rho$ invariant
+under conjugation by $H$: the action of $h^{-1}$ intertwines the
+conjugation twist of $\widehat\rho|_N$ with $\widehat\rho|_N$.
+Also, an extension of an irreducible representation is irreducible, since
+every $H$-invariant subspace is $N$-invariant.
+
+\begin{theorem}[Cyclic extension]
+\label{lib:ordinary:cyclic-principle}
+Assume that $K$ is algebraically closed. Let $H$ be finite, let
+$N\trianglelefteq H$, and let $\rho$ be a finite
+dimensional irreducible $K$-representation of $N$. If $H/N$ is cyclic
+and $\rho\circ c_h\simeq\rho$ for every $h\in H$, where
+$c_h(n)=hnh^{-1}$, then $\rho$ extends to $H$.
+\end{theorem}
+\begin{proof}
+Choose $h\in H$ whose coset generates $H/N$, and set $r=|H/N|$.
+Conjugation invariance gives an invertible operator $T$ such that
+$T\rho(n)T^{-1}=\rho(hnh^{-1})$ for every $n\in N$.
+Consequently $\rho(h^r)^{-1}T^r$ commutes with $\rho(N)$ and is
+a nonzero scalar $c$ by Schur's lemma. Choose $u\in K$ with
+$u^r=c^{-1}$. Replacing $T$ by $uT$ preserves the conjugation
+identity and gives $T^r=\rho(h^r)$.
+These identities ensure that $\widehat\rho(nh^i)=\rho(n)T^i$,
+for $n\in N$ and $0\leq i<r$, defines a representation of $H$
+extending $\rho$.
+\end{proof}
+
+For the complex character formulation, see
+\cite[Corollary~11.22]{Isaacs1976}. The proof above uses
+algebraic closure to apply Schur's lemma and take the required root.
+The modular analogue is discussed in
+Section~\ref{lib:brauer:actions-extensions}.
+
+\begin{proposition}[Extension of an invariant ordinary character]
+\label{lib:ordinary:cyclic-bridge}
+Assume that $K$ is algebraically closed. Let $H$ be finite, let
+$N\trianglelefteq H$, let $H/N$ be cyclic, and let $\chi\in\Irr_K(N)$. If
+\[
+ \chi(hnh^{-1})=\chi(n)\qquad(h\in H,\ n\in N),
+\]
+then there exists $\widehat\chi\in\Irr_K(H)$ such that
+$\widehat\chi|_N=\chi$.
+\end{proposition}
+\begin{proof}
+Choose an irreducible realisation $\rho$ of $\chi$. Each conjugation twist
+of $\rho$ has character $\chi$, so
+Proposition~\ref{lib:ordinary:separation} supplies an equivalence with
+$\rho$. The cyclic extension theorem gives $\widehat\rho$ and its
+restriction equivalence. The extension is irreducible, and taking traces
+of the intertwining identity proves the required restriction equality.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.CyclicExtension} defines
+\lean{Representation.ConjugationInvariant} and
+\lean{Representation.Extension}.
+The Lean construction assumes
+\lean{Representation.CyclicExtensionPrinciple}, which states the
+representation extension property over the chosen coefficient field.
+This principle is an explicit hypothesis of the Lean construction,
+including when $K$ is algebraically closed. Theorem~\ref{lib:ordinary:cyclic-principle}
+proves the mathematical assertion under algebraic closure.
+Over an arbitrary field of characteristic zero the assertion can fail. In
+\module{ModularRep.OrdinaryCharacterCyclicExtensionBridge},
+\lean{ModularRep.OrdinaryIrreducibleCharacter.realisation_conjugationInvariant_of_fixed}
+proves invariance of an irreducible realisation, and
+\lean{ModularRep.OrdinaryIrreducibleCharacter.exists_extension_of_fixed_cyclic_quotient}
+constructs the extending character under the stated extension hypothesis.
+An \lean{ExtensionWitness} consists of
+an irreducible character of $H$ together with its restriction identity
+on $N$.
+\end{implementation}
+
+\begin{example}[Extension to a semidirect product]
+Let $D$ and $A$ be finite, with $A$ cyclic. For $H=D\rtimes A$, the normal
+copy of $D$ has quotient $H/D\simeq A$. A conjugation invariant irreducible
+representation of $D$ therefore extends to $H$ whenever the cyclic
+extension property holds over the coefficient field.
+\lean{Representation.exists_extension_to_semidirect_of_cyclic_outer}
+constructs this quotient isomorphism and applies the principle.
+\end{example}

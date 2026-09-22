@@ -1,0 +1,40 @@
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsJ4
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsBabyTwo
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsBabyOdd
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsMonsterTwo
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsMonsterOdd
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsFi24Two
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsFi24Three
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsFi24Five
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsFi24Seven
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedNamedInputsFi24Cyclic
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedSporadicAssembly
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedBlockDefinition41
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedDefectFour
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedCentralSectorAssembly
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierAcceleratedEquivariantReplacement
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierOriginalCompleteCollapse
+import ModularRep.PaperProofs.SporadicFi24P3Definition44NamedCarrierCanonicalCompleteCollapse
+import Formalisation.BlockCancellation
+
+/-!
+Owned integration for the literature-relative sporadic certificate.
+5.1 / 5.7: AcceleratedSporadicAssembly; all exceptional results are constructed.
+5.2: OriginalCompleteCollapse, with CanonicalCompleteCollapse as centreless specialization.
+5.3: AcceleratedDefectFour, fixed actual BlockCertificate.
+5.4: Formalisation.BlockCancellation, indexed cancellation and exchanged-block preservation.
+5.5: AcceleratedEquivariantReplacement, four branches on one retained family.
+5.6: AcceleratedCentralSectorAssembly, fixed full original Definition4.1 output.
+All published and actual-identification parameters retain the accepted external
+input policy. This import target does not modify shared manuscript aggregators.
+-/
+
+
+/-
+This file is part of ModularRep, the Lean companion to
+Baoyu Zhang (2026), "On the inductive blockwise Alperin weight condition
+for type B and type C".
+
+The formalisation checks selected arguments under explicit external
+assumptions. See FORMALISATION_GUIDE.md in the package root.
+-/

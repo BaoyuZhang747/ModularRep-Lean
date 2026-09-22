@@ -1,0 +1,616 @@
+\chapter{Brauer characters}
+\label{chap:library:brauer}
+
+Let $\ell$ be a prime, let $G$ be finite, let $k$ be an algebraically closed
+field of characteristic $\ell$, and let $K$ be a field of characteristic
+zero. Fix a multiplicative correspondence between the roots of unity in
+$k$ and $K$ of orders dividing $|G|_{\ell'}$. We use it to lift the
+eigenvalues of a modular representation and define its Brauer character.
+For the usual complex valued construction, see, for example,
+\cite[pp.~17--18]{Navarro1998}. The construction here uses only a finite
+group of roots of unity in $K$, which need not be algebraically closed.
+
+We prove additivity on short exact sequences, separation of irreducible
+representations and linear independence of their Brauer characters.
+These results will identify composition multiplicities from character
+values in Chapter~\ref{chap:library:kzero}.
+
+\section{Regular elements and roots of unity}
+\label{lib:brauer:roots}
+
+An element is $\ell$-regular if its order is prime to $\ell$. Write
+$G_{\ell'}$ for these elements and
+$\operatorname{CF}_{\ell'}(G,K)$ for the $K$-valued functions on
+$G_{\ell'}$ invariant under conjugation by $G$. Set
+\[
+ m_G=|G|_{\ell'},\qquad
+ \mu_{m_G}(k)=\{a\in k^\times:a^{m_G}=1\}.
+\]
+Here $|G|_{\ell'}$ is the largest divisor of $|G|$ prime to $\ell$.
+It is a common exponent for the regular elements and need not be their
+least common exponent.
+
+\begin{definition}
+\label{lib:brauer:root-correspondence}
+A root correspondence for $G$ is a multiplicative isomorphism
+$\iota_G:\mu_{m_G}(k)\to\mu_{m_G}(K)$.
+\end{definition}
+
+Since $k$ is algebraically closed and $\ell\nmid m_G$, its group of
+$m_G$th roots is cyclic of order $m_G$. The existence of $\iota_G$
+therefore requires $K$ to contain all $m_G$th roots of unity.
+The correspondence $\iota_G$ is specified separately from the modular system in
+Chapter~\ref{chap:library:reduction}. When restricting characters or
+comparing character tables, the chosen correspondences must agree on the
+roots involved.
+
+\begin{implementation}
+\module{ModularRep.BrauerRootConvention} defines
+\lean{PrimeRegularRootEmbedding.AgreesOnRoots}: two correspondences agree
+on every root whose order divides the exponent for the group being restricted
+to. Agreement is reflexive and is transitive when the required exponents
+divide one another. The theorem \lean{agreesOnRoots_of_commonRoot}
+proves agreement for correspondences induced by one common root
+identification. Separate choices of roots do not establish this agreement.
+\end{implementation}
+
+\begin{lemma}[Orders of eigenvalues at regular elements]
+\label{lib:brauer:eigenvalues}
+Let $\rho$ be a finite dimensional $k$-representation of $G$.
+If $g\in G_{\ell'}$ and $a$ is a root of the characteristic polynomial of
+$\rho(g)$, then $a^{m_G}=1$.
+\end{lemma}
+\begin{proof}
+The order of $g$ divides $|G|$ and is prime to $\ell$, so it divides $m_G$.
+Hence $g^{m_G}=1$. A root of the characteristic polynomial is an eigenvalue, so
+there is $v\ne0$ with $\rho(g)v=av$. Applying the $m_G$th power gives
+$v=a^{m_G}v$, and cancellation proves the assertion.
+\end{proof}
+
+\begin{implementation}
+\lean{ModularRep.primeRegularExponent} is $m_G$.
+\lean{ModularRep.PrimeRegularRootEmbedding} specifies a prime
+\lean{p} and an equivalence between the groups defined by Mathlib's
+\lean{rootsOfUnity}. The exponent identity and the
+eigenvalue lemma are
+\lean{ModularRep.PrimeRegularElement.pow_primeRegularExponent_eq_one} and
+\lean{Representation.charpolyRoot_pow_primeRegularExponent_eq_one} in
+\module{ModularRep.PrimeRegularEigenvalues}.
+These two elementary results only need a field and a finite dimensional
+representation. The field characteristic and algebraic closure enter the
+subsequent construction of Brauer characters.
+\end{implementation}
+
+\section{The character of a modular representation}
+\label{lib:brauer:construction}
+
+For a finite dimensional $k$-representation $\rho$, let
+$\mathcal R_\rho(g)$ be the multiset of roots of the characteristic
+polynomial of $\rho(g)$, with algebraic multiplicities.
+
+\begin{definition}
+\label{lib:brauer:character-definition}
+The Brauer character afforded by $\rho$, relative to $\iota_G$, is
+\[
+ \varphi_\rho(g)=\sum_{a\in\mathcal R_\rho(g)}\iota_G(a)
+ \qquad(g\in G_{\ell'}).
+\]
+An irreducible Brauer character is one afforded by an irreducible finite
+dimensional $k$-representation. Their set is denoted
+$\IBr_{\iota_G}(G)$.
+\end{definition}
+
+The preceding lemma places every root in the domain of $\iota_G$.
+Algebraic closure ensures that the characteristic polynomial splits over
+$k$. The eigenvalues are lifted to $K$ before they are summed.
+Their sum in $k$ is the trace $\tr_k(\rho(g))$.
+
+\begin{proposition}[Invariance of Brauer characters]
+\label{lib:brauer:invariance}
+The function $\varphi_\rho$ is constant on conjugacy classes in
+$G_{\ell'}$. Equivalent representations have equal Brauer characters.
+For $\alpha\in\Aut(G)$,
+\[
+ \varphi_{\rho\circ\alpha}(g)=\varphi_\rho(\alpha(g)).
+\]
+\end{proposition}
+\begin{proof}
+Conjugating a group element conjugates its representing operator.
+An equivalence of representations also conjugates the corresponding
+operators. Conjugate operators have the same characteristic polynomial,
+hence the same root multiset. The definition as a sum of lifted roots gives the first two
+assertions. For the last assertion the operator on the left at $g$ is
+exactly the operator on the right at $\alpha(g)$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.BrauerCharacter} defines
+\lean{Representation.brauerCharacterOfRootEmbedding} using Mathlib's
+characteristic polynomials and their root multisets. It has values in
+\lean{ModularRep.PrimeRegularClassFunction}. It uses a total function
+\lean{PrimeRegularRootEmbedding.lift}, extended by zero outside the root
+group, to map the root multiset. The theorem
+\lean{Representation.lift_charpolyRootAsRootOfUnity} proves agreement with
+the specified root equivalence on every root that occurs.
+The invariance declarations are
+\lean{Representation.charpoly_conj},
+\lean{Representation.brauerCharacterOfRootEmbedding_iso} and
+\lean{Representation.brauerCharacterOfRootEmbedding_twist}.
+The conjugacy lemma specialises Mathlib's
+\lean{LinearEquiv.charpoly_conj} to representation operators.
+\lean{ModularRep.IBr} consists of class functions admitting an
+irreducible \lean{FDRep} realisation. Equality of its elements is
+pointwise equality of functions.
+\end{implementation}
+
+\begin{example}[Diagonal representations]
+Suppose $g\in G_{\ell'}$ acts diagonally with entries
+$a_1,\ldots,a_d\in\mu_{m_G}(k)$. Its Brauer value is
+$\iota_G(a_1)+\cdots+\iota_G(a_d)$. If several entries coincide, every
+occurrence contributes to the sum. At the identity all entries are one,
+so $\varphi_\rho(1)=d$ in $K$. This remains the integer $d$ even when the
+trace of the identity in $k$ vanishes because $\ell\mid d$.
+\end{example}
+
+\section{Additivity on exact sequences}
+\label{lib:brauer:exactness}
+
+\begin{lemma}[Characteristic polynomial on a subspace and quotient]
+\label{lib:brauer:charpoly-factorisation}
+Let $T$ be an endomorphism of a finite dimensional vector space $V$ over a
+field, and let $U\leq V$ be $T$-invariant. If $\bar T$ is the induced
+endomorphism of $V/U$, then
+\[
+ \det(XI-T)=\det(XI-T|_U)\det(XI-\bar T).
+\]
+\end{lemma}
+\begin{proof}
+Choose a basis of $U$, a basis of $V/U$ and lifts of the quotient basis.
+Together they give a basis of $V$ in which $T$ has the form
+\[
+ \begin{pmatrix}A&B\\0&D\end{pmatrix}.
+\]
+The diagonal blocks represent $T|_U$ and $\bar T$. The determinant of the
+resulting block upper triangular polynomial matrix is the product of the
+two diagonal determinants.
+\end{proof}
+
+\begin{implementation}
+\lean{LinearMap.charpoly_eq_restrict_mul_mapQ} in
+\module{ModularRep.CharpolyInvariantSubmodule} constructs this basis and
+identifies all four blocks. It uses Mathlib's basis construction
+\lean{Module.Basis.sumQuot} and block matrix identity
+\lean{Matrix.charpoly_fromBlocks_zero}\textsubscript{\texttt{21}}.
+\end{implementation}
+
+\begin{theorem}[Additivity on short exact sequences]
+\label{lib:brauer:short-exact}
+For a short exact sequence of finite dimensional $kG$-representations
+\[
+ 0\longrightarrow U\overset{f}{\longrightarrow}V
+   \overset{\pi}{\longrightarrow}W\longrightarrow0,
+\]
+the Brauer characters formed using $\iota_G$ satisfy
+$\varphi_V=\varphi_U+\varphi_W$. In particular,
+$\varphi_{U\oplus W}=\varphi_U+\varphi_W$.
+\end{theorem}
+\begin{proof}
+First take an invariant subspace of $V$. By
+Lemma~\ref{lib:brauer:charpoly-factorisation}, the root multiset of the
+operator on $V$ is the sum of the root multisets on the subspace and its
+quotient. Applying the same lift to each occurrence and summing proves
+additivity. This step uses no additive property of $\iota_G$.
+
+For a short exact sequence, $\im f=\ker \pi$ is invariant. Injectivity of
+$f$ identifies $U$ with $\im f$, and surjectivity of $\pi$ identifies
+$V/\im f$ with $W$. Both identifications intertwine the actions. The
+first part and Proposition~\ref{lib:brauer:invariance} give the assertion.
+The case of a direct sum follows in the same way, or from the characteristic
+polynomial of a block diagonal operator.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.BrauerCharacterExact} proves
+\lean{Representation.brauerCharacterOfRootEmbedding_subrepresentation_quotient}
+and \lean{Representation.brauerCharacterOfRootEmbedding_prod}.
+The statement for the category of finite dimensional representations is
+\lean{FDRep.brauerCharacterOfRootEmbedding_shortExact}.
+\lean{FDRep.shortExact_underlying_functions} gives injectivity,
+surjectivity and exactness of the underlying linear maps. Intertwining
+identities identify the subrepresentation and quotient with the first
+and last terms of the sequence.
+\end{implementation}
+
+\begin{example}[An invariant filtration]
+If $0=V_0\leq V_1\leq\cdots\leq V_r=V$ is a finite invariant filtration,
+repeated exact additivity gives
+$\varphi_V=\sum_{i=1}^r\varphi_{V_i/V_{i-1}}$.
+For a representation given by block upper triangular matrices, the
+diagonal blocks therefore suffice to calculate its Brauer character.
+The blocks above the diagonal can distinguish a nonsplit extension from
+a direct sum, even though their Brauer characters agree.
+\end{example}
+
+\section{Separation and linear independence}
+\label{lib:brauer:traces}
+
+The modular traces of nonisomorphic simple representations are linearly
+independent. To pass from this fact to Brauer characters, we compare the
+same sums of roots of unity in the two fields. Cyclotomic polynomials
+provide the comparison. For linear independence of complex valued Brauer
+characters, see \cite[Theorem~2.6]{Navarro1998}.
+
+\begin{lemma}[Traces on regular parts]
+\label{lib:brauer:regular-traces}
+Let $\rho$ be a finite dimensional $k$-representation of $G$.
+For every $g\in G$, write $g=g_\ell g_{\ell'}$ as commuting factors of
+$\ell$-power order and order prime to $\ell$. Then
+\[
+ \tr_k(\rho(g))=\tr_k(\rho(g_{\ell'})).
+\]
+\end{lemma}
+This trace identity also appears in \cite[Lemma~2.4]{Navarro1998}.
+\begin{proof}
+If $g_\ell$ has order dividing $\ell^a$, then in characteristic $\ell$
+the operator $P=\rho(g_\ell)$ satisfies
+$(P-I)^{\ell^a}=P^{\ell^a}-I=0$. Let $R=\rho(g_{\ell'})$.
+The operators $P$ and $R$ commute. Hence $R(P-I)$ is nilpotent and has
+trace zero. Since $RP=R+R(P-I)$, taking traces proves the claim.
+\end{proof}
+
+\begin{implementation}
+\lean{Representation.character_eq_character_primeRegularPart} in
+\module{ModularRep.ModularTraceRegularPart} uses the commuting primary
+decomposition from \module{ModularRep.PrimeRegularPart} and Mathlib's trace
+identity for a commuting nilpotent term.
+\end{implementation}
+
+\begin{proposition}[Brauer characters determine irreducible representations]
+\label{lib:brauer:separation}
+If two finite dimensional modular representations have equal Brauer
+characters relative to $\iota_G$, then their $k$-valued trace functions
+on $G$ are equal. If both representations are irreducible, they are
+equivalent.
+\end{proposition}
+\begin{proof}
+Choose a primitive $m_G$th root $\zeta\in k$. Its image
+$\widehat\zeta=\iota_G(\zeta)$ is primitive in $K$. At a regular element,
+write the two eigenvalue multisets as powers of $\zeta$. The difference
+of the sums of these powers is the value of some polynomial
+$F\in\Z[X]$ at $\zeta$. Equality of the Brauer values says
+$F(\widehat\zeta)=0$. The minimal polynomial of $\widehat\zeta$ over
+$\Q$ is the cyclotomic polynomial $\Phi_{m_G}$, so
+$\Phi_{m_G}$ divides $F$ in $\Z[X]$. Since $m_G$ is prime to
+$\ell$, the primitive root $\zeta$ is also a root of the corresponding
+cyclotomic polynomial in $k$. Thus $F(\zeta)=0$.
+
+The sum of the roots of the characteristic polynomial is the trace, so the traces
+agree at regular elements. Lemma~\ref{lib:brauer:regular-traces} gives
+agreement on all of $G$. The argument separating simple modules by their traces in
+Proposition~\ref{lib:ordinary:separation}, applied over the algebraically
+closed field $k$, proves the last assertion.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.CyclotomicRootSumReflection} proves that
+equality of the lifted sums in $K$ implies equality of the sums in $k$.
+\module{ModularRep.BrauerTraceRecovery} identifies these sums with the
+root multisets used by the character definition.
+\lean{ModularRep.FDRepSimpleClassKZero.brauerCharacterDeterminesModularTrace_of_rootEmbedding}
+and
+\lean{ModularRep.FDRepSimpleClassKZero.irreducibleBrauerCharacterInjectivity_of_rootEmbedding}
+are the resulting theorems in \module{ModularRep.BrauerCharacterSeparation}.
+The latter proves that simple modules with equal Brauer characters are
+isomorphic. Trace recovery is proved from the root correspondence.
+\end{implementation}
+
+\begin{theorem}[Linear independence of irreducible Brauer characters]
+\label{lib:brauer:independence}
+The functions in $\IBr_{\iota_G}(G)$ are linearly independent over $K$
+on $G_{\ell'}$.
+\end{theorem}
+\begin{proof}
+Choose one representative of every simple $kG$-module class. There are
+finitely many such classes: each is a composition factor of the finite
+dimensional regular module. Denote the representatives by
+$S_1,\ldots,S_s$ and their trace functions by $t_1,\ldots,t_s$.
+
+First, the $t_i$ are linearly independent over $k$. For each $i$, Schur's
+lemma and density on $\bigoplus_jS_j$ give an element of $kG$ acting as
+an operator of trace one on $S_i$ and as zero on every other summand.
+Evaluating any linear relation of trace functionals at this element
+extracts its $i$th coefficient. Restriction of a linear functional on
+$kG$ to the basis $G$ is injective, so the trace functions on $G$ are
+independent too. Lemma~\ref{lib:brauer:regular-traces} then gives
+independence of their restrictions to $G_{\ell'}$.
+
+Independent functions admit a nonsingular square evaluation matrix.
+Indeed, their evaluation vectors span $k^s$, since a linear functional
+annihilating that span would give a relation between the functions.
+Choose a basis of evaluation vectors, at regular elements
+$x_1,\ldots,x_s$, and write
+\[
+ M_k=(t_i(x_j))_{i,j},\qquad \det M_k\ne0.
+\]
+Express each root multiset occurring in this matrix as powers of the
+primitive root $\zeta$. Replacing each $\zeta$ by the class of $X$
+defines a matrix $M$ over the common ring
+$R=\Z[X]/(\Phi_{m_G})$. Evaluation at $\zeta$ gives $M_k$.
+Evaluation at $\widehat\zeta$ gives the Brauer evaluation matrix
+$M_K=(\varphi_{S_i}(x_j))_{i,j}$.
+
+The map $R\to K$ is injective by the theorem on the minimal polynomial of a primitive root of unity. If $\det M_K=0$, then $\det M=0$ in $R$, and evaluating in
+$k$ would give $\det M_k=0$. This contradiction shows
+$\det M_K\ne0$. Evaluating a $K$-linear relation among the Brauer
+characters at $x_1,\ldots,x_s$ now forces all coefficients to vanish.
+Finally, separation and realisation identify this family indexed by
+simple classes with the set of functions $\IBr_{\iota_G}(G)$.
+\end{proof}
+
+\begin{implementation}
+\module{ModularRep.SimpleTraceLinearIndependence} proves independence of
+the modular simple trace functions, and
+\module{ModularRep.PrimeRegularEvaluationMatrix} obtains the regular
+evaluation points. The coefficient argument is
+\lean{ModularRep.CyclotomicDeterminantSpecialization.rootMultisetMatrix_det_ne_zero_transfer},
+using \lean{CyclotomicOrder} and
+\lean{cyclotomicSpecialization_injective} in the same namespace.
+\lean{ModularRep.FDRepSimpleClassKZero.exists_simpleClass_primeRegular_brauer_det_ne_zero}
+constructs the nonsingular Brauer evaluation matrix.
+The final theorem is
+\lean{ModularRep.FDRepSimpleClassKZero.irreducibleBrauerCharacters_linearIndependent}.
+The determinant is first computed over the cyclotomic integer ring.
+Its nonvanishing after evaluation in $K$ permits the final linear
+algebra argument over $K$.
+\end{implementation}
+
+\begin{example}[Equality of composition multiplicities]
+Suppose exact additivity gives
+$\varphi_V=\sum_i a_i\varphi_i$ and
+$\varphi_W=\sum_i b_i\varphi_i$, where $a_i,b_i$ are nonnegative integers
+and the $\varphi_i$ are distinct irreducible Brauer characters.
+If $\varphi_V=\varphi_W$, linear independence gives
+$a_i=b_i$ for every $i$, using characteristic zero to recover equality
+of integers from equality in $K$. This is the step used to prove
+injectivity of the Brauer character map on the exact Grothendieck group.
+It determines composition multiplicities without asserting that
+$V\simeq W$.
+\end{example}
+
+\section{Compatible choices under pullback and restriction}
+\label{lib:brauer:compatible-roots}
+
+Let $f:H\to G$ be a homomorphism of finite groups with root
+correspondences $\iota_H$ and $\iota_G$. A regular element of $H$ maps
+to a regular element of $G$, so class functions can always be pulled back
+by $f$. To compare this pullback with the character of $f^*\rho$, the
+two lifts must agree on the roots of $\rho(f(h))$ for every
+$h\in H_{\ell'}$.
+
+\begin{proposition}[Pullback with compatible root correspondences]
+\label{lib:brauer:compatible-pullback}
+Let $f:H\to G$ be a homomorphism and let $\rho$ be a finite dimensional
+$k$-representation of $G$. Suppose that $\iota_H(a)=\iota_G(a)$
+for every eigenvalue $a$ of $\rho(f(h))$, for every $h\in H_{\ell'}$.
+Then
+\[
+ \varphi_{f^*\rho}^{\,\iota_H}(h)
+     =\varphi_\rho^{\,\iota_G}(f(h))
+       \qquad(h\in H_{\ell'}).
+\]
+Such agreement holds if the two correspondences are restrictions of one
+multiplicative equivalence $\mu_M(k)\simeq\mu_M(K)$, where both
+$m_H$ and $m_G$ divide $M$.
+\end{proposition}
+\begin{proof}
+The representing operator on both sides is $\rho(f(h))$. Its root
+multiset is therefore the same on both sides, and the agreement of
+the lifts gives equality term by term. A common root correspondence
+gives that agreement on every root in the intersection of the two
+root groups.
+\end{proof}
+
+\begin{implementation}
+Compatibility on these eigenvalues is expressed by
+\lean{Representation.BrauerRootLiftCompatibleAlong}.
+\lean{Representation.brauerCharacterOfRootEmbedding_pullback_of_compatible}
+proves the formula.
+\module{ModularRep.BrauerCharacterCommonRootCompatibility} restricts one
+common equivalence and proves the condition for any homomorphism.
+Equality of the total functions $k\to K$ is a sufficient stronger
+condition, but is unnecessary away from the occurring roots.
+\end{implementation}
+
+A group isomorphism $\phi:G\to H$ preserves $|G|_{\ell'}$ and therefore
+transports a chosen root correspondence with the same function lifting
+roots. Pullback along $\phi^{-1}$ then transports an irreducible Brauer
+character together with an affording representation. The constructions
+\lean{PrimeRegularRootEmbedding.alongMulEquiv} and
+\lean{IrreducibleBrauerCharacter.alongMulEquiv} in
+\module{ModularRep.BrauerCharacterEquivTransport} give this transport.
+If an extension is also transported, the ambient and base group
+isomorphisms must commute with the inclusion maps. A separately specified
+target character must be identified with the transported base character.
+These are the hypotheses of
+\lean{Representation.Extension.BrauerCharacterExtensionWitness.alongMulEquivOfBase}
+in \module{ModularRep.BrauerCharacterExtensionWitnessTransport}.
+
+\begin{proposition}[Extending a root correspondence from a subgroup]
+\label{lib:brauer:root-reselection}
+Let $H\leq G$, and prescribe a root correspondence for $H$. If at least
+one root correspondence for $G$ exists, one can choose a correspondence
+for $G$ whose restriction agrees with the prescribed correspondence
+on $\mu_{m_H}(k)$.
+\end{proposition}
+\begin{proof}
+The divisibility $m_H\mid m_G$ permits restriction of any chosen ambient
+correspondence to the smaller root group. If $j$ is this restriction, then
+$j^{-1}\iota_H$ is an automorphism of the finite cyclic group
+$\mu_{m_H}(k)$. An automorphism of a finite cyclic subgroup extends
+to the ambient finite cyclic group: in power coordinates this is
+surjectivity of reduction on the corresponding groups of units.
+Compose the ambient correspondence with such an extension. Its
+restriction is now the prescribed one.
+\end{proof}
+
+\begin{implementation}
+\lean{ModularRep.PrimeRegularRootEmbedding.exists_ambient_agreeing_on_subgroup}
+assumes existence of an ambient root correspondence, expressed by
+\lean{Nonempty}, and uses
+\lean{exists_mulAut_extension} in the same namespace. It adjusts an
+ambient correspondence while retaining the prescribed subgroup correspondence.
+\end{implementation}
+
+There is a particularly direct choice for a normal $\ell$-subgroup
+$N\trianglelefteq G$. Since $|G|=|G/N|\,|N|$, one has
+$m_G=m_{G/N}$. A prescribed quotient correspondence can therefore be
+transported to $G$ with the same root lifting map.
+\lean{ModularRep.PrimeRegularRootEmbeddingPQuotient.exponent_quotient_eq},
+\lean{ofPQuotient} and \lean{ofPQuotient_lift} implement this observation.
+
+\section{Inflation and descent of irreducible Brauer characters}
+\label{lib:brauer:descent}
+
+For $\varphi\in\IBr_{\iota_G}(G)$, define $\ker\varphi=\ker\rho$,
+where $\rho$ is any irreducible representation affording $\varphi$.
+Proposition~\ref{lib:brauer:separation} makes this independent of the
+choice of $\rho$, since equivalent representations have the same kernel.
+Let $\pi:G\twoheadrightarrow H$ be a surjection.
+
+\begin{theorem}[Inflation of irreducible Brauer characters]
+\label{lib:brauer:quotient-equivalence}
+Suppose that $\ell\nmid|\ker \pi|$, and that the root correspondences
+are compatible along $\pi$ for every finite dimensional representation
+of $H$. Inflation gives a bijection between
+$\IBr_{\iota_H}(H)$ and
+$\{\varphi\in\IBr_{\iota_G}(G):\ker \pi\leq\ker\varphi\}$.
+If $\bar\varphi$ corresponds to $\varphi$, then
+\[
+ \varphi(g)=\bar\varphi(\pi(g))\qquad(g\in G_{\ell'}).
+\]
+\end{theorem}
+\begin{proof}
+Pullback along $\pi$ preserves irreducibility, and the pulled back
+representation has $\ker \pi$ in its kernel. Root compatibility identifies
+its Brauer character with the inflated function. Conversely, descend a
+representation affording $\varphi$ on the same vector space, using
+$\ker \pi\leq\ker\varphi$.
+Representation descent preserves irreducibility, and compatible
+pullback gives the asserted identity.
+
+It remains to prove that pullback is injective on functions on $H_{\ell'}$. Every lift
+$g$ of an $\ell$-regular $h$ is itself $\ell$-regular in this case.
+Indeed, if $h$ has order $d$, then $g^d\in\ker \pi$, so the order of $g$ divides
+$d\,|\ker \pi|$, which is prime to $\ell$. Hence $\pi$ is surjective on
+regular elements and pullback of their class functions is injective.
+The two character identities now show that inflation and descent are inverse.
+\end{proof}
+
+\begin{implementation}
+\lean{ModularRep.IrreducibleBrauerCharacterSurjectiveDescent.KernelTrivialIBrAlong}
+consists of irreducible Brauer characters admitting a realisation on
+which $\ker \pi$ acts trivially. By character separation, this is the
+condition $\ker \pi\leq\ker\varphi$. In the same namespace,
+\lean{inflateToKernelTrivialIBrAlong}, \lean{descendIBrAlong} and
+\lean{quotientIBrEquivKernelTrivialIBrAlong} construct the maps and the
+bijection. The representation descent itself only requires surjectivity
+and an irreducible realisation on which $\ker \pi$ acts trivially. Root
+compatibility proves its character identity. The hypothesis that $\ker \pi$
+has order prime to $\ell$ proves injectivity of pullback on class functions.
+This hypothesis differs from the normal $\ell$-subgroup hypothesis in
+the preceding construction of a root correspondence.
+The classical inflation correspondence allows an arbitrary normal kernel
+\cite[p.~39]{Navarro1998}. The theorem stated here uses the stronger
+hypothesis that the kernel has order prime to $\ell$, as does the cited
+Lean equivalence.
+\end{implementation}
+
+\section{Tensor actions and cyclic extensions}
+\label{lib:brauer:actions-extensions}
+
+For a modular linear character $\lambda:G\to k^\times$, define
+$\widehat\lambda(g)=\iota_G(\lambda(g))$ on $G_{\ell'}$.
+The value $\lambda(g)$ belongs to the required root group because
+$g^{m_G}=1$. Multiplicativity of the root correspondence proves
+$\widehat{\lambda\mu}=\widehat\lambda\widehat\mu$ and
+$(\widehat\lambda)^\alpha=\widehat{\lambda\circ\alpha}$.
+
+\begin{theorem}[Tensoring with a linear character]
+\label{lib:brauer:tensor-source}
+For every finite dimensional modular representation $V$ and every
+$\lambda:G\to k^\times$, one has
+\[
+ \varphi_{V\otimes\lambda}=\widehat\lambda\,\varphi_V.
+\]
+\end{theorem}
+\begin{proof}
+At $g\in G_{\ell'}$, the representing operator on $V\otimes\lambda$
+is $\lambda(g)\rho_V(g)$. Its eigenvalues, counted with multiplicity,
+are $\lambda(g)a$ as $a$ runs through the eigenvalues of $\rho_V(g)$.
+Multiplicativity of $\iota_G$ gives
+$\iota_G(\lambda(g)a)=\widehat\lambda(g)\iota_G(a)$.
+Summing proves the formula.
+\end{proof}
+
+This is the case of a one dimensional factor in the tensor product
+formula for Brauer characters. See, for example,
+\cite[proof of Theorem~2.23]{Navarro1998}.
+The argument with invariant subspaces in
+Proposition~\ref{lib:ordinary:linear-twist} also applies over $k$.
+Thus $V\otimes\lambda$ is irreducible when $V$ is irreducible, and
+$\widehat\lambda\varphi_V$ is then an irreducible Brauer character.
+
+\begin{implementation}
+The Lean construction uses
+\lean{ModularRep.BrauerLinearTensorProductFormula} as a hypothesis.
+\module{ModularRep.BrauerLinearCharacterTensorAction} defines
+\lean{ModularRep.PrimeRegularRootEmbedding.liftedLinearCharacter} and proves
+its multiplicative and automorphism identities. Given the tensor formula,
+\lean{ModularRep.IrreducibleBrauerCharacter.linearTwist} constructs the
+irreducible Brauer character. Its \lean{linearTwist_mul},
+\lean{twist_linearTwist} and \lean{tensorFieldSemidirectAction} give the
+action laws, with the inverse convention explained in
+Section~\ref{lib:ordinary:actions}.
+\end{implementation}
+
+\begin{theorem}[Cyclic extension of a Brauer character]
+Let $H$ be finite, let $N\trianglelefteq H$, and suppose that $H/N$
+is cyclic. Choose root correspondences $\iota_N$ and $\iota_H$
+compatible with restriction to $N$ for every finite dimensional
+$k$-representation of $H$. If
+$\varphi\in\IBr_{\iota_N}(N)$ is invariant under conjugation by $H$,
+then there is $\widehat\varphi\in\IBr_{\iota_H}(H)$ with
+$\widehat\varphi|_{N_{\ell'}}=\varphi$.
+\end{theorem}
+\begin{proof}
+Choose an irreducible realisation $\rho$ of $\varphi$. Its conjugation
+twists have the same Brauer character, so
+Proposition~\ref{lib:brauer:separation} makes them equivalent to $\rho$.
+The proof of Theorem~\ref{lib:ordinary:cyclic-principle} applies over
+the algebraically closed field $k$ in any characteristic. It therefore
+gives an extension $\widehat\rho$, which is irreducible because
+$\rho$ is irreducible. Compatible roots identify the restriction of
+its Brauer character with $\varphi$ by
+Proposition~\ref{lib:brauer:compatible-pullback}.
+\end{proof}
+
+For the usual complex valued formulation and the representation extension
+argument, see \cite[Theorem~8.12]{Navarro1998}.
+There is no restriction on the order of the cyclic quotient relative to
+$\ell$. The value field $K$ need not be algebraically closed, but the
+root correspondences must satisfy the stated compatibility.
+
+\begin{implementation}
+The Lean construction assumes
+\lean{Representation.BrauerCyclicExtensionPrinciple} over the
+algebraically closed modular field $k$. It does not prove this
+extension property from algebraic closure.
+\module{ModularRep.BrauerCharacterExtensionBridge} proves
+\lean{Representation.conjugationInvariant_of_brauerCharacter_fixed} and
+\lean{Representation.exists_extension_realisation_of_ibr_fixed_cyclic_quotient}.
+The latter gives an affording representation and a representation
+extension. In \module{ModularRep.BrauerCharacterHomPullback},
+\lean{Representation.Extension.brauerCharacterExtensionWitnessOfCompatible}
+uses compatible roots to construct the extending irreducible Brauer character
+and its restriction equality.
+\end{implementation}

@@ -1,0 +1,125 @@
+\chapter{Manuscript statements and Lean declarations}
+\label{chap:current-statements}
+
+This table gives an entry point for each numbered manuscript statement.
+The selected declarations include definitions, deductions and explicit
+assumptions. Their association with a statement does not assert that every
+part of its proof is formalised or that its external hypotheses have been
+established. The relevant chapters explain those hypotheses and the full
+types in Lean specify them.
+
+The source associations accompanying the package list the additional
+declarations used by each argument. Numbers within declaration names are
+not manuscript cross-references.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.04}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.49\textwidth}>{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
+\toprule
+Manuscript & Selected declaration & Role and scope \\
+\midrule
+\endfirsthead
+\toprule
+Manuscript & Selected declaration & Role and scope \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Theorem\par 1.1 & \lean{ManuscriptIBAW.Main.theorem_1_1} & Conditional deduction for the three families. \\
+\addlinespace[2pt]
+Corollary\par 1.2 & \lean{ManuscriptIBAW.Main.corollary_1_2} & Deduction using the assumed finite group reduction. \\
+\addlinespace[2pt]
+Definition\par 2.1 & \lean{ManuscriptIBAW.Preliminaries.CentralSectors.existsUnique_centralCharacterSector} & Existence and uniqueness of the central character sector. \\
+\addlinespace[2pt]
+Lemma\par 2.2 & \lean{ModularRep.LinearBlockStabilizer.modular_block_stabilizer_bound} & Modular stabiliser bound under the block and character hypotheses. \\
+\addlinespace[2pt]
+Theorem\par 2.3 & \lean{ManuscriptIBAW.Preliminaries.SpathCriterion.current_theorem_2_3} & Character triple equivalence under an explicit source assumption. \\
+\addlinespace[2pt]
+Remark\par 2.4 & \lean{ManuscriptIBAW.Preliminaries.BlockFamilies.fullFamily} & Part (a): construction of the family using the assumed passage from block conditions to the full condition. Part (b) is an orbit transport observation. \\
+\addlinespace[2pt]
+Corollary\par 2.5 & \lean{ManuscriptIBAW.Preliminaries.Descent.current_corollary_2_5_coherent} & Descent with explicit character and root compatibility. \\
+\addlinespace[2pt]
+Lemma\par 2.6 & \lean{ManuscriptIBAW.Preliminaries.CentralCore.core_le_raw} & Normal core containment in the central quotient construction. \\
+\addlinespace[2pt]
+Corollary\par 2.7 & \lean{ModularRep.PaperProofs.ConlonBasicSet.corollary_2_4_conlonMark} & Conlon deduction for the stated prime and lattice assumptions. \\
+\addlinespace[2pt]
+Lemma\par 2.8 & \lean{ManuscriptIBAW.equivariant_bijection_of_basic_set_fixed} & Equivariant bijection from a fixed integral basic set. \\
+\addlinespace[2pt]
+Lemma\par 2.9 & \lean{ManuscriptIBAW.Jordan.SemidirectExtension.restrict} & Restriction of an extension from a semidirect product. \\
+\addlinespace[2pt]
+Lemma\par 2.10 & \lean{ManuscriptIBAW.TypeC.EvenApplication.unipotent_bawGood} & Application of the cyclic outer criterion under its source assumptions. \\
+\addlinespace[2pt]
+Lemma\par 2.11 & \lean{ManuscriptIBAW.FiniteCharacterSelection.exists_delta_injection_of_nonnegative} & Finite character selection. Geometry and trace identities remain inputs. \\
+\addlinespace[2pt]
+Lemma\par 2.12 & \lean{ManuscriptIBAW.TypeC.GGGRSelection.delta_selection} & Conditional Type C selection from the specified geometric sources. \\
+\addlinespace[2pt]
+Theorem\par 3.1 & \lean{ManuscriptIBAW.TypeC.all_primes} & Conditional deduction for the Type C cases. \\
+\addlinespace[2pt]
+Lemma\par 3.2 & \lean{ManuscriptIBAW.Jordan.generalPerLabel_of_fullActor} & Restriction of the Brauer character hypothesis to the automorphism groups chosen for individual semisimple parameters. \\
+\addlinespace[2pt]
+Proposition\par 3.3 & \lean{ManuscriptIBAW.TypeC.prop33_originalIBAW} & Principal block application with explicit field, counting and compatibility inputs. \\
+\addlinespace[2pt]
+Remark\par 3.4 & \lean{ModularRep.PaperProofs.OddTwoWreathCoreCharacterSource.triangular_ne_two} & Arithmetic distinction only. The subgroup identifications remain external. \\
+\addlinespace[2pt]
+Proposition\par 3.5 & \lean{ManuscriptIBAW.TypeC.prop34_full_block_condition} & Conditional rank two conclusion under the sources for the selected prime and field. \\
+\addlinespace[2pt]
+Lemma\par 3.6 & \lean{ModularRep.PaperProofs.EvenFieldLemmas35_36Actual.lemma_3_5_actual} & Field invariance of the specified ordinary characters and generic weights under the source assumptions. \\
+\addlinespace[2pt]
+Lemma\par 3.7 & \lean{ModularRep.PaperProofs.EvenFieldLemmas35_36Actual.lemma_3_6_actual} & Equivariant correspondence between the ordinary character set and generic weights under the source assumptions. \\
+\addlinespace[2pt]
+Proposition\par 3.8 & \lean{ManuscriptIBAW.TypeC.EvenApplication.unipotent_definition35} & Unipotent block condition under the specified published criterion. \\
+\addlinespace[2pt]
+Proposition\par 3.9 & \lean{ManuscriptIBAW.TypeC.EvenApplicationRouting.fullHG_strictBlocks_of_proposition39_semisimple} & Jordan reduction from the semisimple parameter hypotheses. \\
+\addlinespace[2pt]
+Lemma\par 3.10 & \lean{ManuscriptIBAW.quotientKernelCenterEquiv} & Quotient and kernel comparison used in the stabiliser bound. \\
+\addlinespace[2pt]
+Proposition\par 3.11 & \lean{ManuscriptIBAW.TypeC.OddConformalCorrespondence.globalCorrespondence} & Conformal correspondence under the source and action assumptions. \\
+\addlinespace[2pt]
+Lemma\par 3.12 & \lean{ManuscriptIBAW.TypeC.OddGlobalFactorization.GlobalBijection.allBrauerFactorization} & Transfer of ordinary stabiliser factorisation to Brauer characters. \\
+\addlinespace[2pt]
+Remark\par 3.13 & \lean{ManuscriptIBAW.TypeC.OddGlobalFactorization.BlockSourceInputs} & Record of the assumptions used for the Conlon argument. It supplies neither canonical labels nor unitriangularity. \\
+\addlinespace[2pt]
+Proposition\par 3.14 & \lean{ManuscriptIBAW.TypeC.OddPrimeApplication.full_block_condition_source_instantiated} & Application of the full criterion under the listed sources. \\
+\addlinespace[2pt]
+Theorem\par 4.1 & \lean{ManuscriptIBAW.TypeB.AllPrimes.all_primes} & Conditional deduction for the Type B cases. \\
+\addlinespace[2pt]
+Lemma\par 4.2 & \lean{ManuscriptIBAW.TypeB.OddConlon.block_bijection} & Blockwise Conlon correspondence under the stated basic set hypotheses. \\
+\addlinespace[2pt]
+Proposition\par 4.3 & \lean{ManuscriptIBAW.TypeB.OddUniform.complete} & Odd prime application with its structural and criterion sources. \\
+\addlinespace[2pt]
+Lemma\par 4.4 & \lean{ManuscriptIBAW.TypeB.Levi.component_return_full} & Action on a factor after a cycle of the factor permutation. \\
+\addlinespace[2pt]
+Lemma\par 4.5 & \lean{ManuscriptIBAW.TypeB.Levi.cartesian_character_orbit} & Character orbit calculation for the rational product. \\
+\addlinespace[2pt]
+Lemma\par 4.6 & \lean{ManuscriptIBAW.TypeB.Levi.lemma46} & Clifford stabiliser deduction on the specified characters. \\
+\addlinespace[2pt]
+Lemma\par 4.7 & \lean{ManuscriptIBAW.TypeB.PrincipalField.rationalClass_fixed} & Field invariance of the specified rational classes. \\
+\addlinespace[2pt]
+Lemma\par 4.8 & \lean{ManuscriptIBAW.TypeB.PrincipalSeries.lemma_4_8} & Principal series deduction under its source interpretation. \\
+\addlinespace[2pt]
+Proposition\par 4.9 & \lean{ManuscriptIBAW.TypeB.GGGRBasis.gggr_basis} & Conditional basis of projected generalised Gelfand--Graev characters from the geometric and finite selection inputs. \\
+\addlinespace[2pt]
+Corollary\par 4.10 & \lean{ManuscriptIBAW.TypeB.PrincipalApplication.principal_selector} & Principal character selection using field invariance and extension inputs. \\
+\addlinespace[2pt]
+Proposition\par 4.11 & \lean{ManuscriptIBAW.TypeB.Exceptional.Inputs.complete} & Exceptional cover application with computation, quotient and root assumptions. \\
+\addlinespace[2pt]
+Lemma\par 4.12 & \lean{ManuscriptIBAW.Jordan.TypeBLocalized.full_family_of_hypotheses} & Localised Jordan reduction under its factor and transport hypotheses. \\
+\addlinespace[2pt]
+Proposition\par 4.13 & \lean{ManuscriptIBAW.TypeB.TwoApplication.Inputs.brauerHypothesis} & Derivation of the required Brauer character hypothesis. \\
+\addlinespace[2pt]
+Proposition\par 4.14 & \lean{ManuscriptIBAW.TypeB.TwoApplication.Inputs.complete} & Prime two application under the principal and Levi sources. \\
+\addlinespace[2pt]
+Corollary\par 4.15 & \lean{ManuscriptIBAW.TypeB.finite_simple_typeB} & Conditional deduction for the specified Type B groups. \\
+\addlinespace[2pt]
+Theorem\par 5.1 & \lean{ManuscriptIBAW.Sporadic.Theorem.Inputs.complete} & Sporadic deduction including the external result for 22 groups. \\
+\addlinespace[2pt]
+Lemma\par 5.2 & \lean{ManuscriptIBAW.Sporadic.CompleteCollapse.lemma_5_2} & Numerical construction with compatible roots for the constructed family. \\
+\addlinespace[2pt]
+Lemma\par 5.3 & \lean{ManuscriptIBAW.Sporadic.Cancellation.cancel_equivariant_equiv} & Equivariant cancellation of the specified parts. \\
+\addlinespace[2pt]
+Proposition\par 5.4 & \lean{ManuscriptIBAW.Sporadic.Theorem.BoundaryInputs.proposition_5_4} & Four remaining groups under their numerical and compatible packet sources. \\
+\addlinespace[2pt]
+\end{longtable}
+\endgroup

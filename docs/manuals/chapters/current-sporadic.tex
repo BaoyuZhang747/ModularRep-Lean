@@ -1,0 +1,618 @@
+\chapter{The sporadic arguments}
+\label{chap:current-sporadic}
+
+Let $S$ be a sporadic simple group, let $\ell$ divide $|S|$, and write
+$X_\ell(S)$ for its specified universal $\ell'$-cover. The manuscript treats
+the $45$ relevant pairs for $J_4$, $Fi'_{24}$, the Baby Monster and the
+Monster, then combines them with the verification reported in the CTBlocks
+overview for the other $22$ groups.
+
+The arguments use numerical weight equalities, the action of the outer
+automorphism group, and calculations with ordinary character tables. Their
+hypotheses specify the covering groups, blocks, local characters and the
+interpretation of the table entries. The local extension and block
+compatibility conditions are also required for the full inductive
+conclusion. The ordinary values of Brauer characters depend on
+the chosen identification of roots of unity. Whenever a global character,
+a local character or their restrictions to an intermediate group are
+compared, these identifications must agree on the roots involved.
+The complete certificates require this agreement for their extensions.
+For the direct constructions, root agreement is assumed for the extensions
+already constructed. For the triple cover, a separate assumption supplies
+replacement extensions and intermediate block witnesses with compatible
+roots for each pair in the same numerical matching. Their existence is not derived from the extension and block assumptions used in the original construction. A certificate formed without
+the required root compatibility is retained
+only as a \lean{RawDefinition41Certificate} and does not establish the
+complete inductive condition.
+
+\section{Two general arguments}
+
+Suppose first that $\Out(X_\ell(S))=1$ and that
+\[
+ |\IBr(b)|=|\Alp(b)|
+\]
+for each block $b$ of $X_\ell(S)$. Choose a bijection on each block.
+Every automorphism of the cover is inner, so it fixes each irreducible
+Brauer character and each conjugacy class of weights. The chosen
+bijections are therefore equivariant under the block stabilisers.
+The identification of the covering group also gives
+$\Out(S)\cong\Out(X_\ell(S))$.
+
+The cyclic outer criterion in \cite[Corollary~2.13]{FengLiZhang2019} gives
+the inductive BAW conclusion for each block. The construction chooses the
+block bijections with the prescribed defect zero normalisation and
+proves the required extension and block conditions from the local
+reduction and quotient laws, with the compatible root choices specified
+below. It uses the original cover, including a
+nontrivial centre. This proves the implication in manuscript Lemma 5.2.
+
+The second argument is manuscript Lemma 5.3. A finite set with an involution
+is determined up to equivariant bijection by its total size and number of
+fixed points. These two numbers add over invariant disjoint unions. Thus an
+equivariant bijection on the whole set, together with equivariant bijections
+on all but one block orbit, gives an equivariant bijection on the remaining
+orbit by subtraction. If that orbit consists of two exchanged blocks, choose
+a bijection on one block and define the other by the involutions. This
+ensures that the resulting map preserves individual blocks. The library
+manual gives the complete proof for finite sets.
+
+\begin{implementation}
+\module{ManuscriptIBAW.Sporadic.CompleteCollapse} states the
+numerical premise as \lean{NumericalHypothesis} on the actual
+blocks of a fixed \lean{CaseModel}. Its \lean{Sources}
+contains local reductions, the laws for defect zero blocks and trivial weights,
+local block compatibility, the quotient data and the prescribed
+coefficient field. The quotient data specify finite complete block
+decompositions for the quotient group and its relevant normalisers,
+together with their block central characters, before a correspondence is
+chosen. They also supply the required normaliser quotient and block
+induction laws.
+\lean{lemma_5_2} constructs the complete \lean{CaseConclusion}
+from these assumptions, the numerical premise and the fact that
+all automorphisms are inner. The ordinary field has characteristic zero and the modular field is
+algebraically closed. The character interpretations are supplied for
+these fields.
+The full \lean{Definition41Certificate} also requires
+\lean{OriginalWitnessRoots} or
+\lean{CanonicalWitnessRoots} for the extensions in the
+constructed witness. For the centreless argument, the corresponding
+source is \lean{CoherentOriginalRowsOutput}. For the quotient, extension and intermediate block witnesses recorded in an original packet,
+\lean{OriginalPacketRoots} requires agreement between the original and
+quotient roots, between the global extension and quotient roots, between
+the global and local extension roots, and with both root correspondences
+used on $J$ and $D\cap J$ for every intermediate subgroup $J$, where $D$
+is the normaliser used for the local extension.
+Agreement between the global extension and all original roots is an
+additional condition in \lean{ActualPacketRoots}, used by
+\lean{CanonicalWitnessRoots}. It is not required for an original packet,
+whose base representation factors through the central character quotient.
+The quotient roots agree with the original Brauer character roots. The
+inflated quotient representation and the restricted global representation
+therefore afford that same Brauer character.
+\lean{RawDefinition41Certificate} omits these root compatibility conditions
+and is used only in intermediate constructions. \lean{CaseConclusion}
+uses \lean{Definition41Certificate}, which includes them.
+For the triple cover, \lean{CoherentOriginalPacketChoices.OriginalPacketChoices}
+requires compatible extension and block witnesses for every pair of one
+specified bijection. The applications at primes two, five and seven and
+the applications to cyclic blocks
+apply this assumption only to the bijection selected by their numerical
+argument. They do not assume it for every equivariant block bijection.
+The constructor \lean{withCompatiblePackets} preserves
+that bijection, its equivariance, its block correspondence and its
+defect zero normalisation. It replaces the packet field of the constructed
+witness with packets having compatible roots supplied by
+\lean{OriginalPacketChoices}. The original packets satisfy the raw
+restriction and intermediate block conditions, but their root compatibility
+has not been proved. For the replacement packets, \lean{OriginalWitnessRoots}
+follows directly from the assumption, rather than from the raw packet
+construction. The existence of compatible extension and block witnesses
+for the numerical matching therefore remains an explicit assumption.
+\module{ManuscriptIBAW.Sporadic.Cancellation} gives the finite set deductions, including \lean{cancel_exchanged_blocks_preserving}.
+\end{implementation}
+
+\section{The covers and the group \texorpdfstring{$J_4$}{J4}}
+
+The multiplier and outer group data are those of the Atlas
+\cite[Table~1]{Atlas1985}. The covers are
+\[
+\begin{array}{c|c}
+ S&X_\ell(S)\\\hline
+ J_4&J_4\\
+ Fi'_{24}&Fi'_{24}\text{ at }3,\quad3.Fi'_{24}\text{ otherwise}\\
+ \mathrm B&\mathrm B\text{ at }2,\quad2.\mathrm B\text{ otherwise}\\
+ \mathrm M&\mathrm M.
+\end{array}
+\]
+Here $\mathrm B$ and $\mathrm M$ denote the Baby Monster and the
+Monster. Each group name is tied to its covering projection and
+specified simple quotient. Those identifications are part of the
+structural assumptions.
+
+For $J_4$, the blockwise weight counts for noncyclic defect are
+An--O'Brien--Wilson's Theorem 5.2 \cite{AnOBrienWilsonJ4}. Sp\"ath's
+Proposition 6.2 supplies the cyclic cases, including defect zero
+\cite{Spath2013}. The multiplier and outer group are trivial, so the first
+general argument applies at every prime dividing the group order.
+
+\begin{implementation}
+\module{ManuscriptIBAW.Sporadic.J4} records three clauses in
+\lean{NumericalSources}: existence of a defect group for each
+actual block, Sp\"ath's equality for cyclic defect, and
+An--O'Brien--Wilson's equality for noncyclic defect.
+\lean{NumericalSources.all_blocks} proves the equality for every
+block by that case distinction. The structure \lean{Inputs}
+keeps the selected finite group, roots, actual block operations,
+local reductions, full cover and outer group data, and its
+identification with the named simple base.
+\lean{Inputs.model} fixes the required cover before
+\lean{Inputs.complete} gives its complete inductive certificate.
+The ordinary field has characteristic zero and the modular field is
+algebraically closed of characteristic $\ell$. The published numerical
+equalities require the stated splitting and character interpretation.
+The group identification is an additional structural assumption.
+\end{implementation}
+
+\section{The central sectors of the Fischer cover}
+
+At $\ell\ne3$, set $X=3.Fi'_{24}$ and $Z=Z(X)$, and let
+$\pi:X\longrightarrow\overline X:=X/Z$ be the quotient map.
+A bar denotes the image of an element or subgroup under $\pi$.
+For an $\ell$-subgroup $\overline Q$ of $\overline X$, the inverse
+image $\pi^{-1}(\overline Q)$ has a complement $Q$ to $Z$.
+Schur--Zassenhaus gives existence, and centrality of $Z$ makes this
+complement unique. Radicality is preserved by this correspondence
+\cite[Lemma~2.3(c)]{NavarroTiep2011}. The quotient map gives
+\[
+ \overline{N_X(Q)}=N_{\overline X}(\overline Q),\qquad
+ N_X(Q)/(QZ)\cong N_{\overline X}(\overline Q)/\overline Q.
+\]
+
+Inflation identifies the blocks and Brauer characters of $\overline X$
+with those of $X$ over the trivial character of $Z$
+(see, for example, \cite[Theorem~9.9(c)]{Navarro1998}). The corresponding weight
+character is inflated along
+\[
+ \pi_Q:N_X(Q)/Q\longrightarrow
+ N_{\overline X}(\overline Q)/\overline Q,\qquad
+ nQ\longmapsto\overline{nQ}.
+\]
+Here $\overline{nQ}$ denotes the image under this quotient homomorphism.
+The block correspondence and the equivariant weight passage use
+Feng--Li--Zhang's Lemmas 2.3(iii) and 2.5
+\cite{FengLiZhang2019}, with the same local character and block
+operations.
+
+By \cite[Lemma~4.7]{AnDietrich2012}, the outer involution exchanges the two
+faithful central characters and hence their sectors. A block in a faithful sector
+consequently has only inner automorphisms in its stabiliser. A bijection for
+one such block is equivariant under that stabiliser, and applying the outer
+involution gives the bijection on its partner.
+
+For a finite set $Y$ with an involution, write
+$\operatorname{sig}(Y)=(|Y|,|Y^{C_2}|)$. Table~8 of An--Dietrich \cite{AnDietrich2012} gives the weight counts used below. Its entry $a/b$
+means $a+b$ weights, with $a$ fixed by the involution.
+
+\section{The Fischer group for \texorpdfstring{$\ell=2$}{ell=2}}
+
+The trivial sector has five blocks with pairs of total and fixed Brauer character counts
+\[
+ (33,25),\quad(3,1),\quad(3,3),\quad(1,1),\quad(1,1).
+\]
+These are obtained from the ordinary restrictions and outer action
+in the specified computation. The last two blocks have defect zero
+and use the bijection $\chi^0\mapsto(1,\chi)$ with their unique
+ordinary irreducible character.
+
+The two other nonprincipal blocks have defect groups of orders $4$ and $8$
+\cite[Lemma~4.2(d)]{AnCannonOBrienUngerFi24}. The numerical Alperin weight
+equality for blocks of defect at most four \cite[Theorem~13.7]{Sambale2014}
+therefore gives three weights in each. Their fixed counts follow from
+invariant subsets of the conjugacy classes of radical subgroups in that table.
+
+The classes $(2^2)_a$ and $(2^2)_b$ in Table~8 are
+called $2^2$ and $(2^2)^*$, respectively, in
+\cite[Table~2]{AnCannonOBrienUngerFi24}.
+For the block of defect two, every weight subgroup is conjugate into its
+defect group \cite[Theorem~4.14]{Navarro1998}. The classification places
+that defect group in the class denoted $(2^2)_b$. The rows for the trivial
+subgroup account for the two defect zero blocks, and the row of order two
+contributes no weights to this sector. Thus the three weights form an
+invariant subset of the four weights in the $(2^2)_b$ row. This row has two
+fixed weights and one orbit of length two. An invariant subset of size three
+contains that orbit and one fixed weight. Its signature is therefore
+$(3,1)$.
+
+For the block with defect group $D_8$, the possible conjugacy classes of radical subgroups are
+$(2^2)_a$, $(2^2)_b$ and $D_8$. The first and last rows each contain one
+fixed weight. The middle row contains two fixed weights and one orbit of
+length two. Three of its four weights have already been assigned to the
+block of defect two. The only remaining candidates are the $(2^2)_a$ weight,
+the remaining fixed $(2^2)_b$ weight and the $D_8$ weight. There are three
+weights in the block, so all three occur and are fixed. Its signature is
+$(3,3)$.
+
+The total signature of the trivial sector is $(41,31)$, from Table~8. Cancel the two small positive defect blocks and the two defect zero
+blocks. The principal signature is $(33,25)$, equal to its Brauer signature.
+The argument for sets with an involution gives the required block bijections.
+
+Each faithful sector contains exactly two blocks and has a total of
+$25$ weights. The blocks have defects $21$ and $3$ and contain
+$23$ and $2$ Brauer characters, respectively.
+The block of defect three has two weights by Sambale's theorem,
+so the other block has $23$ weights. Bijections on one faithful
+sector are transported to the other by the outer involution.
+
+The fusion calculation for the $(2^2)_a$ and $(2^2)_b$ rows gives the same
+block distribution as the invariant subset argument. Both calculations use
+the specified radical and character table data.
+
+\begin{implementation}
+\module{ManuscriptIBAW.Sporadic.Fi24TwoRows} identifies the
+finite sets of ordinary characters of defect zero of the normaliser quotients with the weight classes in the trivial sector, using the same central
+quotient, normaliser characters, reductions and root restrictions. Its
+\lean{row_total} and \lean{row_fixed} give their total and fixed
+counts. Compatibility of the automorphism actions under this identification also proves that each such set is invariant.
+
+\lean{ManuscriptIBAW.Sporadic.Fi24TwoSupport.Geometry}
+specifies the two actual defect groups and classifies the
+radical subgroups conjugate into them. These are subgroup
+assertions, without a local character or an assignment of
+weights to blocks. The Brauer support criterion proves that
+the subgroup of a weight is conjugate into the appropriate
+defect group. A weight with trivial radical would belong to a
+defect zero ordinary block with one Brauer character, so it
+cannot occur in either block with three Brauer characters.
+The row corresponding to a radical subgroup of order two has specified
+count zero and is therefore empty.
+
+The resulting support statements place the weights of the first small block in the set of four weights associated with $(2^2)_b$ and those of the second in the three possible nonempty sets. The chosen finite enumeration contains each radical conjugacy class exactly once. The sets of weight classes associated with $(2^2)_a$, $(2^2)_b$ and $D_8$ are disjoint. Their union contains six weight classes, four fixed by $\tau$.
+\lean{Fi24TwoCounting.three_in_four} and
+\lean{Fi24TwoCounting.remaining_three} prove the two subset
+calculations. The small defect theorem supplies the weight counts.
+Their fixed counts are conclusions of
+\lean{Fi24TwoWeights.fixed_counts}.
+
+\lean{ManuscriptIBAW.Sporadic.Fi24Two.Inputs.model} fixes the
+groups, roots, local block operations and universal triple cover
+before \lean{Inputs.complete} constructs the full condition.
+The numerical argument combines the derived signatures, cancellation and
+the defect zero normalisation to choose a correspondence. The additional
+\lean{Inputs.packets} hypothesis supplies compatible extension and
+intermediate block witnesses for each pair of that correspondence.
+\lean{Inputs.complete} uses those witnesses on the same model.
+The ordinary character values, block labels and outer class fusion are
+specified for these groups. The relevant quotients are also supplied with
+finite complete block decompositions and their block central characters.
+The subset argument supplies the assignment of the weights in the small
+blocks and their fixed
+counts. Existence of the compatible witnesses is a separate hypothesis
+and is not derived here from the counting argument or the raw packet construction.
+\end{implementation}
+
+\section{The Fischer group at the other primes}
+
+For $\ell=3$ the cover is $G=Fi'_{24}$. The classification supplies
+a radical subgroup $Q\cong C_3^2$ with
+\[
+ N_G(Q)\cong(3^2\!:\!2\times G_2(3)).2
+\]
+\cite[Proposition~4.1 and Table~1]{AnCannonOBrienUngerFi24}.
+The same source gives the unique nonprincipal block $B_1$ of
+positive defect, its defect group $Q$, and four weights
+\cite[Lemma~4.2(c) and Theorem~4.3]{AnCannonOBrienUngerFi24}.
+
+The character table calculation selects the four ordinary defect zero
+characters of $N_G(Q)/Q$ and inflates them to the specified local block.
+Brauer block induction is defined by the criterion for defect groups. The
+reduced central characters of induced ordinary characters identify the induced block of $G$ \cite[Theorem~4.14 and Lemma~6.1]{Navarro1998}. The
+calculation tests each entry of the list of $32$ compatible class fusions.
+For every candidate and each of the six ordinary characters in that local
+block, the test identifies block $2$ of $G$. The defects of the blocks of $G$ are
+$16,2,0$, with the first block principal, so this second block is $B_1$. The
+test uses all $32$ entries of the candidate list, whether or not some
+entries coincide.
+
+The four selected ordinary characters therefore account for all four weights
+of $B_1$. The radical row in Table~8 has two fixed weights, giving signature
+$(4,2)$, equal to the Brauer signature. The defect zero block has its usual
+bijection with one weight. Cancellation from the equivariant sector
+correspondence of An--Dietrich \cite[Section~4.3.4]{AnDietrich2012} gives
+the principal signature $(25,25)$ and a bijection preserving blocks.
+
+\begin{implementation}
+\lean{ManuscriptIBAW.Sporadic.Fi24ThreeLocal.NamedTableSource}
+specifies the normaliser block containing the four inflated
+ordinary characters and the identity of reduced central characters
+after the actual Brauer map. Evaluating this identity on the
+target primitive idempotent proves \lean{row_block}.
+The interpretation of the named rows, actual inclusion and
+candidate fusions remains a composite source assumption.
+The separate published total of four, together with injectivity
+of the four local classes, proves \lean{radical_support}.
+
+\lean{ManuscriptIBAW.Sporadic.Fi24Three.SourceInputs} also
+specifies the six ordinary rows of the block on its thirty
+regular classes, a common root encoding and the actual outer
+class fusion. The matrix certificates give rank four
+and symmetrised rank three. Under the stated decomposition and
+evaluation identifications, these imply four Brauer characters
+and two fixed characters. The local character set is identified with
+the four characters in the $3^2$ row of
+\cite[Table~8]{AnDietrich2012}. The field \lean{rowBijective}
+identifies all four ordinary characters of defect zero of the actual
+normaliser quotient. The field \lean{localFixed} takes the two fixed
+characters in the entry $2/2$ as a published count for the specified
+local automorphism. These are explicit source assumptions. No
+unverified local fusion is used to deduce the fixed count.
+
+\lean{SourceInputs.complete} combines these deductions with
+the An--Dietrich correspondence on the whole sector and the canonical
+defect zero normalisation. Cancellation constructs the principal
+block matching. The full condition on the fixed \lean{Inputs.model} additionally
+requires the stated compatible local extension and intermediate block
+witnesses for this same matching.
+\end{implementation}
+
+For $\ell=5$, the nontrivial radical subgroups of $Fi'_{24}$ have orders
+$5$ and $25$ \cite[Proposition~4.1 and Table~1]
+{AnCannonOBrienUngerFi24}. The argument uses their unique lifts to
+$3.Fi'_{24}$, the corresponding normaliser quotients and inflated characters. For every
+tested fusion, each selected character induces to a unique block,
+and the block distribution is independent of the candidate.
+The outer class fusion preserves the selected character rows and induces an
+involution on them. The three invariant block
+signatures in the trivial sector are
+\[
+ (16,16),\qquad(14,6),\qquad(16,16).
+\]
+They equal the corresponding pairs of total and fixed Brauer character counts. The two pairs
+of exchanged faithful blocks have respectively $16$ and $14$
+weights and Brauer characters per block. The weights whose radical subgroups have order five belong to cyclic defect blocks, and the cited classification
+accounts for all nontrivial radical classes.
+
+For $\ell=7$, each sector has a unique block of noncyclic defect. Use the
+equivariant correspondence on the whole sector
+\cite[Section~4.3.4 and Table~8]{AnDietrich2012}. Removing the cyclic and defect zero blocks gives
+signature $(22,12)$ in the trivial sector. Each faithful sector has $63$
+weights in total. Removing its known blocks leaves $22$ weights, equal to
+the Brauer count in the unique noncyclic block. Choose a bijection for one
+faithful block and transport it to the other.
+
+At $11,13,17,23,29$, the full defect distributions in the specified
+computation show that every positive defect block is cyclic. Sp\"ath's
+Proposition 6.2 treats these blocks and all the defect zero blocks, as well
+as the remaining cyclic blocks at the smaller primes \cite{Spath2013}. This
+gives equivariant block bijections on every required Fischer cover. The
+outer group is cyclic of order two, so the manuscript invokes the cyclic
+outer criterion to finish the argument.
+
+\begin{implementation}
+The namespaces \lean{ManuscriptIBAW.Sporadic.Fi24Five},
+\lean{Fi24Seven} and \lean{Fi24Cyclic} construct their
+\lean{Inputs.model} directly from the specified groups, roots,
+local operations and covering projection, before proving
+\lean{Inputs.complete}. For $\ell=5$, the seven blocks in the calculation
+carry separate Brauer and weight counts, their fixed counts
+and the outer permutation. These equations and the condition that every block outside the seven specified blocks has cyclic defect are source assumptions.
+The finite comparison gives all the required block bijections.
+
+For $\ell=7$, the assumptions specify whole sector totals, the fixed total in the trivial sector and the condition that every block other than the distinguished block in each sector has cyclic defect. The equality for that remaining block is deduced by cancellation. At
+the five listed larger primes, the source supplies an actual cyclic defect
+group for every block. A defect exponent at most one suffices after the
+block and defect interpretation.
+
+The full inductive conclusion for the original triple cover also uses the
+supplied compatible extension and intermediate block witnesses for each
+pair of the selected numerical correspondence. These witnesses concern
+the same normaliser characters, reductions and root correspondences.
+The modular field is algebraically closed of characteristic $\ell$.
+The ordinary field has characteristic zero, with the compatible
+splitting and character interpretation required by the published data.
+\end{implementation}
+
+\begingroup\clubpenalty=10000
+For the triple cover, the numerical arguments first construct a common
+correspondence with the defect zero normalisation. The full inductive
+condition then uses the compatible packets supplied for that correspondence,
+in addition to the ordinary and modular extension, covering and block laws.
+The centre action and map from the full cover then separate the faithful and
+trivial cases in the local proofs. For the centreless case with $\ell=3$, the
+ordinary character family is combined with block preservation, defect zero
+normalisation and the full local data to give the complete inductive
+certificate.
+\par\endgroup
+
+\begin{implementation}
+\module{ManuscriptIBAW.Sporadic.CyclicOuterFamilies} provides
+\lean{TripleCover.ofNormalizedEquiv} and
+\lean{Centerless.centerless_manuscript_ad3_assembly}.
+The first constructs a raw witness using the common normalised correspondence
+on the original triple cover. It does not establish the compatibility of
+roots required by the full certificate. The applications use
+\lean{withCompatiblePackets} with the supplied compatible packets to obtain
+that certificate without changing the correspondence.
+The second constructs conditions (3.a)--(3.d)
+for AWC-goodness in Navarro and Tiep \cite[\S3.3]{NavarroTiep2011},
+in the form recalled by An and Dietrich
+\cite[Definition~4.4]{AnDietrich2012}, before the full inductive
+condition is deduced. Both constructions use the stated outer group, centre and coefficient
+hypotheses.
+\end{implementation}
+
+\section{The Baby Monster and the Monster}
+
+For the Baby Monster and $\ell=2$, the ordinary table has two blocks of defects
+$41$ and $3$, containing $179$ and $5$ ordinary irreducible characters. The
+ordinary table is verified in
+\cite[Section~7]{BreuerMagaardWilsonBaby2020}. The block decomposition and
+the restriction ranks are separate table calculations. Restriction to
+the $2$-regular classes has exact ranks $25$ and $2$. The restriction rank
+argument therefore gives $27$ irreducible Brauer characters in total.
+
+An--Dietrich compute $27$ conjugacy classes of $2$-weights
+\cite[proof of Theorem~4.2 and Table~2]{AnDietrich2012}.
+The corrections to the subgroup descriptions in
+\cite[Table~2]{AnDietrichErratum} leave this total unchanged.
+The nonprincipal block has a defect group of order eight, so its number
+of weights equals its Brauer count, namely two, by
+\cite[Theorem~13.7]{Sambale2014}. Subtracting gives $25$ weights for the
+principal block. The outer group is trivial, so the first general argument
+gives the inductive conclusion on $\mathrm B$.
+
+At odd primes the cover is $2.\mathrm B$. The noncyclic defect equalities
+are An--Wilson's Theorem 5.3 \cite{AnWilsonBaby}, and the cyclic cases use
+Sp\"ath's Proposition 6.2 \cite{Spath2013}. For $\ell=7$, the proof of Lemma 5.2
+in \cite{AnWilsonBaby} lists $220$ regular classes. The appendix calculation
+gives $222$. The four relevant block restriction ranks are still
+$24,24,21,24$, so this correction does not change the blockwise values used
+in Theorem 5.3. The outer group of the double cover is again trivial.
+
+For the Monster and $\ell=2$, the ordinary table has five blocks,
+with defects
+\[
+ (46,0,0,4,0)
+\]
+and ordinary character counts $(183,1,1,8,1)$.
+The ordinary table verification in
+\cite[Sections~2 and 5]{BreuerMagaardWilsonMonster2026} assumes that there
+are precisely two conjugacy classes of involutions, with the specified
+centralisers, and that an ordinary irreducible character of degree $196883$
+exists.
+It also uses the group, subgroup and representation data set out in
+Section~2. The block distribution above is a separate calculation with
+the ordinary table.
+The table calculation gives $61$ conjugacy classes of $2$-regular
+elements. Hence there are $61$ irreducible $2$-Brauer characters
+(see, for example, \cite[Corollary~2.10]{Navarro1998}).
+An--Dietrich compute $61$ conjugacy classes of $2$-weights
+\cite[proof of Theorem~4.2 and Table~17]{AnDietrich2012}.
+The corrections to the subgroup and normaliser entries in
+\cite[Table~17]{AnDietrichErratum} leave this total unchanged.
+
+The three defect zero blocks each contribute one character and one weight.
+The remaining nonprincipal block has a defect group of order sixteen,
+so its weight count equals its Brauer count by
+\cite[Theorem~13.7]{Sambale2014}. These five blocks form the complete
+block decomposition, so they account for every nonprincipal contribution.
+Subtraction therefore proves the principal equality. At odd primes,
+An--Wilson's Theorem 4.4 supplies the noncyclic defect cases
+\cite{AnWilsonMonster}, and Sp\"ath supplies the cyclic ones
+\cite[Proposition~6.2]{Spath2013}. The Monster is its own required cover and
+has trivial outer group, so the first general argument applies at every
+relevant prime.
+
+\begin{implementation}
+\module{ManuscriptIBAW.Sporadic.BabyNumerical} and
+\module{ManuscriptIBAW.Sporadic.MonsterNumerical} perform the
+subtractions on the actual Brauer and weight fibres of the
+complete block decomposition. The numerical sources
+identify the table ranks or counts of regular classes with the
+corresponding Brauer counts and supply the published weight
+totals. The equality for small defect is a separate source clause.
+The principal equality and \lean{all_block_counts} are deductions.
+The Baby module's \lean{seven_transcript_values} checks the numerical
+data $222$ and $[24,24,21,24]$. The corresponding table calculation is
+described below.
+
+The namespaces \lean{Sporadic.BabyTwo}, \lean{Sporadic.BabyOdd},
+\lean{Sporadic.MonsterTwo} and \lean{Sporadic.MonsterOdd} are
+defined in \module{ManuscriptIBAW.Sporadic.BabyApplication} and
+\module{ManuscriptIBAW.Sporadic.MonsterApplication}. Each defines
+\lean{model} from the selected groups, character fields, roots,
+blocks and covering map before defining \lean{target} and proving
+\lean{complete}. The proofs for $\ell=2$ use the numerical deductions above. The proofs at odd primes use the published cyclic and
+noncyclic equalities, together with the stated local extension and block
+hypotheses.
+
+The projection is bijective in the Baby case for $\ell=2$ and both Monster cases. For the Baby Monster at odd primes it retains the actual
+universal double cover, with kernel of order two. Composing with
+the identification with the named simple group gives \lean{projection} into the
+original simple group. That identification remains external.
+The character counts and reductions must agree with their ordinary
+complex character interpretation. This is supplied by the stated
+splitting or scalar comparison, for example by choosing $K=\C$.
+\end{implementation}
+
+\section{The finite computations and the final theorem}
+
+The calculations for the Fischer group use \lean{fi24blocks.g}, \lean{fi24p3.g} and \lean{fi24weights.g}. The calculations for the Baby Monster and Monster use \lean{baby.g} and \lean{monster.g}.
+The five table programs were checked with GAP 4.16.0 \cite{GAP2026}
+and CTblLib 1.3.11 \cite{CTblLib2025}. The programs
+\path{o7radical.g}, \path{o7weights.g} and \path{sp6.g}
+also use AtlasRep 2.1.11 \cite{AtlasRep2026}.
+The table calculations for the exceptional Type B case use
+\mbox{\path{o7blocks.g}}, \mbox{\path{o7brauer.g}} and \mbox{\path{o7block2.g}}.
+The saved outputs of all eleven programs supply the assertions and numerical results in the
+manuscript's computational appendix. This evidence concerns the table calculations. The radical subgroup
+enumerations are supplied by the cited classification and its recorded
+computations.
+
+\begin{implementation}
+The accompanying computation records identify the programs, preserve their
+outputs and record the comparisons with the stated results.
+Lean checks the stated arithmetic properties of the matrices.
+Their identification with character values, and the interpretation of the
+fusions and permutations as group actions, remain explicit assumptions.
+
+The saved Fischer data were checked in 65,088 comparisons. Of these,
+23,208 compared exported values with Lean expressions. The remaining
+41,880 checked consistency within the exported GAP data. The
+comparisons are divided as follows.
+\begin{center}
+\begin{tabular}{p{0.76\textwidth}r}
+\toprule
+Comparison & Number\\
+\midrule
+Character matrix entries against the Lean expressions & 23,200\\
+Local evaluations against the formulas in \lean{Fi24Three} & 8\\
+Inflation values within the GAP export & 408\\
+Induced values for the 32 returned fusion candidates & 20,736\\
+Central character ratios recomputed from the export & 20,736\\
+\midrule
+Total & 65,088\\
+\bottomrule
+\end{tabular}
+\end{center}
+The total includes repeated entries and derived values, rather than
+65,088 distinct table entries. The checks also record row and class
+order, root encodings and the specified permutations.
+The eight local evaluation comparisons concern the formulas recorded
+in the computation evidence. They do not establish a fusion for an
+automorphism of the actual local group. The prime three application
+uses the published fixed count with an explicit identification of the
+four local characters. The group, character, inclusion and coefficient
+interpretations remain assumptions.
+\end{implementation}
+
+The table identifications, subgroup embeddings and completeness of the
+radical subgroup classification remain assumptions. Block numbers refer to
+positions in each table. The classification identifies the noncyclic
+blocks. Defect exponents zero and one establish the remaining cases.
+
+Ordinary restriction ranks give the Brauer counts. For an invariant block
+whose ordinary restrictions span its Brauer space, twice the symmetrised
+rank minus the original rank gives the fixed count. The library manual
+proves these formulas and explains their finite certificates. The character
+value and action identifications remain assumptions.
+
+\begingroup\clubpenalty=10000
+Finally, the result for these four groups combines with the verification for
+the other $22$ sporadic groups in the CTBlocks 0.9.5 overview
+\cite{BreuerSporadicOverview}. That source concerns the inductive condition
+in Sp\"ath's Definition 4.1. It is applied to the specified covering groups
+and character data for those $22$ groups.
+\par\endgroup
+
+\begin{implementation}
+In \module{ManuscriptIBAW.Sporadic.Theorem},
+\lean{BoundaryInputs} fixes the group models before their inductive
+conditions are proved. Its \lean{proposition_5_4} combines the four
+families and the enumeration of $45$ distinct pairs.
+\lean{PublishedTwentyTwoInputs.published} assumes the full condition
+reported by CTBlocks for the other $22$ groups, on the specified covers
+and character interpretations. The proofs reported in the overview are
+not formalised here. Using the division into these cases and the stated prime
+divisors, \lean{Inputs.complete} proves Theorem~5.1. The group and
+character table identifications remain assumptions.
+\end{implementation}
