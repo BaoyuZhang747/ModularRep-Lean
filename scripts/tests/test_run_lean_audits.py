@@ -20,7 +20,7 @@ class AuditRunnerTests(unittest.TestCase):
         self.enterContext(redirect_stdout(io.StringIO()))
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name) / 'repo'
+        self.root = (Path(self.temporary.name) / 'repo').resolve()
         self.core = Path(self.temporary.name) / 'lean/lib/lean'
         self.core.mkdir(parents=True)
         for name in ['Init', 'Lean', 'Std/Tactic']:
